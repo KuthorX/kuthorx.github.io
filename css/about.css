@@ -1,0 +1,11 @@
+main .center {
+    text-align: start;
+}
+
+.measure-wide {
+    max-width: 40em;
+}
+
+.pagination {
+    text-align: center;
+}
