@@ -60,9 +60,13 @@ article .toc-title {
     margin: 1rem 0;
 }
 
+#TableOfContents a {
+    color: inherit;
+}
+
 a {
     text-decoration: none;
-    color: inherit;
+    color: #357edd;
     transition: all 100ms ease-in-out;
 }
 
