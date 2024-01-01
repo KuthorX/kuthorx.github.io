@@ -1,0 +1,198 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Rust - Basic - 12 - Iterators and Closures | KuthorX Blog II</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=generator content="Hugo 0.59.1"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link href=/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css rel=stylesheet><link rel=stylesheet href=/css/about.css><link rel="shortcut icon" href=/images/KuthorX-512.png type=image/x-icon><meta property="og:title" content="Rust - Basic - 12 - Iterators and Closures"><meta property="og:description" content="RRRRRRRRRRRR"><meta property="og:type" content="article"><meta property="og:url" content="https://kuthorx.github.io/posts/rust/12_iterators-and-closures/"><meta property="article:published_time" content="2022-01-03T00:00:12+08:00"><meta property="article:modified_time" content="2022-01-03T00:00:12+08:00"><meta itemprop=name content="Rust - Basic - 12 - Iterators and Closures"><meta itemprop=description content="RRRRRRRRRRRR"><meta itemprop=datePublished content="2022-01-03T00:00:12&#43;08:00"><meta itemprop=dateModified content="2022-01-03T00:00:12&#43;08:00"><meta itemprop=wordCount content="1595"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Rust - Basic - 12 - Iterators and Closures"><meta name=twitter:description content="RRRRRRRRRRRR"></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">KuthorX Blog II</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/repos/ title="Repos page">Repos</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/posts/thinking-talking/ title="Thinking Talking page">Thinking Talking</a></li></ul><a href=https://github.com/KuthorX target=_blank class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel=noopener aria-label="follow on Github——Opens in a new window"><svg height="32" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a></div></div></nav></div></header><main role=main><div class=flex><aside id=toc><h1 class=toc-title>目录</h1><nav id=TableOfContents><ul><li><a href=#iterators-and-closures>Iterators and Closures</a></li><li><a href=#comprehension>Comprehension</a></li><li><a href=#origin>Origin</a><ul><li><ul><li><a href=#closure-type-inference-and-annotation-https-doc-rust-lang-org-book-ch13-01-closures-html-closure-type-inference-and-annotation><a href=https://doc.rust-lang.org/book/ch13-01-closures.html#closure-type-inference-and-annotation>Closure Type Inference and Annotation</a></a></li><li><a href=#capturing-the-environment-with-closures-https-doc-rust-lang-org-book-ch13-01-closures-html-capturing-the-environment-with-closures><a href=https://doc.rust-lang.org/book/ch13-01-closures.html#capturing-the-environment-with-closures>Capturing the Environment with Closures</a></a></li></ul></li></ul></li></ul></nav></aside><article id=article class="flex-l flex-wrap justify-between mw9 center"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked"><div id=breadcrumbs><a class=kuthorx-posts-breadcrumbs-span href=/posts//rust>rust</a></div><style>.kuthorx-posts-breadcrumbs-span{text-decoration:none;color:#000;font-family:avenir next,avenir,sans-serif;font-weight:400}a.kuthorx-posts-breadcrumbs-span:hover{color:grey}</style></aside><h1 class="f1 athelas mt3 mb1">Rust - Basic - 12 - Iterators and Closures</h1><time class="f6 mv4 dib tracked" datetime=2022-01-03T00:00:12&#43;08:00>January 3, 2022</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><nav><h1 class=toc-title>目录</h1><nav id=TableOfContents><ul><li><a href=#iterators-and-closures>Iterators and Closures</a></li><li><a href=#comprehension>Comprehension</a></li><li><a href=#origin>Origin</a><ul><li><ul><li><a href=#closure-type-inference-and-annotation-https-doc-rust-lang-org-book-ch13-01-closures-html-closure-type-inference-and-annotation><a href=https://doc.rust-lang.org/book/ch13-01-closures.html#closure-type-inference-and-annotation>Closure Type Inference and Annotation</a></a></li><li><a href=#capturing-the-environment-with-closures-https-doc-rust-lang-org-book-ch13-01-closures-html-capturing-the-environment-with-closures><a href=https://doc.rust-lang.org/book/ch13-01-closures.html#capturing-the-environment-with-closures>Capturing the Environment with Closures</a></a></li></ul></li></ul></li></ul></nav></nav><h1 id=iterators-and-closures>Iterators and Closures</h1><blockquote><p>迭代器与闭包，函数式编程的思想之一</p></blockquote><h1 id=comprehension>Comprehension</h1><ul><li><p>closures</p><p>表现：函数可以被赋值为变量，此时函数未被调用</p><p>特点：不对调用者暴露、简短且意义明确</p><p>编译器会进行推断以决定使用哪种 Closures：</p><p><code>FnOnce</code> 当使用的外部环境被 taking ownership (move) 则使用</p><p><code>FnMut</code> 当使用的外部环境被 borrow mutably 则使用</p><p><code>Fn</code> 当使用的外部环境被 borrow immutably 则使用</p><p>环境即 *envrionment*，一般指闭包内使用的外部变量</p><pre><code class=language-rust>// 常见声明
+let expensive_closure = |num| {
+    println!(&quot;calculating slowly...&quot;);
+    thread::sleep(Duration::from_secs(2));
+    num
+};
+    
+// 只有 a single expression 的时候
+let add_one_v3 = |x|             { x + 1 };
+// 大括号可以去掉
+let add_one_v4 = |x|               x + 1  ;
+    
+// closures 自带 type inferred
+let example_closure = |x| x;
+let s = example_closure(String::from(&quot;hello&quot;));
+let n = example_closure(5);  // 编译器处理到这里的时候会报错
+    
+// 使用 struct + closures + trait 实现 lazy load
+struct Cacher&lt;T&gt;
+where
+    T: Fn(u32) -&gt; u32,
+{
+    calculation: T,
+    value: Option&lt;u32&gt;,
+}
+impl&lt;T&gt; Cacher&lt;T&gt;
+where
+    T: Fn(u32) -&gt; u32,
+{
+    fn new(calculation: T) -&gt; Cacher&lt;T&gt; {
+        Cacher {
+            calculation,
+            value: None,
+        }
+    }
+    
+    fn value(&amp;mut self, arg: u32) -&gt; u32 {
+        match self.value {
+            Some(v) =&gt; v,
+            None =&gt; {
+                let v = (self.calculation)(arg);
+                self.value = Some(v);
+                v
+            }
+        }
+    }
+}
+    
+// 通过 move 关键字强制指定
+// 一般不会这么做（交给编译器推导）
+// 以下代码无法通过编译（因为 x 被 move 了）
+fn main() {
+    let x = vec![1, 2, 3];
+    
+    let equal_to_x = move |z| z == x;
+    
+    println!(&quot;can't use x here: {:?}&quot;, x);
+    
+    let y = vec![1, 2, 3];
+    
+    assert!(equal_to_x(y));
+}
+</code></pre></li><li><p>iterators</p><p>迭代 和 循环 性能没有差别。</p><pre><code class=language-rust>// 基础写法
+#[test]
+fn iterator_demonstration() {
+    let v1 = vec![1, 2, 3];
+        // 由于后续需要 next，会修改 v1 迭代器状态，故需要 mut 关键字
+    // 如果需要 take ownership，则使用 into_iter
+        // 如果需要 mutable referance，则使用 iter_mut
+    let mut v1_iter = v1.iter();
+    
+    assert_eq!(v1_iter.next(), Some(&amp;1));
+    assert_eq!(v1_iter.next(), Some(&amp;2));
+    assert_eq!(v1_iter.next(), Some(&amp;3));
+    assert_eq!(v1_iter.next(), None);
+}
+    
+let v1: Vec&lt;i32&gt; = vec![1, 2, 3];
+// 这里没有 consuming adaptors（调用 next 的 methods）会触发 compile warning
+v1.iter().map(|x| x + 1);
+let v2: Vec&lt;_&gt; = v1.iter().map(|x| x + 1).collect(); // 使用 collect 消费迭代器
+assert_eq!(v2, vec![2, 3, 4]);
+    
+/// into_inter 使用示例 - filter
+#[derive(PartialEq, Debug)]
+struct Shoe {
+    size: u32,
+    style: String,
+}
+fn shoes_in_size(shoes: Vec&lt;Shoe&gt;, shoe_size: u32) -&gt; Vec&lt;Shoe&gt; {
+    shoes.into_iter().filter(|s| s.size == shoe_size).collect()
+}
+    
+// 实现一个能 iter 的 struct
+struct Counter {
+    count: u32,
+}
+impl Counter {
+    fn new() -&gt; Counter {
+        Counter { count: 0 }
+    }
+}
+impl Iterator for Counter {
+    type Item = u32;
+    
+    fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt; {
+        if self.count &lt; 5 {
+            self.count += 1;
+            Some(self.count)
+        } else {
+            None
+        }
+    }
+}
+#[test]
+fn calling_next_directly() {
+    let mut counter = Counter::new();
+    
+    assert_eq!(counter.next(), Some(1));
+    assert_eq!(counter.next(), Some(2));
+    assert_eq!(counter.next(), Some(3));
+    assert_eq!(counter.next(), Some(4));
+    assert_eq!(counter.next(), Some(5));
+    assert_eq!(counter.next(), None);
+}
+    
+// 使用其它 Iterator Trait Methods
+#[test]
+fn using_other_iterator_trait_methods() {
+    let sum: u32 = Counter::new()
+        .zip(Counter::new().skip(1))  // 任一 iter 返回 None，zip 停止 pair items，所以这里只有 4 pairs
+        .map(|(a, b)| a * b)
+        .filter(|x| x % 3 == 0)
+        .sum();
+    assert_eq!(18, sum);
+}
+</code></pre></li></ul><h1 id=origin>Origin</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch13-00-functional-features.html>https://doc.rust-lang.org/book/ch13-00-functional-features.html</a></p></blockquote><p>&hellip;</p><h3 id=closure-type-inference-and-annotation-https-doc-rust-lang-org-book-ch13-01-closures-html-closure-type-inference-and-annotation><a href=https://doc.rust-lang.org/book/ch13-01-closures.html#closure-type-inference-and-annotation>Closure Type Inference and Annotation</a></h3><p>Closures don’t require you to annotate the types of the parameters or the return value like <code>fn</code> functions do. Type annotations are required on functions because they’re part of an explicit interface exposed to your users. Defining this interface rigidly is important for ensuring that everyone agrees on what types of values a function uses and returns. But closures aren’t used in an exposed interface like this: they’re <strong>stored in variables and used without naming them and exposing them to users of our library</strong>.</p><p>Closures are usually <strong>short and relevant</strong> only within a narrow context rather than in any arbitrary scenario. Within these limited contexts, the compiler is reliably able to infer the types of the parameters and the return type, similar to how it’s able to infer the types of most variables.</p><p>Making programmers annotate the types in these small, anonymous functions would be annoying and largely redundant with the information the compiler already has available.</p><p>&hellip;</p><h3 id=capturing-the-environment-with-closures-https-doc-rust-lang-org-book-ch13-01-closures-html-capturing-the-environment-with-closures><a href=https://doc.rust-lang.org/book/ch13-01-closures.html#capturing-the-environment-with-closures>Capturing the Environment with Closures</a></h3><p>In the workout generator example, we only used closures as inline anonymous functions. However, closures have an additional capability that functions don’t have: they can capture their environment and access variables from the scope in which they’re defined.</p><p>Listing 13-12 has an example of a closure stored in the <code>equal_to_x</code> variable that uses the <code>x</code> variable from the closure’s surrounding environment.</p><p>Filename: src/main.rs</p><pre><code class=language-rust>fn main() {
+    let x = 4;
+
+    let equal_to_x = |z| z == x;
+
+    let y = 4;
+
+    assert!(equal_to_x(y));
+}
+</code></pre><p><strong>Listing 13-12: Example of a closure that refers to a variable in its enclosing scope</strong></p><p>Here, even though <code>x</code> is not one of the parameters of <code>equal_to_x</code>, the <code>equal_to_x</code> closure is allowed to use the <code>x</code> variable that’s defined in the same scope that <code>equal_to_x</code> is defined in.</p><p>We can’t do the same with functions; if we try with the following example, our code won’t compile:</p><p>Filename: src/main.rs</p><pre><code class=language-rust>fn main() {
+    let x = 4;
+
+    fn equal_to_x(z: i32) -&gt; bool {
+        z == x
+    }
+
+    let y = 4;
+
+    assert!(equal_to_x(y));
+}
+</code></pre><p>We get an error:</p><pre><code class=language-bash>$ cargo run
+   Compiling equal-to-x v0.1.0 (file:///projects/equal-to-x)
+error[E0434]: can't capture dynamic environment in a fn item
+ --&gt; src/main.rs:5:14
+  |
+5 |         z == x
+  |              ^
+  |
+  = help: use the `|| { ... }` closure form instead
+
+For more information about this error, try `rustc --explain E0434`.
+error: could not compile `equal-to-x` due to previous error
+</code></pre><p>The compiler even reminds us that this only works with closures!</p><p>When a closure captures a value from its environment, it uses memory to store the values for use in the closure body. This use of memory is overhead that we don’t want to pay in more common cases where we want to execute code that doesn’t capture its environment. Because functions are never allowed to capture their environment, defining and using functions will never incur this overhead.</p><p>Closures can capture values from their environment in three ways, which directly map to the three ways a function can take a parameter: <strong>taking ownership, borrowing mutably, and borrowing immutably</strong>. These are encoded in the three <code>Fn</code> traits as follows:</p><ul><li><code>FnOnce</code> consumes the variables it captures from its enclosing scope, known as the closure’s <em>environment</em>. To consume the captured variables, the closure must take ownership of these variables and move them into the closure when it is defined. The <code>Once</code> part of the name represents the fact that the closure can’t take ownership of the same variables more than once, so it can be called only once.</li><li><code>FnMut</code> can change the environment because it mutably borrows values.</li><li><code>Fn</code> borrows values from the environment immutably.</li></ul><p>When you create a closure, Rust infers which trait to use based on how the closure uses the values from the environment. All closures implement <code>FnOnce</code> because they can all be called at least once. Closures that don’t move the captured variables also implement <code>FnMut</code>, and closures that don’t need mutable access to the captured variables also implement <code>Fn</code>. In Listing 13-12, the <code>equal_to_x</code> closure borrows <code>x</code> immutably (so <code>equal_to_x</code> has the <code>Fn</code> trait) because the body of the closure only needs to read the value in <code>x</code>.</p><p>When you create a closure, Rust infers which trait to use based on how the closure uses the values from the environment. All closures implement <code>FnOnce</code> because they can all be called at least once. Closures that don’t move the captured variables also implement <code>FnMut</code>, and closures that don’t need mutable access to the captured variables also implement <code>Fn</code>. In Listing 13-12, the <code>equal_to_x</code> closure borrows <code>x</code> immutably (so <code>equal_to_x</code> has the <code>Fn</code> trait) because the body of the closure only needs to read the value in <code>x</code>.</p><p>If you want to force the closure to take ownership of the values it uses in the environment, you can use the <code>move</code> keyword before the parameter list. This technique is mostly useful when passing a closure to a new thread to move the data so it’s owned by the new thread.</p><blockquote><p>Note: move closures may still implement Fn or FnMut, even though they capture variables by move. This is because the traits implemented by a closure type are determined by what the closure does with captured values, not how it captures them. The move keyword only specifies the latter.</p></blockquote><p>We’ll have more examples of <code>move</code> closures in Chapter 16 when we talk about concurrency. For now, here’s the code from Listing 13-12 with the <code>move</code> keyword added to the closure definition and using vectors instead of integers, because integers can be copied rather than moved; note that this code will not yet compile.</p><p>Filename: src/main.rs</p><pre><code class=language-rust>fn main() {
+    let x = vec![1, 2, 3];
+
+    let equal_to_x = move |z| z == x;
+
+    println!(&quot;can't use x here: {:?}&quot;, x);
+
+    let y = vec![1, 2, 3];
+
+    assert!(equal_to_x(y));
+}
+</code></pre><p>We receive the following error:</p><pre><code class=language-bash>$ cargo run
+   Compiling equal-to-x v0.1.0 (file:///projects/equal-to-x)
+error[E0382]: borrow of moved value: `x`
+ --&gt; src/main.rs:6:40
+  |
+2 |     let x = vec![1, 2, 3];
+  |         - move occurs because `x` has type `Vec&lt;i32&gt;`, which does not implement the `Copy` trait
+3 |
+4 |     let equal_to_x = move |z| z == x;
+  |                      --------      - variable moved due to use in closure
+  |                      |
+  |                      value moved into closure here
+5 |
+6 |     println!(&quot;can't use x here: {:?}&quot;, x);
+  |                                        ^ value borrowed here after move
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `equal-to-x` due to previous error
+</code></pre><p>The <code>x</code> value is moved into the closure when the closure is defined, because we added the <code>move</code> keyword. The closure then has ownership of <code>x</code>, and <code>main</code> isn’t allowed to use <code>x</code> anymore in the <code>println!</code> statement. Removing <code>println!</code> will fix this example.</p><p>Most of the time when specifying one of the <code>Fn</code> trait bounds, you can start with <code>Fn</code> and the compiler will tell you if you need <code>FnMut</code> or <code>FnOnce</code> based on what happens in the closure body.</p><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div></article></div><script>window.addEventListener('DOMContentLoaded',()=>{const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');if(entry.intersectionRatio>0){document.querySelector(`#toc li a[href="#${id}"]`).parentElement.classList.add('active');}else{document.querySelector(`#toc li a[href="#${id}"]`).parentElement.classList.remove('active');}});});document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]').forEach((section)=>{observer.observe(section);});});</script></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://kuthorx.github.io/>&copy; KuthorX Blog II 2024</a><div><a href=https://github.com/KuthorX target=_blank class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel=noopener aria-label="follow on Github——Opens in a new window"><svg height="32" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a></div></div></footer><script src=/dist/js/app.3fc0f988d21662902933.js></script></body></html>

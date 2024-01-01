@@ -1,0 +1,100 @@
+main .center {
+    text-align: start;
+}
+
+.measure-wide {
+    max-width: 40em;
+}
+
+.pagination {
+    text-align: center;
+}
+
+/* 以下为 single.html 及其 partial 会使用到的样式 */
+html, body {
+    scroll-padding-top: 2rem;
+}
+
+main {
+    padding-bottom: 0;
+    min-height: 60vh;
+}
+
+#toc {
+    position: sticky;
+    top: 0rem;
+    align-self: start;
+    padding: 1rem 2rem;
+    overflow-y: auto;
+    min-width: 300px;
+    height: 100vh;
+    max-width: 30rem;
+}
+
+.active {
+    color: #357edd;
+}
+
+.active a {
+    color: #357edd;
+}
+
+article #TableOfContents {
+    display: none;
+}
+
+aside .toc-title {
+    display: block;
+    padding: 0 0;
+}
+
+article .toc-title {
+    display: none;
+}
+
+#TableOfContents ul {
+    padding: 0 1rem;
+}
+
+#TableOfContents ul li {
+    margin: 1rem 0;
+}
+
+#TableOfContents a {
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: #357edd;
+    transition: all 100ms ease-in-out;
+}
+
+#TableOfContents ul li a:hover {
+    color: #357edd;
+}
+
+@media screen and (max-width: 60rem) {
+    main {
+        max-height: unset;
+    }
+
+    #toc {
+        display: none;
+    }
+    
+    article .toc-title {
+        display: block;
+    }
+
+    article #TableOfContents {
+        display: contents;
+    }
+    
+    #article {
+        height: auto;
+        max-height: unset;
+        padding: 1rem 4rem;
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,399 @@
+<html>
+  <head>
+    <title>Diff Json</title>
+    <script src="./js/jquery.min.js" type="text/javascript"></script>
+    <script src="./js/skulpt.min.js" type="text/javascript"></script>
+    <script src="./js/skulpt-stdlib.js" type="text/javascript"></script>
+    <style type="text/css">
+      pre {
+        white-space: unset;
+      }
+      textarea {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+    <style type="text/css">
+      .left-indent {
+        margin-left: 10px;
+      }
+
+      .no-line {
+        display: inline-block;
+      }
+
+      .line {
+        display: block;
+      }
+
+      .diff-container {
+        display: flex;
+      }
+
+      .state-7 {
+        color: grey;
+      }
+
+      .state-3 {
+        color: blue;
+      }
+
+      .state-1 {
+        color: green;
+      }
+
+      .state-2 {
+        color: purple;
+      }
+    </style>
+  </head>
+
+  <body style="zoom: 1;">
+    <script type="text/javascript">
+      // output functions are configurable.  This one just appends some text
+      // to a pre element.
+      function outf(text) {
+        var mypre = document.getElementById("output")
+        mypre.innerHTML = mypre.innerHTML + text
+      }
+      function builtinRead(x) {
+        if (
+          Sk.builtinFiles === undefined ||
+          Sk.builtinFiles["files"][x] === undefined
+        )
+          throw "File not found: '" + x + "'"
+        return Sk.builtinFiles["files"][x]
+      }
+
+      // Here's everything you need to run a python program in skulpt
+      // grab the code from your textarea
+      // get a reference to your pre element for output
+      // configure the output function
+      // call Sk.importMainWithBody()
+      function runit() {
+        var prog = document.getElementById("yourcode").value
+        var mypre = document.getElementById("output")
+        mypre.innerHTML = ""
+        Sk.pre = "output"
+        Sk.configure({ output: outf, read: builtinRead })
+        ;(Sk.TurtleGraphics || (Sk.TurtleGraphics = {})).target = "mycanvas"
+        var myPromise = Sk.misceval.asyncToPromise(function() {
+          return Sk.importMainWithBody("<stdin>", false, prog, true)
+        })
+        myPromise.then(
+          function(mod) {
+            console.log("success")
+          },
+          function(err) {
+            console.log(err.toString())
+          }
+        )
+      }
+    </script>
+
+    <h1>Diff Json</h1>
+    <p>
+      Just change <strong>left_json</strong> and <strong>right_json</strong> and
+      click <strong>Diff!</strong> button to see the result.
+    </p>
+    <form>
+      <textarea id="yourcode" cols="40" rows="10">
+# coding=utf-8
+import time
+import collections
+
+
+def gen_process_list(left_json, right_json, parent=None):
+    # state 是什么？
+    # 当 json 是 dict 时：
+    # 2(b010) 表示仅左json有该key
+    # 3(b011) 表示左右都有该key但是值不同（包括类型不同）
+    # 7(b111) 表示左右都有该key且值相同
+    # 1(b001) 表示仅右json有该key
+    # 当 json 是 list 时：
+    # 2(b010) 表示仅左json有该index
+    # 3(b011) 表示左右都有该index但是值不同（包括类型不同）
+    # 7(b111) 表示左右都有该index且值相同
+    # 1(b001) 表示仅右json有该index
+    # 
+    # :param left_json:
+    # :param right_json:
+    # :param parent:
+    # :return: (process_list(key: state, children(key: state, children(...)...)...), mask_state)
+    #          (process_list[(key: state, children[(key: state, children...), ...]), ...], mask_state)
+
+    # 前置调用保证了两侧的类型相同
+    if_list = isinstance(left_json, list)
+
+    if if_list:
+        process_list = []
+        if parent is not None:
+            parent["children"] = process_list
+        l_len = len(left_json)
+        r_len = len(right_json)
+        _i = 0
+        while _i &lt; l_len:
+            lv = left_json[_i]
+            pl_item = {
+                "state": 2,
+                "children": None
+            }
+            process_list.append(pl_item)
+            if _i &lt; r_len:
+                pl_item["state"] = 3
+                lv_type_l = isinstance(lv, list)
+                lv_type_d = isinstance(lv, dict)
+                rv_type_l = isinstance(right_json[_i], list)
+                rv_type_d = isinstance(right_json[_i], dict)
+                if (lv_type_l and rv_type_l) or (lv_type_d and rv_type_d):
+                    _, return_state = gen_process_list(lv, right_json[_i], parent=pl_item)
+                    pl_item["state"] = return_state
+                elif lv == right_json[_i]:
+                    pl_item["state"] = 7
+            _i += 1
+        while _i &lt; r_len:
+            pl_item = {
+                "state": 1,
+                "children": None
+            }
+            process_list.append(pl_item)
+            _i += 1
+        mask_state = 7
+        for v in process_list:
+            c_state = v["state"]
+            mask_state = mask_state &amp; c_state
+    else:
+        process_list = {}
+        if parent is not None:
+            parent["children"] = process_list
+        l_keys = left_json.keys()
+        r_keys = right_json.keys()
+        for lk, lv in left_json.items():
+            process_list[lk] = {
+                "state": 2,
+                "children": None
+            }
+            if lk in r_keys:
+                process_list[lk]["state"] = 3
+                lv_type_l = isinstance(lv, list)
+                lv_type_d = isinstance(lv, dict)
+                rv_type_l = isinstance(right_json[lk], list)
+                rv_type_d = isinstance(right_json[lk], dict)
+                if (lv_type_l and rv_type_l) or (lv_type_d and rv_type_d):
+                    _, return_state = gen_process_list(lv, right_json[lk], parent=process_list[lk])
+                    process_list[lk]["state"] = return_state
+                elif lv == right_json[lk]:
+                    process_list[lk]["state"] = 7
+        for rk, rv in right_json.items():
+            if rk not in l_keys:
+                process_list[rk] = {
+                    "state": 1,
+                    "children": None
+                }
+        mask_state = 7
+        for k, v in process_list.items():
+            c_state = process_list[k]["state"]
+            mask_state = mask_state &amp; c_state
+    if parent:
+        mask_state = mask_state | parent["state"]
+    return process_list, mask_state
+
+
+def gen_order_json(in_json, process_list):
+    # 根据 7 &gt; 3 &gt; 2/1 的顺序排列 key
+    if not process_list:
+        return in_json
+
+    if isinstance(process_list, dict):
+        final_json = collections.OrderedDict()
+        for k, v in process_list.items():
+            state = v["state"]
+            if state == 7:
+                value = in_json[k]
+                final_json[k] = value
+        for k, v in process_list.items():
+            state = v["state"]
+            if state == 3:
+                value = in_json[k]
+                if isinstance(value, dict):
+                    value = gen_order_json(in_json[k], v["children"])
+                final_json[k] = value
+        for k, v in process_list.items():
+            state = v["state"]
+            if state == 2 or state == 1:
+                if k in in_json:
+                    value = in_json[k]
+                    if isinstance(value, dict):
+                        value = gen_order_json(in_json[k], v["children"])
+                    final_json[k] = value
+        return final_json
+    elif isinstance(process_list, list):
+        final_json = []
+        _i = 0
+        length = len(in_json)
+        while _i &lt; length:
+            value = in_json[_i]
+            if isinstance(value, dict):
+                value = gen_order_json(in_json[_i], process_list[_i]["children"])
+            final_json.append(value)
+            _i += 1
+        return final_json
+
+
+def gen_json_str(in_json, process_list, is_root=True, parent_state=7, is_last=False):
+    if isinstance(in_json, dict):
+        gen_json_str_arr = []
+        keys = in_json.keys()
+        k_len = len(keys)
+        _i = 0
+        while _i &lt; k_len:
+            k = keys[_i]
+            v = in_json[k]
+            if process_list:
+                state = process_list[k]["state"]
+                children = process_list[k]["children"]
+            else:
+                state = parent_state
+                children = None
+            if isinstance(v, dict) or isinstance(v, list):
+                key_str = """
+                    &lt;div class="line left-indent state-%s"&gt;"%s": &lt;/div&gt;
+                """ % (state, k)
+                v_str = gen_json_str(v, children, is_root=False, parent_state=state, is_last=(_i == k_len - 1))
+                value_wrapper = """
+                    &lt;div class="no-line left-indent state-%s"&gt;%s&lt;/div&gt;
+                """ % (state, v_str)
+                gen_json_str_arr += [key_str, value_wrapper]
+            else:
+                final_v = v
+                if isinstance(v, str):
+                    final_v = """\"%s\"""" % v
+                comma = """&lt;div class="no-line end-comma"&gt;,&lt;/div&gt;"""
+                if _i == k_len - 1:
+                    comma = ""
+                key_str = """
+                    &lt;div class="line left-indent state-%s"&gt;"%s": %s%s&lt;/div&gt;
+                """ % (state, k, final_v, comma)
+                gen_json_str_arr.append(key_str)
+            _i += 1
+        gen_str = ""
+        for a in gen_json_str_arr:
+            gen_str += a
+        comma = ""
+        if not is_root and not is_last:
+            comma = """&lt;div class="no-line end-comma"&gt;,&lt;/div&gt;"""
+        curly_braces_wrapper = """
+            &lt;div class="line left-curly-brace symbol"&gt; { &lt;/div&gt;
+            &lt;div class="no-line"&gt;%s&lt;/div&gt;
+            &lt;div class="line right-curly-brace symbol"&gt; }%s &lt;/div&gt;
+        """ % (gen_str, comma)
+        return curly_braces_wrapper
+    elif isinstance(in_json, list):
+        gen_json_str_arr = []
+        _i = 0
+        length = len(in_json)
+        while _i &lt; length:
+            v = in_json[_i]
+            if process_list:
+                state = process_list[_i]["state"]
+                children = process_list[_i]["children"]
+            else:
+                state = parent_state
+                children = None
+            if isinstance(v, dict) or isinstance(v, list):
+                v_str = gen_json_str(v, children, is_root=False, parent_state=state, is_last=(_i == length - 1))
+                value_wrapper = """
+                    &lt;div class="line left-indent state-%s"&gt;%s&lt;/div&gt;
+                """ % (state, v_str)
+                gen_json_str_arr += [value_wrapper]
+            else:
+                final_v = v
+                if isinstance(v, str):
+                    final_v = """\"%s\"""" % v
+                comma = """&lt;div class="no-line end-comma"&gt;,&lt;/div&gt;"""
+                if _i == length - 1:
+                    comma = ""
+                v_str = """
+                    &lt;div class="line left-indent state-%s"&gt;%s%s&lt;/div&gt;
+                """ % (state, final_v, comma)
+                gen_json_str_arr.append(v_str)
+            _i += 1
+        gen_str = ""
+        for a in gen_json_str_arr:
+            gen_str += a
+        comma = ""
+        if not is_root and not is_last:
+            comma = """&lt;div class="no-line end-comma"&gt;,&lt;/div&gt;"""
+        bracket_wrapper = """
+            &lt;div class="line left-bracket symbol"&gt; [ &lt;/div&gt;
+            &lt;div class="no-line"&gt;%s&lt;/div&gt;
+            &lt;div class="line right-bracket symbol"&gt; ]%s &lt;/div&gt;
+        """ % (gen_str, comma)
+        return bracket_wrapper
+
+
+def gen_html_str(left_json, right_json, process_list):
+    left_html = gen_json_str(left_json, process_list)
+    right_html = gen_json_str(right_json, process_list)
+    html_wrapper = """
+            &lt;div class="diff-container"&gt;
+              &lt;div class="left-area"&gt;%s&lt;/div&gt;
+              &lt;div class="right-area"&gt;%s&lt;/div&gt;
+            &lt;/div&gt;
+    """ % (left_html, right_html)
+    return html_wrapper
+
+
+def json_diff(left_json, right_json):
+    if_left_list = isinstance(left_json, list)
+    if_right_list = isinstance(left_json, list)
+    if_left_dict = isinstance(left_json, dict)
+    if_right_dict = isinstance(left_json, dict)
+
+    if (if_left_list and if_right_list) or (if_left_dict and if_right_dict):
+        process_list, status = gen_process_list(left_json, right_json)
+        order_left_json = gen_order_json(left_json, process_list)
+        order_right_json = gen_order_json(right_json, process_list)
+        html_wrapper = gen_html_str(order_left_json, order_right_json, process_list)
+        print html_wrapper
+    else:
+        return "Not same type"
+
+
+def main():
+    left_json = [{"key1": "value1", "key2": "value2", "key3": "value3", "list1": [{"a": []}, "2", "4", "5"],
+                  "list2": {"a": 1.2, "c": 2, "b": 3}}, {"a": 1}]
+    right_json = [{"key1": "value1", "key2": "value22", "key4": "value4", "list1": [{"a": [1]}, "2", "4", "5"],
+                    "list2": {"a": 1.2, "b": 2, "d": 3.3}}, {"a": 1}]
+    json_diff(left_json, right_json)
+
+
+if __name__ == "__main__":
+    main()
+
+</textarea
+      ><br />
+      <button type="button" onclick="runit()">Diff!</button>
+    </form>
+    <p>
+      <span class="state-7"> grey </span> means both have key/index and their
+      value is same<br />
+      <span class="state-3"> blue </span> means both have key/index and their
+      value is <strong> not </strong> same<br />
+      <span class="state-2"> purple </span> means
+      <strong>only left_json has</strong> this key/index<br />
+      <span class="state-1"> green </span> means
+      <strong>only right_json has</strong> this key/index
+    </p>
+    <pre id="output"></pre>
+    <!-- If you want turtle graphics include a canvas -->
+    <div id="mycanvas"></div>
+    <script>
+      window.onload = function() {
+        runit()
+        var textarea = document.getElementById("yourcode")
+        textarea.scrollTop = textarea.scrollHeight
+      }
+    </script>
+  </body>
+</html>
