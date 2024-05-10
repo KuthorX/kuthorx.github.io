@@ -94,7 +94,7 @@ a {
     #article {
         height: auto;
         max-height: unset;
-        padding: 1rem 4rem;
+        padding: 1rem 3rem;
         overflow-y: auto;
     }
 }
