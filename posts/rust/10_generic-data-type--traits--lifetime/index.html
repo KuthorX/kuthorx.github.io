@@ -1,0 +1,192 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Rust - Basic - 10 - Generaic Data Type & Traits & Lifetime | KuthorX Blog II</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="RRRRRRRRRR"><meta name=generator content="Hugo 0.148.2"><meta name=robots content="index, follow"><link rel=stylesheet href=/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css><link rel=stylesheet href=/css/about.css><link rel=stylesheet href=/css/toc.css><link rel="shortcut icon" href=/images/KuthorX-512.png type=image/x-icon><link rel=canonical href=https://kuthorx.github.io/posts/rust/10_generic-data-type--traits--lifetime/><meta property="og:url" content="https://kuthorx.github.io/posts/rust/10_generic-data-type--traits--lifetime/"><meta property="og:site_name" content="KuthorX Blog II"><meta property="og:title" content="Rust - Basic - 10 - Generaic Data Type & Traits & Lifetime"><meta property="og:description" content="RRRRRRRRRR"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-01-03T00:00:10+08:00"><meta property="article:modified_time" content="2022-01-03T00:00:10+08:00"><meta itemprop=name content="Rust - Basic - 10 - Generaic Data Type & Traits & Lifetime"><meta itemprop=description content="RRRRRRRRRR"><meta itemprop=datePublished content="2022-01-03T00:00:10+08:00"><meta itemprop=dateModified content="2022-01-03T00:00:10+08:00"><meta itemprop=wordCount content="1061"><meta name=twitter:card content="summary"><meta name=twitter:title content="Rust - Basic - 10 - Generaic Data Type & Traits & Lifetime"><meta name=twitter:description content="RRRRRRRRRR"></head><body class="ma0 avenir bg-near-white production"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l center items-center justify-between"><a href=/ class="f3 fw2 hover-white white-90 dib no-underline">KuthorX Blog II</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href=/about/ title="About 页">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href=/posts/ title="Posts 页">Posts</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href=/repos/ title="Repos 页">Repos</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href=/story_of_cloak/ title="苍绿之眼 页">苍绿之眼</a></li></ul><div class=ananke-socials></div></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l mw8 center ph3 flex-wrap justify-between"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">Rust</aside><div id=sharing class="mt3 ananke-socials"></div><h1 class="f1 athelas mt3 mb1">Rust - Basic - 10 - Generaic Data Type & Traits & Lifetime</h1><time class="f6 mv4 dib tracked" datetime=2022-01-03T00:00:10+08:00>一月 3, 2022</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id=generic-data-type--traits--lifetime>Generic: Data Type & Traits & Lifetime</h1><h1 id=comprehension>Comprehension</h1><ul><li><p>Generic 表现方式 1 : Data Type</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#75715e>// 泛型声明 - struct
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>Point</span><span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    x: <span style=color:#a6e22e>T</span>,
+</span></span><span style=display:flex><span>    y: <span style=color:#a6e22e>T</span>,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> point <span style=color:#f92672>=</span> Point { x: <span style=color:#ae81ff>5</span>, y: <span style=color:#ae81ff>4</span> }; <span style=color:#75715e>// 必须是同一类型
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>PointDiffType</span><span style=color:#f92672>&lt;</span>T, U<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    x: <span style=color:#a6e22e>T</span>,
+</span></span><span style=display:flex><span>    y: <span style=color:#a6e22e>U</span>,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> point_diff_type <span style=color:#f92672>=</span> PointDiffType{ x: <span style=color:#ae81ff>5</span>, y: <span style=color:#ae81ff>4.0</span> }; <span style=color:#75715e>// 不同类型
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 泛型声明 - impl
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>impl</span><span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> Point<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>x</span>(<span style=color:#f92672>&amp;</span>self) -&gt; <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>T</span> {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&amp;</span>self.x
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 泛型声明 - enum
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>enum</span> Option<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    Some(T),
+</span></span><span style=display:flex><span>    None,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>enum</span> Result<span style=color:#f92672>&lt;</span>T, E<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    Ok(T),
+</span></span><span style=display:flex><span>    Err(E),
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 一种 mix-up 实现
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>Point</span><span style=color:#f92672>&lt;</span>T, U<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    x: <span style=color:#a6e22e>T</span>,
+</span></span><span style=display:flex><span>    y: <span style=color:#a6e22e>U</span>,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>impl</span><span style=color:#f92672>&lt;</span>T, U<span style=color:#f92672>&gt;</span> Point<span style=color:#f92672>&lt;</span>T, U<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 由于泛型的高灵活性，这里做了巧妙的 field 交叉混合，组合出第三个新泛型实例
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// 这种语法可用于 middleware
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>mixup</span><span style=color:#f92672>&lt;</span>V, W<span style=color:#f92672>&gt;</span>(self, other: <span style=color:#a6e22e>Point</span><span style=color:#f92672>&lt;</span>V, W<span style=color:#f92672>&gt;</span>) -&gt; <span style=color:#a6e22e>Point</span><span style=color:#f92672>&lt;</span>T, W<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>        Point {
+</span></span><span style=display:flex><span>            x: <span style=color:#a6e22e>self</span>.x,
+</span></span><span style=display:flex><span>            y: <span style=color:#a6e22e>other</span>.y,
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> p1 <span style=color:#f92672>=</span> Point { x: <span style=color:#ae81ff>5</span>, y: <span style=color:#ae81ff>10.4</span> };
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> p2 <span style=color:#f92672>=</span> Point { x: <span style=color:#e6db74>&#34;Hello&#34;</span>, y: <span style=color:#a6e22e>&#39;c&#39;</span> };
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> p3 <span style=color:#f92672>=</span> p1.mixup(p2);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;p3.x = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>, p3.y = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>, p3.x, p3.y);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></li><li><p>泛型的使用，不会影响运行时性能</p><p>因为在编译阶段，Monomorphization process 就已经将泛型转换为具体类型</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#75715e>// 比如使用了 Some 泛型代码
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> integer <span style=color:#f92672>=</span> Some(<span style=color:#ae81ff>5</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> float <span style=color:#f92672>=</span> Some(<span style=color:#ae81ff>5.0</span>);
+</span></span><span style=display:flex><span><span style=color:#75715e>// 编译期会 Monomorphization 为以下代码
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>enum</span> <span style=color:#a6e22e>Option_i32</span> {
+</span></span><span style=display:flex><span>    Some(<span style=color:#66d9ef>i32</span>),
+</span></span><span style=display:flex><span>    None,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>enum</span> <span style=color:#a6e22e>Option_f64</span> {
+</span></span><span style=display:flex><span>    Some(<span style=color:#66d9ef>f64</span>),
+</span></span><span style=display:flex><span>    None,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> integer <span style=color:#f92672>=</span> Option_i32::Some(<span style=color:#ae81ff>5</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> float <span style=color:#f92672>=</span> Option_f64::Some(<span style=color:#ae81ff>5.0</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></li><li><p>Generic 表现方式 2 ：Traits & Trait Bounds</p><p>Trait 意为 “特征”，从基础写法来看，它可以给 struct、函数参数、函数返回值 打上特征</p><p>对于 struct，特征可以明确该 struct 有特征内声明的 method，类似于 Java 的 <code>interface</code></p><p><code>impl structA for traitA</code></p><p>对于 generic type，特征可以指出：只有对应的 concrete type 有这些特征（也可被称为 trait bound）时，才能有对应的函数集</p><p><code>impl&lt;T: traitA + traitB + ...> structA&lt;T> {...}</code></p><p>对于函数参数，特征可以限定：只有具有相应特征的参数，才能作为函数参数（多态）</p><p><code>pub fn notify(item: &amp;impl Summary) {...}</code></p><p>对于函数返回值，特征可以明确：返回值一定拥有该特征</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#75715e>// Defining a Trait
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>trait</span> Summary {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>summarize</span>(<span style=color:#f92672>&amp;</span>self) -&gt; String;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Implementing a Trait on a Type
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>NewsArticle</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>pub</span> headline: String,
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>pub</span> location: String,
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>pub</span> author: String,
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>pub</span> content: String,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>impl</span> Summary <span style=color:#66d9ef>for</span> NewsArticle {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>summarize</span>(<span style=color:#f92672>&amp;</span>self) -&gt; String {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>format!</span>(<span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{}</span><span style=color:#e6db74>, by </span><span style=color:#e6db74>{}</span><span style=color:#e6db74> (</span><span style=color:#e6db74>{}</span><span style=color:#e6db74>)&#34;</span>, self.headline, self.author, self.location)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Default Implementations
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>trait</span> Summary {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>summarize</span>(<span style=color:#f92672>&amp;</span>self) -&gt; String {
+</span></span><span style=display:flex><span>        String::from(<span style=color:#e6db74>&#34;(Read more...)&#34;</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Default Implementations 可以调用其它 impl
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>trait</span> Summary {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>summarize_author</span>(<span style=color:#f92672>&amp;</span>self) -&gt; String;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>summarize</span>(<span style=color:#f92672>&amp;</span>self) -&gt; String {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>format!</span>(<span style=color:#e6db74>&#34;(Read more from </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>...)&#34;</span>, self.summarize_author())
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Traits as Parameters
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>notify</span>(item: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>impl</span> Summary) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;Breaking news! </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>, item.summarize());
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 可以使用 generic type 来指定 trait bounds
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>notify</span><span style=color:#f92672>&lt;</span>T: <span style=color:#a6e22e>Summary</span><span style=color:#f92672>&gt;</span>(item1: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>T</span>, item2: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>T</span>) {}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 多个 trait 的情况 1 - 使用 + 操作符
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>notify</span>(item: <span style=color:#66d9ef>&amp;</span>(<span style=color:#66d9ef>impl</span> Summary <span style=color:#f92672>+</span> Display)) {
+</span></span><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>notify</span><span style=color:#f92672>&lt;</span>T: <span style=color:#a6e22e>Summary</span> <span style=color:#f92672>+</span> Display<span style=color:#f92672>&gt;</span>(item: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>T</span>) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 多个 trait 的情况 2 - 使用 where
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>some_function</span><span style=color:#f92672>&lt;</span>T, U<span style=color:#f92672>&gt;</span>(t: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>T</span>, u: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>U</span>) -&gt; <span style=color:#66d9ef>i32</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>where</span> T: <span style=color:#a6e22e>Display</span> <span style=color:#f92672>+</span> Clone,
+</span></span><span style=display:flex><span>          U: Clone <span style=color:#f92672>+</span> Debug
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Returning Types that Implement Traits
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>returns_summarizable</span>() -&gt; <span style=color:#a6e22e>impl</span> Summary {
+</span></span><span style=display:flex><span>    Tweet {
+</span></span><span style=display:flex><span>        username: String::from(<span style=color:#e6db74>&#34;horse_ebooks&#34;</span>),
+</span></span><span style=display:flex><span>        content: String::from(
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;of course, as you probably already know, people&#34;</span>,
+</span></span><span style=display:flex><span>        ),
+</span></span><span style=display:flex><span>        reply: <span style=color:#a6e22e>false</span>,
+</span></span><span style=display:flex><span>        retweet: <span style=color:#a6e22e>false</span>,
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 可以通过 trait bounds 特性，以实现：有对应 trait 的 generic type，才能有对应的 method
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>use</span> std::fmt::Display;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>Pair</span><span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    x: <span style=color:#a6e22e>T</span>,
+</span></span><span style=display:flex><span>    y: <span style=color:#a6e22e>T</span>,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>impl</span><span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> Pair<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>new</span>(x: <span style=color:#a6e22e>T</span>, y: <span style=color:#a6e22e>T</span>) -&gt; <span style=color:#a6e22e>Self</span> {
+</span></span><span style=display:flex><span>        Self { x, y }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>impl</span><span style=color:#f92672>&lt;</span>T: <span style=color:#a6e22e>Display</span> <span style=color:#f92672>+</span> PartialOrd<span style=color:#f92672>&gt;</span> Pair<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>cmp_display</span>(<span style=color:#f92672>&amp;</span>self) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> self.x <span style=color:#f92672>&gt;=</span> self.y {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;The largest member is x = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>, self.x);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;The largest member is y = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>, self.y);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></li><li><p>Generic 表现方式 3 ：Lifetimes</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#f92672>&amp;</span><span style=color:#66d9ef>i32</span>        <span style=color:#75715e>// a reference
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>&amp;</span><span style=color:#a6e22e>&#39;a</span> <span style=color:#66d9ef>i32</span>     <span style=color:#75715e>// a reference with an explicit lifetime
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>&amp;</span><span style=color:#a6e22e>&#39;a</span> <span style=color:#66d9ef>mut</span> <span style=color:#66d9ef>i32</span> <span style=color:#75715e>// a mutable reference with an explicit lifetime
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// 一般用在 function 定义时
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>longest</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>&#39;a</span><span style=color:#f92672>&gt;</span>(x: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>&#39;a</span> <span style=color:#66d9ef>str</span>, y: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>&#39;a</span> <span style=color:#66d9ef>str</span>) -&gt; <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>&#39;a</span> <span style=color:#66d9ef>str</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> x.len() <span style=color:#f92672>&gt;</span> y.len() {
+</span></span><span style=display:flex><span>        x
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        y
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#75715e>// 可用于 struct
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>ImportantExcerpt</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>&#39;a</span><span style=color:#f92672>&gt;</span> {
+</span></span><span style=display:flex><span>    part: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>&#39;a</span> <span style=color:#66d9ef>str</span>,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Lifetime Elision - 活用 3 条规则
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>first_word</span>(s: <span style=color:#66d9ef>&amp;</span><span style=color:#66d9ef>str</span>) -&gt; <span style=color:#66d9ef>&amp;</span><span style=color:#66d9ef>str</span> {<span style=color:#f92672>..</span>.}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// static 生命期，可以在整个程序运行时保持可用
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>let</span> s: <span style=color:#66d9ef>&amp;</span>&#39;static <span style=color:#66d9ef>str</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;I have a static lifetime.&#34;</span>;
+</span></span></code></pre></div><p><strong>编译器会使用 3 条规则，以在没有显式注解的时候，计算出 lifetimes references</strong></p><p>The first rule is that each parameter that is a reference gets its own lifetime parameter.</p><p>第一条：每一个引用输入参数有它自己的生命期参数。</p><p>The second rule is if there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters</p><p>第二条：如果只有一个输入生命期参数，这个参数会被分配给所有的输出生命期参数。</p><p>The third rule is if there are multiple input lifetime parameters, but one of them is <code>&amp;self</code> or <code>&amp;mut self</code> because this is a method, the lifetime of <code>self</code> is assigned to all output lifetime parameters.</p><p>第三条：如果有多个输入生命期参数，且其中一个是 <code>&amp;self</code> 或 <code>&amp;mut self</code>（method），那么 <code>self</code> 的生命期参数会被分配给所有的输出生命期参数。</p></li><li><p>3 种表现方式组合使用</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#66d9ef>use</span> std::fmt::Display;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>longest_with_an_announcement</span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>&#39;a</span>, T<span style=color:#f92672>&gt;</span>(
+</span></span><span style=display:flex><span>    x: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>&#39;a</span> <span style=color:#66d9ef>str</span>,
+</span></span><span style=display:flex><span>    y: <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>&#39;a</span> <span style=color:#66d9ef>str</span>,
+</span></span><span style=display:flex><span>    ann: <span style=color:#a6e22e>T</span>,
+</span></span><span style=display:flex><span>) -&gt; <span style=color:#66d9ef>&amp;</span><span style=color:#a6e22e>&#39;a</span> <span style=color:#66d9ef>str</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>where</span>
+</span></span><span style=display:flex><span>    T: <span style=color:#a6e22e>Display</span>,
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;Announcement! </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>, ann);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> x.len() <span style=color:#f92672>&gt;</span> y.len() {
+</span></span><span style=display:flex><span>        x
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        y
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></li></ul><h1 id=origin>Origin</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch10-00-generics.html>https://doc.rust-lang.org/book/ch10-00-generics.html</a></p></blockquote><p>&mldr;</p><h3 id=performance-of-code-using-generics><a href=https://doc.rust-lang.org/book/ch10-01-syntax.html#performance-of-code-using-generics>Performance of Code Using Generics</a></h3><p>You might be wondering whether there is a runtime cost when you’re using generic type parameters. The good news is that Rust implements generics in such a way that your code doesn’t run any slower using generic types than it would with concrete types.</p><p>Rust accomplishes this by performing monomorphization of the code that is using generics at compile time. <em>Monomorphization</em> is the process of turning generic code into specific code by filling in the concrete types that are used when compiled.</p><p>&mldr;</p><p>The compiler uses three rules to figure out what lifetimes references have when there aren’t explicit annotations. The first rule applies to input lifetimes, and the second and third rules apply to output lifetimes. If the compiler gets to the end of the three rules and there are still references for which it can’t figure out lifetimes, the compiler will stop with an error. These rules apply to <code>fn</code> definitions as well as <code>impl</code> blocks.</p><p>The first rule is that each parameter that is a reference gets its own lifetime parameter. In other words, a function with one parameter gets one lifetime parameter: <code>fn foo&lt;'a>(x: &'a i32)</code>; a function with two parameters gets two separate lifetime parameters: <code>fn foo&lt;'a, 'b>(x: &'a i32, y: &'b i32)</code>; and so on.</p><p>The second rule is if there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters: <code>fn foo&lt;'a>(x: &'a i32) -> &'a i32</code>.</p><p>The third rule is if there are multiple input lifetime parameters, but one of them is <code>&amp;self</code> or <code>&amp;mut self</code> because this is a method, the lifetime of <code>self</code> is assigned to all output lifetime parameters. This third rule makes methods much nicer to read and write because fewer symbols are necessary.</p><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href=https://kuthorx.github.io/>&copy; KuthorX Blog II 2025</a><div><div class=ananke-socials></div></div></div></footer></body></html>

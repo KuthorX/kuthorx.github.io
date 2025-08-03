@@ -1,170 +1,170 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Rust - Basic - 14 - Smart Pointers | KuthorX Blog II</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=generator content="Hugo 0.59.1"><meta name=ROBOTS content="NOINDEX, NOFOLLOW"><link href=/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css rel=stylesheet><link rel=stylesheet href=/css/about.css><link rel="shortcut icon" href=/images/KuthorX-512.png type=image/x-icon><meta property="og:title" content="Rust - Basic - 14 - Smart Pointers"><meta property="og:description" content="RRRRRRRRRRRRRR"><meta property="og:type" content="article"><meta property="og:url" content="https://kuthorx.github.io/posts/rust/14_smart-pointers/"><meta property="article:published_time" content="2022-01-03T00:00:14+08:00"><meta property="article:modified_time" content="2022-01-03T00:00:14+08:00"><meta itemprop=name content="Rust - Basic - 14 - Smart Pointers"><meta itemprop=description content="RRRRRRRRRRRRRR"><meta itemprop=datePublished content="2022-01-03T00:00:14&#43;08:00"><meta itemprop=dateModified content="2022-01-03T00:00:14&#43;08:00"><meta itemprop=wordCount content="1001"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Rust - Basic - 14 - Smart Pointers"><meta name=twitter:description content="RRRRRRRRRRRRRR"></head><body class="ma0 avenir bg-near-white"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l justify-between items-center center"><a href=/ class="f3 fw2 hover-white no-underline white-90 dib">KuthorX Blog II</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/about/ title="About page">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/repos/ title="Repos page">Repos</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white no-underline white-90" href=/posts/thinking-talking/ title="Thinking Talking page">Thinking Talking</a></li></ul><a href=https://github.com/KuthorX target=_blank class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel=noopener aria-label="follow on Github——Opens in a new window"><svg height="32" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a></div></div></nav></div></header><main role=main><div class=flex><aside id=toc><h1 class=toc-title>目录</h1><nav id=TableOfContents><ul><li><a href=#smart-pointers>Smart Pointers</a></li><li><a href=#comprehension>Comprehension</a><ul><li><a href=#box>Box</a></li><li><a href=#deref-drop>Deref &amp; Drop</a></li><li><a href=#rc-t>Rc<t></a></li><li><a href=#refcell-t>RefCell<t></a></li><li><a href=#weak-t>Weak<t></a></li></ul></li><li><a href=#origin>Origin</a><ul><li><a href=#using-box-t-to-point-to-data-on-the-heap-https-doc-rust-lang-org-book-ch15-01-box-html-using-boxt-to-point-to-data-on-the-heap><a href=https://doc.rust-lang.org/book/ch15-01-box.html#using-boxt-to-point-to-data-on-the-heap>Using <code>Box&lt;T&gt;</code> to Point to Data on the Heap</a></a></li></ul></li></ul></nav></aside><article id=article class="flex-l flex-wrap justify-between mw9 center"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked"><div id=breadcrumbs><a class=kuthorx-posts-breadcrumbs-span href=/posts//rust>rust</a></div><style>.kuthorx-posts-breadcrumbs-span{text-decoration:none;color:#000;font-family:avenir next,avenir,sans-serif;font-weight:400}a.kuthorx-posts-breadcrumbs-span:hover{color:grey}</style></aside><h1 class="f1 athelas mt3 mb1">Rust - Basic - 14 - Smart Pointers</h1><time class="f6 mv4 dib tracked" datetime=2022-01-03T00:00:14&#43;08:00>January 3, 2022</time><br></header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id=smart-pointers>Smart Pointers</h1><h1 id=comprehension>Comprehension</h1><p>实现了 <code>Deref</code> 和 <code>Drop</code> trait 的类型可以作为智能指针类型</p><h2 id=box>Box</h2><p>三种使用 <code>Box</code> 的情况</p><ul><li>当一个类型在运行期 size 不确定时</li><li>当数据过大需要避免 transfer ownership 带来的 copy 开销时</li><li>想 own a value 但不关心具体类型，只关心特定trait时</li></ul><p>下图为 <em>recursive type</em> 在 Rust 编译器的内存推断简图，最终结果是无法通过编译</p><pre><code class=language-rust>// 以下代码会编译失败
-enum List {
-    Cons(i32, List),
-    Nil,
-}
-
-use crate::List::{Cons, Nil};
-
-fn main() {
-    let list = Cons(1, Cons(2, Cons(3, Nil)));
-}
-</code></pre><p><img src=/posts/rust/14/1.png alt=1></p><p>此时可以使用 <code>Box</code> ，编译器就能推断出相关类型的内存占用大小</p><pre><code class=language-rust>enum List {
-    Cons(i32, Box&lt;List&gt;),
-    Nil,
-}
-
-use crate::List::{Cons, Nil};
-
-fn main() {
-    let list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
-}
-</code></pre><p><img src=/posts/rust/14/2.png alt=2></p><h2 id=deref-drop>Deref &amp; Drop</h2><p>当一个类型变量作为函数参数传入时，如果参数类型与该变量类型不一致，那么 Rust 编译器将会尝试 强制解引用（即调用 <code>Deref</code> trait 的 <code>deref</code> 方法）</p><blockquote><p>Deref coercion happens automatically when we pass a reference to a particular type’s value as an argument to a function or method that doesn’t match the parameter type in the function or method definition.</p></blockquote><p><code>Drop</code> trait 的 <code>drop</code> 方法，会在 <em>value goes out of scope</em> 的时候调用（FILO）</p><p><code>drop</code> 方法不允许被主动调用</p><pre><code class=language-rust>struct CustomSmartPointer {
-    data: String,
-}
-
-impl Drop for CustomSmartPointer {
-    fn drop(&amp;mut self) {
-        println!(&quot;Dropping CustomSmartPointer with data `{}`!&quot;, self.data);
-    }
-}
-// 先调用 d 的 drop 方法，再调用 c 的 drop 方法
-fn main() {
-    let c = CustomSmartPointer {
-        data: String::from(&quot;my stuff&quot;),
-    };
-    let d = CustomSmartPointer {
-        data: String::from(&quot;other stuff&quot;),
-    };
-    println!(&quot;CustomSmartPointers created.&quot;);
-}
-
-// drop 不允许被主动调用，以下代码会编译失败
-fn main() {
-    let c = CustomSmartPointer {
-        data: String::from(&quot;some data&quot;),
-    };
-    println!(&quot;CustomSmartPointer created.&quot;);
-    c.drop();
-    println!(&quot;CustomSmartPointer dropped before the end of main.&quot;);
-}
-// 可以通过 std::mem:drop 间接触发 drop 的调用
-fn main() {
-    let c = CustomSmartPointer {
-        data: String::from(&quot;some data&quot;),
-    };
-    println!(&quot;CustomSmartPointer created.&quot;);
-    drop(c);
-    println!(&quot;CustomSmartPointer dropped before the end of main.&quot;);
-}
-</code></pre><h2 id=rc-t>Rc<t></h2><p>引用计数，可用于实现图</p><pre><code class=language-rust>// 基础写法
-enum List {
-    Cons(i32, Rc&lt;List&gt;),
-    Nil,
-}
-
-use crate::List::{Cons, Nil};
-use std::rc::Rc;
-
-fn main() {
-    let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
-    let b = Cons(3, Rc::clone(&amp;a));  // 使用 clone 实现浅拷贝
-    let c = Cons(4, Rc::clone(&amp;a));
-}
-
-// 使用 strong_count 获取当前变量被引用的数量
-fn main() {
-    let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
-    println!(&quot;count after creating a = {}&quot;, Rc::strong_count(&amp;a));
-    let b = Cons(3, Rc::clone(&amp;a));
-    println!(&quot;count after creating b = {}&quot;, Rc::strong_count(&amp;a));
-    {
-        let c = Cons(4, Rc::clone(&amp;a));
-        println!(&quot;count after creating c = {}&quot;, Rc::strong_count(&amp;a));
-    }
-    println!(&quot;count after c goes out of scope = {}&quot;, Rc::strong_count(&amp;a));
-}
-</code></pre><h2 id=refcell-t>RefCell<t></h2><p>和 <code>Box</code> 与 <code>RefCell</code> 不同的是，<code>RefCell</code> 可以在 runtime 期间执行 immutable or mutable borrows checked</p><p>如果检查不通过，那么程序会 panic</p><blockquote><p>选择 <code>Box&lt;T&gt;</code>, <code>Rc&lt;T&gt;</code>, or <code>RefCell&lt;T&gt;</code> 的参考：</p><ul><li><p><code>Rc&lt;T&gt;</code> 允许多个 owner，<code>Box&lt;T&gt;</code>和 <code>RefCell&lt;T&gt;</code> 只允许一个 owner</p><p><code>Rc&lt;T&gt;</code> enables multiple owners of the same data; <code>Box&lt;T&gt;</code> and <code>RefCell&lt;T&gt;</code> have single owners.</p></li><li><p><code>Box&lt;T&gt;</code> 允许在编译时 immutable or mutable borrows checked; <code>Rc&lt;T&gt;</code> 只允许编译时 immutable borrows checked; <code>RefCell&lt;T&gt;</code> 允许运行时 immutable or mutable borrows checked</p><p><code>Box&lt;T&gt;</code> allows immutable or mutable borrows checked at compile time; <code>Rc&lt;T&gt;</code> allows only immutable borrows checked at compile time; <code>RefCell&lt;T&gt;</code> allows immutable or mutable borrows checked at runtime.</p></li><li><p>因为 <code>RefCell&lt;T&gt;</code> 允许运行时 mutable borrows checked, 所以即使 <code>RefCell&lt;T&gt;</code> 是不可变的，也可以更改 <code>RefCell&lt;T&gt;</code> 内部变量值</p><p>Because <code>RefCell&lt;T&gt;</code> allows mutable borrows checked at runtime, you can mutate the value inside the <code>RefCell&lt;T&gt;</code> even when the <code>RefCell&lt;T&gt;</code> is immutable.</p></li></ul></blockquote><pre><code class=language-rust>// 基础写法 - 和 Rc 配合使用
-#[derive(Debug)]
-enum List {
-    Cons(Rc&lt;RefCell&lt;i32&gt;&gt;, Rc&lt;List&gt;),
-    Nil,
-}
-
-use crate::List::{Cons, Nil};
-use std::cell::RefCell;
-use std::rc::Rc;
-
-fn main() {
-    let value = Rc::new(RefCell::new(5));
-
-    let a = Rc::new(Cons(Rc::clone(&amp;value), Rc::new(Nil)));
-
-    let b = Cons(Rc::new(RefCell::new(3)), Rc::clone(&amp;a));
-    let c = Cons(Rc::new(RefCell::new(4)), Rc::clone(&amp;a));
-
-    *value.borrow_mut() += 10;
-
-    println!(&quot;a after = {:?}&quot;, a);
-    println!(&quot;b after = {:?}&quot;, b);
-    println!(&quot;c after = {:?}&quot;, c);
-}
-</code></pre><h2 id=weak-t>Weak<t></h2><p>使用强引用 <code>Strong&lt;T&gt;</code> 可能会造成 循环引用 进而导致 内存泄漏</p><p>通过 <code>Rc::downgrade</code>，可以生成弱引用 <code>Weak&lt;T&gt;</code> ，同时会使 <code>weak_count</code> 自增 1</p><p>当 <code>strong_count</code> 为 0 时，<code>weak_count</code> 即使不为 0 ，相关 ref 也会被释放</p><p>弱引用需要调用 <code>upgrade</code> 方法动态获取被引用的数据（返回类型为 <code>Option</code> ）</p><pre><code class=language-rust>// 可以通过该例直观感受弱引用、强引用使用上的区别
-use std::cell::RefCell;
-use std::rc::{Rc, Weak};
-
-#[derive(Debug)]
-struct Node {
-    value: i32,
-    parent: RefCell&lt;Weak&lt;Node&gt;&gt;,
-    children: RefCell&lt;Vec&lt;Rc&lt;Node&gt;&gt;&gt;,
-}
-
-fn main() {
-    let leaf = Rc::new(Node {
-        value: 3,
-        parent: RefCell::new(Weak::new()),
-        children: RefCell::new(vec![]),
-    });
-
-    println!(
-        &quot;leaf strong = {}, weak = {}&quot;,
-        Rc::strong_count(&amp;leaf),
-        Rc::weak_count(&amp;leaf),
-    );
-
-    {
-        let branch = Rc::new(Node {
-            value: 5,
-            parent: RefCell::new(Weak::new()),
-            children: RefCell::new(vec![Rc::clone(&amp;leaf)]),
-        });
-
-        *leaf.parent.borrow_mut() = Rc::downgrade(&amp;branch);
-
-        println!(
-            &quot;branch strong = {}, weak = {}&quot;,
-            Rc::strong_count(&amp;branch),
-            Rc::weak_count(&amp;branch),
-        );
-
-        println!(
-            &quot;leaf strong = {}, weak = {}&quot;,
-            Rc::strong_count(&amp;leaf),
-            Rc::weak_count(&amp;leaf),
-        );
-    }
-
-    println!(&quot;leaf parent = {:?}&quot;, leaf.parent.borrow().upgrade());
-    println!(
-        &quot;leaf strong = {}, weak = {}&quot;,
-        Rc::strong_count(&amp;leaf),
-        Rc::weak_count(&amp;leaf),
-    );
-}
-</code></pre><p>以上程序运行输出如下</p><pre><code class=language-prolog>leaf strong = 1, weak = 0
-branch strong = 1, weak = 1
-leaf strong = 2, weak = 0
-leaf parent = None
-leaf strong = 1, weak = 0
-</code></pre><h1 id=origin>Origin</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch15-00-smart-pointers.html>https://doc.rust-lang.org/book/ch15-00-smart-pointers.html</a></p></blockquote><p>&hellip;</p><h2 id=using-box-t-to-point-to-data-on-the-heap-https-doc-rust-lang-org-book-ch15-01-box-html-using-boxt-to-point-to-data-on-the-heap><a href=https://doc.rust-lang.org/book/ch15-01-box.html#using-boxt-to-point-to-data-on-the-heap>Using <code>Box&lt;T&gt;</code> to Point to Data on the Heap</a></h2><p>The most straightforward smart pointer is a <em>box</em>, whose type is written <code>Box&lt;T&gt;</code>. Boxes allow you to store data on the heap rather than the stack. What remains on the stack is the pointer to the heap data. Refer to Chapter 4 to review the difference between the stack and the heap.</p><p>Boxes don’t have performance overhead, other than storing their data on the heap instead of on the stack. But they don’t have many extra capabilities either. You’ll use them most often in these situations:</p><ul><li>When you have a type whose size can’t be known at compile time and you want to use a value of that type in a context that requires an exact size</li><li>When you have a large amount of data and you want to transfer ownership but ensure the data won’t be copied when you do so</li><li>When you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type</li></ul><p>We’ll demonstrate the first situation in the <a href=https://doc.rust-lang.org/book/ch15-01-box.html#enabling-recursive-types-with-boxes>“Enabling Recursive Types with Boxes”</a> section. In the second case, transferring ownership of a large amount of data can take a long time because the data is copied around on the stack. To improve performance in this situation, we can store the large amount of data on the heap in a box. Then, only the small amount of pointer data is copied around on the stack, while the data it references stays in one place on the heap. The third case is known as a <em>trait object</em>, and Chapter 17 devotes an entire section, <a href=https://doc.rust-lang.org/book/ch17-02-trait-objects.html#using-trait-objects-that-allow-for-values-of-different-types>“Using Trait Objects That Allow for Values of Different Types,”</a> just to that topic. So what you learn here you’ll apply again in Chapter 17!</p><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div></article></div><script>window.addEventListener('DOMContentLoaded',()=>{const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{const id=entry.target.getAttribute('id');if(entry.intersectionRatio>0){document.querySelector(`#toc li a[href="#${id}"]`).parentElement.classList.add('active');}else{document.querySelector(`#toc li a[href="#${id}"]`).parentElement.classList.remove('active');}});});document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]').forEach((section)=>{observer.observe(section);});});</script></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://kuthorx.github.io/>&copy; KuthorX Blog II 2025</a><div><a href=https://github.com/KuthorX target=_blank class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel=noopener aria-label="follow on Github——Opens in a new window"><svg height="32" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg><span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg></span></a></div></div></footer><script src=/dist/js/app.3fc0f988d21662902933.js></script></body></html>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><title>Rust - Basic - 14 - Smart Pointers | KuthorX Blog II</title><meta name=viewport content="width=device-width,minimum-scale=1"><meta name=description content="RRRRRRRRRRRRRR"><meta name=generator content="Hugo 0.148.2"><meta name=robots content="index, follow"><link rel=stylesheet href=/ananke/css/main.min.8d048772ae72ab11245a0e296d1f2a36d3e3dd376c6c867394d6cc659c68fc37.css><link rel=stylesheet href=/css/about.css><link rel=stylesheet href=/css/toc.css><link rel="shortcut icon" href=/images/KuthorX-512.png type=image/x-icon><link rel=canonical href=https://kuthorx.github.io/posts/rust/14_smart-pointers/><meta property="og:url" content="https://kuthorx.github.io/posts/rust/14_smart-pointers/"><meta property="og:site_name" content="KuthorX Blog II"><meta property="og:title" content="Rust - Basic - 14 - Smart Pointers"><meta property="og:description" content="RRRRRRRRRRRRRR"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-01-03T00:00:14+08:00"><meta property="article:modified_time" content="2022-01-03T00:00:14+08:00"><meta itemprop=name content="Rust - Basic - 14 - Smart Pointers"><meta itemprop=description content="RRRRRRRRRRRRRR"><meta itemprop=datePublished content="2022-01-03T00:00:14+08:00"><meta itemprop=dateModified content="2022-01-03T00:00:14+08:00"><meta itemprop=wordCount content="1001"><meta name=twitter:card content="summary"><meta name=twitter:title content="Rust - Basic - 14 - Smart Pointers"><meta name=twitter:description content="RRRRRRRRRRRRRR"></head><body class="ma0 avenir bg-near-white production"><header><div class=bg-black><nav class="pv3 ph3 ph4-ns" role=navigation><div class="flex-l center items-center justify-between"><a href=/ class="f3 fw2 hover-white white-90 dib no-underline">KuthorX Blog II</a><div class="flex-l items-center"><ul class="pl0 mr3"><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href=/about/ title="About 页">About</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href=/posts/ title="Posts 页">Posts</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href=/repos/ title="Repos 页">Repos</a></li><li class="list f5 f4-ns fw4 dib pr3"><a class="hover-white white-90 no-underline" href=/story_of_cloak/ title="苍绿之眼 页">苍绿之眼</a></li></ul><div class=ananke-socials></div></div></div></nav></div></header><main class=pb7 role=main><article class="flex-l mw8 center ph3 flex-wrap justify-between"><header class="mt4 w-100"><aside class="instapaper_ignoref b helvetica tracked ttu">Rust</aside><div id=sharing class="mt3 ananke-socials"></div><h1 class="f1 athelas mt3 mb1">Rust - Basic - 14 - Smart Pointers</h1><time class="f6 mv4 dib tracked" datetime=2022-01-03T00:00:14+08:00>一月 3, 2022</time></header><div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id=smart-pointers>Smart Pointers</h1><h1 id=comprehension>Comprehension</h1><p>实现了 <code>Deref</code> 和 <code>Drop</code> trait 的类型可以作为智能指针类型</p><h2 id=box>Box</h2><p>三种使用 <code>Box</code> 的情况</p><ul><li>当一个类型在运行期 size 不确定时</li><li>当数据过大需要避免 transfer ownership 带来的 copy 开销时</li><li>想 own a value 但不关心具体类型，只关心特定trait时</li></ul><p>下图为 <em>recursive type</em> 在 Rust 编译器的内存推断简图，最终结果是无法通过编译</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#75715e>// 以下代码会编译失败
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>enum</span> <span style=color:#a6e22e>List</span> {
+</span></span><span style=display:flex><span>    Cons(<span style=color:#66d9ef>i32</span>, List),
+</span></span><span style=display:flex><span>    Nil,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>use</span> <span style=color:#66d9ef>crate</span>::List::{Cons, Nil};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> list <span style=color:#f92672>=</span> Cons(<span style=color:#ae81ff>1</span>, Cons(<span style=color:#ae81ff>2</span>, Cons(<span style=color:#ae81ff>3</span>, Nil)));
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><img src=/posts/rust/14/1.png alt=1></p><p>此时可以使用 <code>Box</code> ，编译器就能推断出相关类型的内存占用大小</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#66d9ef>enum</span> <span style=color:#a6e22e>List</span> {
+</span></span><span style=display:flex><span>    Cons(<span style=color:#66d9ef>i32</span>, Box<span style=color:#f92672>&lt;</span>List<span style=color:#f92672>&gt;</span>),
+</span></span><span style=display:flex><span>    Nil,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>use</span> <span style=color:#66d9ef>crate</span>::List::{Cons, Nil};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> list <span style=color:#f92672>=</span> Cons(<span style=color:#ae81ff>1</span>, Box::new(Cons(<span style=color:#ae81ff>2</span>, Box::new(Cons(<span style=color:#ae81ff>3</span>, Box::new(Nil))))));
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><img src=/posts/rust/14/2.png alt=2></p><h2 id=deref--drop>Deref & Drop</h2><p>当一个类型变量作为函数参数传入时，如果参数类型与该变量类型不一致，那么 Rust 编译器将会尝试 强制解引用（即调用 <code>Deref</code> trait 的 <code>deref</code> 方法）</p><blockquote><p>Deref coercion happens automatically when we pass a reference to a particular type’s value as an argument to a function or method that doesn’t match the parameter type in the function or method definition.</p></blockquote><p><code>Drop</code> trait 的 <code>drop</code> 方法，会在 <em>value goes out of scope</em> 的时候调用（FILO）</p><p><code>drop</code> 方法不允许被主动调用</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>CustomSmartPointer</span> {
+</span></span><span style=display:flex><span>    data: String,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>impl</span> Drop <span style=color:#66d9ef>for</span> CustomSmartPointer {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>drop</span>(<span style=color:#f92672>&amp;</span><span style=color:#66d9ef>mut</span> self) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;Dropping CustomSmartPointer with data `</span><span style=color:#e6db74>{}</span><span style=color:#e6db74>`!&#34;</span>, self.data);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#75715e>// 先调用 d 的 drop 方法，再调用 c 的 drop 方法
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> c <span style=color:#f92672>=</span> CustomSmartPointer {
+</span></span><span style=display:flex><span>        data: String::from(<span style=color:#e6db74>&#34;my stuff&#34;</span>),
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> d <span style=color:#f92672>=</span> CustomSmartPointer {
+</span></span><span style=display:flex><span>        data: String::from(<span style=color:#e6db74>&#34;other stuff&#34;</span>),
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;CustomSmartPointers created.&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// drop 不允许被主动调用，以下代码会编译失败
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> c <span style=color:#f92672>=</span> CustomSmartPointer {
+</span></span><span style=display:flex><span>        data: String::from(<span style=color:#e6db74>&#34;some data&#34;</span>),
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;CustomSmartPointer created.&#34;</span>);
+</span></span><span style=display:flex><span>    c.drop();
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;CustomSmartPointer dropped before the end of main.&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#75715e>// 可以通过 std::mem:drop 间接触发 drop 的调用
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> c <span style=color:#f92672>=</span> CustomSmartPointer {
+</span></span><span style=display:flex><span>        data: String::from(<span style=color:#e6db74>&#34;some data&#34;</span>),
+</span></span><span style=display:flex><span>    };
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;CustomSmartPointer created.&#34;</span>);
+</span></span><span style=display:flex><span>    drop(c);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;CustomSmartPointer dropped before the end of main.&#34;</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=rc>Rc</h2><p>引用计数，可用于实现图</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#75715e>// 基础写法
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>enum</span> <span style=color:#a6e22e>List</span> {
+</span></span><span style=display:flex><span>    Cons(<span style=color:#66d9ef>i32</span>, Rc<span style=color:#f92672>&lt;</span>List<span style=color:#f92672>&gt;</span>),
+</span></span><span style=display:flex><span>    Nil,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>use</span> <span style=color:#66d9ef>crate</span>::List::{Cons, Nil};
+</span></span><span style=display:flex><span><span style=color:#66d9ef>use</span> std::rc::Rc;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> a <span style=color:#f92672>=</span> Rc::new(Cons(<span style=color:#ae81ff>5</span>, Rc::new(Cons(<span style=color:#ae81ff>10</span>, Rc::new(Nil)))));
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> b <span style=color:#f92672>=</span> Cons(<span style=color:#ae81ff>3</span>, Rc::clone(<span style=color:#f92672>&amp;</span>a));  <span style=color:#75715e>// 使用 clone 实现浅拷贝
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>let</span> c <span style=color:#f92672>=</span> Cons(<span style=color:#ae81ff>4</span>, Rc::clone(<span style=color:#f92672>&amp;</span>a));
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 使用 strong_count 获取当前变量被引用的数量
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> a <span style=color:#f92672>=</span> Rc::new(Cons(<span style=color:#ae81ff>5</span>, Rc::new(Cons(<span style=color:#ae81ff>10</span>, Rc::new(Nil)))));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;count after creating a = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>, Rc::strong_count(<span style=color:#f92672>&amp;</span>a));
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> b <span style=color:#f92672>=</span> Cons(<span style=color:#ae81ff>3</span>, Rc::clone(<span style=color:#f92672>&amp;</span>a));
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;count after creating b = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>, Rc::strong_count(<span style=color:#f92672>&amp;</span>a));
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> c <span style=color:#f92672>=</span> Cons(<span style=color:#ae81ff>4</span>, Rc::clone(<span style=color:#f92672>&amp;</span>a));
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;count after creating c = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>, Rc::strong_count(<span style=color:#f92672>&amp;</span>a));
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;count after c goes out of scope = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>, Rc::strong_count(<span style=color:#f92672>&amp;</span>a));
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=refcell>RefCell</h2><p>和 <code>Box</code> 与 <code>RefCell</code> 不同的是，<code>RefCell</code> 可以在 runtime 期间执行 immutable or mutable borrows checked</p><p>如果检查不通过，那么程序会 panic</p><blockquote><p>选择 <code>Box&lt;T></code>, <code>Rc&lt;T></code>, or <code>RefCell&lt;T></code> 的参考：</p><ul><li><p><code>Rc&lt;T></code> 允许多个 owner，<code>Box&lt;T></code>和 <code>RefCell&lt;T></code> 只允许一个 owner</p><p><code>Rc&lt;T></code> enables multiple owners of the same data; <code>Box&lt;T></code> and <code>RefCell&lt;T></code> have single owners.</p></li><li><p><code>Box&lt;T></code> 允许在编译时 immutable or mutable borrows checked; <code>Rc&lt;T></code> 只允许编译时 immutable borrows checked; <code>RefCell&lt;T></code> 允许运行时 immutable or mutable borrows checked</p><p><code>Box&lt;T></code> allows immutable or mutable borrows checked at compile time; <code>Rc&lt;T></code> allows only immutable borrows checked at compile time; <code>RefCell&lt;T></code> allows immutable or mutable borrows checked at runtime.</p></li><li><p>因为 <code>RefCell&lt;T></code> 允许运行时 mutable borrows checked, 所以即使 <code>RefCell&lt;T></code> 是不可变的，也可以更改 <code>RefCell&lt;T></code> 内部变量值</p><p>Because <code>RefCell&lt;T></code> allows mutable borrows checked at runtime, you can mutate the value inside the <code>RefCell&lt;T></code> even when the <code>RefCell&lt;T></code> is immutable.</p></li></ul></blockquote><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#75715e>// 基础写法 - 和 Rc 配合使用
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e>#[derive(Debug)]</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>enum</span> <span style=color:#a6e22e>List</span> {
+</span></span><span style=display:flex><span>    Cons(Rc<span style=color:#f92672>&lt;</span>RefCell<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>i32</span><span style=color:#f92672>&gt;&gt;</span>, Rc<span style=color:#f92672>&lt;</span>List<span style=color:#f92672>&gt;</span>),
+</span></span><span style=display:flex><span>    Nil,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>use</span> <span style=color:#66d9ef>crate</span>::List::{Cons, Nil};
+</span></span><span style=display:flex><span><span style=color:#66d9ef>use</span> std::cell::RefCell;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>use</span> std::rc::Rc;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> value <span style=color:#f92672>=</span> Rc::new(RefCell::new(<span style=color:#ae81ff>5</span>));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> a <span style=color:#f92672>=</span> Rc::new(Cons(Rc::clone(<span style=color:#f92672>&amp;</span>value), Rc::new(Nil)));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> b <span style=color:#f92672>=</span> Cons(Rc::new(RefCell::new(<span style=color:#ae81ff>3</span>)), Rc::clone(<span style=color:#f92672>&amp;</span>a));
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> c <span style=color:#f92672>=</span> Cons(Rc::new(RefCell::new(<span style=color:#ae81ff>4</span>)), Rc::clone(<span style=color:#f92672>&amp;</span>a));
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>*</span>value.borrow_mut() <span style=color:#f92672>+=</span> <span style=color:#ae81ff>10</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;a after = </span><span style=color:#e6db74>{:?}</span><span style=color:#e6db74>&#34;</span>, a);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;b after = </span><span style=color:#e6db74>{:?}</span><span style=color:#e6db74>&#34;</span>, b);
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;c after = </span><span style=color:#e6db74>{:?}</span><span style=color:#e6db74>&#34;</span>, c);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=weak>Weak</h2><p>使用强引用 <code>Strong&lt;T></code> 可能会造成 循环引用 进而导致 内存泄漏</p><p>通过 <code>Rc::downgrade</code>，可以生成弱引用 <code>Weak&lt;T></code> ，同时会使 <code>weak_count</code> 自增 1</p><p>当 <code>strong_count</code> 为 0 时，<code>weak_count</code> 即使不为 0 ，相关 ref 也会被释放</p><p>弱引用需要调用 <code>upgrade</code> 方法动态获取被引用的数据（返回类型为 <code>Option</code> ）</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#75715e>// 可以通过该例直观感受弱引用、强引用使用上的区别
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>use</span> std::cell::RefCell;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>use</span> std::rc::{Rc, Weak};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#[derive(Debug)]</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>struct</span> <span style=color:#a6e22e>Node</span> {
+</span></span><span style=display:flex><span>    value: <span style=color:#66d9ef>i32</span>,
+</span></span><span style=display:flex><span>    parent: <span style=color:#a6e22e>RefCell</span><span style=color:#f92672>&lt;</span>Weak<span style=color:#f92672>&lt;</span>Node<span style=color:#f92672>&gt;&gt;</span>,
+</span></span><span style=display:flex><span>    children: <span style=color:#a6e22e>RefCell</span><span style=color:#f92672>&lt;</span>Vec<span style=color:#f92672>&lt;</span>Rc<span style=color:#f92672>&lt;</span>Node<span style=color:#f92672>&gt;&gt;&gt;</span>,
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> leaf <span style=color:#f92672>=</span> Rc::new(Node {
+</span></span><span style=display:flex><span>        value: <span style=color:#ae81ff>3</span>,
+</span></span><span style=display:flex><span>        parent: <span style=color:#a6e22e>RefCell</span>::new(Weak::new()),
+</span></span><span style=display:flex><span>        children: <span style=color:#a6e22e>RefCell</span>::new(<span style=color:#a6e22e>vec!</span>[]),
+</span></span><span style=display:flex><span>    });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;leaf strong = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>, weak = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>        Rc::strong_count(<span style=color:#f92672>&amp;</span>leaf),
+</span></span><span style=display:flex><span>        Rc::weak_count(<span style=color:#f92672>&amp;</span>leaf),
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>let</span> branch <span style=color:#f92672>=</span> Rc::new(Node {
+</span></span><span style=display:flex><span>            value: <span style=color:#ae81ff>5</span>,
+</span></span><span style=display:flex><span>            parent: <span style=color:#a6e22e>RefCell</span>::new(Weak::new()),
+</span></span><span style=display:flex><span>            children: <span style=color:#a6e22e>RefCell</span>::new(<span style=color:#a6e22e>vec!</span>[Rc::clone(<span style=color:#f92672>&amp;</span>leaf)]),
+</span></span><span style=display:flex><span>        });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>*</span>leaf.parent.borrow_mut() <span style=color:#f92672>=</span> Rc::downgrade(<span style=color:#f92672>&amp;</span>branch);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>println!</span>(
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;branch strong = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>, weak = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>            Rc::strong_count(<span style=color:#f92672>&amp;</span>branch),
+</span></span><span style=display:flex><span>            Rc::weak_count(<span style=color:#f92672>&amp;</span>branch),
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>println!</span>(
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;leaf strong = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>, weak = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>            Rc::strong_count(<span style=color:#f92672>&amp;</span>leaf),
+</span></span><span style=display:flex><span>            Rc::weak_count(<span style=color:#f92672>&amp;</span>leaf),
+</span></span><span style=display:flex><span>        );
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(<span style=color:#e6db74>&#34;leaf parent = </span><span style=color:#e6db74>{:?}</span><span style=color:#e6db74>&#34;</span>, leaf.parent.borrow().upgrade());
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>println!</span>(
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;leaf strong = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>, weak = </span><span style=color:#e6db74>{}</span><span style=color:#e6db74>&#34;</span>,
+</span></span><span style=display:flex><span>        Rc::strong_count(<span style=color:#f92672>&amp;</span>leaf),
+</span></span><span style=display:flex><span>        Rc::weak_count(<span style=color:#f92672>&amp;</span>leaf),
+</span></span><span style=display:flex><span>    );
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>以上程序运行输出如下</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>leaf</span> <span style=color:#e6db74>strong</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>, <span style=color:#e6db74>weak</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>branch</span> <span style=color:#e6db74>strong</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>, <span style=color:#e6db74>weak</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>leaf</span> <span style=color:#e6db74>strong</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>, <span style=color:#e6db74>weak</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>leaf</span> <span style=color:#e6db74>parent</span> <span style=color:#f92672>=</span> None
+</span></span><span style=display:flex><span><span style=color:#e6db74>leaf</span> <span style=color:#e6db74>strong</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>, <span style=color:#e6db74>weak</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span></code></pre></div><h1 id=origin>Origin</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch15-00-smart-pointers.html>https://doc.rust-lang.org/book/ch15-00-smart-pointers.html</a></p></blockquote><p>&mldr;</p><h2 id=using><a href=https://doc.rust-lang.org/book/ch15-01-box.html#using-boxt-to-point-to-data-on-the-heap>Using <code>Box&lt;T></code> to Point to Data on the Heap</a></h2><p>The most straightforward smart pointer is a <em>box</em>, whose type is written <code>Box&lt;T></code>. Boxes allow you to store data on the heap rather than the stack. What remains on the stack is the pointer to the heap data. Refer to Chapter 4 to review the difference between the stack and the heap.</p><p>Boxes don’t have performance overhead, other than storing their data on the heap instead of on the stack. But they don’t have many extra capabilities either. You’ll use them most often in these situations:</p><ul><li>When you have a type whose size can’t be known at compile time and you want to use a value of that type in a context that requires an exact size</li><li>When you have a large amount of data and you want to transfer ownership but ensure the data won’t be copied when you do so</li><li>When you want to own a value and you care only that it’s a type that implements a particular trait rather than being of a specific type</li></ul><p>We’ll demonstrate the first situation in the <a href=https://doc.rust-lang.org/book/ch15-01-box.html#enabling-recursive-types-with-boxes>“Enabling Recursive Types with Boxes”</a> section. In the second case, transferring ownership of a large amount of data can take a long time because the data is copied around on the stack. To improve performance in this situation, we can store the large amount of data on the heap in a box. Then, only the small amount of pointer data is copied around on the stack, while the data it references stays in one place on the heap. The third case is known as a <em>trait object</em>, and Chapter 17 devotes an entire section, <a href=https://doc.rust-lang.org/book/ch17-02-trait-objects.html#using-trait-objects-that-allow-for-values-of-different-types>“Using Trait Objects That Allow for Values of Different Types,”</a> just to that topic. So what you learn here you’ll apply again in Chapter 17!</p><ul class=pa0></ul><div class="mt6 instapaper_ignoref"></div></div><aside class="w-30-l mt6-l"></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo><div class="flex justify-between"><a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href=https://kuthorx.github.io/>&copy; KuthorX Blog II 2025</a><div><div class=ananke-socials></div></div></div></footer></body></html>
