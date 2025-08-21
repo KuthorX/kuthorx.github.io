@@ -83,14 +83,15 @@
 &lt;ol>
 &lt;li>出生地点：某处丛林的白天。&lt;/li>
 &lt;li>出生时间：未知。&lt;/li>
-&lt;/ol></description></item><item><title>[L-5731] 指纹 FingerPrint</title><link>https://kuthorx.github.io/character/l-5731/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/l-5731/</guid><description/></item><item><title>[Q-0976] Hand Ci Zoe</title><link>https://kuthorx.github.io/character/q-0976/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/q-0976/</guid><description/></item><item><title>[S-1920] 雨</title><link>https://kuthorx.github.io/character/s-1920/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/s-1920/</guid><description/></item><item><title>[S-6458] 火爪 Burning Claws</title><link>https://kuthorx.github.io/character/s-6458/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/s-6458/</guid><description>&lt;h2 id="外观">外观&lt;/h2>
-&lt;h3 id="形态一---gray-claws">形态一 - Gray Claws&lt;/h3>
+&lt;/ol></description></item><item><title>[L-5731] 指纹 FingerPrint</title><link>https://kuthorx.github.io/character/l-5731/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/l-5731/</guid><description/></item><item><title>[Q-0976] Hand Ci Zoe</title><link>https://kuthorx.github.io/character/q-0976/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/q-0976/</guid><description/></item><item><title>[S-1920] 雨</title><link>https://kuthorx.github.io/character/s-1920/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/s-1920/</guid><description/></item><item><title>[S-6458] 火爪 Burning Claws</title><link>https://kuthorx.github.io/character/s-6458/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/s-6458/</guid><description>&lt;h1 id="外观">外观&lt;/h1>
+&lt;h2 id="形态一---gray-claws">形态一 - Gray Claws&lt;/h2>
 &lt;p>形态名称：Gray Claws&lt;/p>
 &lt;p>颜色：灰色&lt;/p>
 &lt;p>英文：Devon Rex&lt;/p>
 &lt;p>中文：德文帝王猫&lt;/p>
 &lt;p>日文：デボンレックス&lt;/p>
-&lt;h3 id="形态二---迦南-canaan">形态二 - &lt;strong>迦南 CANAAN&lt;/strong>&lt;/h3>
+&lt;p>技能：发出低沉的吼叫，以震慑敌人。&lt;/p>
+&lt;h2 id="形态二---迦南-canaan">形态二 - &lt;strong>迦南 CANAAN&lt;/strong>&lt;/h2>
 &lt;p>英语：Canaan&lt;/p>
 &lt;blockquote>
 &lt;p>仅供参考：希伯来语：כְּנַעַן，腓尼基语：𐤊𐤍𐤏𐤍‬，希腊语：Χαναάν，阿拉伯语：کنعان&lt;/p>&lt;/blockquote>
@@ -98,16 +99,17 @@
 &lt;p>英文：British Longhair&lt;/p>
 &lt;p>中文：英国长毛猫&lt;/p>
 &lt;p>日文：イギリスの長毛猫&lt;/p>
-&lt;h3 id="形态三---grenyes">形态三 - Grenyes&lt;/h3>
-&lt;h2 id="衣物">衣物&lt;/h2>
+&lt;p>技能：（暂定）&lt;/p>
+&lt;h2 id="形态三---grenyes">形态三 - Grenyes&lt;/h2>
+&lt;p>？？？&lt;/p>
+&lt;h1 id="衣物">衣物&lt;/h1>
 &lt;p>武士着装，三把太刀，太刀参考下述定义。&lt;/p>
-&lt;h2 id="内在定义">&lt;strong>内在定义&lt;/strong>&lt;/h2>
+&lt;h1 id="内在定义">&lt;strong>内在定义&lt;/strong>&lt;/h1>
 &lt;ol>
 &lt;li>行为动机：寻找归宿。&lt;/li>
 &lt;/ol>
-&lt;h1 id="装备">装备&lt;/h1>
-&lt;h2 id="三把太刀">三把太刀&lt;/h2>
-&lt;h3 id="撼地">【撼地】&lt;/h3>
+&lt;h1 id="装备---三把利刃">装备 - 三把利刃&lt;/h1>
+&lt;h2 id="撼地">【撼地】&lt;/h2>
 &lt;p>外观&lt;/p>
 &lt;ul>
 &lt;li>银色&lt;/li>
@@ -117,7 +119,7 @@
 &lt;ul>
 &lt;li>使无生命物体可移动。参考 &lt;a href="https://kuthorx.github.io/story_of_cloak/fiction/0x04/">0x04&lt;/a> ，&lt;a href="https://kuthorx.github.io/story_of_cloak/fiction/0x07/">0x07&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h3 id="断斩">【断】【斩】&lt;/h3>
+&lt;h2 id="断斩">【断】【斩】&lt;/h2>
 &lt;p>外观&lt;/p>
 &lt;ul>
 &lt;li>（暂定）&lt;/li>
@@ -127,8 +129,15 @@
 &lt;li>物理意义上斩断某种事物。&lt;/li>
 &lt;li>概念意义上偶尔生效。&lt;/li>
 &lt;/ul>
-&lt;h3 id="heading">【？？？】&lt;/h3>
-&lt;h1 id="技能">技能&lt;/h1></description></item><item><title>[X-2408] Square Standing</title><link>https://kuthorx.github.io/character/x-2408/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/x-2408/</guid><description/></item><item><title>[X-3467] One White Tiger</title><link>https://kuthorx.github.io/character/x-3467/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/x-3467/</guid><description>&lt;p>东 西 南 北 中&lt;/p>
+&lt;h2 id="kantin">【Kantin】&lt;/h2>
+&lt;p>外观&lt;/p>
+&lt;ul>
+&lt;li>（暂定）&lt;/li>
+&lt;/ul>
+&lt;p>功能&lt;/p>
+&lt;ul>
+&lt;li>（暂定）&lt;/li>
+&lt;/ul></description></item><item><title>[X-2408] Square Standing</title><link>https://kuthorx.github.io/character/x-2408/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/x-2408/</guid><description/></item><item><title>[X-3467] One White Tiger</title><link>https://kuthorx.github.io/character/x-3467/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/x-3467/</guid><description>&lt;p>东 西 南 北 中&lt;/p>
 &lt;p>商 徵 角 羽 宫&lt;/p>
 &lt;p>若 火 燃 万 物&lt;/p>
 &lt;p>此 人 为 __ __&lt;/p></description></item><item><title>[Y-9601] East Edward</title><link>https://kuthorx.github.io/character/y-9601/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/y-9601/</guid><description>&lt;p>Singer.&lt;/p>
@@ -243,54 +252,8 @@
 &lt;/ul>
 &lt;h4 id="5-grenyes-是什么">&lt;strong>〖5. Grenyes 是什么？〗&lt;/strong>&lt;/h4>
 &lt;p>【】&lt;/p></description></item><item><title>0x05 - 火爪 - Thinking</title><link>https://kuthorx.github.io/story_of_cloak/fiction/0x05/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/story_of_cloak/fiction/0x05/</guid><description>&lt;h1 id="0x05-火爪---thinking">0x05 火爪 - Thinking&lt;/h1>
-&lt;p>主题曲: &lt;a href="https://music.163.com/song?id=2735001703">在网易云音乐收听&lt;/a>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Below-Author: cursorosruc.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在那些漫长的午夜时分，当三个孩子都陷入沉睡，当家中唯一的烛火在风中摇曳，我总是坐在窗边，凝视着远方的星空。&lt;/p>
-&lt;p>&lt;strong>&lt;!-- raw HTML omitted -->思考&lt;!-- raw HTML omitted -->&lt;/strong> 对我来说，既是奢侈，也是必需。&lt;/p>
-&lt;p>我记得那些还有他在身边的夜晚。&lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#husburd">Husburd&lt;/a> 总是在我耳边轻声说着那些古老的故事，讲述着远方的土地，讲述着那些我们总有一天会一起去看的风景。他的声音低沉而温暖，像冬日炉火边的葡萄酒，能让我忘却所有的疲惫。&lt;/p>
-&lt;p>现在，只剩下寂静。&lt;/p>
-&lt;p>我学会了在寂静中聆听自己的呼吸，学会了在思考中寻找力量。每当夜深人静，我会取出那三把刀，轻轻地抚摸着它们冰冷的刀刃。&lt;/p>
-&lt;p>第一把刀，名为&amp;quot;&lt;strong>回响&lt;/strong>&amp;quot;，能够让我的声音产生共鸣，震慑敌人。但它也提醒着我，有些声音一旦消失，就再也不会回来。&lt;/p>
-&lt;p>第二把刀，名为&amp;quot;&lt;strong>&lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#thinny">Thinny&lt;/a>&lt;/strong>&amp;quot;，锋利得能够切断任何物质。但它切不断思念，切不断那些深夜里涌上心头的孤独。&lt;/p>
-&lt;p>第三把刀，至今没有名字。我一直在等待，等待那个能够为它命名的时刻到来。也许是找到他的那一天，也许是我真正理解自己力量的那一刻。&lt;/p>
-&lt;p>在那家 &lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#ciiakua">CiiaKua&lt;/a> 公司工作的日子里，我每天都在思考。思考如何在这个混乱的世界中保护我的孩子们，思考如何在众多的 &lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#ciiakua">CiiaKua&lt;/a> 同事中保持自己的本性，思考如何在夜晚归家的路上，不被那些涌上心头的绝望所吞噬。&lt;/p>
-&lt;p>有时候，思考会变成一种痛苦。我想象着他可能遭遇的种种情况：被困在某个遥远的地方，失去记忆，或者更糟的可能性。每一种想象都像刀刃一样刺痛着我的心，让我在深夜里发出无声的嚎叫。&lt;/p>
-&lt;p>但思考也给了我力量。&lt;/p>
-&lt;p>在酒馆遇到那个奇怪的斗篷之前，我已经学会了如何将痛苦转化为行动的动力。我学会了如何在白天工作时保持专注，如何在回家路上保持警觉，如何在孩子们面前展现坚强。&lt;/p>
-&lt;p>那个斗篷，那个自称学会了&amp;quot;吸收时间&amp;quot;的存在，让我想起了自己在这些年里所学会的东西。时间确实可以被吸收，但不是像斗篷那样简单地让它流过身体，而是在思考中将每一个瞬间都变得有意义。&lt;/p>
-&lt;p>每一个想念他的夜晚，都让我更加坚定要找到他的决心。
-每一次为孩子们准备晚餐，都提醒我自己是这个家的支柱。
-每一天在 &lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#ciiakua">CiiaKua&lt;/a> 公司的工作，都是为了积攒足够的资源去寻找真相。&lt;/p>
-&lt;p>当我看到斗篷那种纯真的模仿能力时，我突然意识到：也许我一直在寻找的，不仅仅是我失踪的 &lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#husburd">Husburd&lt;/a>，更是我自己内心深处那个还相信奇迹的部分。&lt;/p>
-&lt;p>那一刻，当我决定抽出刀测试斗篷的能力时，我知道自己不仅仅是在测试它的反应速度。我是在测试自己是否还敢于相信，这个世界上还存在着那些超越常理的可能性。&lt;/p>
-&lt;p>&lt;strong>&lt;!-- raw HTML omitted -->思考&lt;!-- raw HTML omitted -->&lt;/strong> 让我明白，有些时候，行动比继续思考更重要。&lt;/p>
-&lt;p>而有些时候，坚持思考本身，就是最勇敢的行动。&lt;/p>
-&lt;hr>
-&lt;p>&lt;em>（注：在火爪的语言中，思考与行动从来不是对立的，它们是同一条河流的两个河岸，缺一不可。）&lt;/em>&lt;/p></description></item><item><title>0x06 - 火爪 - Continuing</title><link>https://kuthorx.github.io/story_of_cloak/fiction/0x06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/story_of_cloak/fiction/0x06/</guid><description>&lt;h1 id="0x06-火爪---continuing">0x06 火爪 - Continuing&lt;/h1>
-&lt;p>主题曲: &lt;a href="https://music.163.com/song?id=2735001701">在网易云音乐收听&lt;/a>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Below-Author: cursorosruc.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>&lt;!-- raw HTML omitted -->继续&lt;!-- raw HTML omitted -->&lt;/strong> 是一种选择，也是一种宿命。&lt;/p>
-&lt;p>在我八十年的生命中，我见证了太多的开始和结束。见证了春天的第一片新叶，也见证了冬日里最后一朵雪花的凋零。但我从未想过，继续本身会成为一种如此沉重的能力。&lt;/p>
-&lt;p>今天早晨，大儿子问我：&amp;ldquo;妈妈，爸爸什么时候回来？&amp;rdquo;&lt;/p>
-&lt;p>我停下手中正在准备的早餐，看着他那双和他父亲一模一样的眼睛。八岁的年纪，正是开始理解世界复杂性的时候。我该如何告诉他，有些等待可能永远没有结果？我该如何教会他，继续生活本身就需要勇气？&lt;/p>
-&lt;p>&amp;ldquo;爸爸在很远的地方。&amp;rdquo; 我最终这样回答，&amp;ldquo;但我们要继续好好生活，这样他回来的时候，就能看到我们都很好。&amp;rdquo;&lt;/p>
-&lt;p>这是我对他说的话，也是我对自己说的话。&lt;/p>
-&lt;p>&lt;strong>&lt;!-- raw HTML omitted -->继续&lt;!-- raw HTML omitted -->&lt;/strong> 意味着即使在最黑暗的夜晚，也要相信黎明会来临。
-&lt;strong>&lt;!-- raw HTML omitted -->继续&lt;!-- raw HTML omitted -->&lt;/strong> 意味着即使声音嘶哑，也要为孩子们唱摇篮曲。
-&lt;strong>&lt;!-- raw HTML omitted -->继续&lt;!-- raw HTML omitted -->&lt;/strong> 意味着即使心碎成千万片，也要将它们重新拼接起来，因为这个家需要一个完整的我。&lt;/p>
-&lt;p>在 &lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#ciiakua">CiiaKua&lt;/a> 公司工作的这些月里，我学会了如何在疲惫中继续工作，如何在同事们的冷眼中继续保持尊严，如何在每一个看似没有希望的项目中继续寻找突破口。&lt;/p>
-&lt;p>我的上司，一个特别 &lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#ciiakua">CiiaKua&lt;/a> 的家伙，总是在最后时刻改变需求，总是用那种居高临下的语气和我说话。但我继续忍耐，继续工作，因为这份工作给我提供了寻找他所需要的资源。&lt;/p>
-&lt;p>每个月的薪水，有一部分用来养育孩子们，有一部分存起来，准备用于那些可能的寻找行动。剩下的一小部分，我会花在酒馆里，寻找那些可能知道些什么的陌生人。&lt;/p>
-&lt;p>就像遇到那个斗篷一样。&lt;/p>
-&lt;p>当我看到斗篷学会模仿鱼老板的动作时，我意识到：继续学习，继续成长，这种能力是多么珍贵。即使在八十岁的年纪，即使经历了这么多的失去，我依然可以从一个初生的意识体身上学到新的东西。&lt;/p>
-&lt;p>那把没有名字的第三把刀，我想我知道该如何为它命名了：&lt;strong>&amp;quot;&lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#kantin">Kantin&lt;/a>&amp;quot;&lt;/strong>。&lt;/p>
-&lt;p>在古老的语言中，这个词既表示&amp;quot;继续&amp;quot;，也表示&amp;quot;希望&amp;quot;。因为真正的希望，不是等待奇迹降临，而是在没有奇迹的日子里，依然选择继续前行。&lt;/p>
-&lt;p>昨夜，小女儿因为噩梦而哭泣。我抱着她，轻抚着她的背，告诉她那些我小时候听过的故事。我告诉她，勇敢的人不是不会害怕，而是在害怕的时候依然继续前行。&lt;/p>
-&lt;p>&amp;ldquo;就像妈妈一样吗？&amp;rdquo; 她在我怀中问道。&lt;/p>
-&lt;p>&amp;ldquo;对，就像妈妈一样。&amp;rdquo; 我回答，&amp;ldquo;也像你一样，我的小勇士。&amp;rdquo;&lt;/p>
-&lt;p>继续并不意味着遗忘。每当我使用第一把刀&amp;quot;回响&amp;quot;的时候，我都能听到他的声音在其中回荡。每当我擦拭第二把刀&amp;quot;&lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#thinny">Thinny&lt;/a>&amp;ldquo;的时候，我都记得他曾经说过，锋利的刀刃需要温柔的保养。&lt;/p>
-&lt;p>而现在，第三把刀&amp;rdquo;&lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#kantin">Kantin&lt;/a>&amp;ldquo;将会提醒我：无论前路如何艰难，我都会继续走下去。为了孩子们，为了那个依然在某个地方等待着我们的他，也为了我自己。&lt;/p>
-&lt;p>在酒馆里，当我向斗篷提出雇佣关系的时候，我并不只是在寻找一个保镖。我是在给自己一个继续行动的理由，一个不让自己在等待中消磨殆尽的机会。&lt;/p></description></item><item><title>0x07 - 雨天</title><link>https://kuthorx.github.io/story_of_cloak/fiction/0x07/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/story_of_cloak/fiction/0x07/</guid><description>&lt;h1 id="𑁧">𑁧&lt;/h1>
+&lt;p>主题曲: &lt;a href="https://music.163.com/song?id=2735001703">在网易云音乐收听&lt;/a>&lt;/p></description></item><item><title>0x06 - 火爪 - Continuing</title><link>https://kuthorx.github.io/story_of_cloak/fiction/0x06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/story_of_cloak/fiction/0x06/</guid><description>&lt;h1 id="0x06-火爪---continuing">0x06 火爪 - Continuing&lt;/h1>
+&lt;p>主题曲: &lt;a href="https://music.163.com/song?id=2735001701">在网易云音乐收听&lt;/a>&lt;/p></description></item><item><title>0x07 - 雨天</title><link>https://kuthorx.github.io/story_of_cloak/fiction/0x07/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/story_of_cloak/fiction/0x07/</guid><description>&lt;h1 id="𑁧">𑁧&lt;/h1>
 &lt;p>（插图 A）&lt;/p>
 &lt;p>&lt;a href="https://kuthorx.github.io/story_of_cloak/fiction/0x04/">酒馆&lt;/a> 外，下雨天。&lt;/p>
 &lt;p>在火爪的第一把刀 &lt;a href="https://kuthorx.github.io/character/s-6458/#%E8%A3%85%E5%A4%87">【撼地】&lt;/a> 的作用下，在短暂的镜头闪烁之后，酒馆，开始在逐渐落下的雨滴里升起。&lt;/p>
@@ -325,6 +288,7 @@
 &lt;h4 id="2-被省略的形容词是什么">&lt;strong>〖2. 被省略的形容词是什么？〗&lt;/strong>&lt;/h4>
 &lt;h4 id="3-被省略的名词是什么">&lt;strong>〖3. 被省略的名词是什么？〗&lt;/strong>&lt;/h4>
 &lt;h4 id="4-最后的-它-是谁">&lt;strong>〖4. 最后的 “它” 是谁？〗&lt;/strong>&lt;/h4>
+&lt;h4 id="5-again-whatwho-is-grenyes-">&lt;strong>〖5. Again: What/Who is Grenyes ？〗&lt;/strong>&lt;/h4>
 &lt;hr>
 &lt;h1 id="但是你真的要继续往下阅读吗">&lt;em>&lt;strong>但是你真的要继续往下阅读吗？&lt;/strong>&lt;/em>&lt;/h1>
 &lt;p>&amp;amp;nbsp&lt;/p>

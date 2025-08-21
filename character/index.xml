@@ -83,14 +83,15 @@
 &lt;ol>
 &lt;li>出生地点：某处丛林的白天。&lt;/li>
 &lt;li>出生时间：未知。&lt;/li>
-&lt;/ol></description></item><item><title>[L-5731] 指纹 FingerPrint</title><link>https://kuthorx.github.io/character/l-5731/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/l-5731/</guid><description/></item><item><title>[Q-0976] Hand Ci Zoe</title><link>https://kuthorx.github.io/character/q-0976/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/q-0976/</guid><description/></item><item><title>[S-1920] 雨</title><link>https://kuthorx.github.io/character/s-1920/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/s-1920/</guid><description/></item><item><title>[S-6458] 火爪 Burning Claws</title><link>https://kuthorx.github.io/character/s-6458/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/s-6458/</guid><description>&lt;h2 id="外观">外观&lt;/h2>
-&lt;h3 id="形态一---gray-claws">形态一 - Gray Claws&lt;/h3>
+&lt;/ol></description></item><item><title>[L-5731] 指纹 FingerPrint</title><link>https://kuthorx.github.io/character/l-5731/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/l-5731/</guid><description/></item><item><title>[Q-0976] Hand Ci Zoe</title><link>https://kuthorx.github.io/character/q-0976/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/q-0976/</guid><description/></item><item><title>[S-1920] 雨</title><link>https://kuthorx.github.io/character/s-1920/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/s-1920/</guid><description/></item><item><title>[S-6458] 火爪 Burning Claws</title><link>https://kuthorx.github.io/character/s-6458/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/s-6458/</guid><description>&lt;h1 id="外观">外观&lt;/h1>
+&lt;h2 id="形态一---gray-claws">形态一 - Gray Claws&lt;/h2>
 &lt;p>形态名称：Gray Claws&lt;/p>
 &lt;p>颜色：灰色&lt;/p>
 &lt;p>英文：Devon Rex&lt;/p>
 &lt;p>中文：德文帝王猫&lt;/p>
 &lt;p>日文：デボンレックス&lt;/p>
-&lt;h3 id="形态二---迦南-canaan">形态二 - &lt;strong>迦南 CANAAN&lt;/strong>&lt;/h3>
+&lt;p>技能：发出低沉的吼叫，以震慑敌人。&lt;/p>
+&lt;h2 id="形态二---迦南-canaan">形态二 - &lt;strong>迦南 CANAAN&lt;/strong>&lt;/h2>
 &lt;p>英语：Canaan&lt;/p>
 &lt;blockquote>
 &lt;p>仅供参考：希伯来语：כְּנַעַן，腓尼基语：𐤊𐤍𐤏𐤍‬，希腊语：Χαναάν，阿拉伯语：کنعان&lt;/p>&lt;/blockquote>
@@ -98,16 +99,17 @@
 &lt;p>英文：British Longhair&lt;/p>
 &lt;p>中文：英国长毛猫&lt;/p>
 &lt;p>日文：イギリスの長毛猫&lt;/p>
-&lt;h3 id="形态三---grenyes">形态三 - Grenyes&lt;/h3>
-&lt;h2 id="衣物">衣物&lt;/h2>
+&lt;p>技能：（暂定）&lt;/p>
+&lt;h2 id="形态三---grenyes">形态三 - Grenyes&lt;/h2>
+&lt;p>？？？&lt;/p>
+&lt;h1 id="衣物">衣物&lt;/h1>
 &lt;p>武士着装，三把太刀，太刀参考下述定义。&lt;/p>
-&lt;h2 id="内在定义">&lt;strong>内在定义&lt;/strong>&lt;/h2>
+&lt;h1 id="内在定义">&lt;strong>内在定义&lt;/strong>&lt;/h1>
 &lt;ol>
 &lt;li>行为动机：寻找归宿。&lt;/li>
 &lt;/ol>
-&lt;h1 id="装备">装备&lt;/h1>
-&lt;h2 id="三把太刀">三把太刀&lt;/h2>
-&lt;h3 id="撼地">【撼地】&lt;/h3>
+&lt;h1 id="装备---三把利刃">装备 - 三把利刃&lt;/h1>
+&lt;h2 id="撼地">【撼地】&lt;/h2>
 &lt;p>外观&lt;/p>
 &lt;ul>
 &lt;li>银色&lt;/li>
@@ -117,7 +119,7 @@
 &lt;ul>
 &lt;li>使无生命物体可移动。参考 &lt;a href="https://kuthorx.github.io/story_of_cloak/fiction/0x04/">0x04&lt;/a> ，&lt;a href="https://kuthorx.github.io/story_of_cloak/fiction/0x07/">0x07&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h3 id="断斩">【断】【斩】&lt;/h3>
+&lt;h2 id="断斩">【断】【斩】&lt;/h2>
 &lt;p>外观&lt;/p>
 &lt;ul>
 &lt;li>（暂定）&lt;/li>
@@ -127,8 +129,15 @@
 &lt;li>物理意义上斩断某种事物。&lt;/li>
 &lt;li>概念意义上偶尔生效。&lt;/li>
 &lt;/ul>
-&lt;h3 id="heading">【？？？】&lt;/h3>
-&lt;h1 id="技能">技能&lt;/h1></description></item><item><title>[X-2408] Square Standing</title><link>https://kuthorx.github.io/character/x-2408/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/x-2408/</guid><description/></item><item><title>[X-3467] One White Tiger</title><link>https://kuthorx.github.io/character/x-3467/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/x-3467/</guid><description>&lt;p>东 西 南 北 中&lt;/p>
+&lt;h2 id="kantin">【Kantin】&lt;/h2>
+&lt;p>外观&lt;/p>
+&lt;ul>
+&lt;li>（暂定）&lt;/li>
+&lt;/ul>
+&lt;p>功能&lt;/p>
+&lt;ul>
+&lt;li>（暂定）&lt;/li>
+&lt;/ul></description></item><item><title>[X-2408] Square Standing</title><link>https://kuthorx.github.io/character/x-2408/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/x-2408/</guid><description/></item><item><title>[X-3467] One White Tiger</title><link>https://kuthorx.github.io/character/x-3467/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/x-3467/</guid><description>&lt;p>东 西 南 北 中&lt;/p>
 &lt;p>商 徵 角 羽 宫&lt;/p>
 &lt;p>若 火 燃 万 物&lt;/p>
 &lt;p>此 人 为 __ __&lt;/p></description></item><item><title>[Y-9601] East Edward</title><link>https://kuthorx.github.io/character/y-9601/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kuthorx.github.io/character/y-9601/</guid><description>&lt;p>Singer.&lt;/p>
