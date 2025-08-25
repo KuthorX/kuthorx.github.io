@@ -124,7 +124,7 @@
 &lt;h2 id="形态三---grenyes">形态三 - Grenyes&lt;/h2>
 &lt;p>？？？&lt;/p>
 &lt;h1 id="衣物">衣物&lt;/h1>
-&lt;p>武士着装，三把太刀，太刀参考下述定义。&lt;/p>
+&lt;p>武士着装，三把利刃，利刃参考下述定义。&lt;/p>
 &lt;h1 id="内在定义">&lt;strong>内在定义&lt;/strong>&lt;/h1>
 &lt;ol>
 &lt;li>行为动机：寻找归宿。&lt;/li>
@@ -135,6 +135,7 @@
 &lt;ul>
 &lt;li>银色&lt;/li>
 &lt;li>镜面反射&lt;/li>
+&lt;li>偏太刀、横刀设计&lt;/li>
 &lt;/ul>
 &lt;p>功能&lt;/p>
 &lt;ul>
@@ -143,12 +144,15 @@
 &lt;h2 id="断斩">【断】【斩】&lt;/h2>
 &lt;p>外观&lt;/p>
 &lt;ul>
-&lt;li>（暂定）&lt;/li>
+&lt;li>未被佩戴的时候，只有手柄。&lt;/li>
+&lt;li>【离开】装备者的时候，刃身会从手柄中抽离，长度取决于装备者的【思念】。&lt;/li>
+&lt;li>当【思念】被彻底斩断的时候，抽离出来的刃身会重新回到手柄中。&lt;/li>
 &lt;/ul>
 &lt;p>功能&lt;/p>
 &lt;ul>
 &lt;li>物理意义上斩断某种事物。&lt;/li>
-&lt;li>概念意义上偶尔生效。&lt;/li>
+&lt;li>概念意义上的斩断偶尔生效，取决于装备者的【Ren Xing】与【Xin Ren】。&lt;/li>
+&lt;li>参考 &lt;a href="https://kuthorx.github.io/story_of_cloak/fiction/0x07/">0x07&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="kantin">【Kantin】&lt;/h2>
 &lt;p>外观&lt;/p>
