@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Thinking Talking on KuthorX Blog II</title><link>https://kuthorx.github.io/posts/thinking-talking/</link><description>Recent content in Thinking Talking on KuthorX Blog II</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0800</lastBuildDate><atom:link href="https://kuthorx.github.io/posts/thinking-talking/index.xml" rel="self" type="application/rss+xml"/><item><title>《最后一案》</title><link>https://kuthorx.github.io/posts/thinking-talking/the-last-case/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/the-last-case/</guid><description>&lt;h1 id="故事简介">故事简介&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Thinking Talking on KuthorX Blog II</title><link>https://kuthorx.github.io/posts/thinking-talking/</link><description>Recent content in Thinking Talking on KuthorX Blog II</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 28 Aug 2025 00:00:00 +0800</lastBuildDate><atom:link href="https://kuthorx.github.io/posts/thinking-talking/index.xml" rel="self" type="application/rss+xml"/><item><title>《最后一案》游戏介绍</title><link>https://kuthorx.github.io/posts/thinking-talking/the-last-case/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/the-last-case/</guid><description>&lt;h1 id="故事简介">故事简介&lt;/h1>
 &lt;p>曾经的伟大侦探，&lt;a href="https://kuthorx.github.io/posts/fiction/sad-slow-song/">普森·沃尔&lt;/a>，在他生命中的最后时刻，通过&lt;a href="https://kuthorx.github.io/character/d-xxxx/">死象&lt;/a>将自己的生命托付给了&lt;a href="https://kuthorx.github.io/character/k-1647/">K-1647&lt;/a>。&lt;/p>
 &lt;p>K-1647 的意识与沃尔不断糅合，将自己分裂为 &lt;a href="https://kuthorx.github.io/character/k-1647/">斗篷&lt;/a>、&lt;a href="https://kuthorx.github.io/character/s-6458">火爪&lt;/a>、&lt;a href="https://kuthorx.github.io/character/a-4597">耳鱼&lt;/a> ，并通过 &lt;em>&lt;strong>投射仪&lt;/strong>&lt;/em> 投射到了不同的 &lt;em>&lt;strong>位面&lt;/strong>&lt;/em>。&lt;/p>
 &lt;ul>
@@ -32,22 +32,20 @@
 &lt;/ul>
 &lt;h1 id="玩法说明">玩法说明&lt;/h1>
 &lt;p>第一人称场景解谜游戏。&lt;/p>
-&lt;h2 id="整体玩法">整体玩法&lt;/h2>
-&lt;h3 id="一周目">一周目&lt;/h3>
-&lt;p>一周目标题《苍绿之眼》，美术主色调为蓝绿色系。&lt;/p>
-&lt;p>玩家需要解开多个谜题，获取成就（正反馈）和（暂时）不可使用的关键物品。&lt;/p>
-&lt;p>关键物品集齐后，即可开始下一周目。&lt;/p>
-&lt;h3 id="二周目">二周目&lt;/h3>
-&lt;p>二周目标题《最后一案》，双主角。&lt;/p>
+&lt;h2 id="核心玩法">核心玩法&lt;/h2>
+&lt;p>玩家需要进入不同的 &lt;em>&lt;strong>谜题房间&lt;/strong>&lt;/em> 体验不同世界的谜面，并用在 &lt;em>&lt;strong>普通房间&lt;/strong>&lt;/em> 获得的物品 解谜。&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="https://kuthorx.github.io/character/s-6458">火爪&lt;/a> ，唯一一只不是红绿色盲的猫。&lt;/p>
-&lt;/li>
+&lt;p>音乐&lt;/p>
+&lt;p>玩家在进入 &lt;em>&lt;strong>谜题房间&lt;/strong>&lt;/em> 时，会听到该房间专属的音乐，但这个音乐要“更完善”，才能推进剧情。&lt;/p>
+&lt;ul>
 &lt;li>
-&lt;p>&lt;a href="https://kuthorx.github.io/character/s-6459">凯特·沃尔&lt;/a> ，带有蟒蛇特征的人，且红绿色盲。&lt;/p>
+&lt;p>举例：比如一段爵士乐里缺了钢琴（键盘乐器），那么玩家就需要从以下几个物品里选择一个&lt;/p>
+&lt;ol>
+&lt;li>唢呐&lt;/li>
+&lt;li>风铃&lt;/li>
+&lt;li>非洲鼓&lt;/li>
+&lt;/ol>
 &lt;/li>
 &lt;/ul>
-&lt;p>玩家需要切换火爪和凯特的视角，使用一周目继承的物品，查明凯特的身世。&lt;/p>
-&lt;h2 id="特色玩法">特色玩法&lt;/h2>
-&lt;h3 id="基础配置">基础配置&lt;/h3>
-&lt;p>过完初始剧情后，玩家在 普通房间 出生 ，获取特殊道具 光谱仪 ，通过 调色（HUE）技术 找到静态画面中出现 不和谐动作（颜色叠加、溶解、闪烁、变色、马赛克、移动等）的符号（物品/文字等）。&lt;/p></description></item><item><title>《苍绿之眼》编者按</title><link>https://kuthorx.github.io/posts/thinking-talking/thats-it/</link><pubDate>Tue, 05 Aug 2025 20:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/thats-it/</guid><description>The show must go on</description></item><item><title>再一次交界 1 / 2</title><link>https://kuthorx.github.io/posts/thinking-talking/after-read-deconstruction/</link><pubDate>Thu, 13 Jun 2024 02:15:02 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/after-read-deconstruction/</guid><description>Deconstruction</description></item><item><title>从《年会不能停》说起</title><link>https://kuthorx.github.io/posts/thinking-talking/talk-from-johnny-keep-walking/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/talk-from-johnny-keep-walking/</guid><description>The show must go on</description></item><item><title>“我” 回来了，但 “我” 很快又会重新出发</title><link>https://kuthorx.github.io/posts/thinking-talking/i-come-back-i-will-start-soon/</link><pubDate>Sat, 10 Dec 2022 23:59:59 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/i-come-back-i-will-start-soon/</guid><description>Once Again</description></item></channel></rss>
+&lt;p>显然，选择 2 更合适。&lt;/p></description></item><item><title>《苍绿之眼》编者按</title><link>https://kuthorx.github.io/posts/thinking-talking/thats-it/</link><pubDate>Tue, 05 Aug 2025 20:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/thats-it/</guid><description>The show must go on</description></item><item><title>再一次交界 1 / 2</title><link>https://kuthorx.github.io/posts/thinking-talking/after-read-deconstruction/</link><pubDate>Thu, 13 Jun 2024 02:15:02 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/after-read-deconstruction/</guid><description>Deconstruction</description></item><item><title>从《年会不能停》说起</title><link>https://kuthorx.github.io/posts/thinking-talking/talk-from-johnny-keep-walking/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/talk-from-johnny-keep-walking/</guid><description>The show must go on</description></item><item><title>“我” 回来了，但 “我” 很快又会重新出发</title><link>https://kuthorx.github.io/posts/thinking-talking/i-come-back-i-will-start-soon/</link><pubDate>Sat, 10 Dec 2022 23:59:59 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/i-come-back-i-will-start-soon/</guid><description>Once Again</description></item></channel></rss>
