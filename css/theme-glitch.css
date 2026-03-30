@@ -1,0 +1,255 @@
+/* ========================================
+   Glitch Theme — Cyberpunk signal interference
+   Activated by html.theme-glitch
+   ======================================== */
+
+.theme-glitch {
+  --bg-primary: #0a0a12;
+  --bg-secondary: #12121f;
+  --bg-card: #14142a;
+  --text-primary: #00ffff;
+  --text-secondary: #ff00ff;
+  --text-body: #c0c0d0;
+  --text-muted: #5a5a7a;
+  --accent: #00ffff;
+  --accent-hover: #66ffff;
+  --border: #1a1a3a;
+  --border-accent: #00ffff;
+  --font-display: 'VT323', 'Noto Sans SC', monospace;
+  --font-body: 'Space Mono', 'Noto Sans SC', monospace;
+  --font-size-hero: 4rem;
+  --radius: 0;
+}
+
+.theme-glitch body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(0, 0, 0, 0.15) 1px,
+    rgba(0, 0, 0, 0.15) 3px
+  );
+  animation: scanline-scroll 8s linear infinite;
+}
+
+@keyframes scanline-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(6px); }
+}
+
+.theme-glitch body::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+}
+
+.theme-glitch .hero-title { position: relative; }
+.theme-glitch .hero-ascii { display: none; }
+
+.theme-glitch .hero-text {
+  display: inline;
+  animation: glitch-text 3s infinite;
+  position: relative;
+}
+
+.theme-glitch .hero-text::before,
+.theme-glitch .hero-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.theme-glitch .hero-text::before {
+  color: #ff00ff;
+  z-index: -1;
+  animation: glitch-before 3s infinite;
+}
+
+.theme-glitch .hero-text::after {
+  color: #ffff00;
+  z-index: -1;
+  animation: glitch-after 3s infinite;
+}
+
+@keyframes glitch-text {
+  0%, 90%, 100% { transform: none; }
+  91% { transform: skewX(2deg); }
+  93% { transform: skewX(-1deg); }
+  95% { transform: skewX(3deg); }
+  97% { transform: none; }
+}
+
+@keyframes glitch-before {
+  0%, 90%, 100% { clip-path: inset(0); transform: none; }
+  91% { clip-path: inset(20% 0 60% 0); transform: translateX(-3px); }
+  93% { clip-path: inset(50% 0 20% 0); transform: translateX(3px); }
+  95% { clip-path: inset(10% 0 70% 0); transform: translateX(-2px); }
+  97% { clip-path: inset(0); transform: none; }
+}
+
+@keyframes glitch-after {
+  0%, 90%, 100% { clip-path: inset(0); transform: none; }
+  92% { clip-path: inset(60% 0 10% 0); transform: translateX(4px); }
+  94% { clip-path: inset(30% 0 40% 0); transform: translateX(-4px); }
+  96% { clip-path: inset(80% 0 5% 0); transform: translateX(2px); }
+  98% { clip-path: inset(0); transform: none; }
+}
+
+.theme-glitch .hero-cursor { display: none; }
+
+.theme-glitch .hero-tagline {
+  animation: none;
+  white-space: normal;
+  overflow: visible;
+  color: var(--text-secondary);
+}
+
+.theme-glitch .nav-prompt { display: none; }
+.theme-glitch .nav-site-title { display: inline; }
+
+.theme-glitch .nav-home {
+  text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+  transition: text-shadow var(--transition-speed);
+}
+
+.theme-glitch .nav-home:hover {
+  text-shadow: 4px 0 #ff00ff, -4px 0 #00ffff, 0 2px #ffff00;
+}
+
+.theme-glitch .nav-link { border-bottom: none; }
+.theme-glitch .nav-link::before { content: none; }
+
+.theme-glitch .nav-link:hover {
+  text-shadow: 1px 0 #ff00ff, -1px 0 #00ffff;
+  animation: glitch-text 0.3s;
+}
+
+.theme-glitch .section-title {
+  border-bottom-color: var(--accent);
+  text-shadow: 1px 0 #ff00ff, -1px 0 #00ffff;
+}
+
+.theme-glitch .section-title::before { content: none; }
+
+.theme-glitch .card {
+  border-color: var(--border);
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.05);
+}
+
+.theme-glitch .card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), 0 0 40px rgba(255, 0, 255, 0.05);
+}
+
+.theme-glitch .story-link {
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.theme-glitch .story-link::before { content: none; }
+
+.theme-glitch .story-link:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 0 0 60px rgba(255, 0, 255, 0.1);
+}
+
+.theme-glitch .story-link h2 {
+  text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+  color: #00ff88;
+}
+
+.theme-glitch .story-label {
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+}
+
+.theme-glitch .story-enter {
+  color: var(--accent);
+  display: block;
+  margin-top: var(--spacing-md);
+}
+
+.theme-glitch .story-title {
+  color: #00ff88;
+  text-shadow: 2px 0 rgba(255, 0, 255, 0.3), -2px 0 rgba(0, 255, 255, 0.3);
+  border-bottom-color: #00ff88;
+}
+
+.theme-glitch .story-section-card { border-color: #00ff88; }
+.theme-glitch .story-section-card:hover { box-shadow: 0 0 20px rgba(0, 255, 136, 0.2); }
+
+.theme-glitch .chapter-label {
+  color: #00ff88;
+  text-shadow: 1px 0 rgba(255, 0, 255, 0.3);
+}
+
+.theme-glitch .chapter-item::before { content: none; }
+
+.theme-glitch .character-card:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+}
+
+.theme-glitch .character-name { color: #00ff88; }
+.theme-glitch .character-name::before { content: none; }
+
+.theme-glitch .character-img { transition: filter var(--transition-speed); }
+.theme-glitch .character-card:hover .character-img { filter: hue-rotate(30deg) saturate(1.5); }
+
+.theme-glitch .character-placeholder {
+  background: linear-gradient(135deg, #14142a, #00ff88);
+  opacity: 0.5;
+}
+
+.theme-glitch .post-item::before { content: none; }
+.theme-glitch .post-item a::after { content: none; }
+.theme-glitch .post-item a { transition: text-shadow 0.1s; }
+.theme-glitch .post-item a:hover { text-shadow: 1px 0 #ff00ff, -1px 0 #00ffff; }
+
+.theme-glitch .article-content pre {
+  border: 1px solid var(--border);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+.theme-glitch a:hover { text-shadow: 1px 0 rgba(255, 0, 255, 0.3); }
+
+.theme-glitch .theme-btn { background: var(--bg-secondary); }
+
+.theme-glitch .theme-btn[data-theme="theme-glitch"] {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.theme-glitch .card-link {
+  border-color: var(--accent);
+  box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+}
+
+.theme-glitch .card-link:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  background: rgba(0, 255, 255, 0.1);
+}
+
+@media (max-width: 640px) {
+  .theme-glitch { --font-size-hero: 2.5rem; }
+}

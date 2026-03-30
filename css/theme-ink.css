@@ -1,0 +1,344 @@
+/* ========================================
+   Ink Theme — Chinese calligraphy / ink wash
+   Activated by html.theme-ink
+   ======================================== */
+
+.theme-ink {
+  --bg-primary: #f5f0e5;
+  --bg-secondary: #ede7d9;
+  --bg-card: #f5f0e5;
+  --text-primary: #2c2c2c;
+  --text-secondary: #4a4a4a;
+  --text-body: #333333;
+  --text-muted: #8a8070;
+  --accent: #b22222;
+  --accent-hover: #cc3333;
+  --border: #d4c9b5;
+  --border-accent: #2c2c2c;
+  --font-display: 'Noto Sans SC', 'Georgia', serif;
+  --font-body: 'Noto Sans SC', 'Georgia', serif;
+  --font-code: 'JetBrains Mono', monospace;
+  --font-size-hero: 3.5rem;
+  --font-size-xl: 2rem;
+  --font-weight-bold: 700;
+  --line-height-body: 2;
+  --letter-spacing-wide: 0.1em;
+  --radius: 0;
+}
+
+/* --- Rice Paper Texture --- */
+.theme-ink body {
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='rice'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23rice)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* --- Navigation --- */
+.theme-ink .site-nav {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.theme-ink .nav-prompt { display: none; }
+.theme-ink .nav-site-title { display: inline; }
+
+.theme-ink .nav-home {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: 0.2em;
+}
+
+.theme-ink .nav-home:hover { color: var(--accent); }
+
+.theme-ink .nav-link {
+  font-family: var(--font-body);
+  text-transform: none;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  border-bottom: none;
+  position: relative;
+}
+
+.theme-ink .nav-link::before { content: none; }
+
+.theme-ink .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.theme-ink .nav-link:hover::after,
+.theme-ink .nav-link.active::after {
+  width: 100%;
+}
+
+.theme-ink .nav-link:hover,
+.theme-ink .nav-link.active {
+  color: var(--text-primary);
+  border-bottom: none;
+}
+
+/* --- Hero --- */
+.theme-ink .hero {
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.theme-ink .hero-ascii { display: none; }
+.theme-ink .hero-text { display: inline; }
+.theme-ink .hero-cursor { display: none; }
+
+.theme-ink .hero-title {
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  color: var(--text-primary);
+}
+
+.theme-ink .hero-tagline {
+  font-style: italic;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  animation: none;
+  white-space: normal;
+  overflow: visible;
+}
+
+/* --- Seal/Stamp Accent --- */
+.theme-ink .section-title {
+  text-align: center;
+  border-bottom: none;
+  position: relative;
+  letter-spacing: 0.15em;
+}
+
+.theme-ink .section-title::before { content: none; }
+
+.theme-ink .section-title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  margin: var(--spacing-sm) auto 0;
+}
+
+/* --- Brush Stroke Dividers --- */
+.theme-ink .post-item {
+  border-bottom: none;
+  padding: var(--spacing-md) 0;
+  position: relative;
+}
+
+.theme-ink .post-item + .post-item {
+  border-top: 1px solid transparent;
+  background-image: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+  background-size: 80% 1px;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding-top: calc(var(--spacing-md) + 4px);
+}
+
+.theme-ink .post-item a {
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.theme-ink .post-item a:hover { color: var(--accent); }
+.theme-ink .post-item a::after { content: none; }
+
+.theme-ink .post-item time {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+}
+
+/* --- Article --- */
+.theme-ink .article-title {
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.theme-ink .article-meta {
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.theme-ink .article-content {
+  line-height: 2;
+}
+
+.theme-ink .article-content > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3rem;
+  line-height: 0.85;
+  padding: 0.05em 0.1em 0 0;
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.theme-ink .article-content blockquote {
+  border-left: 2px solid var(--accent);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.theme-ink .article-content pre {
+  background: #2c2c2c;
+  color: #d4c9b5;
+  border: none;
+}
+
+.theme-ink .article-content a {
+  color: var(--accent);
+}
+
+/* --- Cards --- */
+.theme-ink .card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+}
+
+.theme-ink .card:hover {
+  border-color: var(--accent);
+  transform: none;
+}
+
+.theme-ink .card-title {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.theme-ink .card-link {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.theme-ink .card-link:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* --- Story Feature --- */
+.theme-ink .story-link {
+  border: 1px solid var(--border);
+  text-align: center;
+  padding: var(--spacing-2xl);
+  position: relative;
+}
+
+.theme-ink .story-link::before { content: none; }
+
+.theme-ink .story-link::after {
+  content: '苍绿之眼';
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  font-size: 0.8rem;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 4px 8px;
+  transform: rotate(3deg);
+  opacity: 0.6;
+}
+
+.theme-ink .story-link h2 {
+  font-size: 2.5rem;
+  letter-spacing: 0.3em;
+  color: var(--text-primary);
+}
+
+.theme-ink .story-link:hover { background: var(--bg-secondary); transform: none; }
+.theme-ink .story-link:hover h2 { color: var(--accent); }
+
+.theme-ink .story-label { display: none; }
+.theme-ink .story-enter {
+  color: var(--accent);
+  font-style: italic;
+  display: block;
+  margin-top: var(--spacing-md);
+}
+
+/* --- Story Section --- */
+.theme-ink .story-title {
+  color: var(--text-primary);
+  border-bottom: none;
+}
+
+.theme-ink .story-section-card { border-color: var(--border); }
+.theme-ink .story-section-card:hover { border-color: var(--accent); }
+
+.theme-ink .chapter-label {
+  color: var(--accent);
+  letter-spacing: 0.2em;
+}
+
+.theme-ink .chapter-item::before { content: none; }
+
+/* --- Characters --- */
+.theme-ink .character-card {
+  border: 1px solid var(--border);
+}
+
+.theme-ink .character-card:hover { border-color: var(--accent); }
+
+.theme-ink .character-img {
+  filter: sepia(20%) contrast(0.95);
+  transition: filter 0.3s;
+}
+
+.theme-ink .character-card:hover .character-img { filter: none; }
+
+.theme-ink .character-name {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+}
+
+.theme-ink .character-name::before { content: none; }
+
+.theme-ink .character-placeholder {
+  background: linear-gradient(135deg, #d4c9b5, #f5f0e5);
+  color: var(--accent);
+  font-size: 3rem;
+}
+
+/* --- Theme Switcher --- */
+.theme-ink .theme-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.theme-ink .theme-btn[data-theme="theme-ink"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* --- Footer --- */
+.theme-ink .site-footer {
+  border-top: 1px solid var(--border);
+}
+
+/* --- Links --- */
+.theme-ink a { color: var(--accent); }
+.theme-ink a:hover { color: var(--accent-hover); }
+
+/* --- TOC --- */
+.theme-ink .toc {
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+@media (max-width: 640px) {
+  .theme-ink {
+    --font-size-hero: 2rem;
+    --font-size-xl: 1.5rem;
+  }
+  .theme-ink .story-link h2 { font-size: 1.75rem; letter-spacing: 0.15em; }
+  .theme-ink .story-link::after { display: none; }
+}

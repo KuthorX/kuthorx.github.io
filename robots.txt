@@ -1,3 +1,1 @@
 User-agent: *
-Allow: /
-Sitemap: https://kuthorx.github.io/sitemap.xml

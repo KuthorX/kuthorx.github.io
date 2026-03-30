@@ -1,0 +1,231 @@
+/* ========================================
+   Swiss Theme — International Typographic Style
+   Activated by html.theme-swiss
+   ======================================== */
+
+.theme-swiss {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-card: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-body: #222222;
+  --text-muted: #888888;
+  --accent: #ff0000;
+  --accent-hover: #cc0000;
+  --border: #e0e0e0;
+  --border-accent: #000000;
+  --font-display: 'Helvetica Neue', 'Noto Sans SC', Arial, sans-serif;
+  --font-body: 'Helvetica Neue', 'Noto Sans SC', Arial, sans-serif;
+  --font-size-hero: 6rem;
+  --font-size-xl: 3rem;
+  --font-weight-bold: 900;
+  --line-height-body: 1.6;
+  --letter-spacing-wide: 0.1em;
+  --radius: 0;
+  --shadow: none;
+}
+
+.theme-swiss .hero-title {
+  font-size: var(--font-size-hero);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.theme-swiss .hero-ascii { display: none; }
+.theme-swiss .hero-text { display: inline; }
+.theme-swiss .hero-cursor { display: none; }
+
+.theme-swiss .hero-tagline {
+  font-weight: 300;
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.05em;
+  animation: none;
+  white-space: normal;
+  overflow: visible;
+}
+
+.theme-swiss .nav-prompt { display: none; }
+.theme-swiss .nav-site-title { display: inline; }
+
+.theme-swiss .nav-home {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.theme-swiss .nav-link {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-bottom: 3px solid transparent;
+}
+
+.theme-swiss .nav-link:hover,
+.theme-swiss .nav-link.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.theme-swiss .nav-link::before { content: none; }
+
+.theme-swiss .section-title {
+  font-size: var(--font-size-xl);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 4px solid var(--text-primary);
+}
+
+.theme-swiss .section-title::before { content: none; }
+
+.theme-swiss .post-item {
+  border-bottom: 1px solid var(--border);
+  padding: var(--spacing-md) 0;
+}
+
+.theme-swiss .post-item::before { content: none; }
+
+.theme-swiss .post-item a {
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+}
+
+.theme-swiss .post-item a:hover { color: var(--accent); }
+.theme-swiss .post-item a::after { content: none; }
+
+.theme-swiss .post-item time {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.theme-swiss .card { border: 2px solid var(--text-primary); }
+.theme-swiss .card:hover { border-color: var(--accent); }
+.theme-swiss .card-title { text-transform: uppercase; letter-spacing: 0.05em; }
+
+.theme-swiss .story-link {
+  border: 3px solid var(--text-primary);
+  padding: var(--spacing-2xl);
+}
+
+.theme-swiss .story-link::before { content: none; }
+
+.theme-swiss .story-link h2 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.theme-swiss .story-link:hover { border-color: #00885a; }
+.theme-swiss .story-link:hover h2 { color: #00885a; }
+
+.theme-swiss .story-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+}
+
+.theme-swiss .story-enter {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-top: var(--spacing-lg);
+  display: block;
+}
+
+.theme-swiss .story-title {
+  color: #00885a;
+  border-bottom-color: #00885a;
+}
+
+.theme-swiss .story-section-card { border-color: #00885a; }
+.theme-swiss .story-section-card:hover { border-color: #006644; }
+.theme-swiss .story-section-card .card-title { color: #00885a; }
+
+.theme-swiss .chapter-label {
+  color: #00885a;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+.theme-swiss .chapter-item::before { content: none; }
+
+.theme-swiss .character-card { border: 2px solid var(--text-primary); }
+.theme-swiss .character-card:hover { border-color: #00885a; }
+
+.theme-swiss .character-name {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #00885a;
+}
+
+.theme-swiss .character-name::before { content: none; }
+
+.theme-swiss .character-img {
+  filter: grayscale(80%);
+  transition: filter var(--transition-speed);
+}
+
+.theme-swiss .character-card:hover .character-img { filter: grayscale(0%); }
+
+.theme-swiss .article-title {
+  font-size: 3rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.theme-swiss .article-content pre {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+}
+
+.theme-swiss .article-content blockquote {
+  border-left-color: var(--accent);
+  font-style: normal;
+  font-weight: 300;
+}
+
+.theme-swiss a {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.theme-swiss a:hover { color: var(--accent); }
+
+.theme-swiss .article-content a {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+.theme-swiss .theme-switcher { background: transparent; }
+
+.theme-swiss .theme-btn {
+  background: transparent;
+  border: 2px solid var(--text-primary);
+  color: var(--text-primary);
+}
+
+.theme-swiss .theme-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.theme-swiss .theme-btn[data-theme="theme-swiss"] {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+.theme-swiss .site-footer { border-top: 4px solid var(--text-primary); }
+
+@media (max-width: 640px) {
+  .theme-swiss {
+    --font-size-hero: 3rem;
+    --font-size-xl: 2rem;
+  }
+  .theme-swiss .story-link h2 { font-size: 2rem; }
+}

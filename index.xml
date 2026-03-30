@@ -81,29 +81,29 @@
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;pre tabindex="0">&lt;code class="language-log" data-lang="log">ref: https://zh.wikipedia.org/wiki/%E9%93%9C
-
-铜（英语：Copper），是最早发现的化学元素，化学符号为Cu（源于拉丁语：Cuprum[3]），原子序数为29，原子量为63.546 u。纯铜是柔软的金属，表面刚切开时为红橙色带金属光泽、延展性好、导热性和导电性高，因此在电缆、电气和电子元件是最常用的材料，也可用作建筑材料，以及组成众多种合金，例如用于珠宝的纹银，用于制作船用五金和硬币的白铜以及用于应变片和热电偶的康铜。铜合金机械性能优异，电阻率很低，其中最重要的是青铜和黄铜。此外，铜也是耐用的金属，可以多次回收而无损其机械性能。
-
-铜是在自然界中可以直接使用的金属的其中一种（天然金属），这使得其在公元前8000年时被多个不同地区的人们使用，在数千年之后，铜在公元前5000年成为首个从硫化矿石中冶炼出的金属；在公元前4000年成为第一个在模具中塑形的金属，更在公元前3500年与另一种金属锡锻造成了人类史的第一个合金——青铜[4]。
-
-铜在自然界中经常形成二价的铜盐类，它们使蓝铜矿、孔雀石和绿松石等矿物具有蓝色或绿色，并且在历史上也广泛用作颜料。氧化成铜绿的铜经常被用在建筑物的屋顶上。而有时铜也被用在装饰艺术上，而且不管是元素型态或形成化合物的铜都会被利用。另外，铜化合物用作抑菌剂、杀真菌剂和木材防腐剂。
-
-铜是所有生物所必需的微量膳食矿物质，因为那是呼吸酶复合体-细胞色素c氧化酶（cytochrome c oxidase）的重要组成成分。在软体动物和甲壳类动物中，铜是组成血液色素血蓝蛋白（blood pigment hemocyanin）的成分，而在鱼类或其他脊椎动物中，则被铁血红蛋白复合体给取代。另外，在人体中，铜主要分布在肝脏、肌肉和骨骼中[5]，而一般成人每公斤体重约含有1.4至3.2毫克的铜[6]。
-&lt;/code>&lt;/pre>&lt;h3 id="锌">锌&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ref: https://zh.wikipedia.org/wiki/%E9%93%9C
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">铜（英语：Copper），是最早发现的化学元素，化学符号为Cu（源于拉丁语：Cuprum[3]），原子序数为29，原子量为63.546 u。纯铜是柔软的金属，表面刚切开时为红橙色带金属光泽、延展性好、导热性和导电性高，因此在电缆、电气和电子元件是最常用的材料，也可用作建筑材料，以及组成众多种合金，例如用于珠宝的纹银，用于制作船用五金和硬币的白铜以及用于应变片和热电偶的康铜。铜合金机械性能优异，电阻率很低，其中最重要的是青铜和黄铜。此外，铜也是耐用的金属，可以多次回收而无损其机械性能。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">铜是在自然界中可以直接使用的金属的其中一种（天然金属），这使得其在公元前8000年时被多个不同地区的人们使用，在数千年之后，铜在公元前5000年成为首个从硫化矿石中冶炼出的金属；在公元前4000年成为第一个在模具中塑形的金属，更在公元前3500年与另一种金属锡锻造成了人类史的第一个合金——青铜[4]。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">铜在自然界中经常形成二价的铜盐类，它们使蓝铜矿、孔雀石和绿松石等矿物具有蓝色或绿色，并且在历史上也广泛用作颜料。氧化成铜绿的铜经常被用在建筑物的屋顶上。而有时铜也被用在装饰艺术上，而且不管是元素型态或形成化合物的铜都会被利用。另外，铜化合物用作抑菌剂、杀真菌剂和木材防腐剂。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">铜是所有生物所必需的微量膳食矿物质，因为那是呼吸酶复合体-细胞色素c氧化酶（cytochrome c oxidase）的重要组成成分。在软体动物和甲壳类动物中，铜是组成血液色素血蓝蛋白（blood pigment hemocyanin）的成分，而在鱼类或其他脊椎动物中，则被铁血红蛋白复合体给取代。另外，在人体中，铜主要分布在肝脏、肌肉和骨骼中[5]，而一般成人每公斤体重约含有1.4至3.2毫克的铜[6]。
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="锌">锌&lt;/h3>
 &lt;p>？？？&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-log" data-lang="log">ref: https://zh.wikipedia.org/wiki/%E9%94%8C
-
-锌（英语：Zinc)，是一种化学元素，化学符号为Zn，原子序数为30，原子量为65.38 u，属于过渡金属；锌由于形、色类似铅，故也称为亚铅，古称倭铅、白铅。锌在常温下为硬脆物质，且带有蓝银色光泽。锌为元素周期表第十二族中的第一个元素。在某些方面，锌的化学性质与镁相似：两者皆呈现单一氧化态 (+2)，且Zn2+和Mg2+离子大小相似。锌为地壳中含量第二十四多的元素，有五个稳定的同位素。最常见的含锌矿物为闪锌矿，是锌硫化物。最大可开采的矿脉位于澳洲、亚洲及美国。锌矿物利用泡沫浮选法精炼，并经过焙烧和电解提炼。
-
-*黄铜为依各种比例混合的铜及锌的合金，早在西元三千年前的爱琴海、伊拉克、阿拉伯联合酋长国、卡尔梅克、土库曼斯坦及格鲁吉亚，和西元两千年前的印度西部、乌兹别克斯坦、伊朗、叙利亚、伊拉克及以色列/巴勒斯坦就已经被人们利用[2][3][4]。尽管人们在古代罗马跟希腊时就知道锌金属，但直到十二世纪时才在印度被大规模生产[5]。借由拉贾斯坦邦的矿物我们获得确切的证据，将锌的生产回溯至公元前六世纪[6]。迄今，最古老的纯锌来自拉贾斯坦邦的扎瓦尔，早在西元九世纪时便利用蒸馏法来生产纯锌了[7]。炼金术士在空气中燃烧锌，用来产生氧化锌，他们称之为“白雪”。*
-
-**此元素可能是由炼金术士帕拉塞尔苏斯经德语：Zinke（叉、牙齿之意）所命名。纯金属锌在1746年被德国化学家马格拉夫发现。1800年时，路易吉·伽伐尼和亚历山德罗·伏打揭示了锌的电化学性质。锌最主要的应用为抗腐蚀的铁镀锌（热浸镀锌），在现代工业中对于碳锌电池制造上有不可磨灭的地位，最具代表性之用途为“镀锌铁板”，该技术被广泛用于汽车、电力、电子及建筑等各种产业中。其他应用在电池、小型非结构铸件及合金像是黄铜等。人们在生活中普遍的使用各种锌化合物，例如碳酸锌和葡萄糖酸锌（膳食补充剂）、氯化锌（除臭剂）、吡硫𬭩锌（去屑洗发精）、硫化锌（萤光涂料），及有机实验室的二甲基锌或二乙基锌。**
-
-***锌为必需矿物质，包含产前生长及产后发育[8]。发展中国家约有二十亿的人受到缺锌症的影响，及其连带的疾病[9]。若孩童缺乏锌，将导致生长迟缓、性晚熟、免疫力下降及腹泻[8]。在生物化学中，锌为酶中广泛存在的辅因子，例如人体的醇脱氢酶[10]。***
-
-【食用过量锌可能造成共济失调、精神萎靡和缺铜症。】
-&lt;/code>&lt;/pre>&lt;p>〖我看见了这个世界的真相，你呢？〗&lt;/p></description></item><item><title>[C-6024] Thinny Goat</title><link>https://kuthorx.github.io/posts/story_of_cloak/characters/c-6024/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/story_of_cloak/characters/c-6024/</guid><description>&lt;p>🎵 &lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#thinny">Thinny&lt;/a> Goat&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ref: https://zh.wikipedia.org/wiki/%E9%94%8C
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">锌（英语：Zinc)，是一种化学元素，化学符号为Zn，原子序数为30，原子量为65.38 u，属于过渡金属；锌由于形、色类似铅，故也称为亚铅，古称倭铅、白铅。锌在常温下为硬脆物质，且带有蓝银色光泽。锌为元素周期表第十二族中的第一个元素。在某些方面，锌的化学性质与镁相似：两者皆呈现单一氧化态 (+2)，且Zn2+和Mg2+离子大小相似。锌为地壳中含量第二十四多的元素，有五个稳定的同位素。最常见的含锌矿物为闪锌矿，是锌硫化物。最大可开采的矿脉位于澳洲、亚洲及美国。锌矿物利用泡沫浮选法精炼，并经过焙烧和电解提炼。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">*黄铜为依各种比例混合的铜及锌的合金，早在西元三千年前的爱琴海、伊拉克、阿拉伯联合酋长国、卡尔梅克、土库曼斯坦及格鲁吉亚，和西元两千年前的印度西部、乌兹别克斯坦、伊朗、叙利亚、伊拉克及以色列/巴勒斯坦就已经被人们利用[2][3][4]。尽管人们在古代罗马跟希腊时就知道锌金属，但直到十二世纪时才在印度被大规模生产[5]。借由拉贾斯坦邦的矿物我们获得确切的证据，将锌的生产回溯至公元前六世纪[6]。迄今，最古老的纯锌来自拉贾斯坦邦的扎瓦尔，早在西元九世纪时便利用蒸馏法来生产纯锌了[7]。炼金术士在空气中燃烧锌，用来产生氧化锌，他们称之为“白雪”。*
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">**此元素可能是由炼金术士帕拉塞尔苏斯经德语：Zinke（叉、牙齿之意）所命名。纯金属锌在1746年被德国化学家马格拉夫发现。1800年时，路易吉·伽伐尼和亚历山德罗·伏打揭示了锌的电化学性质。锌最主要的应用为抗腐蚀的铁镀锌（热浸镀锌），在现代工业中对于碳锌电池制造上有不可磨灭的地位，最具代表性之用途为“镀锌铁板”，该技术被广泛用于汽车、电力、电子及建筑等各种产业中。其他应用在电池、小型非结构铸件及合金像是黄铜等。人们在生活中普遍的使用各种锌化合物，例如碳酸锌和葡萄糖酸锌（膳食补充剂）、氯化锌（除臭剂）、吡硫𬭩锌（去屑洗发精）、硫化锌（萤光涂料），及有机实验室的二甲基锌或二乙基锌。**
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">***锌为必需矿物质，包含产前生长及产后发育[8]。发展中国家约有二十亿的人受到缺锌症的影响，及其连带的疾病[9]。若孩童缺乏锌，将导致生长迟缓、性晚熟、免疫力下降及腹泻[8]。在生物化学中，锌为酶中广泛存在的辅因子，例如人体的醇脱氢酶[10]。***
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">【食用过量锌可能造成共济失调、精神萎靡和缺铜症。】
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>〖我看见了这个世界的真相，你呢？〗&lt;/p></description></item><item><title>[C-6024] Thinny Goat</title><link>https://kuthorx.github.io/posts/story_of_cloak/characters/c-6024/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/story_of_cloak/characters/c-6024/</guid><description>&lt;p>🎵 &lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#thinny">Thinny&lt;/a> Goat&lt;/p>
 &lt;p>Thinny Goat&lt;/p>
 &lt;p>Why are you so happy that through the flow&lt;/p>
 &lt;p>Through the flow&lt;/p>
@@ -331,8 +331,8 @@
 &lt;p>但是，但是，还好我们有声音，以及声音在不同时空中的堆叠。&lt;/p>
 &lt;p>这些堆叠，能更进一步地，让每一个，每一个，身处不同生活中的迷宫的人&lt;/p>
 &lt;p>知道&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-log" data-lang="log">没有什么，比当下更珍贵。
-&lt;/code>&lt;/pre>&lt;p>一首 &lt;a href="https://music.163.com/#/song?id=2737151630">《童年》&lt;/a> ，送给你。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">没有什么，比当下更珍贵。
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>一首 &lt;a href="https://music.163.com/#/song?id=2737151630">《童年》&lt;/a> ，送给你。&lt;/p>
 &lt;p>谢 __ 。&lt;/p></description></item><item><title>0x01 - 苍绿之眼 - Breath</title><link>https://kuthorx.github.io/posts/story_of_cloak/chapters/0x01/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/story_of_cloak/chapters/0x01/</guid><description>&lt;p>一件残破不堪的 &lt;a href="https://kuthorx.github.io/story_of_cloak/characters/k-1647/">斗篷&lt;/a> 出现在春天的丛林里。斗篷内的形体飘忽不定。它没有自我。&lt;/p>
 &lt;p>“这里是哪里？”斗篷自问，它还发不出声音。&lt;/p>
 &lt;p>丛林里有很多斗篷从未见过的会动的物体，它对此很感兴趣，不过很多事情它还做不了。&lt;/p>
@@ -497,7 +497,7 @@
 &lt;p>好问题，你会心一笑。&lt;/p>
 &lt;p>“还记得你问过我的问题吗？”&lt;/p>
 &lt;p>【𝕮𝖍𝖆𝖑𝖑𝖊𝖓𝖌𝖊 𝖙𝖔 𝖙𝖍𝖊 𝕽𝖊𝖆𝖉𝖊𝖗】&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp &lt;span style="color:#960050;background-color:#1e0010">&amp;amp;&lt;/span>nbsp ...
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp &lt;span class="err">&amp;amp;&lt;/span>nbsp ...
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>“停，你在说什么东西，还有，思考太累了，先让我歇会。&lt;/p>
 &lt;p>“我是人，我有七情六欲，我要吃个饭，我要享受一下生活。&lt;/p>
 &lt;p>“我还有三个娃要照顾，你跟我也差不多，稍微消停点。”&lt;/p>

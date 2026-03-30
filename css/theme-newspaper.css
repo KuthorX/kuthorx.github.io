@@ -1,0 +1,305 @@
+/* ========================================
+   Newspaper Theme — Broadsheet editorial layout
+   Activated by html.theme-newspaper
+   ======================================== */
+
+.theme-newspaper {
+  --bg-primary: #f5f0e8;
+  --bg-secondary: #ebe6dc;
+  --bg-card: #f5f0e8;
+  --text-primary: #1a1a1a;
+  --text-secondary: #333333;
+  --text-body: #2a2a2a;
+  --text-muted: #777777;
+  --accent: #8b0000;
+  --accent-hover: #a30000;
+  --border: #c4b9a8;
+  --border-accent: #1a1a1a;
+  --font-display: 'Georgia', 'Noto Sans SC', 'Times New Roman', serif;
+  --font-body: 'Georgia', 'Noto Sans SC', 'Times New Roman', serif;
+  --font-code: 'Courier New', monospace;
+  --font-size-hero: 4rem;
+  --font-size-xl: 2.5rem;
+  --font-weight-bold: 700;
+  --line-height-body: 1.7;
+  --letter-spacing-wide: 0.02em;
+  --radius: 0;
+}
+
+/* --- Newspaper Texture --- */
+.theme-newspaper body {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='paper'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='5' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23paper)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* --- Masthead Navigation --- */
+.theme-newspaper .site-nav {
+  background: var(--bg-primary);
+  border-bottom: 3px double #1a1a1a;
+  text-align: center;
+}
+
+.theme-newspaper .nav-inner {
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-sm);
+}
+
+.theme-newspaper .nav-prompt { display: none; }
+.theme-newspaper .nav-site-title { display: inline; }
+
+.theme-newspaper .nav-home {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: var(--spacing-sm);
+}
+
+.theme-newspaper .nav-home:hover { color: var(--accent); }
+
+.theme-newspaper .nav-links {
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+.theme-newspaper .nav-link {
+  font-family: 'Georgia', serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  border-bottom: none;
+}
+
+.theme-newspaper .nav-link:hover,
+.theme-newspaper .nav-link.active {
+  color: var(--accent);
+  border-bottom: none;
+}
+
+.theme-newspaper .nav-link::before { content: none; }
+
+/* --- Hero as Headline --- */
+.theme-newspaper .hero {
+  text-align: center;
+  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: var(--spacing-xl);
+}
+
+.theme-newspaper .hero-ascii { display: none; }
+.theme-newspaper .hero-text { display: inline; }
+.theme-newspaper .hero-cursor { display: none; }
+
+.theme-newspaper .hero-title {
+  font-family: 'Georgia', serif;
+  font-size: var(--font-size-hero);
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.theme-newspaper .hero-tagline {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  animation: none;
+  white-space: normal;
+  overflow: visible;
+  margin-top: var(--spacing-sm);
+}
+
+/* --- Dateline Section Title --- */
+.theme-newspaper .section-title {
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1rem;
+  border-bottom: 1px solid #1a1a1a;
+  position: relative;
+  text-align: center;
+}
+
+.theme-newspaper .section-title::before { content: none; }
+
+.theme-newspaper .section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin: var(--spacing-sm) auto 0;
+}
+
+/* --- Post List as Column --- */
+.theme-newspaper .post-item {
+  border-bottom: 1px solid var(--border);
+  padding: var(--spacing-md) 0;
+}
+
+.theme-newspaper .post-item::before { content: none; }
+.theme-newspaper .post-item a::after { content: none; }
+
+.theme-newspaper .post-item a {
+  font-family: 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.theme-newspaper .post-item a:hover { color: var(--accent); }
+
+.theme-newspaper .post-item time {
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* --- Drop Cap for Articles --- */
+.theme-newspaper .article-content > p:first-of-type::first-letter {
+  float: left;
+  font-family: 'Georgia', serif;
+  font-size: 4rem;
+  line-height: 0.8;
+  padding: 0.05em 0.1em 0 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.theme-newspaper .article-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+.theme-newspaper .article-meta {
+  justify-content: center;
+  font-style: italic;
+}
+
+.theme-newspaper .article-content blockquote {
+  border-left: 3px solid var(--accent);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.theme-newspaper .article-content pre {
+  background: #2a2a2a;
+  color: #e0d8cc;
+  border: none;
+}
+
+.theme-newspaper .article-content a {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* --- Cards --- */
+.theme-newspaper .card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+}
+
+.theme-newspaper .card:hover {
+  border-color: var(--accent);
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.theme-newspaper .card-title {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+}
+
+/* --- Story Feature --- */
+.theme-newspaper .story-link {
+  border: 2px solid #1a1a1a;
+  text-align: center;
+  padding: var(--spacing-2xl);
+}
+
+.theme-newspaper .story-link::before { content: none; }
+
+.theme-newspaper .story-link h2 {
+  font-family: 'Georgia', serif;
+  font-size: 3rem;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.theme-newspaper .story-link:hover { background: var(--bg-secondary); transform: none; }
+.theme-newspaper .story-link:hover h2 { color: var(--accent); }
+
+.theme-newspaper .story-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+
+.theme-newspaper .story-enter {
+  display: block;
+  margin-top: var(--spacing-md);
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* --- Story Section --- */
+.theme-newspaper .story-title { color: var(--accent); border-bottom-color: var(--accent); }
+.theme-newspaper .chapter-label { color: var(--accent); font-style: italic; }
+.theme-newspaper .chapter-item::before { content: none; }
+
+/* --- Characters --- */
+.theme-newspaper .character-card {
+  border: 1px solid var(--border);
+}
+
+.theme-newspaper .character-card:hover { border-color: var(--accent); }
+
+.theme-newspaper .character-img {
+  filter: sepia(30%);
+  transition: filter var(--transition-speed);
+}
+
+.theme-newspaper .character-card:hover .character-img { filter: sepia(0%); }
+.theme-newspaper .character-name { color: #1a1a1a; font-family: 'Georgia', serif; }
+.theme-newspaper .character-name::before { content: none; }
+
+/* --- Theme Switcher --- */
+.theme-newspaper .theme-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.theme-newspaper .theme-btn[data-theme="theme-newspaper"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* --- Footer --- */
+.theme-newspaper .site-footer {
+  border-top: 3px double #1a1a1a;
+}
+
+/* --- Links --- */
+.theme-newspaper a { color: var(--accent); }
+.theme-newspaper a:hover { color: var(--accent-hover); }
+
+@media (max-width: 640px) {
+  .theme-newspaper {
+    --font-size-hero: 2.5rem;
+    --font-size-xl: 1.75rem;
+  }
+  .theme-newspaper .nav-home { font-size: 1.5rem; }
+  .theme-newspaper .story-link h2 { font-size: 2rem; }
+}

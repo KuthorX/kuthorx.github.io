@@ -1,0 +1,187 @@
+/* ========================================
+   Terminal Theme — Green-on-black terminal emulator
+   Activated by html.theme-terminal
+   ======================================== */
+
+.theme-terminal {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-card: #0d0d0d;
+  --text-primary: #00ff41;
+  --text-secondary: #00cc33;
+  --text-body: #b0b0b0;
+  --text-muted: #555555;
+  --accent: #00ff41;
+  --accent-hover: #33ff66;
+  --border: #1a1a1a;
+  --border-accent: #00ff41;
+  --font-display: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  --font-body: 'JetBrains Mono', 'Noto Sans SC', monospace;
+  --radius: 0;
+  --shadow: none;
+}
+
+.theme-terminal body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+}
+
+.theme-terminal .hero-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  background: var(--accent);
+  margin-left: var(--spacing-xs);
+  vertical-align: text-bottom;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.theme-terminal .hero-ascii {
+  display: block;
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.theme-terminal .hero-text {
+  display: none;
+}
+
+.theme-terminal .nav-prompt {
+  display: inline;
+  color: var(--accent);
+}
+
+.theme-terminal .nav-site-title {
+  display: none;
+}
+
+.theme-terminal .nav-link::before {
+  content: 'cd ';
+  color: var(--text-muted);
+}
+
+.theme-terminal .nav-link {
+  border-bottom: none;
+}
+
+.theme-terminal .nav-link:hover,
+.theme-terminal .nav-link.active {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+@media (min-width: 1025px) {
+  .theme-terminal .post-item::before {
+    content: '-rw-r--r--';
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin-right: var(--spacing-sm);
+  }
+}
+
+.theme-terminal .post-item a::after {
+  content: '.md';
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.theme-terminal .card:hover {
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
+}
+
+.theme-terminal .story-link {
+  border: 1px solid var(--accent);
+}
+
+.theme-terminal .story-link::before {
+  content: '> cat /data/story_of_cloak/README.md';
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+.theme-terminal .story-label {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.theme-terminal .story-enter {
+  color: var(--accent);
+  font-size: var(--font-size-sm);
+  display: block;
+  margin-top: var(--spacing-md);
+}
+
+.theme-terminal .chapter-label {
+  font-size: var(--font-size-sm);
+  color: var(--accent);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.theme-terminal .chapter-item::before {
+  content: '[LOG] ';
+  color: var(--accent);
+}
+
+.theme-terminal .chapter-hero-img {
+  border: 1px solid var(--accent);
+  opacity: 0.8;
+}
+
+.theme-terminal .character-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
+}
+
+.theme-terminal .character-name::before {
+  content: '> ';
+  color: var(--accent);
+}
+
+.theme-terminal .article-content pre {
+  border-color: var(--accent);
+  border-left: 3px solid var(--accent);
+}
+
+.theme-terminal .section-title::before {
+  content: '$ ls ';
+  color: var(--text-muted);
+  font-weight: var(--font-weight-normal);
+}
+
+.theme-terminal .theme-btn[data-theme="theme-terminal"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.theme-terminal .hero-tagline {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(30) 0.5s both;
+  max-width: max-content;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
