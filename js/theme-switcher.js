@@ -1,6 +1,6 @@
 (function () {
   var STORAGE_KEY = 'kuthorx-theme';
-  var DEFAULT_THEME = 'theme-terminal';
+  var DEFAULT_THEME = 'theme-newspaper';
 
   var toggle = document.getElementById('theme-toggle');
   var dropdown = document.getElementById('theme-dropdown');

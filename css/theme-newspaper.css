@@ -15,8 +15,8 @@
   --accent-hover: #a30000;
   --border: #c4b9a8;
   --border-accent: #1a1a1a;
-  --font-display: 'Georgia', 'Noto Sans SC', 'Times New Roman', serif;
-  --font-body: 'Georgia', 'Noto Sans SC', 'Times New Roman', serif;
+  --font-display: 'Noto Serif SC', 'Georgia', 'Times New Roman', serif;
+  --font-body: 'Noto Serif SC', 'Georgia', 'Times New Roman', serif;
   --font-code: 'Courier New', monospace;
   --font-size-hero: 4rem;
   --font-size-xl: 2.5rem;

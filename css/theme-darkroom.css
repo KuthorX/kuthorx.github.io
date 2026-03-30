@@ -1,0 +1,163 @@
+/* ========================================
+   Darkroom Theme — Red safelight film processing
+   Activated by html.theme-darkroom
+   ======================================== */
+
+.theme-darkroom {
+  --bg-primary: #0d0808;
+  --bg-secondary: #1a0f0f;
+  --bg-card: #1a0f0f;
+  --text-primary: #cc3333;
+  --text-secondary: #993333;
+  --text-body: #b08888;
+  --text-muted: #664444;
+  --accent: #cc3333;
+  --accent-hover: #ee4444;
+  --border: #2a1515;
+  --border-accent: #cc3333;
+  --font-display: 'Noto Serif SC', 'Georgia', serif;
+  --font-body: 'Noto Serif SC', 'Georgia', serif;
+  --font-code: 'JetBrains Mono', monospace;
+  --font-size-hero: 3rem;
+  --font-size-xl: 2rem;
+  --line-height-body: 1.8;
+  --radius: 0;
+}
+
+/* Film grain overlay */
+.theme-darkroom body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+}
+
+/* Red vignette */
+.theme-darkroom body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 998;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(13, 8, 8, 0.6) 100%);
+}
+
+.theme-darkroom .site-nav {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.theme-darkroom .nav-prompt { display: none; }
+.theme-darkroom .nav-site-title { display: inline; }
+
+.theme-darkroom .nav-home {
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+.theme-darkroom .nav-link {
+  color: var(--text-muted);
+  border-bottom: none;
+}
+
+.theme-darkroom .nav-link::before { content: none; }
+.theme-darkroom .nav-link:hover,
+.theme-darkroom .nav-link.active {
+  color: var(--accent);
+  border-bottom: none;
+}
+
+.theme-darkroom .hero-ascii { display: none; }
+.theme-darkroom .hero-text { display: inline; }
+.theme-darkroom .hero-cursor { display: none; }
+
+.theme-darkroom .hero-title {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.theme-darkroom .hero-tagline {
+  color: var(--text-muted);
+  font-style: italic;
+  animation: none;
+  white-space: normal;
+  overflow: visible;
+}
+
+.theme-darkroom .section-title {
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+}
+
+.theme-darkroom .section-title::before { content: none; }
+
+.theme-darkroom .post-item { border-bottom: 1px solid var(--border); }
+.theme-darkroom .post-item::before { content: none; }
+.theme-darkroom .post-item a::after { content: none; }
+.theme-darkroom .post-item a { color: var(--text-body); }
+.theme-darkroom .post-item a:hover { color: var(--accent); }
+
+/* Developing animation on cards */
+.theme-darkroom .card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  opacity: 0.85;
+  transition: opacity 0.5s, border-color 0.3s;
+}
+
+.theme-darkroom .card:hover {
+  opacity: 1;
+  border-color: var(--accent);
+  transform: none;
+}
+
+.theme-darkroom .story-link {
+  border: 1px solid var(--accent);
+  background: rgba(26, 15, 15, 0.5);
+}
+
+.theme-darkroom .story-link::before { content: none; }
+.theme-darkroom .story-link:hover { background: rgba(204, 51, 51, 0.05); transform: none; }
+.theme-darkroom .story-link h2 { color: var(--accent); }
+
+.theme-darkroom .story-label { color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; font-size: var(--font-size-sm); }
+.theme-darkroom .story-enter { color: var(--accent); display: block; margin-top: var(--spacing-md); }
+
+.theme-darkroom .story-title { color: var(--accent); border-bottom-color: var(--accent); }
+.theme-darkroom .story-section-card { border-color: var(--accent); }
+.theme-darkroom .chapter-label { color: var(--accent); font-style: italic; }
+.theme-darkroom .chapter-item::before { content: none; }
+
+.theme-darkroom .character-card { border: 1px solid var(--border); opacity: 0.85; }
+.theme-darkroom .character-card:hover { opacity: 1; border-color: var(--accent); }
+.theme-darkroom .character-name { color: var(--accent); }
+.theme-darkroom .character-name::before { content: none; }
+.theme-darkroom .character-img { filter: saturate(0.3) brightness(0.8); transition: filter 0.5s; }
+.theme-darkroom .character-card:hover .character-img { filter: saturate(0.5) brightness(1); }
+.theme-darkroom .character-placeholder { background: var(--bg-secondary); color: var(--text-muted); }
+
+.theme-darkroom .article-content pre { background: #0a0505; border: 1px solid var(--border); color: var(--text-body); }
+.theme-darkroom .article-content a { color: var(--accent); }
+.theme-darkroom .article-content blockquote { border-left-color: var(--accent); color: var(--text-muted); }
+
+/* Post hero image with darkroom treatment */
+.theme-darkroom .post-hero-img { filter: saturate(0.4) contrast(1.1); }
+.theme-darkroom .chapter-hero-img { filter: saturate(0.3) brightness(0.8); border: 1px solid var(--accent); }
+
+.theme-darkroom .theme-toggle { background: var(--bg-secondary); }
+.theme-darkroom .theme-dropdown { background: var(--bg-secondary); }
+
+.theme-darkroom .site-footer { border-top: 1px solid var(--border); }
+
+@media (max-width: 640px) {
+  .theme-darkroom { --font-size-hero: 2rem; }
+}

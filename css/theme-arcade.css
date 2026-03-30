@@ -1,0 +1,226 @@
+/* ========================================
+   Arcade Theme — 8-bit pixel retro gaming
+   Activated by html.theme-arcade
+   ======================================== */
+
+.theme-arcade {
+  --bg-primary: #0f0f23;
+  --bg-secondary: #1a1a35;
+  --bg-card: #1a1a35;
+  --text-primary: #ffff00;
+  --text-secondary: #00ff00;
+  --text-body: #ccccff;
+  --text-muted: #6666aa;
+  --accent: #ffff00;
+  --accent-hover: #ffff66;
+  --border: #333366;
+  --border-accent: #ffff00;
+  --font-display: 'Press Start 2P', 'ZCOOL KuaiLe', cursive;
+  --font-body: 'ZCOOL KuaiLe', 'Noto Sans SC', cursive;
+  --font-code: 'Press Start 2P', monospace;
+  --font-size-base: 0.75rem;
+  --font-size-sm: 0.625rem;
+  --font-size-lg: 0.875rem;
+  --font-size-xl: 1.25rem;
+  --font-size-hero: 1.5rem;
+  --line-height-body: 2.2;
+  --letter-spacing-wide: 0.05em;
+  --radius: 0;
+}
+
+/* CRT scanlines */
+.theme-arcade body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+}
+
+/* CRT curvature */
+.theme-arcade body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.theme-arcade .site-nav {
+  background: var(--bg-primary);
+  border-bottom: 2px solid var(--accent);
+}
+
+.theme-arcade .nav-prompt { display: none; }
+.theme-arcade .nav-site-title { display: inline; }
+
+.theme-arcade .nav-home {
+  color: var(--accent);
+  font-size: 0.75rem;
+  text-shadow: 2px 2px 0 #aa8800;
+}
+
+.theme-arcade .nav-link {
+  color: #00ff00;
+  border-bottom: none;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+
+.theme-arcade .nav-link::before { content: none; }
+.theme-arcade .nav-link:hover,
+.theme-arcade .nav-link.active {
+  color: var(--accent);
+  border-bottom: none;
+  text-shadow: 0 0 5px var(--accent);
+}
+
+.theme-arcade .hero-ascii { display: none; }
+.theme-arcade .hero-text { display: inline; }
+.theme-arcade .hero-cursor { display: none; }
+
+.theme-arcade .hero-title {
+  color: var(--accent);
+  text-shadow: 3px 3px 0 #aa8800;
+  text-transform: uppercase;
+}
+
+.theme-arcade .hero-tagline {
+  color: #00ff00;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  animation: none;
+  white-space: normal;
+  overflow: visible;
+}
+
+/* Blinking INSERT COIN */
+.theme-arcade .hero::after {
+  content: 'INSERT COIN';
+  display: block;
+  margin-top: var(--spacing-lg);
+  color: #ff0000;
+  font-size: 0.625rem;
+  animation: blink-text 1s step-end infinite;
+}
+
+@keyframes blink-text {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.theme-arcade .section-title {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  text-shadow: 2px 2px 0 #aa8800;
+}
+
+.theme-arcade .section-title::before { content: none; }
+
+.theme-arcade .post-item { border-bottom: 1px dashed var(--border); }
+.theme-arcade .post-item::before { content: none; }
+.theme-arcade .post-item a::after { content: none; }
+
+.theme-arcade .post-item a {
+  color: #00ff00;
+}
+
+.theme-arcade .post-item a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 5px var(--accent);
+}
+
+.theme-arcade .post-item a::before {
+  content: '> ';
+  color: var(--accent);
+}
+
+.theme-arcade .card {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+}
+
+.theme-arcade .card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.2);
+  transform: none;
+}
+
+.theme-arcade .card-title {
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 0.625rem;
+}
+
+.theme-arcade .story-link {
+  border: 2px solid #ff0000;
+  background: rgba(255, 0, 0, 0.05);
+}
+
+.theme-arcade .story-link::before { content: none; }
+
+.theme-arcade .story-link h2 {
+  color: #ff0000;
+  text-shadow: 2px 2px 0 #880000;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.theme-arcade .story-link:hover {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+  transform: none;
+}
+
+.theme-arcade .story-label { color: var(--accent); text-transform: uppercase; font-size: 0.5rem; }
+.theme-arcade .story-enter { color: #00ff00; display: block; margin-top: var(--spacing-md); font-size: 0.5rem; text-transform: uppercase; }
+
+.theme-arcade .story-title { color: #ff0000; border-bottom-color: #ff0000; text-shadow: 2px 2px 0 #880000; }
+.theme-arcade .story-section-card { border-color: #00ff00; }
+.theme-arcade .story-section-card:hover { box-shadow: 0 0 10px rgba(0, 255, 0, 0.2); }
+.theme-arcade .story-section-card .card-title { color: #00ff00; }
+.theme-arcade .chapter-label { color: #ff0000; text-transform: uppercase; }
+.theme-arcade .chapter-item::before { content: none; }
+
+.theme-arcade .character-card { border: 2px solid var(--border); }
+.theme-arcade .character-card:hover { border-color: #00ff00; box-shadow: 0 0 10px rgba(0, 255, 0, 0.15); }
+.theme-arcade .character-name { color: #00ff00; font-size: 0.625rem; text-transform: uppercase; }
+.theme-arcade .character-name::before { content: none; }
+.theme-arcade .character-img { image-rendering: pixelated; }
+.theme-arcade .character-placeholder { background: #1a1a35; color: var(--accent); font-family: var(--font-display); }
+
+.theme-arcade .article-title { text-transform: uppercase; text-shadow: 2px 2px 0 #aa8800; }
+.theme-arcade .article-content pre { background: #000011; border: 2px solid var(--border); color: #00ff00; }
+.theme-arcade .article-content code { background: #1a1a35; color: #00ff00; }
+.theme-arcade .article-content a { color: #00ff00; }
+.theme-arcade .article-content blockquote { border-left-color: var(--accent); }
+
+.theme-arcade .theme-toggle { background: var(--bg-secondary); border: 2px solid var(--accent); }
+.theme-arcade .theme-dropdown { background: var(--bg-secondary); border: 2px solid var(--accent); }
+.theme-arcade .theme-option-label { font-size: 0.5rem; }
+.theme-arcade .theme-option-desc { font-size: 0.4rem; }
+
+.theme-arcade .site-footer { border-top: 2px solid var(--accent); }
+.theme-arcade .pagination a, .theme-arcade .pagination span { border: 2px solid var(--border); }
+
+@media (max-width: 640px) {
+  .theme-arcade {
+    --font-size-hero: 1rem;
+    --font-size-xl: 0.875rem;
+  }
+}
