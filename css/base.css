@@ -1,21 +1,21 @@
 /* KuthorX archive style. Single visual system, no runtime theme switching. */
 
 :root {
-  --bg-primary: oklch(96% 0.008 112);
-  --bg-secondary: oklch(92% 0.012 112);
-  --bg-card: oklch(98% 0.006 112);
-  --text-primary: oklch(24% 0.026 142);
-  --text-secondary: oklch(34% 0.022 136);
-  --text-body: oklch(31% 0.018 124);
-  --text-muted: oklch(52% 0.018 112);
-  --accent: oklch(42% 0.118 28);
-  --accent-hover: oklch(34% 0.12 28);
-  --accent-soft: oklch(88% 0.026 32);
+  --bg-primary: oklch(96% 0.018 230);
+  --bg-secondary: oklch(92% 0.028 230);
+  --bg-card: oklch(98% 0.01 230);
+  --text-primary: oklch(24% 0.025 245);
+  --text-secondary: oklch(34% 0.022 240);
+  --text-body: oklch(31% 0.018 235);
+  --text-muted: oklch(52% 0.025 230);
+  --accent: oklch(55% 0.11 235);
+  --accent-hover: oklch(45% 0.13 235);
+  --accent-soft: oklch(90% 0.035 230);
   --story-accent: oklch(42% 0.095 152);
   --story-soft: oklch(88% 0.028 152);
-  --border: oklch(78% 0.018 104);
-  --border-strong: oklch(40% 0.02 122);
-  --shadow: 0 16px 36px oklch(32% 0.02 122 / 0.08);
+  --border: oklch(78% 0.03 230);
+  --border-strong: oklch(42% 0.035 235);
+  --shadow: 0 16px 36px oklch(42% 0.04 235 / 0.1);
 
   --font-display: "Noto Serif SC", Georgia, "Times New Roman", serif;
   --font-body: "Noto Serif SC", Georgia, "Times New Roman", serif;
@@ -123,7 +123,7 @@ pre, code {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: oklch(96% 0.008 112 / 0.94);
+  background: oklch(92% 0.028 230 / 0.96);
   border-bottom: 3px double var(--border-strong);
 }
 
@@ -211,7 +211,7 @@ pre, code {
 
 .hero-with-bg {
   max-width: 100%;
-  min-height: 420px;
+  min-height: 520px;
   display: grid;
   align-content: center;
   background-size: cover;
@@ -225,7 +225,7 @@ pre, code {
   position: absolute;
   inset: 0;
   background: var(--bg-primary);
-  opacity: 0.82;
+  opacity: 0.68;
   z-index: 0;
 }
 
@@ -282,6 +282,11 @@ pre, code {
   gap: 0;
 }
 
+.recent-posts {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+}
+
 .post-item {
   display: grid;
   grid-template-columns: 10ch minmax(0, 1fr) auto;
@@ -322,7 +327,7 @@ pre, code {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--spacing-lg);
 }
 
@@ -462,7 +467,7 @@ pre, code {
 }
 
 .section-banner {
-  min-height: 220px;
+  min-height: 340px;
   margin-bottom: var(--spacing-lg);
   background-size: cover;
   background-position: center;
@@ -479,7 +484,7 @@ pre, code {
 .post-hero-img,
 .chapter-hero-img {
   width: 100%;
-  max-height: 460px;
+  max-height: 620px;
   object-fit: cover;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -603,7 +608,10 @@ pre, code {
 }
 
 .article-content img {
-  margin: var(--spacing-md) 0;
+  width: min(920px, calc(100vw - 2rem));
+  max-width: none;
+  margin: var(--spacing-lg) 0 var(--spacing-lg) 50%;
+  transform: translateX(-50%);
   border-radius: var(--radius);
 }
 
