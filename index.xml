@@ -1,0 +1,1538 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>KuthorX Blog II</title><link>https://kuthorx.github.io/</link><description>Recent content on KuthorX Blog II</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Wed, 30 Sep 2026 00:00:03 +0800</lastBuildDate><atom:link href="https://kuthorx.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>0xB0 - 凯特琳·沃尔的最后一案</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xb0/</link><pubDate>Wed, 30 Sep 2026 00:00:03 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xb0/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">终局&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>陪凯特办完她的最后一个案子：找到苍绿之眼。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>你自己。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>你走过的所有路。一张七岁小孩的画。一台能转动颜色的仪器。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>死象里的酒馆。&lt;/p>
+&lt;p>雨还在下。暗红色的，永远不会停的那种。&lt;/p>
+&lt;p>所有人都到齐了。&lt;/p>
+&lt;p>耳鱼在吧台后面擦杯子。阿猫坐在高脚椅上，腰间只剩两把刀。斗篷缩在沙发的纱网里。那张沙发 —— 在脑子里被叫作宗师，在饭店里被叫作神秀 —— 在哼歌，偶尔假装自己只是一张沙发。商徵和陆羽坐在窗边。一个穿燕尾服的绅士在调他的蓝牙音响。方立在啃一个面包，看起来还没完全睡醒。“苏格拉底”抱着三个空的小黑盒。&lt;/p>
+&lt;p>凯特站在酒馆中间。&lt;/p>
+&lt;p>“我父亲说过，” 她说，“排除了其他的可能，剩下的那一个，就一定是真的。”&lt;/p>
+&lt;p>她看向耳鱼：“你的眼睛是苍绿色的。”&lt;/p>
+&lt;p>“只是颜色而已。” 耳鱼说，“我不是你要找的东西。”&lt;/p>
+&lt;p>她看向斗篷。斗篷的眼睛也是苍绿色的。&lt;/p>
+&lt;p>【我只是记录。】斗篷说，【记录的东西，不会看。】&lt;/p>
+&lt;p>她看向阿猫。&lt;/p>
+&lt;p>“我看不见绿色。” 阿猫说，“你知道的，女儿。”&lt;/p>
+&lt;p>凯特没有纠正她。&lt;/p>
+&lt;p>“都不是。” 凯特说。&lt;/p>
+&lt;p>她从口袋里拿出一张折起来的纸，摊开在吧台上。&lt;/p>
+&lt;p>一张蜡笔画。太阳、云、草地、一个火柴人。一大片绿色的天空。&lt;/p>
+&lt;p>&lt;em>凯特，7 岁，给爸爸。&lt;/em>&lt;/p>
+&lt;p>“小时候，所有人都说我把天空画错了颜色。” 凯特说，“只有我爸爸说，没画错。他说，是有人在看。”&lt;/p>
+&lt;p>她把画推到你面前。&lt;/p>
+&lt;p>对，&lt;strong>你&lt;/strong>。&lt;/p>
+&lt;div class="cloak-hue" data-src="https://kuthorx.github.io/images/story_of_cloak/hue_sky.webp" data-band="24" data-alt="一张蜡笔画：绿色的天空、太阳、云和一个火柴人">&lt;/div>
+&lt;form class="full-moon-answer" data-answer-key="end_word" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">HUE / SKY&lt;/span>
+ &lt;label class="full-moon-answer__label" for="end_word_input">天空里藏着一个词。它是什么？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="end_word_input" class="full-moon-answer__input" type="text" placeholder="一个英文词" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="end_word" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>和「解答」那一章一样，转动色相滑块。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>这次藏字的颜色，就是天空本来的颜色：苍绿色。它比纯绿色更偏蓝一点。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>滑块在 160° 左右。这个词，你在序章里见过：“欢迎来到 _______ 的世界。”&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="end_word_wrong_answer" hidden>
+&lt;p>凯特看着你，等你再看一次。&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="end_word_correct_answer" hidden>
+&lt;p>&lt;strong>Grenyes。&lt;/strong>&lt;/p>
+&lt;p>“这是我爸爸最后留下的词。” 凯特说，“我找了很多年，一直不知道它是什么。”&lt;/p>
+&lt;p>【它是一个地方。】斗篷说。&lt;/p></description></item><item><title>0xA1_5 - 世界线</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa1_5/</link><pubDate>Wed, 30 Sep 2026 00:00:02 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa1_5/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 世界线&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>校准世界线偏差仪，让方立回到原来的世界。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>方立，研究员 —— 至少现在还是。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>这个博客里两篇更早的文章：&lt;a href="https://kuthorx.github.io/posts/thinking-talking/i-come-back-i-will-start-soon/">《“我”回来了，但“我”很快又会重新出发》&lt;/a>和&lt;a href="https://kuthorx.github.io/posts/20200721/">《博客版本 II 来了》&lt;/a>。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>三个盒子都找到了。&lt;/p>
+&lt;p>那天晚上，你在宿舍里刚躺下，脑子里的声音就回来了。&lt;/p>
+&lt;p>【坐标修好了。】斗篷说，【你可以回去了。】&lt;/p>
+&lt;p>〖恭喜恭喜！虽然有点舍不得……〗&lt;/p>
+&lt;p>“回去？回 2025 年？”&lt;/p>
+&lt;p>【回你原来的世界。但投射之前，要先校准一台仪器。它在实验室。】&lt;/p>
+&lt;p>第二天，你一个人去了实验室。&lt;/p>
+&lt;p>仪器很旧，像一台老收音机，正面有一块圆形的表盘，指针在红色区域里乱晃。表盘下面刻着一行字，缺了几个字：&lt;/p>
+&lt;p style="text-align:center;">&lt;strong>世界线的偏差还在 ____ 的范围内&lt;/strong>&lt;/p>
+&lt;p>〖只要指针回到绿色区域，就能出发啦。〗&lt;/p>
+&lt;p>【这句话，是另一个世界的一个人写的。他写下它的时候，也在准备重新出发。】&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="line_observe" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">WORLDLINE / GAUGE&lt;/span>
+ &lt;label class="full-moon-answer__label" for="line_observe_input">世界线的偏差还在什么的范围内？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="line_observe_input" class="full-moon-answer__input" type="text" placeholder="三个字" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="line_observe" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>线索里的第一篇文章：《“我”回来了，但“我”很快又会重新出发》。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>在文章里找“世界线”三个字。那句话是斜体的。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>意思是“还能看得见、测得到”。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="line_observe_wrong_answer" hidden>
+&lt;p>指针在红色区域里抖得更厉害了。&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="line_observe_correct_answer" hidden>
+&lt;p>指针慢慢滑回了绿色区域。&lt;/p>
+&lt;p>“前辈？” 凯特推门进来，“你一大早在这里干什么？”&lt;/p>
+&lt;p>你没有瞒她。&lt;/p>
+&lt;p>凯特听完，沉默了一会儿。&lt;/p>
+&lt;p>“所以，你本来就不是方立。”&lt;/p>
+&lt;p>“……嗯。”&lt;/p>
+&lt;p>“我知道。” 她说，“从你第一天问‘小黑盒是什么’的时候就知道了。”&lt;/p>
+&lt;p>她走到仪器旁边，看了看表盘：“还差什么？”&lt;/p>
+&lt;p>【还差一句确认口令。】斗篷说，【另一个世界的那个人，在搭好一个新地方的时候，留下了最后一句话。】&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="line_blog" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">WORLDLINE / PASSPHRASE&lt;/span>
+ &lt;label class="full-moon-answer__label" for="line_blog_input">“先这样吧，等一个 ____ 。”&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="line_blog_input" class="full-moon-answer__input" type="text" placeholder="三个字" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="line_blog" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>线索里的第二篇文章：《博客版本 II 来了》。&lt;/p></description></item><item><title>0xA1_4 - 漂浮</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa1_4/</link><pubDate>Wed, 30 Sep 2026 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa1_4/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 漂浮&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>打开漂在湖面上的第三个盒子。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>方立，研究员。凯特还在你身边。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>平板上的另一篇博客。有一个字写错了 —— 它在等你把它改好。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>第三个盒子不在实验室里。&lt;/p>
+&lt;p>凯特带你走进一间全是屏幕的房间。屏幕上是一片湖。湖面很平，平得不像真的。&lt;/p>
+&lt;p>湖中间漂着一个透明的大球。&lt;/p>
+&lt;p>“那就是盒子。” 凯特说。&lt;/p>
+&lt;p>“那是个……球？”&lt;/p>
+&lt;p>“水上漂球。小孩子钻进去，在水面上滚的那种。” 凯特指了指球上的一条拉链，“拉链是锁着的。”&lt;/p>
+&lt;p>【这个世界的盒子，不一定都长得像盒子。】斗篷说。&lt;/p>
+&lt;p>〖这个好可爱！我想进去滚！〗&lt;/p>
+&lt;p>凯特把平板递给你。平板上是
+
+&lt;a href="https://kuthorx.github.io/posts/misc/water_walking_ball/">一篇博客&lt;/a>
+。&lt;/p>
+&lt;p>“这次要开的锁，叫作‘安静’。” 她说，“先读，读完你就知道了。”&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="ball_sky" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">BALL / LOCK 1&lt;/span>
+ &lt;label class="full-moon-answer__label" for="ball_sky_input">球里的孩子躺下后，抬头看着午后的什么？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="ball_sky_input" class="full-moon-answer__input" type="text" placeholder="两个字" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="ball_sky" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>那篇博客的第三段，写的是拉链拉上以后的事。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>那一段里有一个词在微微发抖。点一下，它会变回原本想写的词。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>原文写成了“填空”，其实想写的是它的同音词：有白云、有阳光的地方。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="ball_sky_wrong_answer" hidden>
+&lt;p>拉链纹丝不动。&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="ball_sky_correct_answer" hidden>
+&lt;p>拉链松动了一格。&lt;/p>
+&lt;p>“还差一步。” 凯特说，“读下去。那个人后来发现了一个让耳朵变安静的办法。”&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="ball_quiet" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">BALL / LOCK 2&lt;/span>
+ &lt;label class="full-moon-answer__label" for="ball_quiet_input">要让耳朵瞬间清净：先一直开着什么，再突然关掉？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="ball_quiet_input" class="full-moon-answer__input" type="text" placeholder="一种声音" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="ball_quiet" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>还是那篇博客，往后读几段。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>找“声场差异”那一段。作者说他偶然间遇到过一件事。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>三个字，一种常用来助眠的声音，第一个字是“白”。&lt;/p></description></item><item><title>0xA1_3 - 译码</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa1_3/</link><pubDate>Tue, 29 Sep 2026 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa1_3/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>读出黑匣子里的东西。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>方立，研究员。黑匣子已经打印好了。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>一首歌的 MV。需要暂停、拖动进度条，甚至逐帧看 —— 视频下面有逐帧按钮。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>你吃完饭回到实验室的时候，3D 打印机已经停了。&lt;/p>
+&lt;p>托盘上放着的，不是一个黑匣子，而是两个。一个橙色，一个灰色。&lt;/p>
+&lt;p>“……买一送一？”&lt;/p>
+&lt;p>“黑匣子本来就是两个。” 凯特把它们并排摆好，“橙色的是 &lt;strong>飞行数据记录器&lt;/strong> ，记数据。灰色的是 &lt;strong>舱音记录器&lt;/strong> ，记声音。”&lt;/p>
+&lt;p>【这一点，两个世界是一样的。】斗篷说。&lt;/p>
+&lt;p>凯特把橙色的盒子接上平板。平板上出现了一首歌的 MV。&lt;/p>
+&lt;div class="cloak-video" data-fps="30">
+&lt;video src="https://kuthorx.github.io/video/swing_beat_mv_480p.mp4" controls preload="metadata" playsinline aria-label="《摇摆节拍》MV（词：十米；曲、编曲、调校、混音：七点半；演唱：Ace Studio 洛天依 &amp; 乐正绫；视频：Claude Opus 5.5）">&lt;/video>
+&lt;/div>
+&lt;p>“又是另一个世界的东西？”&lt;/p>
+&lt;p>“数据记录器在这个世界只记一种数据。” 凯特敲了敲橙色的盒子，“时间。视频里所有的钟，会在同一个时刻停下来。很短，眨一下眼就错过了。”&lt;/p>
+&lt;p>你看着屏幕上转个不停的钟，眼睛开始发酸。&lt;/p>
+&lt;p>〖一帧一帧看吧，没人会笑你的。〗情绪说。&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="fdr_time" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">FDR / TIME&lt;/span>
+ &lt;label class="full-moon-answer__label" for="fdr_time_input">所有的钟停在了几点几分？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="fdr_time_input" class="full-moon-answer__input" type="text" placeholder="例如 1:23" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+ &lt;p class="full-moon-answer__hint">格式：小时:分钟，例如 1:23。&lt;/p>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="fdr_time" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>钟停下的时候，所有钟的指针都指向同一个时间，前后几帧里指针都在乱转。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>钟最多的地方有三处：唱“胡思又乱想”时床边的钟、唱“匆匆忙忙”时树上挂着的钟、下雨的钟楼城市。暂停后用视频下方的“− 1 帧 / + 1 帧”按钮慢慢找，或者打开 0.25× 慢放。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>大约在 0:39 附近。黑色短粗的时针在 2 和 3 之间，红色细长的分针指向 43 分。&lt;/p></description></item><item><title>0xA1_2 - 月圆</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa1_2/</link><pubDate>Sun, 27 Sep 2026 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa1_2/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>找到博客《月圆》的倒数第二句话，输入到仪器里，打印出黑匣子。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>方立，研究员。凯特是你带的实习生。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>《月圆》是这个博客里一篇真实的文章。点开它，读它，也试着 &lt;strong>点&lt;/strong> 它。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>凯特带你走进一间实验室。&lt;/p>
+&lt;p>【先说明一件事。】斗篷的声音响起，【你现在所在的 2014 年，和你记得的那个不一样，连一些科学原理都不一样。】&lt;/p>
+&lt;p>【比如找黑匣子。在你的世界，要去现场搜寻；在这个世界，“现场”是一篇 &lt;strong>网页&lt;/strong> 。】&lt;/p>
+&lt;p>〖听起来就很离谱对吧！〗情绪抢着说。&lt;/p>
+&lt;p>“前辈，你还记得这些仪器怎么用吧？” 凯特问。&lt;/p>
+&lt;p>实验台上有三样东西：一台平板、一套键盘和屏幕、一台 3D 打印机。&lt;/p>
+&lt;p>平板上显示着
+
+&lt;a href="https://kuthorx.github.io/posts/misc/full_moon">一篇博客&lt;/a>
+。&lt;/p>
+&lt;p>“……这不就是个平板吗？”&lt;/p>
+&lt;p>“看来你是真不记得了。” 凯特叹了口气，“听好：黑匣子就藏在这篇博客里。&lt;strong>我们要找到它的倒数第二句话&lt;/strong>，在键盘上输入，打印机就会把黑匣子打印出来。”&lt;/p>
+&lt;p>“为什么是倒数第二句？”&lt;/p>
+&lt;p>“因为最后一句是写给读者的。” 凯特说得理所当然，“倒数第二句，才是写给那个人的。”&lt;/p>
+&lt;p>你决定不再追问。&lt;/p>
+&lt;p>【提示一下：这篇博客一开始是不完整的。结尾藏着，要先把文章“修好”。】&lt;/p>
+&lt;form class="full-moon-answer" id="full_moon_last_word_form" data-answer-key="full_moon_last_word" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">BLACK BOX / INPUT&lt;/span>
+ &lt;label class="full-moon-answer__label" for="full_moon_last_word_input">输入《月圆》的倒数第二句话&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="full_moon_last_word_input" class="full-moon-answer__input" type="text" placeholder="请输入《月圆》的倒数第二句话" autocomplete="off" aria-describedby="full_moon_last_word_hint" enterkeyhint="done" />
+ &lt;button id="full_moon_last_word_confirm_btn" class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+ &lt;p class="full-moon-answer__hint" id="full_moon_last_word_hint">请完整输入句子，标点可以省略。&lt;/p>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="full_moon_last_word" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>《月圆》的结尾一开始是看不见的。文章里有些东西在“等你动手”。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>文章里有几句话在微微发抖，点一下就会被改好；那张芝士牛肉卷的图片也可以点，一直点到吃完为止。全部改好、吃完以后，结尾就会出现。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>结尾最后一句是“感谢你的游玩，我们下次再会”。它前面那一句，以“还好在众多”开头。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="full_moon_last_word_wrong_answer" hidden>
+&lt;p>平板发出一声不太友好的提示音。&lt;/p>
+&lt;p>“没事，这个系统没有登录保护，随便试。” 凯特说。&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="full_moon_last_word_correct_answer" hidden>
+&lt;p>平板发出一声轻快的提示音。&lt;/p>
+&lt;p>3D 打印机轰隆隆地启动了。&lt;/p>
+&lt;p>“不愧是前辈！” 凯特笑了，“打印大概要一个小时。走，先去吃饭。”&lt;/p>
+&lt;p>〖吃饭！〗&lt;/p>
+&lt;p>【……你们两个倒是挺合得来。】&lt;/p>
+&lt;p>
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0xa1_3/">下一章：0xA1_3 译码 →&lt;/a>
+&lt;/p>
+&lt;/div></description></item><item><title>月圆</title><link>https://kuthorx.github.io/posts/misc/full_moon/</link><pubDate>Fri, 25 Sep 2026 22:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/misc/full_moon/</guid><description>Full Moon</description></item><item><title>水上漂球</title><link>https://kuthorx.github.io/posts/misc/water_walking_ball/</link><pubDate>Fri, 28 Aug 2026 23:45:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/misc/water_walking_ball/</guid><description>Water Walking Ball</description></item><item><title>2025/11/12</title><link>https://kuthorx.github.io/posts/misc/20251112/</link><pubDate>Wed, 12 Nov 2025 23:45:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/misc/20251112/</guid><description>近况</description></item><item><title>0x07 - 死象</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0x07/</link><pubDate>Sat, 30 Aug 2025 00:00:07 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0x07/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 死象&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>听火爪讲完她第一次见到耳鱼的事。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>这一章里，“我”是火爪。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>角色卡：&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/a-4597/">耳鱼&lt;/a>、&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/d-xxxx/">死象&lt;/a>。如果你走过「黑匣子」那条路，你会认出一句话。主题曲：&lt;a href="https://music.163.com/song?id=2735001701">在网易云音乐收听&lt;/a>。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;h2 id="一">一&lt;/h2>
+&lt;p>酒馆在雨里升起来的时候，我想起了第一次见到耳鱼的那天。&lt;/p>
+&lt;p>那天也在下雨。&lt;/p>
+&lt;p>那个地方叫
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/d-xxxx/">死象&lt;/a>
+。一头老象临死前被苍绿之眼看了一眼，它的身体就变成了一个地方。那里的雨是暗红色的，闻起来有腥味，而且永远不会停。远处是一片红海。&lt;/p>
+&lt;p>我是去找东西的。&lt;/p>
+&lt;p>我在找苍绿之眼。可我是一只猫，猫是红绿色盲。我这辈子都没见过绿色。&lt;/p>
+&lt;p>“你在这里做什么？” 一头很大的熊站在雨里，问我。&lt;/p>
+&lt;p>“找苍绿之眼。”&lt;/p>
+&lt;p>“你看不见绿色，不可能找到绿色的东西。”&lt;/p>
+&lt;p>“……我别无选择。” 我说，“我的 Husburd 不见了。我的女儿，我也找不到了。家里还有三个孩子，寄放在我姐姐那里。”&lt;/p>
+&lt;p>熊的眼睛是苍绿色的。我看不见，但我知道 —— 很多人都这么说。&lt;/p>
+&lt;p>他没有马上回答我。雨水顺着他那只破了的耳朵流下来，流进身上的伤疤里。&lt;/p>
+&lt;p>我忽然发现一件事：他在说话的时候，鼻子一动也不动。&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="elephant_breath" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">DEAD ELEPHANT / BREATH&lt;/span>
+ &lt;label class="full-moon-answer__label" for="elephant_breath_input">这头熊是用什么呼吸的？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="elephant_breath_input" class="full-moon-answer__input" type="text" placeholder="身体的一个部位" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="elephant_breath" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>这头熊就是耳鱼。他有自己的角色卡。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>耳鱼角色卡里有一节叫“听觉与呼吸系统”。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>他的名字里就有这个部位。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="elephant_breath_wrong_answer" hidden>
+&lt;p>熊看了我一眼，没有说话。&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="elephant_breath_correct_answer" hidden>
+&lt;p>“你在用耳朵呼吸吗？”&lt;/p>
+&lt;p>“是的。” 他说，“你发现了。”&lt;/p>
+&lt;p>“你就是耳鱼。”&lt;/p>
+&lt;p>“见笑了。”&lt;/p>
+&lt;p>我打听过他。据说他能穿越时空，却改变不了已经被写下来的事实。&lt;/p>
+&lt;p>“这里的雨，什么时候停？” 我问。&lt;/p>
+&lt;p>/ 有时候，人问一个答案很明显的问题 /&lt;/p>
+&lt;p>/ 不是为了答案，只是想找个人说说话 /&lt;/p>
+&lt;p>“我不知道。” 耳鱼说，“我活了很久，从来没想过这个问题。”&lt;/p>
+&lt;h2 id="二">二&lt;/h2>
+&lt;p>我从胸口拿出一把匕首，按下刀柄的末端。&lt;/p>
+&lt;p>它叫【断】【斩】。离开我的时候，刀身会从柄里抽出来，长短取决于我有多想念。它此刻抽得很长。&lt;/p>
+&lt;p>“斩断死象，不代表死亡就不存在了。” 耳鱼看着越来越近的红海，“你斩不断的。”&lt;/p></description></item><item><title>0x04 - 酒馆</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0x04/</link><pubDate>Sat, 30 Aug 2025 00:00:04 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0x04/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 酒馆&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>陪斗篷在酒馆里度过第一个晚上。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>旁观者。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>角色卡里的&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/s-6458/">火爪&lt;/a>；以及小说&lt;a href="https://kuthorx.github.io/posts/fiction/one-50000th/">《五万分之一》&lt;/a>的结尾。主题曲：&lt;a href="https://music.163.com/song?id=2735001703">在网易云音乐收听&lt;/a>。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>学会移动以后，斗篷穿过丛林，遇到的第一个地方是一间安静的酒馆。&lt;/p>
+&lt;p>酒馆老板是一头熊。他有一只受过伤的耳朵，另一只耳朵的形状像鱼鳃。他的眼睛是苍绿色的。&lt;/p>
+&lt;p>“这是你的过去吗？” 熊看着墙上的一幅画。画的是丛林、雨、泥水坑。&lt;/p>
+&lt;p>“只是一部分。” 斗篷已经学会了说话，“画是一个朋友帮我画的。”&lt;/p>
+&lt;p>熊摊开熊掌，给斗篷看几枚闪闪发光的扁平东西：“和你的眼睛很像，苍绿色。我们管它叫钱。绿色的，也叫绿币。”&lt;/p>
+&lt;p>“&lt;u>&lt;strong>绿币&lt;/strong>&lt;/u>。”&lt;/p>
+&lt;p>“……你不用重复我说的话。”&lt;/p>
+&lt;p>“……好的。”&lt;/p>
+&lt;p>门铃响了。进来的是一只小猫，腰上挂着三把刀。&lt;/p>
+&lt;p>“好久不见，
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/s-6458/">火爪&lt;/a>
+。” 熊说。&lt;/p>
+&lt;p>“叫我阿猫就行。火爪这个名字，我不太喜欢。” 小猫跳上高脚椅，“我还是得叫你鱼？”&lt;/p>
+&lt;p>“现在得这么叫。” 熊 —— 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/a-4597/">耳鱼&lt;/a>
+ —— 给她倒了一杯葡萄酒。&lt;/p>
+&lt;p>阿猫看了一眼斗篷：“新朋友？你叫什么？”&lt;/p>
+&lt;p>“&lt;u>&lt;strong>叫什么&lt;/strong>&lt;/u>。”&lt;/p>
+&lt;p>“？这家伙怎么回事？”&lt;/p>
+&lt;p>“它只会重复一句话最后的那个词。” 耳鱼说，“它还是一张白纸。”&lt;/p>
+&lt;p>“白纸？” 阿猫眯起眼，“我活了八十年，没见过这样的东西。”&lt;/p>
+&lt;p>她发出一声低吼。声音从那么小的身体里出来，却低沉得像是整个酒馆都在共振。斗篷的身体跟着颤了一下。&lt;/p>
+&lt;p>“控制一下你的能力，火爪。”&lt;/p>
+&lt;p>“呿。” 阿猫放下酒杯，“那简单，让它 &lt;em>动&lt;/em> 一下就知道了。”&lt;/p>
+&lt;p>她从腰间抽出一把银色的刀，刺进了酒馆的地板。&lt;/p>
+&lt;p>斗篷瞪大了眼睛。&lt;/p>
+&lt;p>刀没有动。&lt;/p>
+&lt;p>可是斗篷觉得自己在动。&lt;/p>
+&lt;p>不对 —— 斗篷想 —— 动的不是我。&lt;/p>
+&lt;p style="text-align:center;">&lt;strong>动的应该是 __ __ 。&lt;/strong>&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="tavern_move" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">SHAKE THE EARTH&lt;/span>
+ &lt;label class="full-moon-answer__label" for="tavern_move_input">刀没动，斗篷也没动。那么动的是什么？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="tavern_move_input" class="full-moon-answer__input" type="text" placeholder="两个字" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="tavern_move" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>这把银色的刀叫【撼地】。它的功能写在火爪的角色卡里。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>【撼地】能让“无生命的物体”移动。这里，什么东西是无生命的，又大到能让斗篷觉得“自己在动”？&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>他们此刻所在的那个地方。&lt;/p></description></item><item><title>0x03 - 看见</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0x03/</link><pubDate>Sat, 30 Aug 2025 00:00:03 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0x03/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 一百年 3/3&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>帮斗篷认出它看见的第一个符号。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>旁观者。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>&lt;a href="https://kuthorx.github.io/posts/fiction/two-100000ths/">《十万分之二》&lt;/a>里，有些字被换成了奇怪的编号。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>几千年过去了。&lt;/p>
+&lt;p>丛林越长越高，绿色爬过了斗篷的身体，一直伸向蓝白色的天空。&lt;/p>
+&lt;p>斗篷睁开眼睛的那一刻，下起了大雨。&lt;/p>
+&lt;p>它低下头，在泥泞的水坑里看见了自己。水面上浮着一个它还不认识的符号，看起来像这样：&lt;/p>
+&lt;p style="text-align:center;font-size:2em;font-family:monospace;">\x1e&lt;/p>
+&lt;p>在斗篷学会任何词语之前，这个符号就已经刻进了它永远不会丢失的记忆里。&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="cloak_see" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">K-1647 / SYMBOL&lt;/span>
+ &lt;label class="full-moon-answer__label" for="cloak_see_input">\x1e 代表哪个字？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="cloak_see_input" class="full-moon-answer__input" type="text" placeholder="一个字" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="cloak_see" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>《十万分之二》的第五章里，有几段话的某些字被换成了 &lt;code>\x..&lt;/code> 这样的编号。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>找到带 &lt;code>\x1e&lt;/code> 的那句话，读一读，缺的是哪个字就很明显了。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>那句话是：“我&lt;code>\x1e&lt;/code>法和人类有下一代”。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="cloak_see_wrong_answer" hidden>
+&lt;p>水面晃了晃，符号没有变。&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="cloak_see_correct_answer" hidden>
+&lt;p>无。&lt;/p>
+&lt;p>斗篷认出的第一个符号，是“无”。&lt;/p>
+&lt;p>它抬起头。一个毛茸茸的圆块飞快地爬上树，把一个小一点的圆块放进一个圆形的黑洞里。&lt;/p>
+&lt;p>松鼠、四肢、食物、树洞 —— 在斗篷学会这些词语之前，它们的 &lt;u>&lt;strong>符号&lt;/strong>&lt;/u> 就已经留在了它的眼睛里。&lt;/p>
+&lt;p>斗篷学会了呼吸、倾听和看见。它决定离开丛林，去找第一个能说话的地方。&lt;/p>
+&lt;blockquote>
+&lt;p>案卷 04「一百年」完。
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x04/">下一章：0x04 酒馆 →&lt;/a>
+&lt;/p>&lt;/blockquote>
+&lt;/div></description></item><item><title>0x02 - 听见</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0x02/</link><pubDate>Sat, 30 Aug 2025 00:00:02 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0x02/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 一百年 2/3&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>帮斗篷学会倾听。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>旁观者。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>还是&lt;a href="https://kuthorx.github.io/posts/fiction/two-100000ths/">《十万分之二》&lt;/a>。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>在看见之前，斗篷先学会了听。&lt;/p>
+&lt;p>一开始，它只能听见自己的呼吸。两次呼吸隔得越远，它就能听见越猛烈的震动。偶尔，这些震动会和别的生命一起共振。&lt;/p>
+&lt;p>斗篷看不见那些生命是什么，只能记住它们的声音：急促的、舒缓的、干燥的、粘稠的。&lt;/p>
+&lt;p>有一天，斗篷想：与其一个一个地听，不如让很多声音同时在自己身体里说话。&lt;/p>
+&lt;p>它试着打开一个，又一个。&lt;/p>
+&lt;p>它想知道：自己最多能同时容纳多少个声音？&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="cloak_hear" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">K-1647 / MODULES&lt;/span>
+ &lt;label class="full-moon-answer__label" for="cloak_hear_input">K-1647 最多有多少个模块可以同时通信？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="cloak_hear_input" class="full-moon-answer__input" type="text" placeholder="一个数字" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="cloak_hear" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>K-1647 脑子里的声音，在小说里叫作“模块”。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>在《十万分之二》里找“模块已确认可以同时通信”这句话。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>一个两位数。有人说，它是生命、宇宙以及一切的答案。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="cloak_hear_wrong_answer" hidden>
+&lt;p>太多了，或者太少了。斗篷身体里的声音乱成一团。&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="cloak_hear_correct_answer" hidden>
+&lt;p>四十二个声音，同时安静下来，又同时响起。&lt;/p>
+&lt;p>直到大地剧烈地颤动、盖过了一切，斗篷才集齐了 &lt;u>&lt;strong>两千种声音&lt;/strong>&lt;/u> 。那些它没来得及听见的，就永远留在了过去。&lt;/p>
+&lt;details class="cloak-archive">
+&lt;summary>来信 · Ω-9 Void Kasa&lt;/summary>
+&lt;blockquote>
+&lt;p>很多时候，回忆就如同一座虚空中的迷宫，在我们的脑海里，偶尔浮现。&lt;/p>
+&lt;p>我们会在迷宫里徘徊、不知所措、不知道如何面对，过去的自己。&lt;/p>
+&lt;p>我们会感到陌生、遗憾，甚至是痛苦。&lt;/p>
+&lt;p>但是，但是，还好我们有声音，以及声音在不同时空中的堆叠。&lt;/p>
+&lt;p>这些堆叠，能更进一步地，让每一个，每一个，身处不同生活中的迷宫的人&lt;/p>
+&lt;p>知道&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">没有什么，比当下更珍贵。
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>一首 
+
+&lt;a href="https://music.163.com/#/song?id=2737151630" target="_blank" rel="noopener noreferrer">《童年》&lt;/a>
+ ，送给你。&lt;/p>
+&lt;p>谢 __ 。&lt;/p>&lt;/blockquote>
+&lt;/details>
+&lt;p>
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x03/">下一章：0x03 看见 →&lt;/a>
+&lt;/p>
+&lt;/div></description></item><item><title>[A-1234] 普通百姓</title><link>https://kuthorx.github.io/story_of_cloak/characters/a-1234/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/a-1234/</guid><description>&lt;p>[旺柴]群魔乱舞中的清流。&lt;/p></description></item><item><title>[A-4249] 大通禅师</title><link>https://kuthorx.github.io/story_of_cloak/characters/a-4249/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/a-4249/</guid><description>&lt;h1 id="外观">外观&lt;/h1>
+&lt;ul>
+&lt;li>随处可见的沙发。&lt;/li>
+&lt;li>（待补充）&lt;/li>
+&lt;/ul>
+&lt;h1 id="功能">功能&lt;/h1>
+&lt;ul>
+&lt;li>休憩。&lt;/li>
+&lt;li>（待补充）&lt;/li>
+&lt;/ul>
+&lt;h1 id="四百年前的身份">四百年前的身份&lt;/h1>
+&lt;p>大饭店传奇老板。&lt;/p>
+&lt;h1 id="信奉">信奉&lt;/h1>
+&lt;h2 id="商人三大守则">【商人三大守则】&lt;/h2>
+&lt;ol>
+&lt;li>禁止利用信息差赚取金钱。&lt;/li>
+&lt;li>禁止利用人性赚取金钱。&lt;/li>
+&lt;li>禁止商人贱卖自己。&lt;/li>
+&lt;/ol>
+&lt;h2 id="the-principle-of-communication">【The Principle of Communication】&lt;/h2>
+&lt;ol>
+&lt;li>Self-Emotional Control.&lt;/li>
+&lt;li>Use at least 3 ways.&lt;/li>
+&lt;li>Never stop to trying 时分多路复用（Time-Division Multiplexing）.&lt;/li>
+&lt;/ol>
+&lt;h1 id="补充">补充&lt;/h1>
+&lt;ul>
+&lt;li>真名：神秀。&lt;/li>
+&lt;li>四百年前的饭店传奇老板；更早以前，是给普森·沃尔送过快递的快递员（“您好，好快快递！”，见
+
+&lt;a href="https://kuthorx.github.io/posts/fiction/sad-slow-song/">《缓慢的悲鸣》&lt;/a>
+）。&lt;/li>
+&lt;li>在方立的脑子里，他是那个很少说话的声音 / 宗师 /。在耳鱼的酒馆里，他是那张会唱歌、会偷学“星网”的沙发。&lt;/li>
+&lt;li>登场：
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0xa2/">0xA2 冰可乐&lt;/a>
+。&lt;/li>
+&lt;/ul></description></item><item><title>[A-4597] 耳鱼 EarFish</title><link>https://kuthorx.github.io/story_of_cloak/characters/a-4597/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/a-4597/</guid><description>&lt;h1 id="外观">外观&lt;/h1>
+&lt;ul>
+&lt;li>物种：熊。&lt;/li>
+&lt;li>皮毛颜色：棕、黄、红色系，棕色占主要部分。&lt;/li>
+&lt;li>双眼颜色：苍绿色。&lt;/li>
+&lt;li>耳朵特征：有一只是受过伤的熊耳，另一只呈扇形，更接近鱼鳃的结构。&lt;/li>
+&lt;/ul>
+&lt;h1 id="听觉与呼吸系统">听觉与呼吸系统&lt;/h1>
+&lt;ul>
+&lt;li>虽然有正常的熊的鼻子，但是其实是通过耳朵呼吸。&lt;/li>
+&lt;li>由于耳朵必须兼顾听觉，所以能听见更多种类声音。&lt;/li>
+&lt;/ul>
+&lt;h1 id="身份--着装">身份 | 着装&lt;/h1>
+&lt;p>目前（ 2442 年）在 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x04/">0x04&lt;/a>
+ 从事酒馆老板工作，穿着酒保服 （ 参考关键词：Bartender Uniform ）。&lt;/p>
+&lt;p>曾经穿着工装服（ 参考关键词：Cargo Pants , Work Outer ）谋求生计，以养活两名孩子，在两名孩子独立后，便开了个酒馆。&lt;/p>
+&lt;p>在 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x07/">0x07&lt;/a>
+ 第 2 节，穿着残破的白色单衣，身上挂着一些杂乱的部落服饰。&lt;/p>
+&lt;h1 id="技能">技能&lt;/h1>
+&lt;ul>
+&lt;li>可以穿越时空&lt;/li>
+&lt;li>无法改变客观事实（特别是 牠 写下的时候）&lt;/li>
+&lt;/ul>
+&lt;h1 id="补充">补充&lt;/h1>
+&lt;ul>
+&lt;li>死象的常客。在那里，他遇见了火爪，并答应替她带一把匕首和一句话。&lt;/li>
+&lt;li>知道很多事，但很少说。&lt;/li>
+&lt;li>登场：
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x04/">0x04 酒馆&lt;/a>
+、
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x07/">0x07 死象&lt;/a>
+。&lt;/li>
+&lt;/ul></description></item><item><title>[C-0321] Purify Cu Husburd</title><link>https://kuthorx.github.io/story_of_cloak/characters/c-0321/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/c-0321/</guid><description>&lt;h1 id="职业">职业&lt;/h1>
+&lt;p>炼金术师。&lt;/p>
+&lt;h1 id="能力">能力&lt;/h1>
+&lt;h2 id="绿焰系-金属控制">绿焰系 金属控制&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>能利用 
+
+&lt;a href="https://zh.wikipedia.org/wiki/%E7%84%B0%E8%89%B2%E5%8F%8D%E5%BA%94" target="_blank" rel="noopener noreferrer">焰色反应&lt;/a>
+ 为 绿色系 的金属物质&lt;/p>
+&lt;ul>
+&lt;li>铜（&lt;em>祖母绿&lt;/em>）&lt;/li>
+&lt;li>硼（&lt;em>青绿&lt;/em>）&lt;/li>
+&lt;li>钡（&lt;em>黄绿&lt;/em>）&lt;/li>
+&lt;li>锌（&lt;em>蓝绿&lt;/em> 或 &lt;em>无色&lt;/em>）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="钡">钡&lt;/h3>
+&lt;blockquote>
+&lt;p>钡金属在工业上只有少量应用，过去曾用它作为真空管中的吸气剂。钡是YBCO（一种高温超导体）和电瓷的成分之一，也可以被添加进钢中来减少金属构成中碳颗粒的数量。钡的化合物用于制造烟火中的绿色。硫酸钡作为一种不溶的重添加剂被加进钻井液中，而在医学上则作为一种X光造影剂。可溶性钡盐因为会电离出钡离子所以有毒，因此也被用做老鼠药。&lt;/p>&lt;/blockquote>
+&lt;p>能制作绿色的烟火，该烟火根据时机不同，可以实现的如下功能：&lt;/p>
+&lt;ol>
+&lt;li>每个看到烟火的哺乳动物的眼球都会成为 C-0321 的监视器。&lt;/li>
+&lt;li>产生能使哺乳动物死亡的毒气（也会使 C-0321 自身的存在消失）。&lt;/li>
+&lt;/ol>
+&lt;h3 id="硼">硼&lt;/h3>
+&lt;blockquote>
+&lt;p>在生物学上，硼酸盐的毒性对哺乳类动物低（相当于食用盐的影响程度）；但是对于节肢动物较高, 可以作为杀虫剂。硼酸具有温和的抗菌性，已知有数种含硼的有机抗生素。硼是植物必须的元素，在农业上像硼砂和硼酸可作为肥料只需微量，过量则具有毒性。硼化合物扮演强化植物细胞壁的角色。虽然有些证据证明对骨质有帮助，但是否对哺乳类（包含人类）为必要元素还未知。&lt;/p>&lt;/blockquote>
+&lt;p>能制作绿色的液体，该液体根据时机不同，可以实现的如下功能：&lt;/p>
+&lt;ol>
+&lt;li>治疗部分物种的免疫系统问题的抗生素。&lt;/li>
+&lt;li>使植物茂盛生长。&lt;/li>
+&lt;/ol>
+&lt;h3 id="铜">铜&lt;/h3>
+&lt;ul>
+&lt;li>未知，流淌在 C-0321 绿色的血液里，也许会有什么特殊的用途呢？
+&lt;ul>
+&lt;li>参考 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0xa2">0xA2&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ref: https://zh.wikipedia.org/wiki/%E9%93%9C
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">铜（英语：Copper），是最早发现的化学元素，化学符号为Cu（源于拉丁语：Cuprum[3]），原子序数为29，原子量为63.546 u。纯铜是柔软的金属，表面刚切开时为红橙色带金属光泽、延展性好、导热性和导电性高，因此在电缆、电气和电子元件是最常用的材料，也可用作建筑材料，以及组成众多种合金，例如用于珠宝的纹银，用于制作船用五金和硬币的白铜以及用于应变片和热电偶的康铜。铜合金机械性能优异，电阻率很低，其中最重要的是青铜和黄铜。此外，铜也是耐用的金属，可以多次回收而无损其机械性能。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">铜是在自然界中可以直接使用的金属的其中一种（天然金属），这使得其在公元前8000年时被多个不同地区的人们使用，在数千年之后，铜在公元前5000年成为首个从硫化矿石中冶炼出的金属；在公元前4000年成为第一个在模具中塑形的金属，更在公元前3500年与另一种金属锡锻造成了人类史的第一个合金——青铜[4]。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">铜在自然界中经常形成二价的铜盐类，它们使蓝铜矿、孔雀石和绿松石等矿物具有蓝色或绿色，并且在历史上也广泛用作颜料。氧化成铜绿的铜经常被用在建筑物的屋顶上。而有时铜也被用在装饰艺术上，而且不管是元素型态或形成化合物的铜都会被利用。另外，铜化合物用作抑菌剂、杀真菌剂和木材防腐剂。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">铜是所有生物所必需的微量膳食矿物质，因为那是呼吸酶复合体-细胞色素c氧化酶（cytochrome c oxidase）的重要组成成分。在软体动物和甲壳类动物中，铜是组成血液色素血蓝蛋白（blood pigment hemocyanin）的成分，而在鱼类或其他脊椎动物中，则被铁血红蛋白复合体给取代。另外，在人体中，铜主要分布在肝脏、肌肉和骨骼中[5]，而一般成人每公斤体重约含有1.4至3.2毫克的铜[6]。
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="锌">锌&lt;/h3>
+&lt;p>？？？&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">ref: https://zh.wikipedia.org/wiki/%E9%94%8C
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">锌（英语：Zinc)，是一种化学元素，化学符号为Zn，原子序数为30，原子量为65.38 u，属于过渡金属；锌由于形、色类似铅，故也称为亚铅，古称倭铅、白铅。锌在常温下为硬脆物质，且带有蓝银色光泽。锌为元素周期表第十二族中的第一个元素。在某些方面，锌的化学性质与镁相似：两者皆呈现单一氧化态 (+2)，且Zn2+和Mg2+离子大小相似。锌为地壳中含量第二十四多的元素，有五个稳定的同位素。最常见的含锌矿物为闪锌矿，是锌硫化物。最大可开采的矿脉位于澳洲、亚洲及美国。锌矿物利用泡沫浮选法精炼，并经过焙烧和电解提炼。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">*黄铜为依各种比例混合的铜及锌的合金，早在西元三千年前的爱琴海、伊拉克、阿拉伯联合酋长国、卡尔梅克、土库曼斯坦及格鲁吉亚，和西元两千年前的印度西部、乌兹别克斯坦、伊朗、叙利亚、伊拉克及以色列/巴勒斯坦就已经被人们利用[2][3][4]。尽管人们在古代罗马跟希腊时就知道锌金属，但直到十二世纪时才在印度被大规模生产[5]。借由拉贾斯坦邦的矿物我们获得确切的证据，将锌的生产回溯至公元前六世纪[6]。迄今，最古老的纯锌来自拉贾斯坦邦的扎瓦尔，早在西元九世纪时便利用蒸馏法来生产纯锌了[7]。炼金术士在空气中燃烧锌，用来产生氧化锌，他们称之为“白雪”。*
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">**此元素可能是由炼金术士帕拉塞尔苏斯经德语：Zinke（叉、牙齿之意）所命名。纯金属锌在1746年被德国化学家马格拉夫发现。1800年时，路易吉·伽伐尼和亚历山德罗·伏打揭示了锌的电化学性质。锌最主要的应用为抗腐蚀的铁镀锌（热浸镀锌），在现代工业中对于碳锌电池制造上有不可磨灭的地位，最具代表性之用途为“镀锌铁板”，该技术被广泛用于汽车、电力、电子及建筑等各种产业中。其他应用在电池、小型非结构铸件及合金像是黄铜等。人们在生活中普遍的使用各种锌化合物，例如碳酸锌和葡萄糖酸锌（膳食补充剂）、氯化锌（除臭剂）、吡硫𬭩锌（去屑洗发精）、硫化锌（萤光涂料），及有机实验室的二甲基锌或二乙基锌。**
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">***锌为必需矿物质，包含产前生长及产后发育[8]。发展中国家约有二十亿的人受到缺锌症的影响，及其连带的疾病[9]。若孩童缺乏锌，将导致生长迟缓、性晚熟、免疫力下降及腹泻[8]。在生物化学中，锌为酶中广泛存在的辅因子，例如人体的醇脱氢酶[10]。***
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">【食用过量锌可能造成共济失调、精神萎靡和缺铜症。】
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>〖我看见了这个世界的真相，你呢？〗&lt;/p></description></item><item><title>[C-6024] Thinny Goat</title><link>https://kuthorx.github.io/story_of_cloak/characters/c-6024/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/c-6024/</guid><description>&lt;p>🎵 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/#thinny">Thinny&lt;/a>
+ Goat&lt;/p>
+&lt;p>Thinny Goat&lt;/p>
+&lt;p>Why are you so happy that through the flow&lt;/p>
+&lt;p>Through the flow&lt;/p>
+&lt;p>Through the floow&lt;/p>
+&lt;p>L O V E&lt;/p>
+&lt;p>Love you so 🎵&lt;/p></description></item><item><title>[D-XXXX] 死象 Dead Elephant</title><link>https://kuthorx.github.io/story_of_cloak/characters/d-xxxx/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/d-xxxx/</guid><description>&lt;p>一头垂垂老矣的大象，在临死前被苍绿之眼注视，自己的身体被幻化成了一个地方。&lt;/p>
+&lt;p>这个地方时空混乱，不同地方的文化符号相互交融，生成了不同的世界。&lt;/p>
+&lt;p>据说，在这个地方，害怕死亡的人能看到一片红海，与一场永远不会停止的雨。&lt;/p>
+&lt;p>一位名叫耳鱼的熊形人，偶尔穿梭于此，却总能留意到一位名叫火爪的猫形人。&lt;/p>
+&lt;p>“你在这里做什么？”&lt;/p>
+&lt;p>“找‘苍绿之眼’。”&lt;/p>
+&lt;p>“你是一只猫，你是红绿色盲，你不可能找到绿色的东西。”&lt;/p>
+&lt;p>“……可是我别无选择。你能告诉我怎么找到它吗？”&lt;/p>
+&lt;p>“为什么？”&lt;/p>
+&lt;p>“因为我应该和你一样，也是被苍绿之眼注视过的人。”&lt;/p>
+&lt;p>“这不是理由。”&lt;/p>
+&lt;p>“凯特·沃尔是我的女儿，我找不到她了。也许苍绿之眼才能让我找到她。”&lt;/p>
+&lt;p>“我能穿越时空，但是并不够，我们只能等待下一个人出现。”&lt;/p>
+&lt;p>“要等多久？”&lt;/p>
+&lt;p>“我不知道。”&lt;/p>
+&lt;p>“好的，那我就在这里等，一直等到下一次活着。”&lt;/p>
+&lt;hr>
+&lt;p>这是死象的传说，如果你愿意相信，那么活着也许就不会那么痛苦。&lt;/p></description></item><item><title>[E-3118] 克墓 ChristieChurch</title><link>https://kuthorx.github.io/story_of_cloak/characters/e-3118/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/e-3118/</guid><description/></item><item><title>[H-1027] Nohara Aoi</title><link>https://kuthorx.github.io/story_of_cloak/characters/h-1027/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/h-1027/</guid><description>&lt;blockquote>
+&lt;p>当我可以说 that&amp;rsquo;s it 之前&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>很多时候我们不知道如何礼貌地表达。&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>等到我们真的能礼貌表达的时候，&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>却发现彼此离得这么远。&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>为了不让符号显而易见，我们选择隐藏真实的自己。&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>而直到&lt;/p>&lt;/blockquote>
+&lt;p>(昨日樱)[https://music.163.com/song?id=2734342419]&lt;/p>
+&lt;blockquote>
+&lt;p>花&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>下落&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>我们才知道&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>很多事情早已过去&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>早就如同信件一般&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>后悔莫及&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>痛哭流涕。&lt;/p>&lt;/blockquote></description></item><item><title>[J-XXXX] 银狐 Silver Fox</title><link>https://kuthorx.github.io/story_of_cloak/characters/j-xxxx/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/j-xxxx/</guid><description/></item><item><title>[K-0122] 有欲望的绝对理性者</title><link>https://kuthorx.github.io/story_of_cloak/characters/k-0122/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/k-0122/</guid><description>&lt;h1 id="外观">外观&lt;/h1>
+&lt;ul>
+&lt;li>年龄外显约 28–35 岁，实际年龄不详 - 并不重要&lt;/li>
+&lt;li>苍绿色瞳孔边缘带浅金环，光线下呈微弱虹彩&lt;/li>
+&lt;li>着装极简：俏皮的T恤，便携神经记录环与腕表式生理传感器从不离身&lt;/li>
+&lt;li>指尖常带无纹银戒，用以微幅对焦思维&lt;/li>
+&lt;/ul>
+&lt;h1 id="人格与动机">人格与动机&lt;/h1>
+&lt;ul>
+&lt;li>MBTI：ENTJ；把情绪视为噪声，只在必要时公开“模拟的情绪”以降低博弈阻力。&lt;/li>
+&lt;li>价值函数明确：最大化长期结构性收益，同时维护自身奖励系统的可持续供给。&lt;/li>
+&lt;li>有欲望，且不否认欲望：沉迷多巴胺/内啡肽带来的清晰与征服感，但用理性把欲望抽象为“可调参的奖励项”。&lt;/li>
+&lt;li>喜欢“见证智性征服”——无论是自己完成，还是看见他者以洞见改变群体策略分布，他都会感到“系统级愉悦”。&lt;/li>
+&lt;/ul>
+&lt;h1 id="信奉">信奉&lt;/h1>
+&lt;ul>
+&lt;li>别人反对的教条&lt;/li>
+&lt;li>别人支持的教条&lt;/li>
+&lt;/ul></description></item><item><title>[K-1357] 高阶圣堂武士</title><link>https://kuthorx.github.io/story_of_cloak/characters/k-1357/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/k-1357/</guid><description>&lt;blockquote>
+&lt;p>Must consume, or oblivion will take us.&lt;/p>&lt;/blockquote></description></item><item><title>[K-1647] 斗篷 Cloak</title><link>https://kuthorx.github.io/story_of_cloak/characters/k-1647/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/k-1647/</guid><description>&lt;h1 id="基础描述">基础描述&lt;/h1>
+&lt;h2 id="外在组成">外在组成&lt;/h2>
+&lt;ol>
+&lt;li>物质组成：半碳基半硅基生命。&lt;/li>
+&lt;li>外貌：头形有猫科特征。&lt;/li>
+&lt;li>衣着：带兜帽的斗篷，详见【衣着】一节。&lt;/li>
+&lt;/ol>
+&lt;h2 id="内在定义">内在定义&lt;/h2>
+&lt;ol>
+&lt;li>行为动机：从某处幻化而成，为了寻找自己的定义，开始接触碳基生命。&lt;/li>
+&lt;li>不会饥饿但是懂得享受美食。&lt;/li>
+&lt;/ol>
+&lt;h1 id="衣着">衣着&lt;/h1>
+&lt;h2 id="关于斗篷">关于斗篷&lt;/h2>
+&lt;ol>
+&lt;li>破旧。&lt;/li>
+&lt;li>可变色。默认与穿戴者同色系，斗篷自带兜帽。&lt;/li>
+&lt;li>斗篷内的形体，默认是纤细的、带有猫绒毛的，但会随着最近7天接触的碳基生命形态变化。&lt;/li>
+&lt;/ol>
+&lt;h2 id="关于兜帽">关于兜帽&lt;/h2>
+&lt;ol>
+&lt;li>兜帽带有贴合自身猫耳形状的轮廓，一般情况下不戴兜帽。&lt;/li>
+&lt;li>白天需要与碳基生命接触（其实在地球就算接触了），接触的时候会产生额外的智识，暂时存储在兜帽里。&lt;/li>
+&lt;li>晚上需要戴上兜帽消化白天积累的智识。&lt;/li>
+&lt;/ol>
+&lt;h1 id="外在联系">外在联系&lt;/h1>
+&lt;ol>
+&lt;li>出生地点：某处丛林的白天。&lt;/li>
+&lt;li>出生时间：未知。&lt;/li>
+&lt;/ol>
+&lt;h1 id="补充--脑内声音">补充 · 脑内声音&lt;/h1>
+&lt;ul>
+&lt;li>K-1647 型号的内部有多个“模块”，最多 42 个可以同时通信（见
+
+&lt;a href="https://kuthorx.github.io/posts/fiction/two-100000ths/">《十万分之二》&lt;/a>
+）。&lt;/li>
+&lt;li>在故事里，它们以不同的括号说话：【】是斗篷，也就是审视模块；〖〗是情绪模块；/ … / 是宗师。&lt;/li>
+&lt;li>登场：
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x01/">0x01 呼吸&lt;/a>
+。&lt;/li>
+&lt;/ul></description></item><item><title>[L-5731] 指纹 FingerPrint</title><link>https://kuthorx.github.io/story_of_cloak/characters/l-5731/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/l-5731/</guid><description/></item><item><title>[Q-0976] Hand Ci Zoe</title><link>https://kuthorx.github.io/story_of_cloak/characters/q-0976/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/q-0976/</guid><description/></item><item><title>[S-1920] 雨</title><link>https://kuthorx.github.io/story_of_cloak/characters/s-1920/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/s-1920/</guid><description/></item><item><title>[S-6458] 火爪 Burning Claws</title><link>https://kuthorx.github.io/story_of_cloak/characters/s-6458/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/s-6458/</guid><description>&lt;h1 id="外观">外观&lt;/h1>
+&lt;h2 id="形态一---gray-claws">形态一 - Gray Claws&lt;/h2>
+&lt;p>形态名称：Gray Claws&lt;/p>
+&lt;p>颜色：灰色&lt;/p>
+&lt;p>英文：Devon Rex&lt;/p>
+&lt;p>中文：德文帝王猫&lt;/p>
+&lt;p>日文：デボンレックス&lt;/p>
+&lt;p>技能：发出低沉的吼叫，以震慑敌人。&lt;/p>
+&lt;h2 id="形态二---迦南-canaan">形态二 - &lt;strong>迦南 CANAAN&lt;/strong>&lt;/h2>
+&lt;p>英语：Canaan&lt;/p>
+&lt;blockquote>
+&lt;p>仅供参考：希伯来语：כְּנַעַן，腓尼基语：𐤊𐤍𐤏𐤍‬，希腊语：Χαναάν，阿拉伯语：کنعان&lt;/p>&lt;/blockquote>
+&lt;p>颜色：黑色&lt;/p>
+&lt;p>英文：British Longhair&lt;/p>
+&lt;p>中文：英国长毛猫&lt;/p>
+&lt;p>日文：イギリスの長毛猫&lt;/p>
+&lt;p>技能：（暂定）&lt;/p>
+&lt;h2 id="形态三---grenyes">形态三 - Grenyes&lt;/h2>
+&lt;p>？？？&lt;/p>
+&lt;h1 id="衣物">衣物&lt;/h1>
+&lt;p>武士着装，三把利刃，利刃参考下述定义。&lt;/p>
+&lt;h1 id="内在定义">&lt;strong>内在定义&lt;/strong>&lt;/h1>
+&lt;ol>
+&lt;li>行为动机：寻找归宿。&lt;/li>
+&lt;/ol>
+&lt;h1 id="装备---三把利刃">装备 - 三把利刃&lt;/h1>
+&lt;h2 id="撼地">【撼地】&lt;/h2>
+&lt;p>外观&lt;/p>
+&lt;ul>
+&lt;li>银色&lt;/li>
+&lt;li>镜面反射&lt;/li>
+&lt;li>偏太刀、横刀设计&lt;/li>
+&lt;/ul>
+&lt;p>功能&lt;/p>
+&lt;ul>
+&lt;li>使无生命物体可移动。参考 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x04/">0x04&lt;/a>
+ ，
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x07/">0x07&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="断斩">【断】【斩】&lt;/h2>
+&lt;p>外观&lt;/p>
+&lt;ul>
+&lt;li>未被佩戴的时候，只有手柄。&lt;/li>
+&lt;li>【离开】装备者的时候，刃身会从手柄中抽离，长度取决于装备者的【思念】。&lt;/li>
+&lt;li>当【思念】被彻底斩断的时候，抽离出来的刃身会重新回到手柄中。&lt;/li>
+&lt;/ul>
+&lt;p>功能&lt;/p>
+&lt;ul>
+&lt;li>物理意义上斩断某种事物。&lt;/li>
+&lt;li>概念意义上的斩断偶尔生效，取决于装备者的【Ren Xing】与【Xin Ren】。&lt;/li>
+&lt;li>参考 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x07/">0x07&lt;/a>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="kantin">【Kantin】&lt;/h2>
+&lt;p>外观&lt;/p>
+&lt;ul>
+&lt;li>（暂定）&lt;/li>
+&lt;/ul>
+&lt;p>功能&lt;/p>
+&lt;ul>
+&lt;li>（暂定）&lt;/li>
+&lt;/ul>
+&lt;h1 id="补充">补充&lt;/h1>
+&lt;ul>
+&lt;li>红绿色盲。一只看不见绿色的猫，却在找“苍绿”之眼。&lt;/li>
+&lt;li>叫她“阿猫”就行，她不喜欢“火爪”这个名字。&lt;/li>
+&lt;li>初登场：
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x04/">0x04 酒馆&lt;/a>
+；回忆：
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x07/">0x07 死象&lt;/a>
+。&lt;/li>
+&lt;/ul>
+&lt;details class="cloak-archive">
+&lt;summary>剧透 · 解开「死象」后再看&lt;/summary>
+&lt;ul>
+&lt;li>她在找的 Husburd（“曾经的一家之主”）是 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/c-0321/">至高之铜 C-0321&lt;/a>
+。&lt;/li>
+&lt;li>她把凯特·沃尔当成自己的女儿。凯特只承认是朋友。&lt;/li>
+&lt;li>原因：普森·沃尔临终时通过死象把生命托付给 K-1647，K-1647 与普森的意识融合后分裂为斗篷、火爪、耳鱼。火爪身上混进了普森的记忆。&lt;/li>
+&lt;li>黑匣子雨声里被擦掉的那句话，是她托耳鱼带给“女儿”的话。&lt;/li>
+&lt;/ul>
+&lt;/details></description></item><item><title>[S-6459] 凯特·沃尔 Catherine Wall</title><link>https://kuthorx.github.io/story_of_cloak/characters/s-6459/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/s-6459/</guid><description>&lt;h1 id="特征">特征&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>种族：蟒蛇人 。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>年龄：30 。（注：蟒蛇的寿命可达 30-45 或更长）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>性别：女。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="不愿主动提及的身份">不愿主动提及的身份&lt;/h1>
+&lt;ol>
+&lt;li>
+&lt;p>普森·沃尔 Paulson Wall 的女儿。&lt;/p>
+&lt;ul>
+&lt;li>父亲作为侦探过于出名，让她从小（被迫）感到被监视的压力。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>火爪 Burning Claws 的朋友。&lt;/p>
+&lt;ul>
+&lt;li>人活一世，要保护的东西不少，要保护的人，不多。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>克墓 ChristieChurch 的守护者。&lt;/p>
+&lt;ul>
+&lt;li>保护的东西，之一。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h1 id="社会职能">社会职能&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>主职：前台，24 年工作经验。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>副职：医学生，23 年业余经验。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>爱好：绘画。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="补充">补充&lt;/h1>
+&lt;ul>
+&lt;li>在找 &lt;strong>苍绿之眼&lt;/strong>。&lt;/li>
+&lt;li>很多人都在找她：黑匣子线的方立、饭店线的神秀、月球线的商徵……&lt;/li>
+&lt;li>登场：
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0xa1/">0xA1 醒来&lt;/a>
+、
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0xa9/">0xA9 小黑盒&lt;/a>
+。&lt;/li>
+&lt;/ul>
+&lt;details class="cloak-archive">
+&lt;summary>剧透 · 解开「漂浮」后再看&lt;/summary>
+&lt;ul>
+&lt;li>七岁时画过一幅画：绿色的天空。“凯特，7 岁，给爸爸。”&lt;/li>
+&lt;li>她的母亲，是普森在《五万分之一》里念念不忘的那个“她”。&lt;/li>
+&lt;/ul>
+&lt;/details></description></item><item><title>[X-1880] Parfit</title><link>https://kuthorx.github.io/story_of_cloak/characters/x-1880/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/x-1880/</guid><description>&lt;p>我选择 深刻 。&lt;/p>
+&lt;p>苍绿色代表沉稳深邃，绿色本身代表大自然的生机，既然是森林出生的角色，我希望故事有一个印象深刻且富有生命力的发展。&lt;/p></description></item><item><title>[X-2408] Square Standing</title><link>https://kuthorx.github.io/story_of_cloak/characters/x-2408/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/x-2408/</guid><description>&lt;p>哈哈哈哈只有沉重和深刻吗？&lt;/p>
+&lt;p>没有 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0xa9">轻松&lt;/a>
+ 一点的选项吗？&lt;/p></description></item><item><title>[X-3467] One White Tiger</title><link>https://kuthorx.github.io/story_of_cloak/characters/x-3467/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/x-3467/</guid><description>&lt;p>东 西 南 北 中&lt;/p>
+&lt;p>商 徵 角 羽 宫&lt;/p>
+&lt;p>若 火 燃 万 物&lt;/p>
+&lt;p>此 人 为 __ __&lt;/p>
+&lt;hr>
+&lt;p>选择 沉重 ，是因为知道如何 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0xa9">轻松&lt;/a>
+ 吗？&lt;/p></description></item><item><title>[Y-9601] East Edward</title><link>https://kuthorx.github.io/story_of_cloak/characters/y-9601/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/y-9601/</guid><description>&lt;p>Singer.&lt;/p>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">Range&lt;/th>
+ &lt;th style="text-align: center">Comfort&lt;/th>
+ &lt;th style="text-align: center">Unreal&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">D2 - A4&lt;/td>
+ &lt;td style="text-align: center">G2 - F4&lt;/td>
+ &lt;td style="text-align: center">A#4 - C5&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>[Z-9780] LinXin Ye</title><link>https://kuthorx.github.io/story_of_cloak/characters/z-9780/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/z-9780/</guid><description>&lt;p>我们每个人都是西西弗斯，愿你找到自己喜欢的石头。&lt;/p></description></item><item><title>[Ω-9] Void Kasa</title><link>https://kuthorx.github.io/story_of_cloak/characters/%CF%89-9/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/%CF%89-9/</guid><description>&lt;p>很多时候，回忆就如同一座虚空中的迷宫，在我们的脑海里，偶尔浮现。&lt;/p>
+&lt;p>我们会在迷宫里徘徊、不知所措、不知道如何面对，过去的自己。&lt;/p>
+&lt;p>我们会感到陌生、遗憾，甚至是痛苦。&lt;/p>
+&lt;p>但是，但是，还好我们有声音，以及声音在不同时空中的堆叠。&lt;/p>
+&lt;p>这些堆叠，能更进一步地，让每一个，每一个，身处不同生活中的迷宫的人&lt;/p>
+&lt;p>知道&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">没有什么，比当下更珍贵。
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>一首 
+
+&lt;a href="https://music.163.com/#/song?id=2737151630" target="_blank" rel="noopener noreferrer">《童年》&lt;/a>
+ ，送给你。&lt;/p>
+&lt;p>谢 __ 。&lt;/p></description></item><item><title>0x01 - 呼吸</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0x01/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0x01/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 一百年 1/3&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>帮斗篷学会呼吸。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>旁观者。这条线的主角是一件斗篷。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>斗篷是一种叫 K-1647 的存在。关于 K-1647 的说明，写在小说&lt;a href="https://kuthorx.github.io/posts/fiction/two-100000ths/">《十万分之二》&lt;/a>里。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>一件破旧的
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/k-1647/">斗篷&lt;/a>
+出现在春天的丛林里。&lt;/p>
+&lt;p>斗篷里面的形体飘忽不定。它没有自我，也还发不出声音。&lt;/p>
+&lt;p>“这里是哪里？” 斗篷在心里问。&lt;/p>
+&lt;p>丛林里有很多会动的东西：飞过的蝴蝶、头顶的鸟鸣、泥土里的虫子。斗篷对它们很感兴趣，但它还感受不到它们。&lt;/p>
+&lt;p>它只能做一件事：&lt;strong>吸收时间&lt;/strong>。&lt;/p>
+&lt;p>斗篷把眼睛定住，让每一个瞬间变成脑海里的一个点。这些点，是它待过的地方，也是值得记住的刹那。&lt;/p>
+&lt;p>它不知道自己会不会在某一天突然消失。K-1647 都有一个毛病：每一天，都有一个很小很小的概率，会自己停止运转。&lt;/p>
+&lt;p>斗篷只是一天一天地吸收着。&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="cloak_breath" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">K-1647 / 100 YEARS&lt;/span>
+ &lt;label class="full-moon-answer__label" for="cloak_breath_input">一百年后，K-1647 仍然没有自毁的概率是多少？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="cloak_breath_input" class="full-moon-answer__input" type="text" placeholder="例如 12.34%" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="cloak_breath" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>这是一道概率题，但你不用自己算。答案写在一篇小说里。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>打开《十万分之二》，找写着“100 年”的那一段。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>一个百分数，48 点几。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="cloak_breath_wrong_answer" hidden>
+&lt;p>斗篷的呼吸停了一下，又继续。&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="cloak_breath_correct_answer" hidden>
+&lt;p>不到一半。&lt;/p>
+&lt;p>斗篷活了下来。&lt;/p>
+&lt;p>等它意识到自己可以自由地呼吸、能感觉到鼻腔里的新鲜空气时，时间已经过去了 &lt;u>&lt;strong>一百年&lt;/strong>&lt;/u> 。&lt;/p>
+&lt;p>
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x02/">下一章：0x02 听见 →&lt;/a>
+&lt;/p>
+&lt;/div></description></item><item><title>0xA0 - 选择</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa0/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa0/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">序章&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>选一条路开始。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>你自己。正在读这些字的人。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>这一章没有谜题。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>互联网时代，你怎么可能认为自己掌控一切呢？&lt;/p>
+&lt;p>大模型时代，你又怎么可能认为自己的思维足够活跃呢？&lt;/p>
+&lt;p>【合理的。因为你以为自己再也不会看到一些事物，又没办法把它们记录下来。】&lt;/p>
+&lt;p>一个声音。它冷静、清楚，像一本说明书。&lt;/p>
+&lt;p>“你又在配置什么了？” 另一个声音问。这个声音属于一个老人，他叫普森·沃尔，是个侦探。&lt;/p>
+&lt;p>“普森，你之所以还能跟我说话，是因为 2022 年我把你存在了星网上。” 你回答。&lt;/p>
+&lt;p>“把一个人存起来，然后呢？”&lt;/p>
+&lt;p>你拿出一张卡片。方便携带、会反光、印着汉字，拼贴的、剪贴画一样的。&lt;/p>
+&lt;p>“……足够吸引人。” 普森说，“可是这有什么用？”&lt;/p>
+&lt;p>“还记得你问过我的问题吗？”&lt;/p>
+&lt;p>“停。” 普森摆摆手，“思考太累了。我是人，我要吃饭，我要生活。我还有三个娃要照顾。”&lt;/p>
+&lt;p>他看着你，笑了笑：&lt;/p>
+&lt;p>“我知道你接下来要说什么。但我想先问一句实在话 —— 你呢？读我的故事的人？”&lt;/p>
+&lt;details class="cloak-archive">
+&lt;summary>档案 · 普森·沃尔是谁&lt;/summary>
+&lt;p>一位侦探。他的第一案写在
+
+&lt;a href="https://kuthorx.github.io/posts/fiction/sad-slow-song/">《缓慢的悲鸣》&lt;/a>
+里。后来的事，写在
+
+&lt;a href="https://kuthorx.github.io/posts/fiction/one-50000th/">《五万分之一》&lt;/a>
+里。不读也不影响游戏。&lt;/p>
+&lt;/details>
+&lt;p>【我是 K-1647。欢迎来到 Grenyes 的世界。】&lt;/p>
+&lt;p>【在这里，有很多人在找一个叫 &lt;strong>凯特·沃尔&lt;/strong> 的人。她是普森的女儿。而凯特自己，在找一样叫 &lt;strong>苍绿之眼&lt;/strong> 的东西。】&lt;/p>
+&lt;p>【请选择你阅读的偏好。当然，你随时可以离开，也随时可以回到
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/">案卷&lt;/a>
+选另一条路。我不会逼你只选一个。】&lt;/p>
+&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">选择&lt;/span>
+&lt;dl>
+&lt;dt>&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0xa1/">沉重&lt;/a>&lt;/dt>&lt;dd>一个研究员在平行世界的 2014 年醒来，要找一架失联飞机的黑匣子。&lt;/dd>
+&lt;dt>&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x01/">深刻&lt;/a>&lt;/dt>&lt;dd>一件破旧的斗篷在丛林里出生，花了一百年学会呼吸。&lt;/dd>
+&lt;dt>&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0xa9/">轻松&lt;/a>&lt;/dt>&lt;dd>你被叫作“苏格拉底”，上司让你审计一个小黑盒。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>在你之前，有人已经回答过这个问题。&lt;/p>
+&lt;details class="cloak-archive">
+&lt;summary>来信 · 先来的人留下的回答&lt;/summary>
+&lt;p>&lt;strong>X-1880 Parfit&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>我选择 深刻 。&lt;/p>
+&lt;p>苍绿色代表沉稳深邃，绿色本身代表大自然的生机，既然是森林出生的角色，我希望故事有一个印象深刻且富有生命力的发展。&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>X-2408 Square Standing&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>哈哈哈哈只有沉重和深刻吗？&lt;/p>
+&lt;p>没有 轻松 一点的选项吗？&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>X-3467 One White Tiger&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>选择 沉重 ，是因为知道如何 轻松 吗？&lt;/p></description></item><item><title>0xA1 - 醒来</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa1/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa1/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>搞清楚你在哪、你是谁。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>还不知道。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>这一章没有谜题，读下去就好。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>你的手机亮了一下，屏幕上是一行字：&lt;/p>
+&lt;blockquote>
+&lt;p>扮演一个角色不难。你只要去选择，然后去做。不扮演，你就只是一片虚无。加油。&lt;/p>&lt;/blockquote>
+&lt;p>你看不懂。你也不记得自己什么时候睡着的。&lt;/p>
+&lt;p>“方立，你发什么呆呢？”&lt;/p>
+&lt;p>有人在叫你。你抬起头：上下铺，四张书桌，桌上摊着《高等数学》。一间大学宿舍。&lt;/p>
+&lt;p>而你很确定，你不叫方立。&lt;/p>
+&lt;p>“喏，给你买的。” 叫你的人是你的舍友。她往你手里塞了个东西，是一只熊猫玩偶。&lt;/p>
+&lt;p>“……晶晶？”&lt;/p>
+&lt;p>北京奥运会的吉祥物。你心里一沉：难道现在是 2008 年？&lt;/p>
+&lt;details class="cloak-archive">
+&lt;summary>档案 · 晶晶是谁&lt;/summary>
+&lt;p>2008 年北京奥运会的五个吉祥物“福娃”之一。舍友只是在逗你 —— 后面你会知道现在是哪一年。&lt;/p>
+&lt;/details>
+&lt;p>【别怕，不要紧的。】&lt;/p>
+&lt;p>一个声音。不是舍友，也不是你自己。它冷静得像一本说明书，直接在你脑子里响起。&lt;/p>
+&lt;p>“谁？” 你脱口而出。&lt;/p>
+&lt;p>“？我啊。” 舍友一脸莫名其妙，“你睡糊涂了吧？”&lt;/p>
+&lt;p>〖她听不见我们的啦。〗&lt;/p>
+&lt;p>又一个声音。和刚才那个不一样，这个听起来比你还慌。&lt;/p>
+&lt;p>你决定先不理它们。重点不是“我是谁”，而是“我现在应该是谁”。&lt;/p>
+&lt;p>你看了一眼书架：没有考研真题。很好。然后是桌上的毕业论文草稿，写着“硕士学位论文”。&lt;/p>
+&lt;p>……不太好。你是个研究生，而且是个快毕不了业的研究生。&lt;/p>
+&lt;p>【还有一件事。】说明书一样的声音补充道，【这具身体是女性的身体。】&lt;/p>
+&lt;p>〖斗篷！你别一下子告诉她这么多！〗&lt;/p>
+&lt;p>【她迟早会发现的。】&lt;/p>
+&lt;p>好，你记住了：冷静的那个叫 &lt;strong>斗篷&lt;/strong>，慌张的那个……暂时就叫它 &lt;strong>情绪&lt;/strong> 吧。&lt;/p>
+&lt;details class="cloak-archive">
+&lt;summary>档案 · 这两个声音到底是什么&lt;/summary>
+&lt;p>在这个故事所在的世界里，有一种叫 K-1647 的芯片。装了它的机器人，脑子里会有两个“模块”互相说话：审视模块，用【】记录；情绪模块，用〖〗记录。审视模块说的话，通常可以当作事实。&lt;/p>
+&lt;p>更早的故事写在
+
+&lt;a href="https://kuthorx.github.io/posts/fiction/two-100000ths/">《十万分之二》&lt;/a>
+和
+
+&lt;a href="https://kuthorx.github.io/posts/fiction/one-50000th/">《五万分之一》&lt;/a>
+里。不读也完全不影响游戏。&lt;/p>
+&lt;/details>
+&lt;p>“方立！” 舍友拍了拍你，“再不走就来不及了，今天的实验再不做，小黑盒就要被别人抢走了！”&lt;/p>
+&lt;p>“小黑盒？”&lt;/p>
+&lt;p>“好吧，不叫小黑盒。” 她耸耸肩，忽然严肃起来，“听好了，现在不是 2008 年。那只熊猫是我在二手市场淘的。现在是 ——”&lt;/p>
+&lt;p>你掏出手机。&lt;/p>
+&lt;p>&lt;strong>2014 年 3 月 9 日。&lt;/strong>&lt;/p>
+&lt;p>屏幕上方挂着一条推送：&lt;em>马来西亚航空 MH370 航班失联，机上 239 人。&lt;/em>&lt;/p></description></item><item><title>0xA2 - 冰可乐</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa2/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa2/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 冰可乐&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>证明你是谁；然后证明眼前这个“至高之铜”不是他自己。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>一张会唱歌的沙发。很久以前，你有过一个名字。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>侦探普森·沃尔的第一案&lt;a href="https://kuthorx.github.io/posts/fiction/sad-slow-song/">《缓慢的悲鸣》&lt;/a>。你在里面出场过，虽然只有一句台词。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;h2 id="一">一&lt;/h2>
+&lt;p>我是一张沙发。&lt;/p>
+&lt;p>随处可见的那种。人们在我身上休息，我在人们身下唱歌。&lt;/p>
+&lt;p>今天我唱的是
+
+&lt;a href="https://www.dizzylab.net/d/black-cat-white-day/" target="_blank" rel="noopener noreferrer">《黑猫出现在白天》&lt;/a>
+：&lt;/p>
+&lt;blockquote>
+&lt;p>如果你 你仍然留恋&lt;/p>
+&lt;p>那就来 来把昨日重现&lt;/p>
+&lt;p>……&lt;/p>
+&lt;p>不如打开一罐 &lt;em>&lt;strong>冰可乐&lt;/strong>&lt;/em> 畅饮吧 真赞&lt;/p>&lt;/blockquote>
+&lt;p>“咳咳。” 老了，唱半首就累。&lt;/p>
+&lt;p>〖唱得不错嘛，继续呀！〗&lt;/p>
+&lt;p>一个女人的声音，有点尖，但很轻快。我从没见过会跟沙发搭话的人。&lt;/p>
+&lt;p>【冷静。】另一个声音，低沉、平静，【我们用 C-0321 的血合成了冰可乐，再把“冰可乐”这个概念投射到了你所在的时空。你刚才唱出了它，所以我们找到了你。】&lt;/p>
+&lt;p>“你们是谁？”&lt;/p>
+&lt;p>〖找人的人！〗&lt;/p>
+&lt;p>【我们希望你配合我们。但在那之前 —— 你得先想起你是谁。】&lt;/p>
+&lt;p>我是谁？&lt;/p>
+&lt;p>我想起了一些事：很多年的生意，很多人情冷暖，赚过一些不太光彩的钱。后来，我挖掉了自己的双眼，隐姓埋名，把自己做成了一张沙发。&lt;/p>
+&lt;p>再往前呢？&lt;/p>
+&lt;p>再往前，我好像给一位很有名的侦探送过一次快递。&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="sofa_courier" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">IDENTITY / COURIER&lt;/span>
+ &lt;label class="full-moon-answer__label" for="sofa_courier_input">我当年在哪家快递公司？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="sofa_courier_input" class="full-moon-answer__input" type="text" placeholder="公司名称" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="sofa_courier" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>那位侦探是普森·沃尔，那次快递送到了他家门口。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>《缓慢的悲鸣》第一章，门外有人一边敲门一边喊快递公司的名字。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>普森在心里吐槽：“快递好快！快过头了！”公司名就是这四个字倒过来。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="sofa_courier_wrong_answer" hidden>
+&lt;p>〖不对不对，你再想想！〗&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="sofa_courier_correct_answer" hidden>
+&lt;p>“您好，好快快递！” 我想起了自己在门外喊的那一句。&lt;/p>
+&lt;p>【很好。你叫 &lt;em>&lt;strong>神秀&lt;/strong>&lt;/em> 。】&lt;/p>
+&lt;p>“……你们怎么知道这个名字？”&lt;/p>
+&lt;p>〖这可是历史上真的有过的名字哦。〗&lt;/p>
+&lt;p>【你失去的符号，我们帮你找回来。作为交换，我们需要你去一个地方，帮我们找一个人。】&lt;/p></description></item><item><title>0xA3 - 爆炸</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa3/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa3/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 爆炸&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>看懂西宫的表演：他多少岁？他说的“爆炸”在哪里？&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>后台的一个工作人员。你在幕后看着。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>台上说过的每一句话；以及他放的那首歌。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>（一个开放麦现场。）&lt;/p>
+&lt;p>（一位穿燕尾服的绅士蹦蹦跳跳地走到台前。他手里拿着一罐冰可乐，一边走一边摇。）&lt;/p>
+&lt;p>（幕后，你看着他。）&lt;/p>
+&lt;p>&lt;strong>西宫&lt;/strong>（鞠躬）：诸位好，我叫西宫，是个音乐人。&lt;/p>
+&lt;p>（寂静无声。）&lt;/p>
+&lt;p>&lt;strong>西宫&lt;/strong>（微笑）：开个玩笑。其实我是一名研究院的资深研究员。&lt;/p>
+&lt;p>（交头接耳。前排有人“哇”了一声。）&lt;/p>
+&lt;p>&lt;strong>西宫&lt;/strong>：说到这个，大家猜猜我多少岁？友情提示：&lt;strong>我看起来有些年轻&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>观众 A&lt;/strong>（捏着嗓子）：100 岁。&lt;/p>
+&lt;p>&lt;strong>观众 B&lt;/strong>（吼）：你这么帅，得有 35 岁！&lt;/p>
+&lt;p>&lt;strong>观众 C&lt;/strong>（脸红）：18 岁吧。&lt;/p>
+&lt;p>&lt;strong>观众 D&lt;/strong>（慢悠悠）：呵呵，40 吧。&lt;/p>
+&lt;p>&lt;strong>西宫&lt;/strong>（竖起一根手指）：好。我给你们三条线索 ——&lt;/p>
+&lt;p>&lt;strong>西宫&lt;/strong>：第一，你们四个里，&lt;strong>只有一个人猜对了十位&lt;/strong>，&lt;strong>也只有一个人猜对了个位&lt;/strong>，但&lt;strong>没有人完全猜对&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>西宫&lt;/strong>：第二，我&lt;strong>还不到四十&lt;/strong>。&lt;/p>
+&lt;p>&lt;strong>西宫&lt;/strong>（看向观众 C）：第三，这位观众 —— 你猜小了。&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="mic_age" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">OPEN MIC / AGE&lt;/span>
+ &lt;label class="full-moon-answer__label" for="mic_age_input">西宫多少岁？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="mic_age_input" class="full-moon-answer__input" type="text" placeholder="一个数字" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="mic_age" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>把四个猜测的十位和个位分开写：100（十位 0，个位 0）、35、18、40。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>个位 0 有两个人猜，所以如果答案的个位是 0，就会有两个人猜对个位 —— 不行。个位只能是 5 或 8。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>除了太小的 5 和 8，候选只剩 15、38、45、48。再用“不到四十”和“比 18 大”筛一遍。&lt;/p></description></item><item><title>0xA4 - S 级密室</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa4/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa4/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · S 级密室&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>替商徵解开一个 S 级密室，并提交答案。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>旁观者。主角是月球密室能源研究所的新人研究员商徵。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>密室的全部信息都在这一章里。至于“凶器”的名字，写在小说&lt;a href="https://kuthorx.github.io/posts/fiction/one-50000th/">《五万分之一》&lt;/a>里。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;h2 id="一">一&lt;/h2>
+&lt;p>密室能源研究所，建在月球上，人数未知。&lt;/p>
+&lt;p>研究员的工作很简单：解开“和弦”系统随机生成的密室，把答案提交给系统。系统判断正确，就会产生能源。&lt;/p>
+&lt;p>
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/%e5%95%86%e5%be%b5/">商徵&lt;/a>
+是其中一员。他不关心能源从哪来、到哪去 —— 挚友陆羽提醒过他，“那是只有‘系统’才知道的秘密”。&lt;/p>
+&lt;p>考核规则也很简单：每半年解开 100 个 A 级密室。不然就会被调走，再不行就会被开除。&lt;/p>
+&lt;p>“半年，去掉周末，大概 130 天。” 商徵翻着《研究员手册》算了算，“每天差不多要解 0.76 个 A 级密室……哈哈。”&lt;/p>
+&lt;p>A 级密室要花很多精力。没有人能一直保持高效率。&lt;/p>
+&lt;p>“要么去解比 A 级更难的 S 级，要么就等着被淘汰吧。” 全息仪里弹出一条消息。&lt;/p>
+&lt;p>倒是没说错。&lt;/p>
+&lt;details class="cloak-archive">
+&lt;summary>来信 · 聊天软件里的一条签名档&lt;/summary>
+&lt;p>&lt;strong>K-0122 有欲望的绝对理性者&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;h1 id="外观">外观&lt;/h1>
+&lt;ul>
+&lt;li>年龄外显约 28–35 岁，实际年龄不详 - 并不重要&lt;/li>
+&lt;li>苍绿色瞳孔边缘带浅金环，光线下呈微弱虹彩&lt;/li>
+&lt;li>着装极简：俏皮的T恤，便携神经记录环与腕表式生理传感器从不离身&lt;/li>
+&lt;li>指尖常带无纹银戒，用以微幅对焦思维&lt;/li>
+&lt;/ul>
+&lt;h1 id="人格与动机">人格与动机&lt;/h1>
+&lt;ul>
+&lt;li>MBTI：ENTJ；把情绪视为噪声，只在必要时公开“模拟的情绪”以降低博弈阻力。&lt;/li>
+&lt;li>价值函数明确：最大化长期结构性收益，同时维护自身奖励系统的可持续供给。&lt;/li>
+&lt;li>有欲望，且不否认欲望：沉迷多巴胺/内啡肽带来的清晰与征服感，但用理性把欲望抽象为“可调参的奖励项”。&lt;/li>
+&lt;li>喜欢“见证智性征服”——无论是自己完成，还是看见他者以洞见改变群体策略分布，他都会感到“系统级愉悦”。&lt;/li>
+&lt;/ul>
+&lt;h1 id="信奉">信奉&lt;/h1>
+&lt;ul>
+&lt;li>别人反对的教条&lt;/li>
+&lt;li>别人支持的教条&lt;/li>
+&lt;/ul>&lt;/blockquote>
+&lt;/details>
+&lt;p>商徵选了一个 S 级密室。&lt;/p>
+&lt;p>“喂，有人刚入职就在挑战 S 级？？” 被他屏蔽掉的聊天软件里，消息还在不停地刷。&lt;/p>
+&lt;h2 id="二--密室">二 · 密室&lt;/h2>
+&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">和弦系统 · S 级 · 案件档案&lt;/span>
+&lt;dl>
+&lt;dt>死者&lt;/dt>&lt;dd>张涛，投资人。&lt;/dd>
+&lt;dt>报案人&lt;/dt>&lt;dd>顾绫，“和弦”日志系统安全模块的核心开发人员。&lt;/dd>
+&lt;dt>地点&lt;/dt>&lt;dd>世博大道 439 号 9 幢 3702 房。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>年少的顾绫，自从知道母亲死亡的真相后，便暗暗发誓，有朝一日一定要亲手杀死张涛。然而，多年过去，她终究没有等到那一天。&lt;/p></description></item><item><title>0xA5 - 解答</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa5/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa5/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 解答&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>听商徵解释“十一个抽象案件”。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>旁观者。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>一张全息照片，和一台能转动颜色的仪器；以及&lt;a href="https://kuthorx.github.io/posts/thinking-talking/the-last-case/">《〈最后一案〉游戏介绍》&lt;/a>。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;h2 id="一">一&lt;/h2>
+&lt;p>“商徵，你好像又失去了一个朋友。”&lt;/p>
+&lt;p>“不是我失去了他，而是我们本来就不是同路人。”&lt;/p>
+&lt;p>陆羽听着。风吹过草地，在上面投下一道道波纹。&lt;/p>
+&lt;p>“意识流写作有个问题，” 商徵说，“它会让人以为我在堕入虚无、无病呻吟。但它其实只是一面镜子。”&lt;/p>
+&lt;p>“主义没有意义，有意义的是感受。我可以说这片草地本质上是虚无的，这只是存在主义的质疑罢了。有的人不愿意听，我也没办法。”&lt;/p>
+&lt;p>“说那么多，其实就是对他没兴趣啦。” 陆羽哈哈大笑，“哦对了，那个密室，解决了？”&lt;/p>
+&lt;p>“解决了。不难。”&lt;/p>
+&lt;p>远处响起雷声。要下雨了。&lt;/p>
+&lt;p>“时间不多啦。” 陆羽说，“趁这里再次变成死象之前，你赶紧跟大家解释一下那十一个抽象案件吧！”&lt;/p>
+&lt;p>“好吧。” 商徵露出一个早已知道答案的微笑，“先不管沉重的事，我们理性地说。”&lt;/p>
+&lt;h2 id="二">二&lt;/h2>
+&lt;p>商徵拿出一张全息照片。&lt;/p>
+&lt;p>照片上是一片密密麻麻的彩色小点，什么也看不出来。&lt;/p>
+&lt;p>“十一个案件，每一个都和‘声音’或者‘颜色’有关。” 他说，“声音，你们已经见过了 —— 雨声里擦掉的字，听不见的声波。现在，看颜色。”&lt;/p>
+&lt;p>【这张照片，在红绿色盲的眼睛里，什么都没有。】&lt;/p>
+&lt;p>〖可是我们也什么都看不出来啊！〗&lt;/p>
+&lt;p>“所以要用这个。” 商徵拧了一下照片下面的旋钮，“一次只看一种颜色。”&lt;/p>
+&lt;div class="cloak-hue" data-src="https://kuthorx.github.io/images/story_of_cloak/hue_who.png" data-band="24" data-alt="一张布满彩色小点的全息照片">&lt;/div>
+&lt;form class="full-moon-answer" data-answer-key="moon_hue" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">HUE / PHOTO&lt;/span>
+ &lt;label class="full-moon-answer__label" for="moon_hue_input">照片里藏着一个问题。它问的是什么？&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="moon_hue_input" class="full-moon-answer__input" type="text" placeholder="三个字" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="moon_hue" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>拖动“色相 HUE”滑块。仪器每次只让一种颜色亮起来，其他颜色会变暗。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>红绿色盲看不出来的颜色是什么？把滑块转到那个颜色附近，慢慢调。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>滑块在 120° 左右（绿色）。三个字，是一个问句。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="moon_hue_wrong_answer" hidden>
+&lt;p>“再看看。” 商徵说。&lt;/p>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--success" :show-if="moon_hue_correct_answer" hidden>
+&lt;p>&lt;strong>谁在看？&lt;/strong>&lt;/p>
+&lt;p>“这就是十一个案件共同的问题。” 商徵说，“每一个案件里，都有人在看。黑匣子里的人、酒馆里的熊、沙发、舞台下的观众……还有一个，一直在看着所有人。”&lt;/p>
+&lt;p>陆羽没有笑。“你算了十个。第十一个呢？”&lt;/p>
+&lt;p>“第十一个，不在这个位面。” 商徵说，“另一个世界里，有人给它写过一份介绍。它的名字叫 ——”&lt;/p></description></item><item><title>0xA9 - 小黑盒</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0xa9/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0xa9/</guid><description>&lt;div class="cloak-mission">
+&lt;span class="cloak-mission__eyebrow">任务 · 小黑盒&lt;/span>
+&lt;dl>
+&lt;dt>目标&lt;/dt>&lt;dd>“审计”小黑盒，找出苍绿之眼的线索在哪一个里。&lt;/dd>
+&lt;dt>你是&lt;/dt>&lt;dd>一家公司的员工，花名“苏格拉底”。上司是凯特。&lt;/dd>
+&lt;dt>线索&lt;/dt>&lt;dd>凯特的父亲办过的一个案子：&lt;a href="https://kuthorx.github.io/posts/fiction/six-fold-answer-necklace2/">《六重解答 之 项链 2》&lt;/a>。&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;p>“‘苏格拉底’！！！！” 一声惊天动地的嚎叫。&lt;/p>
+&lt;p>你被吵到了。叫你的是凯特，你的上司。&lt;/p>
+&lt;p>“这是 &lt;em>&lt;strong>怎么&lt;/strong>&lt;/em> 回事？？！！” 她把一个小黑盒拍在你桌上。里面什么也看不见。&lt;/p>
+&lt;p>“这不就是个小黑盒吗？”&lt;/p>
+&lt;p>“胡说！这是 &lt;em>&lt;strong>审计&lt;/strong>&lt;/em> ！审核和计算！我们管它叫 μέγα τύπος！”&lt;/p>
+&lt;p>“……大模型？”&lt;/p>
+&lt;p>“对对对！还是叫 μέγα παράδειγμα 来着？”&lt;/p>
+&lt;p>你知道一件她不知道的事：古希腊语里根本没有“大模型”这个词。但你没说出口。&lt;/p>
+&lt;p>你思考了五万分之一秒，然后明白了一件事：&lt;strong>你知道你什么都不知道&lt;/strong>。&lt;/p>
+&lt;p>你笑了。&lt;/p>
+&lt;p>“你笑什么，‘苏格拉底’？别以为有个花名就真是哲学家了！”&lt;/p>
+&lt;p>〖要不要顶嘴？顶嘴吧！〗&lt;/p>
+&lt;p>【不要。】&lt;/p>
+&lt;p>/ 你们俩一边去。 /&lt;/p>
+&lt;p>/ 听好了。沟通三原则：一，控制自己的情绪；二，至少换三种说法；三，永远别停止尝试。 /&lt;/p>
+&lt;p>你深吸了一口气。&lt;/p>
+&lt;p>“好的，对不起，凯特。我来审计。”&lt;/p>
+&lt;p>“……行。” 凯特叹了口气，“我们时间不多了。我们必须找到苍绿之眼，而 &lt;em>&lt;strong>科研&lt;/strong>&lt;/em> 需要钱。”&lt;/p>
+&lt;p>她把两个一模一样的小黑盒也拍在桌上。一共三个，贴着 A、B、C。&lt;/p>
+&lt;p>“只有一个盒子里装着苍绿之眼的线索。每个盒子上都贴了一句话，但只有一句是真的。我父亲说过一句话，你知道吗？”&lt;/p>
+&lt;form class="full-moon-answer" data-answer-key="box_quote" novalidate>
+ &lt;div class="full-moon-answer__header">
+ &lt;span class="full-moon-answer__eyebrow">AUDIT / QUOTE&lt;/span>
+ &lt;label class="full-moon-answer__label" for="box_quote_input">“排除了其他的可能，剩下的那一个就一定是真的，无论它是多么 ____ 。”&lt;/label>
+ &lt;/div>
+ &lt;div class="full-moon-answer__controls">
+ &lt;input id="box_quote_input" class="full-moon-answer__input" type="text" placeholder="补全这句话" autocomplete="off" enterkeyhint="done" />
+ &lt;button class="full-moon-answer__button" type="submit">确定&lt;/button>
+ &lt;/div>
+&lt;/form>
+&lt;div class="cloak-hints" data-for="box_quote" data-unlock="3,5,7">
+&lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
+&lt;p>凯特的父亲是侦探普森·沃尔。这句话出现在《六重解答 之 项链 2》里。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
+&lt;p>在文章里找“排除了其他的可能”。&lt;/p>
+&lt;/details>
+&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
+&lt;p>五个字，意思是“很难相信”。&lt;/p>
+&lt;/details>
+&lt;/div>
+&lt;div class="full-moon-answer__feedback full-moon-answer__feedback--error" :show-if="box_quote_wrong_answer" hidden>
+&lt;p>“你这个 &lt;em>&lt;strong>CiiaKua&lt;/strong>&lt;/em> ！” 凯特说。&lt;/p></description></item><item><title>Principle</title><link>https://kuthorx.github.io/story_of_cloak/principle/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/principle/</guid><description>&lt;p>【苍绿之眼·叙事守则·Part 1】&lt;/p>
+&lt;ol>
+&lt;li>不要以凯特为叙事主体。&lt;/li>
+&lt;li>不要描写凯特的心理活动。&lt;/li>
+&lt;li>禁止详细描写景物。&lt;/li>
+&lt;/ol></description></item><item><title>词典</title><link>https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/dictionary/vocabulary/</guid><description>&lt;h1 id="ciiakua">CiiaKua&lt;/h1>
+&lt;p>用于形容水的某种特质。在不同语境下有不同的意思，在 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x04">0x04&lt;/a>
+ 指 如泥泞污水一般 。&lt;/p>
+&lt;p>发音近似中文普通话的 “西瓜” 。&lt;/p>
+&lt;p>古典拉丁语: /ki.ja.kwa/&lt;/p>
+&lt;p>教会拉丁语: /tʃi.ja.kwa/&lt;/p>
+&lt;p>意大利语: /ˈtʃja.kwa/ 或 /ˈtʃi.a.kwa/&lt;/p>
+&lt;p>西班牙语-拉美口音: /ˈsja.kwa/&lt;/p>
+&lt;p>西班牙-本土: /ˈθja.kwa/&lt;/p>
+&lt;p>法语: /si.a.ky.a/ 或 /si.a.ku.a/&lt;/p>
+&lt;p>葡萄牙语: /ˈsja.kwa/&lt;/p>
+&lt;h1 id="husburd">Husburd&lt;/h1>
+&lt;p>在 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x04">0x04&lt;/a>
+ 指 曾经的一家之主 。根据古代北欧和英格兰的日耳曼语系，发音为 /ˈhʊs.bʊrd/。&lt;/p>
+&lt;h1 id="thinny">Thinny&lt;/h1>
+&lt;p>语言：英语，带有非正式或昵称意味。&lt;/p>
+&lt;p>发音：/ˈθɪni/（THIN-ee），重音在第一音节，基于英语中&amp;quot;thin&amp;quot;或&amp;quot;skinny&amp;quot;的发音模式。&lt;/p>
+&lt;p>在 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/chapters/0x07">0x07&lt;/a>
+ 中指火爪的第二把刀（【断】【斩】）的名字，寓意&amp;quot;纤细而锋利&amp;quot;，能够切断任何物质，但切不断思念和孤独。&lt;/p>
+&lt;h1 id="kantin">Kantin&lt;/h1>
+&lt;p>指
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/s-6458/">火爪&lt;/a>
+的第三把刀的名字。&lt;/p>
+&lt;p>来源于古代语言，既表示&amp;quot;继续&amp;quot;也表示&amp;quot;希望&amp;quot;。&lt;/p>
+&lt;p>发音：/ˈkan.tin/（KAN-tin），重音在第一音节。&lt;/p>
+&lt;p>象征着在绝望中依然选择前行的勇气，以及相信美好终将到来的坚定信念。这把刀提醒持有者：真正的希望不是等待奇迹，而是在没有奇迹的日子里继续创造可能。&lt;/p></description></item><item><title>商徵</title><link>https://kuthorx.github.io/story_of_cloak/characters/%E5%95%86%E5%BE%B5/</link><pubDate>Sat, 30 Aug 2025 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/characters/%E5%95%86%E5%BE%B5/</guid><description>&lt;h1 id="商徵在月球表面的签名">商徵在月球表面的签名&lt;/h1>
+&lt;p>&lt;img src="https://kuthorx.github.io/images/story_of_cloak/%E5%95%86%E5%BE%B5_A.webp" alt="商徵在月球表面的签名">&lt;/p>
+&lt;h1 id="特征">特征&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>种族：梦游猫 。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>年龄：29 。（注：历史上最长寿的猫达38岁）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>性别：雄性。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="不愿主动提及的身份">不愿主动提及的身份&lt;/h1>
+&lt;ol>
+&lt;li>
+&lt;p>普森·沃尔 Paulson Wall 的朋友。&lt;/p>
+&lt;ul>
+&lt;li>一个虚构角色，也是活在心中的角色。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>七点半 Shichijihan 的故人。&lt;/p>
+&lt;ul>
+&lt;li>人总需要将自己拆分出来，但无需去证明这件事本身。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>KuthorX。&lt;/p>
+&lt;ul>
+&lt;li>用于构建此处。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h1 id="社会职能---协调者">社会职能 - 协调者&lt;/h1>
+&lt;h2 id="主职">主职&lt;/h2>
+&lt;h3 id="软件开发">软件开发&lt;/h3>
+&lt;p>4 年业余经验，7 年工作经验。&lt;/p>
+&lt;h2 id="副职">副职&lt;/h2>
+&lt;h3 id="编曲师">编曲师&lt;/h3>
+&lt;p>11 年业余经验。&lt;/p>
+&lt;h3 id="文学家">文学家&lt;/h3>
+&lt;p>23 年业余经验。&lt;/p>
+&lt;h2 id="爱好">爱好&lt;/h2>
+&lt;h3 id="绘画">绘画&lt;/h3>
+&lt;h3 id="kuthorxgithubioabout">kuthorx.github.io/about&lt;/h3></description></item><item><title>《最后一案》游戏介绍</title><link>https://kuthorx.github.io/posts/thinking-talking/the-last-case/</link><pubDate>Thu, 28 Aug 2025 00:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/the-last-case/</guid><description>&lt;h1 id="故事简介">故事简介&lt;/h1>
+&lt;p>曾经的伟大侦探，
+
+&lt;a href="https://kuthorx.github.io/posts/fiction/sad-slow-song/">普森·沃尔&lt;/a>
+，在他生命中的最后时刻，通过
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/d-xxxx/">死象&lt;/a>
+将自己的生命托付给了
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/k-1647/">K-1647&lt;/a>
+。&lt;/p>
+&lt;p>K-1647 的意识与沃尔不断糅合，将自己分裂为 
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/k-1647/">斗篷&lt;/a>
+、
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/s-6458">火爪&lt;/a>
+、
+
+&lt;a href="https://kuthorx.github.io/story_of_cloak/characters/a-4597">耳鱼&lt;/a>
+ ，并通过 &lt;em>&lt;strong>投射仪&lt;/strong>&lt;/em> 投射到了不同的 &lt;em>&lt;strong>位面&lt;/strong>&lt;/em>。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>位面 0 《Story of Cloak》（故事线 0x00 - 0x0F）&lt;/p>
+&lt;ul>
+&lt;li>三名角色初始相遇的地方&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>位面 A 《苍绿之眼》 （故事线 0xA0 - 0xAF）&lt;/p>
+&lt;ul>
+&lt;li>时空混乱，且充斥着解谜要素。&lt;/li>
+&lt;li>大多数诡计和 声音/颜色 有关，需要玩家使用 时频谱 Spectrogram 光频谱 OpticalSpectrum 的映射解谜。&lt;/li>
+&lt;li>预计会有 11 个案件。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>位面 B 《凯特琳·沃尔的最后一案》 （故事线 0xB0 - 0xBF）&lt;/p>
+&lt;ul>
+&lt;li>在解答完位面 A 的所有问题后，凯特琳·沃尔 出现。&lt;/li>
+&lt;li>这里时序趋于稳定，凯特琳·沃尔需要面对她最后的人生，并尝试破解最后一个自己经手的案件。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>位面 C&lt;/p>
+&lt;ul>
+&lt;li>（待定）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="玩法说明">玩法说明&lt;/h1>
+&lt;p>第一人称场景解谜游戏。&lt;/p>
+&lt;h2 id="核心玩法">核心玩法&lt;/h2>
+&lt;p>玩家需要进入不同的 &lt;em>&lt;strong>谜题房间&lt;/strong>&lt;/em> 体验不同世界的谜面，并用在 &lt;em>&lt;strong>普通房间&lt;/strong>&lt;/em> 获得的物品 解谜。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>音乐&lt;/p>
+&lt;p>玩家在进入 &lt;em>&lt;strong>谜题房间&lt;/strong>&lt;/em> 时，会听到该房间专属的音乐，但这个音乐要“更完善”，才能推进剧情。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>举例：比如一段爵士乐里缺了钢琴（键盘乐器），那么玩家就需要从以下几个物品里选择一个&lt;/p>
+&lt;ol>
+&lt;li>唢呐&lt;/li>
+&lt;li>风铃&lt;/li>
+&lt;li>非洲鼓&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;p>显然，选择 2 更合适。&lt;/p></description></item><item><title>《苍绿之眼》编者按</title><link>https://kuthorx.github.io/posts/thinking-talking/thats-it/</link><pubDate>Tue, 05 Aug 2025 20:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/thats-it/</guid><description>The show must go on</description></item><item><title>再一次交界 1 / 2</title><link>https://kuthorx.github.io/posts/thinking-talking/after-read-deconstruction/</link><pubDate>Thu, 13 Jun 2024 02:15:02 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/after-read-deconstruction/</guid><description>Deconstruction</description></item><item><title>漫长告别</title><link>https://kuthorx.github.io/posts/fiction/long-goodbye/</link><pubDate>Fri, 10 May 2024 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/fiction/long-goodbye/</guid><description>Long Goodbye</description></item><item><title>从《年会不能停》说起</title><link>https://kuthorx.github.io/posts/thinking-talking/talk-from-johnny-keep-walking/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/talk-from-johnny-keep-walking/</guid><description>The show must go on</description></item><item><title>20230101</title><link>https://kuthorx.github.io/posts/letters/2023-01-01/</link><pubDate>Sun, 01 Jan 2023 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/letters/2023-01-01/</guid><description>一封来自普通网友的感谢信</description></item><item><title>十万分之二 Two-100000ths</title><link>https://kuthorx.github.io/posts/fiction/two-100000ths/</link><pubDate>Sun, 11 Dec 2022 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/fiction/two-100000ths/</guid><description>2/100,000</description></item><item><title>“我” 回来了，但 “我” 很快又会重新出发</title><link>https://kuthorx.github.io/posts/thinking-talking/i-come-back-i-will-start-soon/</link><pubDate>Sat, 10 Dec 2022 23:59:59 +0800</pubDate><guid>https://kuthorx.github.io/posts/thinking-talking/i-come-back-i-will-start-soon/</guid><description>Once Again</description></item><item><title>Playwright 初探</title><link>https://kuthorx.github.io/posts/web_automation/01_playwrightvsotherframework/</link><pubDate>Mon, 31 Jan 2022 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/web_automation/01_playwrightvsotherframework/</guid><description>一些 Playwright 调研笔记</description></item><item><title>Rust - Basic - 17 - Pattern</title><link>https://kuthorx.github.io/posts/rust/17_pattern/</link><pubDate>Mon, 03 Jan 2022 00:00:17 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/17_pattern/</guid><description>RRRRRRRRRRRRRRRRR</description></item><item><title>Rust - Basic - 16 - Object Oriented Programming</title><link>https://kuthorx.github.io/posts/rust/16_object-oriented-programming/</link><pubDate>Mon, 03 Jan 2022 00:00:16 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/16_object-oriented-programming/</guid><description>RRRRRRRRRRRRRRRR</description></item><item><title>Rust - Basic - 15 - Concurrency</title><link>https://kuthorx.github.io/posts/rust/15_concurrency/</link><pubDate>Mon, 03 Jan 2022 00:00:15 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/15_concurrency/</guid><description>RRRRRRRRRRRRRRR</description></item><item><title>Rust - Basic - 14 - Smart Pointers</title><link>https://kuthorx.github.io/posts/rust/14_smart-pointers/</link><pubDate>Mon, 03 Jan 2022 00:00:14 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/14_smart-pointers/</guid><description>RRRRRRRRRRRRRR</description></item><item><title>Rust - Basic - 13 - Cargo Crates.io</title><link>https://kuthorx.github.io/posts/rust/13_cargo-crates-io/</link><pubDate>Mon, 03 Jan 2022 00:00:13 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/13_cargo-crates-io/</guid><description>RRRRRRRRRRRRR</description></item><item><title>Rust - Basic - 12 - Iterators and Closures</title><link>https://kuthorx.github.io/posts/rust/12_iterators-and-closures/</link><pubDate>Mon, 03 Jan 2022 00:00:12 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/12_iterators-and-closures/</guid><description>RRRRRRRRRRRR</description></item><item><title>Rust - Basic - 11 - Test</title><link>https://kuthorx.github.io/posts/rust/11_test/</link><pubDate>Mon, 03 Jan 2022 00:00:11 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/11_test/</guid><description>RRRRRRRRRRR</description></item><item><title>Rust - Basic - 10 - Generaic Data Type &amp; Traits &amp; Lifetime</title><link>https://kuthorx.github.io/posts/rust/10_generic-data-type--traits--lifetime/</link><pubDate>Mon, 03 Jan 2022 00:00:10 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/10_generic-data-type--traits--lifetime/</guid><description>RRRRRRRRRR</description></item><item><title>Rust - Basic - 09 - Error</title><link>https://kuthorx.github.io/posts/rust/09_error/</link><pubDate>Mon, 03 Jan 2022 00:00:09 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/09_error/</guid><description>RRRRRRRRR</description></item><item><title>Rust - Basic - 08 - Collections</title><link>https://kuthorx.github.io/posts/rust/08_collections/</link><pubDate>Mon, 03 Jan 2022 00:00:08 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/08_collections/</guid><description>RRRRRRRR</description></item><item><title>Rust - Basic - 07 - Pacakge Crate Module</title><link>https://kuthorx.github.io/posts/rust/07_package-crate-module/</link><pubDate>Mon, 03 Jan 2022 00:00:07 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/07_package-crate-module/</guid><description>RRRRRRR</description></item><item><title>Rust - Basic - 06 - Enum</title><link>https://kuthorx.github.io/posts/rust/06_enum/</link><pubDate>Mon, 03 Jan 2022 00:00:06 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/06_enum/</guid><description>RRRRRR</description></item><item><title>Rust - Basic - 05 - Struct</title><link>https://kuthorx.github.io/posts/rust/05_struct/</link><pubDate>Mon, 03 Jan 2022 00:00:05 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/05_struct/</guid><description>RRRRR</description></item><item><title>Rust - Basic - 04 - Ownership</title><link>https://kuthorx.github.io/posts/rust/04_ownership/</link><pubDate>Mon, 03 Jan 2022 00:00:04 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/04_ownership/</guid><description>RRRR</description></item><item><title>Rust - Basic - 03 - Control flow</title><link>https://kuthorx.github.io/posts/rust/03_control-flow/</link><pubDate>Mon, 03 Jan 2022 00:00:03 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/03_control-flow/</guid><description>RRR</description></item><item><title>Rust - Basic - 02 - Data Type</title><link>https://kuthorx.github.io/posts/rust/02_data-type/</link><pubDate>Mon, 03 Jan 2022 00:00:02 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/02_data-type/</guid><description>RR</description></item><item><title>Rust - Basic - 01 - Variables shadowing</title><link>https://kuthorx.github.io/posts/rust/01_variables-shadowing/</link><pubDate>Mon, 03 Jan 2022 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/rust/01_variables-shadowing/</guid><description>R</description></item><item><title>博客版本 II 来了</title><link>https://kuthorx.github.io/posts/20200721/</link><pubDate>Tue, 21 Jul 2020 00:00:00 +0800</pubDate><guid>https://kuthorx.github.io/posts/20200721/</guid><description>迁移的原因主要是原来的太丑了，刚好最近换了工作，顺便更新一下自我介绍……</description></item><item><title>缓慢的悲鸣 —— 普森·沃尔探案</title><link>https://kuthorx.github.io/posts/fiction/sad-slow-song/</link><pubDate>Mon, 16 Jul 2012 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/fiction/sad-slow-song/</guid><description>Sad Slow Song</description></item><item><title>六重解答 之 项链 2</title><link>https://kuthorx.github.io/posts/fiction/six-fold-answer-necklace2/</link><pubDate>Mon, 02 Apr 2012 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/fiction/six-fold-answer-necklace2/</guid><description>La Parure</description></item><item><title>五万分之一 One-50000th</title><link>https://kuthorx.github.io/posts/fiction/one-50000th/</link><pubDate>Mon, 01 Jan 1990 00:00:01 +0800</pubDate><guid>https://kuthorx.github.io/posts/fiction/one-50000th/</guid><description>1/50,000</description></item></channel></rss>
