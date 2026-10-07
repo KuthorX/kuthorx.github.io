@@ -303,6 +303,8 @@
 &lt;p>我是去找东西的。&lt;/p>
 &lt;p>我在找苍绿之眼。可我是一只猫，猫是红绿色盲。我这辈子都没见过绿色。&lt;/p>
 &lt;p>“你在这里做什么？” 一头很大的熊站在雨里，问我。&lt;/p>
+&lt;img src="https://kuthorx.github.io/images/story_of_cloak/死象_1.webp" alt="死象的雨中，火爪遇见耳鱼" data-image-cycle="/images/story_of_cloak/死象_1.webp|/images/story_of_cloak/死象_2.webp" data-image-state="dead_elephant">
+&lt;div :show-if="dead_elephant_complete" hidden>
 &lt;p>“找苍绿之眼。”&lt;/p>
 &lt;p>“你看不见绿色，不可能找到绿色的东西。”&lt;/p>
 &lt;p>“……我别无选择。” 我说，“我的 Husburd 不见了。我的女儿，我也找不到了。家里还有三个孩子，寄放在我姐姐那里。”&lt;/p>
@@ -342,11 +344,7 @@
 &lt;p>“这里的雨，什么时候停？” 我问。&lt;/p>
 &lt;p>/ 有时候，人问一个答案很明显的问题 /&lt;/p>
 &lt;p>/ 不是为了答案，只是想找个人说说话 /&lt;/p>
-&lt;p>“我不知道。” 耳鱼说，“我活了很久，从来没想过这个问题。”&lt;/p>
-&lt;h2 id="二">二&lt;/h2>
-&lt;p>我从胸口拿出一把匕首，按下刀柄的末端。&lt;/p>
-&lt;p>它叫【断】【斩】。离开我的时候，刀身会从柄里抽出来，长短取决于我有多想念。它此刻抽得很长。&lt;/p>
-&lt;p>“斩断死象，不代表死亡就不存在了。” 耳鱼看着越来越近的红海，“你斩不断的。”&lt;/p></description></item><item><title>0x04 - 酒馆</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0x04/</link><pubDate>Sat, 30 Aug 2025 00:00:04 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0x04/</guid><description>&lt;div class="cloak-mission">
+&lt;p>“我不知道。” 耳鱼说，“我活了很久，从来没想过这个问题。”&lt;/p></description></item><item><title>0x04 - 酒馆</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0x04/</link><pubDate>Sat, 30 Aug 2025 00:00:04 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0x04/</guid><description>&lt;div class="cloak-mission">
 &lt;span class="cloak-mission__eyebrow">任务 · 酒馆&lt;/span>
 &lt;dl>
 &lt;dt>目标&lt;/dt>&lt;dd>陪斗篷在酒馆里度过第一个晚上。&lt;/dd>
@@ -355,6 +353,8 @@
 &lt;/dl>
 &lt;/div>
 &lt;p>学会移动以后，斗篷穿过丛林，遇到的第一个地方是一间安静的酒馆。&lt;/p>
+&lt;img src="https://kuthorx.github.io/images/story_of_cloak/酒馆绘画_1.webp" alt="斗篷在酒馆里" data-image-cycle="/images/story_of_cloak/酒馆绘画_1.webp|/images/story_of_cloak/酒馆绘画_2.webp" data-image-state="tavern_painting">
+&lt;div :show-if="tavern_painting_complete" hidden>
 &lt;p>酒馆老板是一头熊。他有一只受过伤的耳朵，另一只耳朵的形状像鱼鳃。他的眼睛是苍绿色的。&lt;/p>
 &lt;p>“这是你的过去吗？” 熊看着墙上的一幅画。画的是丛林、雨、泥水坑。&lt;/p>
 &lt;p>“只是一部分。” 斗篷已经学会了说话，“画是一个朋友帮我画的。”&lt;/p>
@@ -363,6 +363,8 @@
 &lt;p>“……你不用重复我说的话。”&lt;/p>
 &lt;p>“……好的。”&lt;/p>
 &lt;p>门铃响了。进来的是一只小猫，腰上挂着三把刀。&lt;/p>
+&lt;img src="https://kuthorx.github.io/images/story_of_cloak/火爪_1.webp" alt="火爪走进酒馆" data-image-cycle="/images/story_of_cloak/火爪_1.webp|/images/story_of_cloak/火爪_2.webp|/images/story_of_cloak/火爪_3.webp|/images/story_of_cloak/火爪_4.webp" data-image-state="fire_claw">
+&lt;div :show-if="fire_claw_complete" hidden>
 &lt;p>“好久不见，
 
 &lt;a href="https://kuthorx.github.io/story_of_cloak/characters/s-6458/">火爪&lt;/a>
@@ -398,13 +400,7 @@
 &lt;/form>
 &lt;div class="cloak-hints" data-for="tavern_move" data-unlock="3,5,7">
 &lt;details class="cloak-hint">&lt;summary>提示 1 · 方向&lt;/summary>
-&lt;p>这把银色的刀叫【撼地】。它的功能写在火爪的角色卡里。&lt;/p>
-&lt;/details>
-&lt;details class="cloak-hint">&lt;summary>提示 2 · 方法&lt;/summary>
-&lt;p>【撼地】能让“无生命的物体”移动。这里，什么东西是无生命的，又大到能让斗篷觉得“自己在动”？&lt;/p>
-&lt;/details>
-&lt;details class="cloak-hint">&lt;summary>提示 3 · 几乎是答案&lt;/summary>
-&lt;p>他们此刻所在的那个地方。&lt;/p></description></item><item><title>0x03 - 看见</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0x03/</link><pubDate>Sat, 30 Aug 2025 00:00:03 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0x03/</guid><description>&lt;div class="cloak-mission">
+&lt;p>这把银色的刀叫【撼地】。它的功能写在火爪的角色卡里。&lt;/p></description></item><item><title>0x03 - 看见</title><link>https://kuthorx.github.io/story_of_cloak/chapters/0x03/</link><pubDate>Sat, 30 Aug 2025 00:00:03 +0800</pubDate><guid>https://kuthorx.github.io/story_of_cloak/chapters/0x03/</guid><description>&lt;div class="cloak-mission">
 &lt;span class="cloak-mission__eyebrow">任务 · 一百年 3/3&lt;/span>
 &lt;dl>
 &lt;dt>目标&lt;/dt>&lt;dd>帮斗篷认出它看见的第一个符号。&lt;/dd>
@@ -857,7 +853,7 @@
 &lt;p>【这张照片，在红绿色盲的眼睛里，什么都没有。】&lt;/p>
 &lt;p>〖可是我们也什么都看不出来啊！〗&lt;/p>
 &lt;p>“所以要用这个。” 商徵拧了一下照片下面的旋钮，“一次只看一种颜色。”&lt;/p>
-&lt;div class="cloak-hue" data-src="https://kuthorx.github.io/images/story_of_cloak/hue_who.png" data-band="24" data-alt="一张布满彩色小点的全息照片">&lt;/div>
+&lt;div class="cloak-hue" data-src="https://kuthorx.github.io/images/story_of_cloak/hue_who.webp" data-band="24" data-alt="一张布满彩色小点的全息照片">&lt;/div>
 &lt;form class="full-moon-answer" data-answer-key="moon_hue" novalidate>
  &lt;div class="full-moon-answer__header">
  &lt;span class="full-moon-answer__eyebrow">HUE / PHOTO&lt;/span>

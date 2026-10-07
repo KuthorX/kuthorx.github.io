@@ -54,6 +54,8 @@
 &lt;/dl>
 &lt;/div>
 &lt;p>After learning to move, the cloak passed through the jungle, and the first place it encountered was a quiet tavern.&lt;/p>
+&lt;img src="https://kuthorx.github.io/images/story_of_cloak/酒馆绘画_1.webp" alt="Cloak in the tavern" data-image-cycle="/images/story_of_cloak/酒馆绘画_1.webp|/images/story_of_cloak/酒馆绘画_2.webp" data-image-state="tavern_painting">
+&lt;div :show-if="tavern_painting_complete" hidden>
 &lt;p>The pub owner is a bear. He had one injured ear and the other ear was shaped like a fish gill. His eyes were pale green.&lt;/p></description></item><item><title>0x03 - Seeing</title><link>https://kuthorx.github.io/en/story_of_cloak/chapters/0x03/</link><pubDate>Sat, 30 Aug 2025 00:00:03 +0800</pubDate><guid>https://kuthorx.github.io/en/story_of_cloak/chapters/0x03/</guid><description>&lt;div class="cloak-mission">
 &lt;span class="cloak-mission__eyebrow"> Mission · One Hundred Years 3/3 &lt;/span>
 &lt;dl>

@@ -284,6 +284,15 @@
   transition: opacity 240ms ease-in-out;
 }
 
+.article-image-switcher:not(.is-final):not(.is-switching) {
+  animation: image-switcher-breathe 2.4s ease-in-out infinite;
+}
+
+@keyframes image-switcher-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.72; }
+}
+
 .article-image-switcher.is-switching {
   opacity: 0;
 }
@@ -613,6 +622,10 @@
   .article-reset:hover,
   .article-reset:active {
     transform: none;
+  }
+
+  .article-image-switcher {
+    animation: none !important;
   }
 
   /* No shaking: a static wavy underline still marks the click-to-fix text. */

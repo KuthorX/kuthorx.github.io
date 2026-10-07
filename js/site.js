@@ -111,9 +111,8 @@
 (function () {
   // Articles with an image cycle or `custom_variables: true` get :show-if conditions and
   // click_switch_* / click_self toggles (e.g. the low_freq_shake typo fixes).
-  var articles = document.querySelectorAll('[data-image-cycle], [data-custom-variables]');
+  var articles = document.querySelectorAll('article[data-image-cycle], article[data-custom-variables]');
   var FADE_DURATION = 240;
-  var IMAGE_ALT = '牛肉芝士卷';
   // Answer-form state (site.js answer module) is rendered by that module, never here.
   var ANSWER_STATE_NAME = /_(wrong_answer|correct_answer|wrong_count|user)$/;
 
@@ -261,13 +260,13 @@
       : '点击切换图片（' + (index + 1) + '/' + total + '）';
   }
 
-  // Applies the image state for `index`; the final image also sets after_eating.
+  // Each sequence stores its own index and unlocks its condition on the final image.
   function applyImageIndex(ctx, image, index, animate) {
     var total = ctx.sources.length;
-    ctx.state.image_index = index;
+    ctx.state[ctx.imageIndexName] = index;
     image.setAttribute('aria-label', imageLabel(index, total));
     if (index === total - 1) {
-      ctx.state.after_eating = true;
+      ctx.state[ctx.completeName] = true;
       image.setAttribute('aria-disabled', 'true');
       image.classList.add('is-final');
       setConditionBlocks(ctx, animate);
@@ -280,35 +279,48 @@
 
   function savedImageIndex(ctx, fallback) {
     var index = fallback;
-    var savedIndex = Number(ctx.state.image_index);
+    var savedIndex = Number(ctx.state[ctx.imageIndexName]);
     if (Number.isInteger(savedIndex) && savedIndex >= 0 && savedIndex < ctx.sources.length) {
       index = savedIndex;
     }
-    return ctx.state.after_eating ? ctx.sources.length - 1 : index;
+    return ctx.state[ctx.completeName] ? ctx.sources.length - 1 : index;
   }
 
   function switchImage(ctx, image, switcher) {
     var nextIndex = switcher.index + 1;
     var revealed = false;
+    var previousSource = image.getAttribute('src');
     image.classList.add('is-switching');
 
-    function revealNextImage() {
+    function finishSwitch(success) {
       if (revealed) return;
       revealed = true;
-      switcher.index = nextIndex;
-      image.alt = IMAGE_ALT;
-      applyImageIndex(ctx, image, nextIndex, true);
+      image.onload = image.onerror = null;
+      if (success) {
+        switcher.index = nextIndex;
+        applyImageIndex(ctx, image, nextIndex, true);
+      } else {
+        image.src = previousSource;
+      }
       window.requestAnimationFrame(function () {
         image.classList.remove('is-switching');
         switcher.busy = false;
       });
     }
 
+    function revealNextImage() {
+      if (typeof image.decode === 'function') {
+        image.decode().then(function () { finishSwitch(true); }, function () { finishSwitch(false); });
+      } else {
+        finishSwitch(image.naturalWidth > 0);
+      }
+    }
+
     window.setTimeout(function () {
       image.onload = revealNextImage;
-      image.onerror = revealNextImage;
+      image.onerror = function () { finishSwitch(false); };
       image.src = ctx.sources[nextIndex];
-      if (image.complete) revealNextImage();
+      if (image.complete && image.naturalWidth > 0) revealNextImage();
     }, FADE_DURATION);
   }
 
@@ -317,7 +329,7 @@
     var last = ctx.sources.length - 1;
 
     if (switcher.index >= last) {
-      if (ctx.state.after_eating) return;
+      if (ctx.state[ctx.completeName]) return;
       applyImageIndex(ctx, image, last, true);
       return;
     }
@@ -326,14 +338,15 @@
   }
 
   function initImageSwitcher(ctx, image) {
-    var imagePath = new URL(image.getAttribute('src'), window.location.href).pathname;
-    var initialIndex = ctx.sources.indexOf(imagePath);
+    var imageUrl = new URL(image.getAttribute('src'), window.location.href).href;
+    var initialIndex = ctx.sources.map(function (source) {
+      return new URL(source, window.location.href).href;
+    }).indexOf(imageUrl);
     if (initialIndex < 0) return;
 
     var switcher = { index: savedImageIndex(ctx, initialIndex), busy: false };
     if (switcher.index !== initialIndex) {
       image.src = ctx.sources[switcher.index];
-      image.alt = IMAGE_ALT;
     }
 
     image.classList.add('article-image-switcher');
@@ -374,6 +387,8 @@
     var ctx = {
       article: article,
       sources: sources,
+      imageIndexName: 'image_index',
+      completeName: 'after_eating',
       state: articleState.value,
       save: articleState.save,
       backgroundShowIf: (article.getAttribute('data-background-show-if') || '').trim(),
@@ -385,10 +400,22 @@
 
     ctx.conditionElements.forEach(function (block) { bindToggle(ctx, block); });
     setConditionBlocks(ctx, false);
-    if (!hasImageCycle) return;
-
     Array.prototype.forEach.call(article.querySelectorAll('.article-content img'), function (image) {
-      initImageSwitcher(ctx, image);
+      var imageSources = (image.getAttribute('data-image-cycle') || '').split('|').filter(Boolean);
+      var stateName = image.getAttribute('data-image-state');
+      if (imageSources.length >= 2 && stateName) {
+        imageSources.forEach(function (source) {
+          var preload = new Image();
+          preload.src = source;
+        });
+        initImageSwitcher(Object.assign({}, ctx, {
+          sources: imageSources,
+          imageIndexName: stateName + '_image_index',
+          completeName: stateName + '_complete'
+        }), image);
+      } else if (hasImageCycle) {
+        initImageSwitcher(ctx, image);
+      }
     });
   }
 
