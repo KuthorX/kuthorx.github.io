@@ -113,6 +113,9 @@
   // click_switch_* / click_self toggles (e.g. the low_freq_shake typo fixes).
   var articles = document.querySelectorAll('article[data-image-cycle], article[data-custom-variables]');
   var FADE_DURATION = 240;
+  var englishImages = document.documentElement && /^en\b/i.test(document.documentElement.lang || '');
+  var IMAGE_LOADING_MESSAGE = englishImages ? 'Loading image…' : '图片加载中…';
+  var IMAGE_ERROR_MESSAGE = englishImages ? 'Image failed to load. Click to retry' : '图片加载失败，点击重试';
   // Answer-form state (site.js answer module) is rendered by that module, never here.
   var ANSWER_STATE_NAME = /_(wrong_answer|correct_answer|wrong_count|user)$/;
 
@@ -286,10 +289,13 @@
     return ctx.state[ctx.completeName] ? ctx.sources.length - 1 : index;
   }
 
-  function switchImage(ctx, image, switcher) {
-    var nextIndex = switcher.index + 1;
+  function loadCycleImage(ctx, image, switcher, index, animate) {
     var revealed = false;
-    var previousSource = image.getAttribute('src');
+    var canRestore = switcher.ready && index !== switcher.index;
+    switcher.busy = true;
+    switcher.placeholder.hidden = false;
+    switcher.placeholder.textContent = IMAGE_LOADING_MESSAGE;
+    switcher.frame.setAttribute('aria-busy', 'true');
     image.classList.add('is-switching');
 
     function finishSwitch(success) {
@@ -297,15 +303,30 @@
       revealed = true;
       image.onload = image.onerror = null;
       if (success) {
-        switcher.index = nextIndex;
-        applyImageIndex(ctx, image, nextIndex, true);
+        switcher.index = index;
+        switcher.ready = true;
+        switcher.failed = false;
+        if (image.naturalWidth && image.naturalHeight) {
+          switcher.frame.style.aspectRatio = image.naturalWidth + ' / ' + image.naturalHeight;
+          switcher.frame.style.setProperty('--image-natural-width', image.naturalWidth + 'px');
+        }
+        applyImageIndex(ctx, image, index, animate);
+        window.requestAnimationFrame(function () {
+          switcher.placeholder.hidden = true;
+          switcher.frame.setAttribute('aria-busy', 'false');
+          image.classList.remove('is-switching');
+          switcher.busy = false;
+        });
+      } else if (canRestore) {
+        switcher.ready = false;
+        loadCycleImage(ctx, image, switcher, switcher.index, false);
       } else {
-        image.src = previousSource;
-      }
-      window.requestAnimationFrame(function () {
-        image.classList.remove('is-switching');
+        switcher.failed = true;
+        switcher.placeholder.textContent = IMAGE_ERROR_MESSAGE;
+        switcher.frame.setAttribute('aria-busy', 'false');
+        image.setAttribute('aria-label', IMAGE_ERROR_MESSAGE);
         switcher.busy = false;
-      });
+      }
     }
 
     function revealNextImage() {
@@ -316,16 +337,28 @@
       }
     }
 
-    window.setTimeout(function () {
+    function startLoad() {
       image.onload = revealNextImage;
       image.onerror = function () { finishSwitch(false); };
-      image.src = ctx.sources[nextIndex];
-      if (image.complete && image.naturalWidth > 0) revealNextImage();
-    }, FADE_DURATION);
+      if (new URL(image.getAttribute('src'), window.location.href).href !==
+          new URL(ctx.sources[index], window.location.href).href || switcher.failed) {
+        image.src = ctx.sources[index];
+      }
+      if (image.complete) {
+        if (image.naturalWidth > 0) revealNextImage();
+        else finishSwitch(false);
+      }
+    }
+    if (animate) window.setTimeout(startLoad, FADE_DURATION);
+    else startLoad();
   }
 
   function showNextImage(ctx, image, switcher) {
     if (switcher.busy) return;
+    if (switcher.failed) {
+      loadCycleImage(ctx, image, switcher, switcher.index, false);
+      return;
+    }
     var last = ctx.sources.length - 1;
 
     if (switcher.index >= last) {
@@ -333,8 +366,7 @@
       applyImageIndex(ctx, image, last, true);
       return;
     }
-    switcher.busy = true;
-    switchImage(ctx, image, switcher);
+    loadCycleImage(ctx, image, switcher, switcher.index + 1, true);
   }
 
   function initImageSwitcher(ctx, image) {
@@ -344,15 +376,24 @@
     }).indexOf(imageUrl);
     if (initialIndex < 0) return;
 
-    var switcher = { index: savedImageIndex(ctx, initialIndex), busy: false };
-    if (switcher.index !== initialIndex) {
-      image.src = ctx.sources[switcher.index];
-    }
+    var frame = document.createElement('span');
+    frame.className = 'article-image-frame';
+    var placeholder = document.createElement('span');
+    placeholder.className = 'article-image-placeholder';
+    placeholder.setAttribute('role', 'status');
+    image.parentNode.insertBefore(frame, image);
+    frame.appendChild(image);
+    frame.appendChild(placeholder);
+    var switcher = {
+      index: savedImageIndex(ctx, initialIndex), busy: false, ready: false,
+      frame: frame, placeholder: placeholder
+    };
 
     image.classList.add('article-image-switcher');
     image.setAttribute('tabindex', '0');
     image.setAttribute('role', 'button');
-    applyImageIndex(ctx, image, switcher.index, false);
+    image.setAttribute('aria-label', imageLabel(switcher.index, ctx.sources.length));
+    loadCycleImage(ctx, image, switcher, switcher.index, false);
 
     image.addEventListener('click', function () { showNextImage(ctx, image, switcher); });
     image.addEventListener('keydown', function (event) {
