@@ -1,0 +1,161 @@
+/* 苍绿之眼 · 封面 (partials/cloak-cover.html) and the hub header it sits in.
+   Loaded on the hub only.
+
+   The cover is one ascii piece: an eye that opens, blinks and looks back at the
+   reader — the game's core conceit, at the moment the reader enters. It is not
+   a gallery, so it has no caption, no play button and no credit; the credit is
+   one line in the footer. */
+
+/* ---------- header: text beside the eye ---------- */
+
+.cloak-hub__header-inner {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 900px) {
+  .cloak-hub__header-inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+    column-gap: var(--spacing-xl);
+  }
+}
+
+.cloak-hub__header-text {
+  display: grid;
+  gap: var(--spacing-sm);
+  min-width: 0;
+}
+
+/* ---------- the cover ---------- */
+
+.cloak-cover {
+  /* Small on a phone, and never wider than the text column beside it. */
+  justify-self: center;
+  width: 100%;
+  max-width: 26rem;
+  min-width: 0;
+}
+
+.cloak-cover__stage {
+  position: relative;
+  /* The piece is drawn on the panel's own ground, so the frame is only a hint:
+     a hairline, not a card. */
+  border: 1px solid var(--cloak-line);
+  background: var(--cloak-ink);
+  overflow: hidden;
+}
+
+.cloak-cover__svg,
+.cloak-cover__live {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cloak-cover__svg {
+  opacity: 0.9;
+}
+
+/* The tag mounts a canvas as wide as its container. */
+.cloak-cover__live:empty {
+  display: none;
+}
+
+.cloak-cover__live > canvas,
+.cloak-cover__live > pre {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.cloak-cover__live > pre {
+  margin: 0;
+  color: var(--cloak-green);
+  font-family: var(--font-code);
+  font-size: 0.5rem;
+  line-height: 1.1;
+}
+
+/* Once the piece has drawn it replaces the SVG; until then the SVG stands in,
+   which is also all a no-JS reader gets. */
+.cloak-cover.is-mounted .cloak-cover__svg {
+  display: none;
+}
+
+.cloak-plate.is-mounted .cloak-plate__svg {
+  display: none;
+}
+
+/* A cover is atmosphere, not content: on a narrow screen it sits under the
+   buttons and above the case list, and never pushes the primary button down. */
+@media (max-width: 899px) {
+  .cloak-cover {
+    margin-top: var(--spacing-md);
+    max-width: 20rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloak-cover__stage {
+    border-color: var(--cloak-line);
+  }
+}
+
+
+/* ---------- chapter plates (partials/cloak-plate.html) ---------- */
+
+/* One thin strip under a chapter's title: a frontispiece, not a scene. It is
+   64 × 9 cells, so it reads as a rule with something moving inside it rather
+   than as an illustration, and it never takes the eye off the text below. */
+.cloak-plate {
+  max-width: var(--content-width);
+  margin: var(--spacing-lg) auto var(--spacing-md);
+  padding: 0 var(--spacing-lg);
+}
+
+.cloak-plate__stage {
+  border-top: 1px solid var(--cloak-line);
+  border-bottom: 1px solid var(--cloak-line);
+  background: var(--cloak-ink);
+  overflow: hidden;
+}
+
+.cloak-plate__svg,
+.cloak-plate__live {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cloak-plate__svg {
+  /* Quiet enough to sit under a title without competing with it. */
+  opacity: 0.85;
+}
+
+.cloak-plate__live:empty {
+  display: none;
+}
+
+.cloak-plate__live > canvas,
+.cloak-plate__live > pre {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.cloak-plate__live > pre {
+  margin: 0;
+  color: var(--cloak-green);
+  font-family: var(--font-code);
+  font-size: 0.5rem;
+  line-height: 1.1;
+}
+
+@media (max-width: 640px) {
+  .cloak-plate {
+    margin: var(--spacing-md) auto var(--spacing-sm);
+    padding: 0 var(--spacing-md);
+  }
+}
