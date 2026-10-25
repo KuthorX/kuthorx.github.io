@@ -26,10 +26,17 @@
   var note = root.querySelector('[data-cloak-settings-note]');
 
   var STORAGE_KEY = 'kuthorx-blog:ambience';
-  /* 音量 100% 对应这个增益；默认 75%（≈0.0675）就是离线实测过的那一档
-     （RMS ≈ −40 dBFS，不削波）。留 25% 的余量给笔记本小喇叭。 */
-  var MAX_GAIN = 0.09;
-  var DEFAULT_VOLUME = 75;
+  /* 音量 100% 对应这个增益。
+     `MAX_GAIN` 不是拍出来的：用 `OfflineAudioContext` 在真实 Chromium 里把同一张
+     音频图按 master = 1 渲染一遍，量得原始 RMS = 0.1656，再按「100% ≈ −22 dBFS」
+     反算。0.5 时 RMS ≈ −21.6 dBFS、峰值 −8.7 dBFS，不削波。
+     默认 80% → 增益 0.40 → RMS ≈ −23.6 dBFS。
+
+     这个数只能实测：噪声类信号的感知响度和增益比例差十几 dB，只按比例猜必然偏小。
+     上一版按 0.09 猜，实测只有 −31.5 dBFS，而且几乎全在 300–1500 Hz ——
+     在笔记本小喇叭上等于没有。 */
+  var MAX_GAIN = 0.5;
+  var DEFAULT_VOLUME = 80;
 
   var AudioCtx = window.AudioContext || window.webkitAudioContext;
   var ctx = null;
@@ -117,47 +124,57 @@
     master.gain.value = 0;
     master.connect(ctx.destination);
 
+    /* 调制级：基值 1.0，呼吸的起伏接在它的 gain 上。
+       这一级是必须的 —— 上一版把 LFO 直接接到 `master.gain`（基值 0.4），
+       而 LFO 摆幅是绝对值，于是增益在 0.4±0.16 之间摆、还会穿过负数。
+       那不是「呼吸」，是抽动，而且音量一改，起伏比例就跟着变。
+       接在基值 1.0 的这一级上，起伏恒为 ±16%，与音量无关。 */
+    var mod = ctx.createGain();
+    mod.gain.value = 1;
+    mod.connect(master);
+
     var source = ctx.createBufferSource();
     source.buffer = noiseBuffer();
     source.loop = true;
 
-    /* 低频：雨落在别处的闷响。 */
+    /* 低频：雨落在别处的闷响。1500 而不是 1150 —— 太闷在笔记本喇叭上就没了。 */
     var body = ctx.createBiquadFilter();
     body.type = 'lowpass';
-    body.frequency.value = 1150;
-    body.Q.value = 0.6;
+    body.frequency.value = 1500;
+    body.Q.value = 0.5;
     var bodyGain = ctx.createGain();
-    bodyGain.gain.value = 0.85;
+    bodyGain.gain.value = 0.75;
 
-    /* 高频：雨打在叶子上的颗粒。压得很低，只负责「空气里有东西」。 */
+    /* 中高：雨打在叶子上的颗粒。这一层负责「能听见」，所以比上一版抬了不少
+       （5200 Hz / 0.14 → 3900 Hz / 0.30）。 */
     var patter = ctx.createBiquadFilter();
     patter.type = 'bandpass';
-    patter.frequency.value = 5200;
-    patter.Q.value = 0.55;
+    patter.frequency.value = 3900;
+    patter.Q.value = 0.7;
     var patterGain = ctx.createGain();
-    patterGain.gain.value = 0.14;
+    patterGain.gain.value = 0.3;
 
     source.connect(body);
     body.connect(bodyGain);
-    bodyGain.connect(master);
+    bodyGain.connect(mod);
     source.connect(patter);
     patter.connect(patterGain);
-    patterGain.connect(master);
+    patterGain.connect(mod);
 
     /* 两个极慢的 LFO：一个让整体起伏（呼吸），一个让低通轻微开合（风）。 */
     var breath = ctx.createOscillator();
     breath.type = 'sine';
     breath.frequency.value = 0.07;
     var breathDepth = ctx.createGain();
-    breathDepth.gain.value = 0.22;
+    breathDepth.gain.value = 0.16;
     breath.connect(breathDepth);
-    breathDepth.connect(master.gain);
+    breathDepth.connect(mod.gain);
 
     var gust = ctx.createOscillator();
     gust.type = 'sine';
     gust.frequency.value = 0.021;
     var gustDepth = ctx.createGain();
-    gustDepth.gain.value = 260;
+    gustDepth.gain.value = 320;
     gust.connect(gustDepth);
     gustDepth.connect(body.frequency);
 
@@ -175,6 +192,7 @@
   }
 
   function start() {
+    if (running) return;
     if (!AudioCtx) {
       state.on = true;
       paint();
@@ -193,7 +211,7 @@
     if (ctx.state === 'running') {
       running = true;
       state.on = true;
-      fadeTo(targetGain(), 3);
+      fadeTo(targetGain(), 1.5);
       paint();
       save();
       return;
@@ -206,7 +224,7 @@
     ctx.resume().then(function () {
       if (ctx.state !== 'running') return;
       running = true;
-      fadeTo(targetGain(), 3);
+      fadeTo(targetGain(), 1.5);
       paint();
     }, function () {});
 
@@ -214,8 +232,29 @@
        （要等一个用户手势）。只挂 .catch 的话界面会永远停在「关」上，
        看起来就像这个功能根本没做。所以自己盯一眼状态。 */
     window.setTimeout(function () {
-      if (ctx && ctx.state !== 'running') paint();
+      if (ctx && ctx.state !== 'running') {
+        paint();
+        armFirstGesture();
+      }
     }, 300);
+  }
+
+  /* 绝大多数人不会去点设置里那个开关，所以「被拦下」不能只写在面板里等人来点：
+     页面上第一次真正的用户手势（点击、按键）就把声音接上。只做一次。 */
+  var gestureArmed = false;
+
+  function armFirstGesture() {
+    if (gestureArmed) return;
+    gestureArmed = true;
+    var once = function (event) {
+      /* 设置面板里的操作自己管自己，别在这里抢。 */
+      if (event && event.target && root.contains(event.target)) return;
+      document.removeEventListener('pointerdown', once, true);
+      document.removeEventListener('keydown', once, true);
+      if (state.on && !running) start();
+    };
+    document.addEventListener('pointerdown', once, true);
+    document.addEventListener('keydown', once, true);
   }
 
   function stop() {
