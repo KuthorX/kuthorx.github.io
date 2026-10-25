@@ -10,6 +10,9 @@
   --cloak-green-shadow: #3f7a5a;
   --cloak-text: #d3e6da;
   --cloak-line: #2c4637;
+  /* 仪器上「有字但不要你注意」的那一档：锁着的提示、输入框的提示语。
+     用 token 而不是写死，终局抽色才收得干净。 */
+  --cloak-dim: #6f9e83;
 
   /* Voice inks for light reading surfaces (AA on --bg-primary) and glows for dark panels. */
   --voice-audit-ink: oklch(40% 0.085 222);

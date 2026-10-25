@@ -1,0 +1,122 @@
+/* 苍绿之眼 · 章节页的深色面（前件里写 `surface: instrument`）
+ *
+ * 为什么只做章节页：外面是白天，进去是仪器。大厅、文章列表、其余一切保持浅色，
+ * 这样「黑暗」被圈在游戏里，而不是外溢成整个站点的一个主题。
+ *
+ * 这里换的是**同一套 token 的取值**，不是另一套样式。所以任何一个还沿用了
+ * `var(--text-body)` 之类的元件都会自动跟上；下面单独收的只有那些绕过 token、
+ * 把颜色写死在规则里的地方 —— 深色面上真正会出事的从来是这几处。
+ *
+ * 层级：页面 19%（#0e1613），仪器面板 #050806 比页面更暗，于是读数块是「井」
+ * 而不是「卡片」；井靠 `--cloak-line` 那道细边站住。亮度的预算留给文字和
+ * 那一个绿。
+ *
+ * 已知的边界：`cloak-finale.css` 里有**两套**抽色，靠这个属性分叉。
+ * 如果哪天给大厅（`_index.md`）也加上 `surface: instrument`，它没有终局，
+ * 不涉及抽色，直接用就行。
+ */
+
+html[data-surface="instrument"] {
+  /* 让表单控件、滚动条、选区也走深色，不要白闪。 */
+  color-scheme: dark;
+
+  --bg-primary: oklch(19% 0.014 168);
+  --bg-secondary: oklch(23.5% 0.016 168);
+  --bg-card: oklch(26% 0.017 168);
+
+  --text-primary: oklch(93% 0.010 160);
+  --text-secondary: oklch(82% 0.011 160);
+  --text-body: oklch(87% 0.009 160);
+  --text-muted: oklch(67% 0.012 160);
+
+  --accent: oklch(77% 0.075 235);
+  --accent-hover: oklch(85% 0.07 235);
+  --accent-soft: oklch(27% 0.022 235);
+
+  /* 章节自己的两块绿。深底上终于可以用真正的苍绿，而不是为浅底压暗的那支。 */
+  --story-accent: oklch(84% 0.115 158);
+  --story-soft: oklch(23% 0.028 158);
+
+  --border: oklch(33% 0.015 168);
+  --border-strong: oklch(54% 0.02 168);
+  --shadow: 0 16px 36px oklch(0% 0 0 / 0.5);
+
+  /* 三种脑内声音：浅底那三支是「墨」，深底要换成同色的亮版，否则贴着背景。 */
+  --voice-audit-ink: oklch(78% 0.075 222);
+  --voice-emotion-ink: oklch(80% 0.10 32);
+  --voice-master-ink: oklch(84% 0.115 158);
+}
+
+/* 导航条的颜色是写死的（`base.css` 的 `oklch(92% 0.028 230 / 0.96)`），
+   不跟 token，得单独收一次 —— 否则页顶留一条浅蓝的横带。 */
+html[data-surface="instrument"] .site-nav {
+  background: oklch(19% 0.014 168 / 0.96);
+}
+
+/* 正文里的行内代码用的是 `--bg-secondary`，深底上也还分得出来；
+   但代码块 `pre` 在两套主题里都是「深底浅字」，深色页上它会比页面更亮，
+   读起来像贴了一块。压回页面同层，用一道细边站住。 */
+html[data-surface="instrument"] .article-content pre {
+  background: oklch(16% 0.014 168);
+  border-color: var(--border);
+}
+
+/* 题图在深底上会像贴上去的白纸：压亮度、去一点饱和，让它属于这一页。
+   《死象》那张不一样，见下。 */
+html[data-surface="instrument"] .article-content img,
+html[data-surface="instrument"] .article-content video {
+  filter: brightness(0.78) contrast(1.03) saturate(0.94);
+}
+
+/* `死象_1.webp` 均值亮度 **225/255** —— 它是雨天的白纸，压到 0.78 也还是一块灯。
+   单独压到 0.62，但**不去饱和**：0x07 整章讲的是火爪红绿色盲，那张蜡笔画上的
+   红和绿是情节本身，动了饱和度就等于改剧情。压亮度只让它退回「灯下的一张画」。 */
+html[data-surface="instrument"] .article-content img[data-image-state="dead_elephant"] {
+  filter: brightness(0.62) contrast(1.03);
+}
+
+/* 「重玩本页」是 `color: var(--bg-card)` + `background: var(--text-primary)`：
+   在浅色面上是一块深色药丸，反过来就是整页最亮的一块白砖（实测 207,215,210），
+   而且是页面底部唯一抢眼的东西。改成描边，把亮度让回给答案框。 */
+html[data-surface="instrument"] .article-reset {
+  color: var(--text-primary);
+  background: transparent;
+  border-color: var(--border-strong);
+  box-shadow: none;
+}
+
+html[data-surface="instrument"] .article-reset:hover {
+  color: var(--bg-primary);
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  box-shadow: none;
+  transform: none;
+}
+
+html[data-surface="instrument"] .article-reset:active {
+  box-shadow: none;
+  transform: none;
+}
+
+/* 大厅的案卷卡是粗野主义那一套：`border: 2px solid var(--text-primary)` 加
+   `box-shadow: 4px 4px 0 var(--story-accent)`。浅底上那是一条深色粗框 + 一道
+   深绿硬投影，压得住；深底上 `--text-primary` 是 93% 的近白（还带绿调），
+   `--story-accent` 是亮绿 —— 于是每一张案卷都框了一圈发光的边，
+   和大厅之外那些细边的仪器井分成了两种语言。
+   降成细边、去掉投影：它应该也是井，不是相框。 */
+html[data-surface="instrument"] .cloak-case {
+  border-color: var(--cloak-line);
+  border-width: 1px;
+  box-shadow: none;
+}
+
+/* 角色卡没有配图时，占位显示的是编号（原来取 title 的第一个字符 —— 所有 title
+   都以 `[` 开头，于是 24 张卡上是同一个括号）。编号是索引号，不是标题：
+   等宽、暗一档、小一点，才像仪器上的丝印而不是第二排标题。
+   `--story-accent` 在深底上是亮绿，24 个 2rem 的它会把这页推成一片绿。 */
+html[data-surface="instrument"] .character-placeholder {
+  color: var(--cloak-dim);
+  font-family: var(--font-code);
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.08em;
+}

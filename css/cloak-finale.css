@@ -1,0 +1,169 @@
+/* 苍绿之眼 · 终局：最后一个问题（0xB0）。
+ *
+ * 凯特问「你的眼睛是什么颜色」的时候，颜色从这间屋子里退出去：整页的 token
+ * 都降到同一个亮度、彩度归零，唯一还剩苍绿的东西是**你回答它的那个输入框**
+ * —— 它的 placeholder 本来就写着「在这里，它只有一种颜色」。答完，颜色回来。
+ *
+ * 为什么不是 `filter: grayscale(1)`：filter 加在祖先上会连子元素一起吞掉，
+ * 没有办法在中间豁免一个元素。token 可以——所以抽掉的其实是这套色板，
+ * 而不是这一页的像素。亮度一格没动，对比度与 AA 不受影响。
+ *
+ * 只在一章声明了 `finale: true` 时加载。
+ */
+
+html[data-cloak-finale="ask"] {
+  /* 阅读面：彩度归零，亮度压下去一点。
+     只把彩度归零是不够的 —— 这个站点的阅读面本来就只有 0.018 的彩度，
+     抽掉以后几乎看不出变化。要让「颜色退出去」真的发生，得连光一起退。 */
+  --bg-primary: oklch(93.5% 0 230);
+  --bg-secondary: oklch(89% 0 230);
+  --bg-card: oklch(96% 0 230);
+  --text-primary: oklch(26% 0 245);
+  --text-secondary: oklch(35% 0 240);
+  --text-body: oklch(31% 0 235);
+  --text-muted: oklch(44% 0 230);
+  --accent: oklch(48% 0 235);
+  --accent-hover: oklch(40% 0 235);
+  --accent-soft: oklch(88% 0 230);
+  --border: oklch(75% 0 230);
+  --border-strong: oklch(40% 0 235);
+  --shadow: 0 16px 36px oklch(42% 0 235 / 0.1);
+
+  /* 章节自己的两块绿：答案框的底，和它的边。这是整页最大的一块颜色。 */
+  --story-accent: oklch(42% 0 152);
+  --story-soft: oklch(87% 0 152);
+
+  /* 仪器面板。 */
+  --cloak-green: #c3ccc3;
+  --cloak-green-strong: #dde4dd;
+  --cloak-green-shadow: #59615a;
+  --cloak-text: #d2d6d2;
+  --cloak-line: #39403a;
+  --cloak-dim: #8a8f8b;
+
+  /* 三个声音，这段时间里是同一个声音。 */
+  --voice-audit-ink: oklch(40% 0 222);
+  --voice-audit-glow: #c4c9cb;
+  --voice-emotion-ink: oklch(45% 0 32);
+  --voice-emotion-glow: #cfccc9;
+  --voice-master-ink: oklch(38% 0 152);
+}
+
+/* 照片里没有答案。 */
+html[data-cloak-finale="ask"] .article-content img,
+html[data-cloak-finale="ask"] .cloak-hue {
+  filter: grayscale(1);
+}
+
+/* 导航条的颜色是写死的（base.css 里 `oklch(92% 0.028 230 / 0.96)`），
+   不跟着 token 走，所以它得单独收一次 —— 否则一条淡蓝的横带会留在页顶。 */
+html[data-cloak-finale="ask"] .site-nav {
+  background: oklch(89% 0 230 / 0.96);
+}
+
+/* 暗底上的抽色：`surface: instrument` 的章节页（0xB0 现在是深色的）。
+   上面那一套是把**浅**色页面压暗，直接套到深色页上会把整页**闪白**。
+   深色页上「颜色退出去」的正确读法不一样：彩度归零，光也退一档 ——
+   但底不能退到和仪器面板（#050806）一样黑，否则「井」就没有了，
+   所以只从 19% 走到 16%，面板的边靠灰掉的 `--cloak-line` 留住。
+   正文从 87% 退到 70%：还是 AA，但明显「屋子暗了」，而在深色面上，
+   只有这一步是人眼真的看得出来的那一半。 */
+html[data-surface="instrument"][data-cloak-finale="ask"] {
+  --bg-primary: oklch(16% 0 168);
+  --bg-secondary: oklch(20% 0 168);
+  --bg-card: oklch(23% 0 168);
+
+  --text-primary: oklch(76% 0 160);
+  --text-secondary: oklch(66% 0 160);
+  --text-body: oklch(70% 0 160);
+  --text-muted: oklch(54% 0 160);
+
+  --accent: oklch(58% 0 235);
+  --accent-hover: oklch(64% 0 235);
+  --accent-soft: oklch(22% 0 235);
+
+  --story-accent: oklch(62% 0 158);
+  --story-soft: oklch(20% 0 158);
+
+  --border: oklch(26% 0 168);
+  --border-strong: oklch(38% 0 168);
+  --shadow: 0 16px 36px oklch(0% 0 0 / 0.5);
+
+  --cloak-dim: #70756f;
+
+  --voice-audit-ink: oklch(66% 0 222);
+  --voice-emotion-ink: oklch(68% 0 32);
+  --voice-master-ink: oklch(70% 0 158);
+}
+
+/* 导航条那条写死的颜色，暗底要再收一次 —— 上面那条是给浅底写的。 */
+html[data-surface="instrument"][data-cloak-finale="ask"] .site-nav {
+  background: oklch(16% 0 168 / 0.96);
+}
+
+/* 唯一还剩的颜色：你回答它的那个框。
+   placeholder 说「在这里，它只有一种颜色」—— 现在这句话和这件事是同一件。
+   这里要把**两套**色板都还回去：
+   - `--story-*` / `--accent`：浅色表单需要的（万一没加载仪器那份）；
+   - `--cloak-*`：抽色会把 `--cloak-green` 一起抽成灰，而深色的仪器表单全靠它，
+     照 var() 写的话，黑色输入框里「唯一的绿」其实是灰的。 */
+html[data-cloak-finale="ask"] form[data-cloak-finale] {
+  --story-accent: oklch(42% 0.095 152);
+  --story-soft: oklch(93% 0.05 158);
+  --accent: oklch(42% 0.095 152);
+  --accent-soft: oklch(90% 0.045 160);
+  --border-strong: oklch(55% 0.085 152);
+
+  --cloak-green: #9ff0c0;
+  --cloak-green-strong: #c8f7da;
+  --cloak-green-shadow: #3f7a5a;
+  --cloak-line: #2c4637;
+  --cloak-dim: #6f9e83;
+}
+
+html[data-cloak-finale="ask"] form[data-cloak-finale] .full-moon-answer__input {
+  /* 页面上唯一一个还能动的绿点：你的光标。 */
+  caret-color: oklch(42% 0.095 152);
+}
+
+html[data-cloak-finale="ask"] form[data-cloak-finale] .full-moon-answer__input::placeholder {
+  color: oklch(42% 0.095 152);
+}
+
+/* 这个站的解谜成功块前面都带着一个 `OK` 标记（article.css:170），像一行日志。
+   别的地方都好，但最后这一句不能是「OK / 苍绿色。」—— 到最后，那台仪器不再说话。 */
+html[data-cloak-finale] .full-moon-answer__feedback--success::before {
+  content: none;
+}
+
+/* 颜色回来的时候，是一口气，不是一闪。 */
+.cloak-finale-wash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: #9ff0c0;
+  opacity: 0;
+  animation: cloak-finale-wash 900ms var(--transition-fn) forwards;
+}
+
+@keyframes cloak-finale-wash {
+  0% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.12;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloak-finale-wash {
+    animation: none;
+    opacity: 0;
+  }
+}

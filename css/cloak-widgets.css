@@ -206,7 +206,8 @@
   padding: 0 0.45rem;
   color: var(--text-secondary);
   border: 1px solid var(--border-strong);
-  border-radius: 999px;
+  /* 和 `.cloak-step__status` 同一条规则：仪器上不出现胶囊形。 */
+  border-radius: 0;
   font-size: 0.72rem;
 }
 

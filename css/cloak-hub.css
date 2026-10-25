@@ -188,7 +188,9 @@
   padding: 0.05rem 0.55rem;
   color: var(--text-secondary);
   border: 1px solid var(--border-strong);
-  border-radius: 999px;
+  /* 仪器语言里没有圆角：去掉之后，状态标签和案卷的边框是同一种形状。
+     （`.cloak-archive > summary::after` 的「可跳过」同一条规则。） */
+  border-radius: 0;
   font-family: var(--font-code);
   font-size: 0.78rem;
   white-space: nowrap;

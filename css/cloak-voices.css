@@ -172,7 +172,13 @@
 
   .article-layout.has-voices > .voice-legend {
     position: sticky;
-    top: 110px;
+    /* 导航条在 1280 宽下高 131px（那道双线落在 y=128 / 130）。原来写 110px，
+       于是图例的上沿钻进导航条下面 21px —— 看起来像坏了。留 12px 空隙。 */
+    top: 143px;
+    /* 宽屏上图例是 `voices.js` 自动展开的（`legend.open = wide.matches`），
+       声音一多就会长过视口；让它自己滚，不要顶出屏幕。 */
+    max-height: calc(100vh - 155px);
+    overflow-y: auto;
     grid-column: 3;
     grid-row: 1;
     align-self: start;

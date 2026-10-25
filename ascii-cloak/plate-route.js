@@ -95,306 +95,154 @@ const PUPIL = 0; // the panel itself
 // still for a reader who prefers reduced motion. Every plate is the same size,
 // so the chapters read as one set; only the motif changes.
 //
+// Four rules keep a strip atmosphere instead of wallpaper:
+//
+//   1. Dark first. A plate is mostly empty; the light is what moves inside it.
+//      A strip that fills every cell has no place to look.
+//   2. One event per loop. Every plate has a single moment (a bolt, a box being
+//      read, an eye opening) that the rest of the twelve seconds is quiet for.
+//      Without it a strip is a texture, and a texture is not a place.
+//   3. Nothing is centred for its own sake. Every motif is held by something
+//      that does not move — a horizon, an axis, a window frame, a glass edge —
+//      so the motion has a floor to happen above.
+//   4. Say less than the space allows. A cell is a big mark: eleven of them across
+//      is a block, not a disc. Where a motif cannot be drawn at this size (a full
+//      moon, an eye small enough to hide in a photograph) the strip shows its
+//      consequence instead — the reflection on the water, the band that reveals it.
+//
+// Each factory is self-contained on purpose. tools/ascii/build.mjs emits one
+// module per piece by slicing from its factory to the next, so a chapter's page
+// carries its own plate and none of the other sixteen.
+//
 // This file is concatenated after cloak.ts's helpers by tools/ascii/build.mjs,
 // so it uses Grid, hash, swell and the palette indices without importing them.
 const PLATE_COLS = 64;
-const PLATE_ROWS = 7;
-const PLATE_MID = 3;
-/** A 64 × 9 strip, drawn by whichever motif the chapter is about. */
-function plate(motif, name, note) {
-    const cols = PLATE_COLS;
-    const rows = PLATE_ROWS;
+const PLATE_ROWS = 9;
+const PLATE_MID = 4;
+// One heartbeat for every strip: twelve seconds, slow enough that a reader
+// notices the loop only if they are looking for it.
+const PLATE_LOOP = 12;
+/** One unhurried event per loop: 0 outside it, easing up to 1 and back down.
+ *  This is what turns a strip of moving characters into a moment. */
+function beat(t, at, rise, fall, loop = PLATE_LOOP) {
+    const d = (((t % loop) + loop) % loop) - at;
+    if (d < 0)
+        return 0;
+    if (d < rise) {
+        const u = d / rise;
+        return u * u * (3 - 2 * u);
+    }
+    if (d < rise + fall) {
+        const u = 1 - (d - rise) / fall;
+        return u * u * (3 - 2 * u);
+    }
+    return 0;
+}
+/** The instrument acknowledging that something is being recorded: one cell
+ *  brightens for a fifth of a second, then it is gone. Never two at once, and
+ *  never where the eye already is. */
+function glint(g, t, seed) {
+    const slot = Math.floor(t / 2.7);
+    if (hash(slot, seed, 41) > 0.55)
+        return;
+    if (t - slot * 2.7 > 0.45)
+        return;
+    const c = Math.floor(hash(slot, seed, 42) * (PLATE_COLS - 8)) + 4;
+    const r = Math.floor(hash(slot, seed, 43) * PLATE_ROWS);
+    g.set(c, r, g.get(c, r) === " " ? "·" : g.get(c, r), GLOW);
+}
+/** A glass standing on the strip: two edges, a base, and foam at the rim.
+ *  0xA2 and 0xA3 are the same glass, before and after the can is opened. */
+const GLASS = { l: 24, r: 40, top: 1, bot: 7 };
+function glass(g, t) {
+    for (let r = GLASS.top; r <= GLASS.bot; r++) {
+        g.set(GLASS.l, r, "│", FAR);
+        g.set(GLASS.r, r, "│", FAR);
+    }
+    for (let c = GLASS.l; c <= GLASS.r; c++)
+        g.set(c, GLASS.bot, "─", FAR);
+    for (let c = GLASS.l + 1; c < GLASS.r; c++) {
+        if (hash(c, Math.floor(t * 2), 61) > 0.42)
+            g.set(c, GLASS.top, "°", FAR);
+    }
+}
+/** Bubbles rising in a fixed set of columns. A scatter of dots reads as noise;
+ *  a column reads as a glass with something in it. */
+function rising(g, t, speedScale, ink) {
+    for (let c = GLASS.l + 3; c < GLASS.r - 1; c += 3) {
+        for (let i = 0; i < 3; i++) {
+            const span = GLASS.bot - GLASS.top;
+            const speed = (1.9 + hash(c, i, 6) * 2.4) * speedScale;
+            const y = GLASS.bot - ((t * speed + hash(c, i, 7) * span) % span);
+            g.set(c + (i % 2), y, hash(c, i, 8) > 0.55 ? "○" : "°", hash(c, i, 9) > 0.5 ? NEAR : ink);
+        }
+    }
+}
+/** The piece a factory returns: one size everywhere, one motif inside it. */
+function plateOf(name, note, still, draw) {
     return {
         meta: {
             name,
             category: "scenes",
             note,
-            cols,
-            rows,
+            cols: PLATE_COLS,
+            rows: PLATE_ROWS,
             fps: 12,
             palette: PALETTE,
             ground: PALETTE[0],
-            loop: 9,
-            still: 2.4,
+            loop: PLATE_LOOP,
+            still,
         },
         default: () => (t, env) => {
-            const g = new Grid(cols, rows);
-            switch (motif) {
-                // 0x01 呼吸：一条随呼吸起伏的光带。
-                case "breath": {
-                    for (let c = 0; c < cols; c++) {
-                        const breathe = 0.5 + 0.5 * Math.sin(t * 1.1 - c * 0.18);
-                        const half = 0.5 + breathe * 3.1;
-                        for (let r = 0; r < rows; r++) {
-                            const d = Math.abs(r - PLATE_MID);
-                            if (d > half)
-                                continue;
-                            const edge = half - d;
-                            g.set(c, r, edge > 1.6 ? "▓" : edge > 0.7 ? "▒" : "░", edge > 1.6 ? GLOW : edge > 0.7 ? INK : FAR);
-                        }
-                    }
-                    break;
-                }
-                // 0x02 听见：四十二个模块同时说话。
-                case "modules": {
-                    const N = 42;
-                    for (let i = 0; i < N; i++) {
-                        const c = (i % 21) * 3;
-                        const r = i < 21 ? PLATE_MID - 2 : PLATE_MID + 2;
-                        const beat = Math.floor(t * 1.6) + i;
-                        const on = hash(i, beat, 5) > 0.42;
-                        g.set(c, r, on ? "█" : "░", on ? INK : FAR);
-                        g.set(c + 1, r, on ? "█" : "░", on ? INK : FAR);
-                    }
-                    break;
-                }
-                // 0x03 看见：一层压一层的丛林。
-                case "canopy": {
-                    for (let r = 0; r < rows; r++) {
-                        const depth = r / (rows - 1);
-                        for (let c = 0; c < cols; c++) {
-                            const sway = swell(c * 0.7 + t * (0.6 + depth * 1.4), 16, r);
-                            if (sway < 0.28 + depth * 0.32)
-                                continue;
-                            const ch = depth > 0.62 ? "▓" : depth > 0.32 ? "▒" : "░";
-                            const ink = depth > 0.62 ? GLOW : depth > 0.32 ? INK : FAR;
-                            g.set(c, r, ch, ink);
-                        }
-                    }
-                    break;
-                }
-                // 0x04 酒馆 / 0x07 死象：同一场雨，两种颜色。
-                case "drizzle":
-                case "redrain": {
-                    const red = motif === "redrain";
-                    const far = red ? RED : FAR;
-                    const near = red ? NEAR : INK;
-                    if (red) {
-                        for (let c = 0; c < cols; c++)
-                            if (hash(c, 3, 9) > 0.35)
-                                g.set(c, rows - 1, "▁", FAR);
-                    }
-                    const layers = red
-                        ? [
-                            { n: 34, v: 8, len: 2, ink: far },
-                            { n: 18, v: 15, len: 3, ink: near },
-                        ]
-                        : [
-                            { n: 26, v: 7, len: 2, ink: far },
-                            { n: 12, v: 13, len: 3, ink: near },
-                        ];
-                    for (const layer of layers) {
-                        for (let i = 0; i < layer.n; i++) {
-                            const col = hash(i, 1, layer.n) * (cols + 4) - 2;
-                            const span = rows + layer.len;
-                            const y = ((t * layer.v + hash(i, 2, layer.n) * span) % span) - layer.len;
-                            for (let k = 0; k < layer.len; k++) {
-                                const r = Math.floor(y) + k;
-                                if (r < 0 || r >= rows)
-                                    continue;
-                                g.set(col + (r - Math.floor(y)) * 0.5, r, "╱", layer.ink);
-                            }
-                        }
-                    }
-                    break;
-                }
-                // 0xA0 选择：三条路从同一个点分开。
-                case "paths": {
-                    const start = 2;
-                    const ends = [0, PLATE_MID, rows - 1];
-                    ends.forEach((end, k) => {
-                        for (let c = start; c < cols - 1; c++) {
-                            const u = (c - start) / (cols - 1 - start);
-                            const r = PLATE_MID + (end - PLATE_MID) * u;
-                            if ((c + k) % 3 === 0)
-                                g.set(c, r, "·", k === 1 ? INK : FAR);
-                        }
-                    });
-                    g.set(0, PLATE_MID, "◉", GLOW);
-                    g.set(cols - 1, ends[Math.floor(t / 3) % 3], "◆", GLOW);
-                    break;
-                }
-                // 0xA1 醒来：一条航线，和航线上的一个点。
-                case "route": {
-                    const at = (c) => PLATE_MID - 1 + Math.sin(c * 0.13) * 1.6;
-                    for (let c = 0; c < cols; c++)
-                        if (c % 2 === 0)
-                            g.set(c, at(c), "·", FAR);
-                    const p = (t * 9) % (cols - 2);
-                    g.set(p, at(p), "◆", GLOW);
-                    for (let k = 1; k <= 3; k++) {
-                        const q = p - k * 3;
-                        if (q > 0)
-                            g.set(q, at(q), "·", INK);
-                    }
-                    break;
-                }
-                // 0xA1_2 月圆：月亮走完一轮。
-                case "moon": {
-                    const cx = cols - 12;
-                    const phase = (t % 9) / 9;
-                    const R = 3;
-                    for (let r = -R; r <= R; r++) {
-                        for (let c = -R * 2; c <= R * 2; c++) {
-                            const d = Math.hypot(c / 2, r);
-                            if (d > R)
-                                continue;
-                            const shadow = (phase - 0.5) * 8;
-                            const lit = c / 2 > shadow;
-                            g.set(cx + c / 2, PLATE_MID + r, lit ? "▓" : "░", lit ? GLOW : FAR);
-                        }
-                    }
-                    for (let c = 0; c < cx - 6; c++) {
-                        if (hash(c, Math.floor(t * 0.4), 7) > 0.86)
-                            g.set(c, 1 + Math.round(hash(c, 2, 7) * 2), "·", FAR);
-                    }
-                    break;
-                }
-                // 0xA1_3 译码 / 0xA4 密室：频谱，以及被擦掉的那一段。
-                case "signal": {
-                    for (let c = 0; c < cols; c++) {
-                        const h = 1 + Math.round(swell(c * 1.1 + t * 7, 13, Math.floor(t * 3)) * 6);
-                        for (let r = rows - 1; r > rows - 1 - h; r--) {
-                            g.set(c, r, r === rows - h + 1 ? "▓" : "▒", r > rows - 3 ? GLOW : INK);
-                        }
-                    }
-                    // A narrow band where the bars are missing: the words taken out of the rain.
-                    const gap = Math.floor((t * 6) % cols);
-                    for (let r = 0; r < rows; r++) {
-                        for (let c = gap; c < gap + 3; c++)
-                            g.set(c, r, " ", BG);
-                    }
-                    break;
-                }
-                // 0xA1_4 漂浮：水面上一个透明的球。
-                case "float": {
-                    // Water on one line, and a transparent ball resting on it: the outline
-                    // is drawn as a ring, not a disc, or it reads as a box.
-                    const water = PLATE_MID + 3;
-                    for (let c = 0; c < cols; c++) {
-                        const w = water + (Math.sin(c * 0.25 + t * 1.6) > 0.6 ? -1 : 0);
-                        g.set(c, w, "~", FAR);
-                    }
-                    const cx = cols / 2;
-                    const cy = water - 3 + Math.sin(t * 0.8) * 0.5;
-                    const R = 2.7;
-                    for (let r = -4; r <= 4; r++) {
-                        for (let c = -6; c <= 6; c++) {
-                            const d = Math.hypot(c / 2, r);
-                            if (Math.abs(d - R) > 0.55)
-                                continue;
-                            g.set(cx + c / 2, cy + r, "░", INK);
-                        }
-                    }
-                    g.set(cx - 1, cy - 1, "°", GLOW);
-                    break;
-                }
-                // 0xA1_5 世界线：一条几乎不动的线，偶尔偏一下。
-                case "horizon": {
-                    // The line itself is always there; a deviation is a short spike above
-                    // it, never a gap in it (a gap reads as a rendering fault).
-                    const beat = Math.floor(t * 2);
-                    for (let c = 0; c < cols; c++) {
-                        g.set(c, PLATE_MID, "─", FAR);
-                        if (hash(c, beat, 11) > 0.93) {
-                            g.set(c, PLATE_MID - 1, "╱", RED);
-                            g.set(c, PLATE_MID - 2, "·", RED);
-                        }
-                    }
-                    const p = Math.floor((t * 6) % cols);
-                    g.set(p, PLATE_MID, "◆", GLOW);
-                    break;
-                }
-                // 0xA2 冰可乐 / 0xA3 爆炸：气泡往上跑。
-                case "bubbles": {
-                    // A few fixed columns, each with two or three bubbles rising at its own
-                    // speed: a scatter of dots reads as noise, a column reads as a glass.
-                    for (let c = 2; c < cols; c += 4) {
-                        const n = 2 + Math.floor(hash(c, 9, 6) * 2);
-                        for (let i = 0; i < n; i++) {
-                            const speed = 2.5 + hash(c, i, 6) * 3.5;
-                            const span = rows + 4;
-                            const y = span - ((t * speed + hash(c, i, 7) * span) % span);
-                            g.set(c + (i % 2), y, hash(c, i, 8) > 0.6 ? "○" : "°", hash(c, i, 9) > 0.5 ? NEAR : INK);
-                        }
-                    }
-                    break;
-                }
-                // 0xA9 小黑盒：三个盒子，一道扫描线。
-                case "boxes": {
-                    const at = [6, 26, 46];
-                    for (const x of at) {
-                        for (let c = 0; c < 9; c++) {
-                            g.set(x + c, PLATE_MID - 2, "─", FAR);
-                            g.set(x + c, PLATE_MID + 2, "─", FAR);
-                        }
-                        for (let r = -2; r <= 2; r++) {
-                            g.set(x, PLATE_MID + r, "│", FAR);
-                            g.set(x + 8, PLATE_MID + r, "│", FAR);
-                        }
-                    }
-                    const sweep = Math.floor((t * 20) % (cols + 10)) - 5;
-                    for (let r = 0; r < rows; r++) {
-                        if (sweep >= 0 && sweep < cols)
-                            g.set(sweep, r, "│", GLOW);
-                    }
-                    for (const x of at) {
-                        if (sweep >= x && sweep <= x + 8)
-                            g.set(x + 4, PLATE_MID, "◆", GLOW);
-                    }
-                    break;
-                }
-                // 0xA5 解答：一张一次只能看见一种颜色的照片。
-                case "hue": {
-                    for (let r = 0; r < rows; r++) {
-                        for (let c = 0; c < cols; c++) {
-                            if (hash(c, r, 12) < 0.45)
-                                continue;
-                            const band = (Math.floor((t * 2) % 5) + Math.floor(c / 8)) % 5;
-                            g.set(c, r, "·", [FAR, INK, GLOW, NEAR, BODY][band]);
-                        }
-                    }
-                    break;
-                }
-                // 0xB0 终局：睁开的眼睛。
-                case "eyes": {
-                    const cx = cols / 2;
-                    const lift = 2.4;
-                    for (let c = 0; c < cols; c++) {
-                        const u = (c - cx) / 16;
-                        if (Math.abs(u) > 1)
-                            continue;
-                        const h = Math.sqrt(1 - u * u) * lift;
-                        g.set(c, PLATE_MID - h, "─", INK);
-                        g.set(c, PLATE_MID + h, "─", INK);
-                        for (let r = -h + 0.5; r <= h - 0.5; r += 0.5)
-                            g.set(c, PLATE_MID + r, "░", SCLERA_DIM);
-                    }
-                    for (let r = -2; r <= 2; r++) {
-                        for (let c = -4; c <= 4; c++) {
-                            const d = Math.hypot(c / 2, r);
-                            if (d > 1.9)
-                                continue;
-                            g.set(cx + c / 2, PLATE_MID + r, d < 0.7 ? "█" : "▓", d < 0.7 ? PUPIL : GLOW);
-                        }
-                    }
-                    g.set(cx - 1, PLATE_MID - 1, "°", GLOW);
-                    break;
-                }
-            }
+            const g = new Grid(PLATE_COLS, PLATE_ROWS);
+            draw(g, t);
             return g.frame(env);
         },
     };
 }
 
-function cloakPlateRoute() { return plate("route", "航线", "一条航线，和航线上的一个点"); }
+function cloakPlateRoute() {
+    return plateOf("航线", "一条航线，走到一半就断了", 4.0, (g, t) => {
+        const END = 45; // where the record stops
+        const at = (c) => PLATE_MID - 1 + Math.sin(c * 0.11) * 1.4;
+        for (let c = 2; c <= END; c++)
+            g.set(c, at(c), c % 3 === 0 ? "·" : "─", c % 3 === 0 ? INK : FAR);
+        for (let c = 8; c < END - 4; c += 11)
+            g.set(c, at(c) + 2, "·", SCLERA_DIM);
+        const cyc = (t % PLATE_LOOP) / PLATE_LOOP;
+        const gone = cyc > 0.84;
+        const head = 2 + Math.min(cyc / 0.84, 1) * (END - 2);
+        if (!gone) {
+            for (let k = 1; k <= 6; k++) {
+                const c = head - k * 2;
+                if (c > 3)
+                    g.set(c, at(c), k < 3 ? "▓" : "▒", k < 3 ? GLOW : INK);
+            }
+            g.set(head, at(head), "◆", GLOW);
+        }
+        else {
+            // The trail is all that is left, and it is going out.
+            for (let k = 1; k <= 5; k++) {
+                const c = END - k * 3;
+                if (c > 3)
+                    g.set(c, at(c), k < 2 ? "▒" : "░", k < 2 ? INK : FAR);
+            }
+        }
+        // Past the end of the record: dashed, dim, no mark on it.
+        g.set(END + 1, at(END + 1), "│", SCLERA_DIM);
+        g.set(END + 2, at(END + 2), "│", SCLERA_DIM);
+        for (let c = END + 4; c < PLATE_COLS - 1; c += 3)
+            g.set(c, at(c), ".", FAR);
+    });
+}
+// 0xA1_2 月圆：一轮月，和水里那一截倒影。
 
 export const meta = {
   "name": "航线",
   "category": "scenes",
-  "note": "一条航线，和航线上的一个点",
+  "note": "一条航线，走到一半就断了",
   "cols": 64,
-  "rows": 7,
+  "rows": 9,
   "fps": 12,
   "palette": [
     "#050806",
@@ -408,8 +256,8 @@ export const meta = {
     "#16312a"
   ],
   "ground": "#050806",
-  "loop": 9,
-  "still": 2.4
+  "loop": 12,
+  "still": 4
 };
 
 export default cloakPlateRoute();

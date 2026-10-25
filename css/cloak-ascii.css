@@ -107,11 +107,15 @@
 
 /* One thin strip under a chapter's title: a frontispiece, not a scene. It is
    64 × 9 cells, so it reads as a rule with something moving inside it rather
-   than as an illustration, and it never takes the eye off the text below. */
+   than as an illustration, and it never takes the eye off the text below.
+   Wider than the prose column (70ch) on purpose: at the column's width the strip
+   reads as a picture set into the article; a little wider, it reads as a window,
+   and the cell seams stay tight. 1120px was too much — a third of the first
+   screen, and the `─` / `│` joins start to show. */
 .cloak-plate {
-  max-width: var(--content-width);
+  max-width: min(100%, 56rem);
   margin: var(--spacing-lg) auto var(--spacing-md);
-  padding: 0 var(--spacing-lg);
+  padding: 0;
 }
 
 .cloak-plate__stage {
@@ -156,6 +160,5 @@
 @media (max-width: 640px) {
   .cloak-plate {
     margin: var(--spacing-md) auto var(--spacing-sm);
-    padding: 0 var(--spacing-md);
   }
 }
