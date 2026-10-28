@@ -1,0 +1,103 @@
+<!doctype html><html lang=ko-kr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:title" content="Rust - Basic - 07 - 패키지 크레이트 모듈"><meta property="og:type" content="article"><meta property="og:url" content="https://kuthorx.github.io/ko/posts/rust/07_package-crate-module/"><meta name=twitter:card content="summary_large_image"><title>Rust - Basic - 07 - 패키지 크레이트 모듈 | KuthorX Blog II</title><link rel=icon href=/images/KuthorX-512.webp><link rel=preconnect href=https://fonts.googleapis.cn><link rel=preconnect href=https://fonts.gstatic.cn crossorigin><link href="https://fonts.googleapis.cn/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/base.css><link rel=stylesheet href=/css/article.css><link rel=stylesheet href=/css/cloak.css><link rel=stylesheet href=/css/sections.css><meta name=generator content="Hugo 0.166.0"></head><body><nav class=site-nav role=navigation aria-label="Main navigation"><div class=nav-inner><a href=/ko/ class=nav-home><span class=nav-prompt>kuthorx@blog:~$</span>
+<span class=nav-site-title>KuthorX</span>
+</a><button class=nav-toggle id=nav-toggle aria-label="Toggle menu" aria-expanded=false>
+<span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>한국어</summary><div class=language-options aria-label=Language><a href=/posts/rust/07_package-crate-module/ class=language-link hreflang=zh>中文</a>
+<a href=/en/posts/rust/07_package-crate-module/ class=language-link hreflang=en>English</a>
+<a href=/fr/posts/rust/07_package-crate-module/ class=language-link hreflang=fr>Français</a>
+<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/es/posts/rust/07_package-crate-module/ class=language-link hreflang=es>Español</a>
+<a href=/ja/posts/rust/07_package-crate-module/ class=language-link hreflang=ja>日本語</a>
+<a href=/ko/posts/rust/07_package-crate-module/ class="language-link active" hreflang=ko aria-current=page>한국어</a>
+<a href=/de/posts/rust/07_package-crate-module/ class=language-link hreflang=de>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/ko/about/ class=nav-link>About</a></li><li><a href=/ko/posts/ class=nav-link>Posts</a></li><li><a href=/ko/repos/ class=nav-link>Repos</a></li><li><a href=/ko/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/ko/posts/rust/07_package-crate-module/><div class=article-header><h1 class=article-title>Rust - Basic - 07 - 패키지 크레이트 모듈</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
+<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=패키지-크레이트-모듈>패키지 크레이트 모듈</h1><h1 id=이해>이해</h1><p>하나의 package에는 library crate를 최대 하나만 둘 수 있지만 binary crate는 여러 개 둘 수 있습니다.</p><ul><li>module과 pub<div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=k>mod</span> <span class=nn>front_of_house</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// 다른 module이 중첩 module을 참조하려면 pub이 필요함
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>pub</span><span class=w> </span><span class=k>mod</span> <span class=nn>hosting</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 다른 module이 이 fn을 참조하려면 pub이 필요함
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>add_to_waitlist</span><span class=p>()</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// 중첩 struct를 참조할 때도 pub이 필요함
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>pub</span><span class=w> </span><span class=k>struct</span> <span class=nc>Breakfast</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// struct 내부 field는 기본 private이며 외부 접근에도 pub이 필요함
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>pub</span><span class=w> </span><span class=n>toast</span>: <span class=nb>String</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>seasonal_fruit</span>: <span class=nb>String</span><span class=p>,</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>impl</span><span class=w> </span><span class=n>Breakfast</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>summer</span><span class=p>(</span><span class=n>toast</span>: <span class=kp>&amp;</span><span class=kt>str</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nc>Breakfast</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>Breakfast</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>toast</span>: <span class=nb>String</span>::<span class=n>from</span><span class=p>(</span><span class=n>toast</span><span class=p>),</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>seasonal_fruit</span>: <span class=nb>String</span>::<span class=n>from</span><span class=p>(</span><span class=s>&#34;peaches&#34;</span><span class=p>),</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>eat_at_restaurant</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// Absolute path
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>crate</span>::<span class=n>front_of_house</span>::<span class=n>hosting</span>::<span class=n>add_to_waitlist</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// Relative path
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>front_of_house</span>::<span class=n>hosting</span>::<span class=n>add_to_waitlist</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div></li><li>module과 use<div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// C++의 using namespace와 유사함
+</span></span></span><span class=line><span class=cl><span class=k>mod</span> <span class=nn>front_of_house</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>pub</span><span class=w> </span><span class=k>mod</span> <span class=nn>hosting</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>add_to_waitlist</span><span class=p>()</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=k>crate</span>::<span class=n>front_of_house</span>::<span class=n>hosting</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>eat_at_restaurant</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>hosting</span>::<span class=n>add_to_waitlist</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>hosting</span>::<span class=n>add_to_waitlist</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>hosting</span>::<span class=n>add_to_waitlist</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// use에 pub을 붙이는 것을 Re-exporting이라 하며 외부에서 hosting::xxx로 직접 사용 가능
+</span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>use</span><span class=w> </span><span class=k>crate</span>::<span class=n>front_of_house</span>::<span class=n>hosting</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// use를 간소화할 수 있음
+</span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>cmp</span>::<span class=n>Ordering</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=p>{</span><span class=n>cmp</span>::<span class=n>Ordering</span><span class=p>,</span><span class=w> </span><span class=n>io</span><span class=p>};</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 간소화할 때 self를 사용할 수 있음
+</span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span>::<span class=n>Write</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span>::<span class=p>{</span><span class=bp>self</span><span class=p>,</span><span class=w> </span><span class=n>Write</span><span class=p>};</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// *로 모든 module을 가져올 수 있음
+</span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>collections</span>::<span class=o>*</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></div></li></ul><p><code>mod a;</code>를 사용하면 같은 디렉터리의 a 폴더 또는 파일을 읽습니다.</p><h1 id=출처>출처</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html</a></p></blockquote><p>&mldr;
+<em>package</em>는 기능 집합을 제공하는 하나 이상의 crate입니다. package에는 해당 crate를 빌드하는 방법을 설명하는 <em>Cargo.toml</em> 파일이 들어 있습니다.
+package가 포함할 수 있는 내용을 정하는 규칙이 있습니다. package에는 library crate를 최대 하나만 포함할 수 있습니다. binary crate는 원하는 만큼 포함할 수 있지만, 적어도 하나의 crate(library 또는 binary)는 있어야 합니다.
+&mldr;</p><h2 id=모듈을-여러-파일로-분리하기><a href=https://doc.rust-lang.org/book/ch07-05-separating-modules-into-different-files.html#separating-modules-into-different-files target=_blank rel="noopener noreferrer">모듈을 여러 파일로 분리하기</a></h2><p>지금까지 이 장의 모든 예제는 하나의 파일에 여러 모듈을 정의했습니다. 모듈이 커지면 코드를 탐색하기 쉽도록 정의를 별도의 파일로 옮기고 싶을 수 있습니다.
+예를 들어 목록 7-17의 코드에서 시작해 crate 루트 파일을 목록 7-21의 코드가 들어가도록 바꾸고, <code>front_of_house</code> 모듈을 자체 파일 <em>src/front_of_house.rs</em>로 옮겨 보겠습니다. 이 경우 crate 루트 파일은 <em>src/lib.rs</em>이지만, crate 루트 파일이 <em>src/main.rs</em>인 binary crate에도 같은 절차를 적용할 수 있습니다.
+파일 이름: src/lib.rs</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>mod</span> <span class=nn>front_of_house</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>use</span><span class=w> </span><span class=k>crate</span>::<span class=n>front_of_house</span>::<span class=n>hosting</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>eat_at_restaurant</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>hosting</span>::<span class=n>add_to_waitlist</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>hosting</span>::<span class=n>add_to_waitlist</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>hosting</span>::<span class=n>add_to_waitlist</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p><strong>목록 7-21: 본문이 <em>src/front_of_house.rs</em>에 들어갈 <code>front_of_house</code> 모듈 선언하기</strong>
+그리고 <em>src/front_of_house.rs</em>에는 목록 7-22처럼 <code>front_of_house</code> 모듈 본문의 정의가 들어갑니다.
+파일 이름: src/front_of_house.rs</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>mod</span> <span class=nn>hosting</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>add_to_waitlist</span><span class=p>()</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><p><strong>목록 7-22: <em>src/front_of_house.rs</em>의 <code>front_of_house</code> 모듈 내부 정의</strong>
+블록 대신 <code>mod front_of_house</code> 뒤에 세미콜론을 쓰면 Rust는 모듈과 같은 이름의 다른 파일에서 모듈 내용을 불러옵니다. 예제를 계속해 <code>hosting</code> 모듈도 별도 파일로 옮기려면 <em>src/front_of_house.rs</em>에 <code>hosting</code> 모듈 선언만 남깁니다:
+파일 이름: src/front_of_house.rs</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>mod</span> <span class=nn>hosting</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></div><p>그런 다음 <em>src/front_of_house</em> 디렉터리와 <em>src/front_of_house/hosting.rs</em> 파일을 만들고 <code>hosting</code> 모듈의 정의를 넣습니다:
+파일 이름: src/front_of_house/hosting.rs</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>add_to_waitlist</span><span class=p>()</span><span class=w> </span><span class=p>{}</span><span class=w>
+</span></span></span></code></pre></div><p>모듈 트리는 그대로이며 정의가 서로 다른 파일에 있어도 <code>eat_at_restaurant</code>의 함수 호출은 수정 없이 작동합니다. 이 방법을 사용하면 모듈이 커질 때 새 파일로 옮길 수 있습니다.
+<em>src/lib.rs</em>의 <code>pub use crate::front_of_house::hosting</code> 문도 바뀌지 않았습니다. <code>use</code>는 crate의 일부로 컴파일되는 파일에 영향을 주지 않습니다. <code>mod</code> 키워드는 모듈을 선언하고, Rust는 모듈과 같은 이름의 파일에서 해당 모듈에 들어갈 코드를 찾습니다.</p></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#패키지-크레이트-모듈>패키지 크레이트 모듈</a></li><li><a href=#이해>이해</a></li><li><a href=#출처>출처</a><ul><li><a href=#모듈을-여러-파일로-분리하기>모듈을 여러 파일로 분리하기</a></li></ul></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/ko/posts/rust/06_enum/>&larr; Rust - Basic - 06 - 열거형</a>
+<a href=/ko/posts/rust/08_collections/>Rust - Basic - 08 - 컬렉션 &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
+<a href=/index.xml>RSS</a>
+<a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>

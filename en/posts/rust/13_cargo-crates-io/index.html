@@ -3,11 +3,12 @@
 </a><button class=nav-toggle id=nav-toggle aria-label="Toggle menu" aria-expanded=false>
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>English</summary><div class=language-options aria-label=Language><a href=/posts/rust/13_cargo-crates-io/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/rust/13_cargo-crates-io/ class="language-link active" hreflang=en aria-current=page>English</a>
-<a href=/fr/ class=language-link hreflang=fr>Français</a>
+<a href=/fr/posts/rust/13_cargo-crates-io/ class=language-link hreflang=fr>Français</a>
 <a href=/ru/ class=language-link hreflang=ru>Русский</a>
-<a href=/es/ class=language-link hreflang=es>Español</a>
-<a href=/ja/ class=language-link hreflang=ja>日本語</a>
-<a href=/ko/ class=language-link hreflang=ko>한국어</a></div></details><ul class=nav-links id=nav-links><li><a href=/en/about/ class=nav-link>About</a></li><li><a href=/en/posts/ class=nav-link>Posts</a></li><li><a href=/en/repos/ class=nav-link>Repos</a></li><li><a href=/en/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/en/posts/rust/13_cargo-crates-io/><div class=article-header><h1 class=article-title>Rust - Basic - 13 - Cargo Crates.io</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
+<a href=/es/posts/rust/13_cargo-crates-io/ class=language-link hreflang=es>Español</a>
+<a href=/ja/posts/rust/13_cargo-crates-io/ class=language-link hreflang=ja>日本語</a>
+<a href=/ko/posts/rust/13_cargo-crates-io/ class=language-link hreflang=ko>한국어</a>
+<a href=/de/posts/rust/13_cargo-crates-io/ class=language-link hreflang=de>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/en/about/ class=nav-link>About</a></li><li><a href=/en/posts/ class=nav-link>Posts</a></li><li><a href=/en/repos/ class=nav-link>Repos</a></li><li><a href=/en/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/en/posts/rust/13_cargo-crates-io/><div class=article-header><h1 class=article-title>Rust - Basic - 13 - Cargo Crates.io</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
 <span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=cargo-cratesio>Cargo Crates.io</h1><h1 id=comprehension>Comprehension</h1><ul><li><p>Compilation optimization options</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// Filename: Cargo.toml
 </span></span></span><span class=line><span class=cl><span class=c1>// opt-level controls optimization from 0 to 3; higher values increase compile time and runtime efficiency
 </span></span></span><span class=line><span class=cl><span class=p>[</span><span class=n>profile</span><span class=p>.</span><span class=n>dev</span><span class=p>]</span><span class=w>

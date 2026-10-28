@@ -1,0 +1,81 @@
+<!doctype html><html lang=fr-fr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:title" content="Rust - Basic - 11 - Test"><meta property="og:type" content="article"><meta property="og:url" content="https://kuthorx.github.io/fr/posts/rust/11_test/"><meta name=twitter:card content="summary_large_image"><title>Rust - Basic - 11 - Test | KuthorX Blog II</title><link rel=icon href=/images/KuthorX-512.webp><link rel=preconnect href=https://fonts.googleapis.cn><link rel=preconnect href=https://fonts.gstatic.cn crossorigin><link href="https://fonts.googleapis.cn/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/base.css><link rel=stylesheet href=/css/article.css><link rel=stylesheet href=/css/cloak.css><link rel=stylesheet href=/css/sections.css><meta name=generator content="Hugo 0.166.0"></head><body><nav class=site-nav role=navigation aria-label="Main navigation"><div class=nav-inner><a href=/fr/ class=nav-home><span class=nav-prompt>kuthorx@blog:~$</span>
+<span class=nav-site-title>KuthorX</span>
+</a><button class=nav-toggle id=nav-toggle aria-label="Toggle menu" aria-expanded=false>
+<span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>Français</summary><div class=language-options aria-label=Language><a href=/posts/rust/11_test/ class=language-link hreflang=zh>中文</a>
+<a href=/en/posts/rust/11_test/ class=language-link hreflang=en>English</a>
+<a href=/fr/posts/rust/11_test/ class="language-link active" hreflang=fr aria-current=page>Français</a>
+<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/es/posts/rust/11_test/ class=language-link hreflang=es>Español</a>
+<a href=/ja/posts/rust/11_test/ class=language-link hreflang=ja>日本語</a>
+<a href=/ko/posts/rust/11_test/ class=language-link hreflang=ko>한국어</a>
+<a href=/de/posts/rust/11_test/ class=language-link hreflang=de>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/fr/about/ class=nav-link>About</a></li><li><a href=/fr/posts/ class=nav-link>Posts</a></li><li><a href=/fr/repos/ class=nav-link>Repos</a></li><li><a href=/fr/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/fr/posts/rust/11_test/><div class=article-header><h1 class=article-title>Rust - Basic - 11 - Test</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
+<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=test>Test</h1><blockquote><p>，Rust ，， Test-Driven 。，、，Test-Driven 。Tests，Tests、Tests，。</p></blockquote><h1 id=compréhension>Compréhension</h1><ul><li></li></ul><pre><code>```rust
+
+pub fn greeting(name: &amp;str) -&gt; String {
+    String::from(&quot;Hello!&quot;)
+}
+
+pub struct Guess {
+    value: i32,
+}
+
+impl Guess {
+    pub fn new(value: i32) -&gt; Guess {
+        if value &lt; 1 || value &gt; 100 {
+            panic!(&quot;Guess value must be between 1 and 100, got {}.&quot;, value);
+        }
+
+        Guess { value }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+		use super::*;
+    #[test]
+    fn it_works() {
+				// 也有 assert_ne! 可以使用
+        assert_eq!(2 + 2, 4);
+    }
+
+		#[test]
+    fn will_fail() {
+        panic!(&quot;Make this test fail&quot;);
+    }
+
+		#[test]
+    fn greeting_contains_name() {
+        let result = greeting(&quot;Carol&quot;);
+				// assert 时如果不符合预期，可以 print hint
+        assert!(
+            result.contains(&quot;Carol&quot;),
+            &quot;Greeting did not contain name, value was `{}`&quot;,
+            result
+        );
+    }
+		
+		#[test]
+		#[should_panic]
+		// should_panic 用于检测是否 panic
+		fn greater_than_100() {
+        Guess::new(200);
+    }
+}
+
+#[cfg(test)]
+mod tests2 {
+    #[test]
+		// 使用 Result&lt;T, E&gt; 作为retour值，无法使用 should_panic trait
+    fn it_works() -&gt; Result&lt;(), String&gt; {
+        if 2 + 2 == 4 {
+            Ok(())
+        } else {
+            Err(String::from(&quot;two plus two does not equal four&quot;))
+        }
+    }
+}
+```
+</code></pre><h1 id=origin>Origin</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch11-00-testing.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch11-00-testing.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#test>Test</a></li><li><a href=#compréhension>Compréhension</a></li><li><a href=#origin>Origin</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/fr/posts/rust/10_generic-data-type--traits--lifetime/>&larr; Rust - Basic - 10 - Generaic Data Type & Traits & Lifetime</a>
+<a href=/fr/posts/rust/12_iterators-and-closures/>Rust - Basic - 12 - Iterators and Closures &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
+<a href=/index.xml>RSS</a>
+<a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>
