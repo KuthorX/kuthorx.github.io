@@ -4,27 +4,27 @@
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>Español</summary><div class=language-options aria-label=Language><a href=/posts/rust/06_enum/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/rust/06_enum/ class=language-link hreflang=en>English</a>
 <a href=/fr/posts/rust/06_enum/ class=language-link hreflang=fr>Français</a>
-<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/ru/posts/rust/06_enum/ class=language-link hreflang=ru>Русский</a>
 <a href=/es/posts/rust/06_enum/ class="language-link active" hreflang=es aria-current=page>Español</a>
 <a href=/ja/posts/rust/06_enum/ class=language-link hreflang=ja>日本語</a>
 <a href=/ko/posts/rust/06_enum/ class=language-link hreflang=ko>한국어</a>
 <a href=/de/posts/rust/06_enum/ class=language-link hreflang=de>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/es/about/ class=nav-link>About</a></li><li><a href=/es/posts/ class=nav-link>Posts</a></li><li><a href=/es/repos/ class=nav-link>Repos</a></li><li><a href=/es/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/es/posts/rust/06_enum/><div class=article-header><h1 class=article-title>Rust - Básico - 06 - Enumeración</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
-<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=enumeración>Enumeración</h1><h1 id=comprensión>Comprensión</h1><ul><li><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 基础声明
+<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=enumeración>Enumeración</h1><h1 id=comprensión>Comprensión</h1><ul><li><p>Sintaxis básica</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// declaración básica
 </span></span></span><span class=line><span class=cl><span class=k>enum</span> <span class=nc>IpAddrKind</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V4</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V6</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 基础使用
+</span></span></span><span class=line><span class=cl><span class=c1>// uso básico
 </span></span></span><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=n>four</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>IpAddrKind</span>::<span class=n>V4</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=n>six</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>IpAddrKind</span>::<span class=n>V6</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 可用于 struct
+</span></span></span><span class=line><span class=cl><span class=c1>// se puede usar en un struct
 </span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>IpAddr</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>kind</span>: <span class=nc>IpAddrKind</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>address</span>: <span class=nb>String</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 可包含不同 Type，包括 struct
+</span></span></span><span class=line><span class=cl><span class=c1>// puede contener distintos Type, incluso un struct
 </span></span></span><span class=line><span class=cl><span class=k>enum</span> <span class=nc>IpAddr</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V4</span><span class=p>(</span><span class=kt>u8</span><span class=p>,</span><span class=w> </span><span class=kt>u8</span><span class=p>,</span><span class=w> </span><span class=kt>u8</span><span class=p>,</span><span class=w> </span><span class=kt>u8</span><span class=p>),</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V6</span><span class=p>(</span><span class=nb>String</span><span class=p>),</span><span class=w>
@@ -48,18 +48,13 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>ChangeColor</span><span class=p>(</span><span class=kt>i32</span><span class=p>,</span><span class=w> </span><span class=kt>i32</span><span class=p>,</span><span class=w> </span><span class=kt>i32</span><span class=p>),</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 和 struct 一样，支持 impl
+</span></span></span><span class=line><span class=cl><span class=c1>// igual que un struct, admite impl
 </span></span></span><span class=line><span class=cl><span class=k>impl</span><span class=w> </span><span class=n>Message</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>fn</span> <span class=nf>call</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// method body would be defined here
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li><li>match
-match
-，
-match Type
-match move
-match ，<div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[derive(Debug)]</span><span class=w>
+</span></span></span></code></pre></div></li><li><p>Uso con match</p><p>match debe cubrir todos los valores posibles del enum</p><p>Si no se enumeran todos los valores posibles, se puede usar otra variable o el guion bajo</p><p>El valor devuelto por una sentencia match debe ser del mismo tipo</p><p>Ojo: match también provoca move</p><p>Otras formas de usar match se explican en otros capítulos</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[derive(Debug)]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>enum</span> <span class=nc>UsState</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Alabama</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Alaska</span><span class=p>,</span><span class=w>
@@ -74,18 +69,18 @@ match ，<div class=highlight><pre tabindex=0 class=chroma><code class=language-
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>fn</span> <span class=nf>value_in_cents</span><span class=p>(</span><span class=n>coin</span>: <span class=nc>Coin</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>u8</span> <span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>match</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Penny</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>  </span><span class=c1>// 只有一行的时候，可以省略 {}
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Penny</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>  </span><span class=c1>// cuando solo hay una línea, se pueden omitir {}
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Nickel</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>5</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Dime</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>10</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Quarter</span><span class=p>(</span><span class=n>state</span><span class=p>)</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>						</span><span class=c1>// 这里的值可能为 UsState::Alabama 或 UsState::Alaska
+</span></span></span><span class=line><span class=cl><span class=w>						</span><span class=c1>// el valor aquí puede ser UsState::Alabama o UsState::Alaska
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;State quarter from </span><span class=si>{:?}</span><span class=s>!&#34;</span><span class=p>,</span><span class=w> </span><span class=n>state</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=mi>25</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>};</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>match</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Penny</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// 可用其他变量，表示其他情况
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// se puede usar otra variable para representar otros casos
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>a</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{:?}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>a</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=mi>5</span><span class=w>
@@ -93,25 +88,25 @@ match ，<div class=highlight><pre tabindex=0 class=chroma><code class=language-
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>};</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>match</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Penny</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// 可用下划线
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// se puede usar el guion bajo
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>_</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>5</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li><li>if let<div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></div></li><li><p>Uso con if let</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// match 写法
+</span></span></span><span class=line><span class=cl><span class=c1>// forma con match
 </span></span></span><span class=line><span class=cl><span class=k>match</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Coin</span>::<span class=n>Quarter</span><span class=p>(</span><span class=n>state</span><span class=p>)</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;State quarter from </span><span class=si>{:?}</span><span class=s>!&#34;</span><span class=p>,</span><span class=w> </span><span class=n>state</span><span class=p>),</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>_</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// if let 写法
+</span></span></span><span class=line><span class=cl><span class=c1>// forma con if let
 </span></span></span><span class=line><span class=cl><span class=k>if</span><span class=w> </span><span class=kd>let</span><span class=w> </span><span class=n>Coin</span>::<span class=n>Quarter</span><span class=p>(</span><span class=n>state</span><span class=p>)</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;State quarter from </span><span class=si>{:?}</span><span class=s>!&#34;</span><span class=p>,</span><span class=w> </span><span class=n>state</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>count</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=mi>1</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li></ul><h1 id=fuente>Fuente</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch06-00-enums.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch06-00-enums.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#enumeración>Enumeración</a></li><li><a href=#comprensión>Comprensión</a></li><li><a href=#fuente>Fuente</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/es/posts/rust/05_struct/>&larr; Rust - Básico - 05 - Estructuras</a>
+</span></span></span></code></pre></div></li></ul><h1 id=fuente>Fuente</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch06-00-enums.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch06-00-enums.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Índice</div><nav id=TableOfContents><ul><li><a href=#enumeración>Enumeración</a></li><li><a href=#comprensión>Comprensión</a></li><li><a href=#fuente>Fuente</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/es/posts/rust/05_struct/>&larr; Rust - Básico - 05 - Estructuras</a>
 <a href=/es/posts/rust/07_package-crate-module/>Rust - Básico - 07 - Pacakge Crate Module &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
 <a href=/index.xml>RSS</a>
 <a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>

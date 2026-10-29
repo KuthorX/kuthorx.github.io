@@ -4,50 +4,48 @@
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>Français</summary><div class=language-options aria-label=Language><a href=/posts/rust/13_cargo-crates-io/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/rust/13_cargo-crates-io/ class=language-link hreflang=en>English</a>
 <a href=/fr/posts/rust/13_cargo-crates-io/ class="language-link active" hreflang=fr aria-current=page>Français</a>
-<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/ru/posts/rust/13_cargo-crates-io/ class=language-link hreflang=ru>Русский</a>
 <a href=/es/posts/rust/13_cargo-crates-io/ class=language-link hreflang=es>Español</a>
 <a href=/ja/posts/rust/13_cargo-crates-io/ class=language-link hreflang=ja>日本語</a>
 <a href=/ko/posts/rust/13_cargo-crates-io/ class=language-link hreflang=ko>한국어</a>
 <a href=/de/posts/rust/13_cargo-crates-io/ class=language-link hreflang=de>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/fr/about/ class=nav-link>About</a></li><li><a href=/fr/posts/ class=nav-link>Posts</a></li><li><a href=/fr/repos/ class=nav-link>Repos</a></li><li><a href=/fr/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/fr/posts/rust/13_cargo-crates-io/><div class=article-header><h1 class=article-title>Rust - Basic - 13 - Cargo Crates.io</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
-<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=cargo-cratesio>Cargo Crates.io</h1><h1 id=compréhension>Compréhension</h1><ul><li></li></ul><pre><code>```rust
-// Filename: Cargo.toml
-// opt-level 为优化程度，0-3，越高编译时间越长，运行效率越快
-[profile.dev]
-opt-level = 0
+<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=cargo-cratesio>Cargo Crates.io</h1><h1 id=compréhension>Compréhension</h1><ul><li>Options d’optimisation de la compilation</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=w>   </span><span class=c1>// Filename: Cargo.toml
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// opt-level est le niveau d&#39;optimisation, de 0 à 3: plus il est élevé, plus la compilation est longue et plus l&#39;exécution est rapide
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=p>[</span><span class=n>profile</span><span class=p>.</span><span class=n>dev</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=n>opt</span><span class=o>-</span><span class=n>level</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=p>[</span><span class=n>profile</span><span class=p>.</span><span class=n>release</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=n>opt</span><span class=o>-</span><span class=n>level</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>3</span><span class=w>
+</span></span></span></code></pre></div><ul><li>Doc String</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=w>   </span><span class=sd>//! # My Crate
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>//!
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>//! `my_crate` is a collection of utilities to make performing certain
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>//! calculations more convenient.
+</span></span></span><span class=line><span class=cl><span class=w>   
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>/// Adds one to the number given.
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>///
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>/// # Examples
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>///
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>/// ```
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>/// let arg = 5;
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>/// let answer = my_crate::add_one(arg);
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>///
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>/// assert_eq!(6, answer);
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=sd>/// ```
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>add_one</span><span class=p>(</span><span class=n>x</span>: <span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>       </span><span class=n>x</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></div><pre><code> `cargo doc` 
 
-[profile.release]
-opt-level = 3
-```
-</code></pre><ul><li><p>Doc String</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=sd>//! # My Crate
-</span></span></span><span class=line><span class=cl><span class=sd>//!
-</span></span></span><span class=line><span class=cl><span class=sd>//! `my_crate` is a collection of utilities to make performing certain
-</span></span></span><span class=line><span class=cl><span class=sd>//! calculations more convenient.
-</span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=sd>/// Adds one to the number given.
-</span></span></span><span class=line><span class=cl><span class=sd>///
-</span></span></span><span class=line><span class=cl><span class=sd>/// # Examples
-</span></span></span><span class=line><span class=cl><span class=sd>///
-</span></span></span><span class=line><span class=cl><span class=sd>/// ```
-</span></span></span><span class=line><span class=cl><span class=sd>/// let arg = 5;
-</span></span></span><span class=line><span class=cl><span class=sd>/// let answer = my_crate::add_one(arg);
-</span></span></span><span class=line><span class=cl><span class=sd>///
-</span></span></span><span class=line><span class=cl><span class=sd>/// assert_eq!(6, answer);
-</span></span></span><span class=line><span class=cl><span class=sd>/// ```
-</span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>add_one</span><span class=p>(</span><span class=n>x</span>: <span class=kt>i32</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>i32</span> <span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>x</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div><p><code>cargo doc</code></p><p><code>//!</code> crate module，<code>///</code> fonction</p><p><img src=/posts/rust/13/1.png alt=1></p><p><img src=/posts/rust/13/2.png alt=2></p></li><li></li></ul><pre><code>&gt; A *workspace* is a set of packages that share the same *Cargo.lock* and output directory
-&gt; 
+`//!` crate module, `///` fonction
 
+![1](/posts/rust/13/1.png)
 
-
- Cargo.lock  output dir
-</code></pre><ul><li></li></ul><pre><code>`cargo install`  binary crates
-</code></pre><h1 id=origin>Origin</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html</a></p></blockquote><p>&mldr;</p><h2 id=extending-cargo-with-custom-commands><a href=https://doc.rust-lang.org/book/ch14-05-extending-cargo.html#extending-cargo-with-custom-commands target=_blank rel="noopener noreferrer">Extending Cargo with Custom Commands</a></h2><p>Cargo is designed so you can extend it with new subcommands without having to modify Cargo. If a binary in your <code>$PATH</code> is named <code>cargo-something</code>, you can run it as if it was a Cargo subcommand by running <code>cargo something</code>. Custom commands like this are also listed when you run <code>cargo --list</code>. Being able to use <code>cargo install</code> to install extensions and then run them just like the built-in Cargo tools is a super convenient benefit of Cargo’s design!</p><h2 id=summary><a href=https://doc.rust-lang.org/book/ch14-05-extending-cargo.html#summary target=_blank rel="noopener noreferrer">Summary</a></h2><p>Sharing code with Cargo and 
+![2](/posts/rust/13/2.png)
+</code></pre><ul><li><p>Espaces de travail (workspaces)</p><blockquote><p>A <em>workspace</em> is a set of packages that share the same <em>Cargo.lock</em> and output directory</p></blockquote><p>Cargo.lock output dir</p></li><li><p>Autres</p><p><code>cargo install</code> binary crates</p></li></ul><h1 id=origin>Origin</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html</a></p></blockquote><p>&mldr;</p><h2 id=extending-cargo-with-custom-commands><a href=https://doc.rust-lang.org/book/ch14-05-extending-cargo.html#extending-cargo-with-custom-commands target=_blank rel="noopener noreferrer">Extending Cargo with Custom Commands</a></h2><p>Cargo is designed so you can extend it with new subcommands without having to modify Cargo. If a binary in your <code>$PATH</code> is named <code>cargo-something</code>, you can run it as if it was a Cargo subcommand by running <code>cargo something</code>. Custom commands like this are also listed when you run <code>cargo --list</code>. Being able to use <code>cargo install</code> to install extensions and then run them just like the built-in Cargo tools is a super convenient benefit of Cargo’s design!</p><h2 id=summary><a href=https://doc.rust-lang.org/book/ch14-05-extending-cargo.html#summary target=_blank rel="noopener noreferrer">Summary</a></h2><p>Sharing code with Cargo and 
 <a href=https://crates.io/ target=_blank rel="noopener noreferrer">crates.io</a>
  is part of what makes the Rust ecosystem useful for many different tasks. Rust’s standard library is small and stable, but crates are easy to share, use, and improve on a timeline different from that of the language. Don’t be shy about sharing code that’s useful to you on 
 <a href=https://crates.io/ target=_blank rel="noopener noreferrer">crates.io</a>
-; it’s likely that it will be useful to someone else as well!</p></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#cargo-cratesio>Cargo Crates.io</a></li><li><a href=#compréhension>Compréhension</a></li><li><a href=#origin>Origin</a><ul><li><a href=#extending-cargo-with-custom-commands>Extending Cargo with Custom Commands</a></li><li><a href=#summary>Summary</a></li></ul></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/fr/posts/rust/12_iterators-and-closures/>&larr; Rust - Basic - 12 - Iterators and Closures</a>
+; it’s likely that it will be useful to someone else as well!</p></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Sommaire</div><nav id=TableOfContents><ul><li><a href=#cargo-cratesio>Cargo Crates.io</a></li><li><a href=#compréhension>Compréhension</a></li><li><a href=#origin>Origin</a><ul><li><a href=#extending-cargo-with-custom-commands>Extending Cargo with Custom Commands</a></li><li><a href=#summary>Summary</a></li></ul></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/fr/posts/rust/12_iterators-and-closures/>&larr; Rust - Basic - 12 - Iterators and Closures</a>
 <a href=/fr/posts/rust/14_smart-pointers/>Rust - Basic - 14 - Smart Pointers &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
 <a href=/index.xml>RSS</a>
 <a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>

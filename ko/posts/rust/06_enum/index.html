@@ -4,12 +4,12 @@
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>한국어</summary><div class=language-options aria-label=Language><a href=/posts/rust/06_enum/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/rust/06_enum/ class=language-link hreflang=en>English</a>
 <a href=/fr/posts/rust/06_enum/ class=language-link hreflang=fr>Français</a>
-<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/ru/posts/rust/06_enum/ class=language-link hreflang=ru>Русский</a>
 <a href=/es/posts/rust/06_enum/ class=language-link hreflang=es>Español</a>
 <a href=/ja/posts/rust/06_enum/ class=language-link hreflang=ja>日本語</a>
 <a href=/ko/posts/rust/06_enum/ class="language-link active" hreflang=ko aria-current=page>한국어</a>
 <a href=/de/posts/rust/06_enum/ class=language-link hreflang=de>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/ko/about/ class=nav-link>About</a></li><li><a href=/ko/posts/ class=nav-link>Posts</a></li><li><a href=/ko/repos/ class=nav-link>Repos</a></li><li><a href=/ko/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/ko/posts/rust/06_enum/><div class=article-header><h1 class=article-title>Rust - Basic - 06 - 열거형</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
-<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=열거형>열거형</h1><h1 id=이해>이해</h1><ul><li>기본 문법<div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 기본 선언
+<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=열거형>열거형</h1><h1 id=이해>이해</h1><ul><li><p>기본 문법</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 기본 선언
 </span></span></span><span class=line><span class=cl><span class=k>enum</span> <span class=nc>IpAddrKind</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V4</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V6</span><span class=p>,</span><span class=w>
@@ -54,12 +54,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// method body would be defined here
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li><li>match와 함께 사용
-match는 가능한 모든 열거형 값을 포함해야 합니다.
-가능한 모든 열거형 값을 나열하지 않을 때는 다른 변수나 밑줄로 대신할 수 있습니다.
-match 문이 반환하는 값의 Type은 일치해야 합니다.
-match도 move를 발생시킨다는 점에 유의하세요.
-match의 다른 사용 방식은 다른 장에서 설명합니다.<div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[derive(Debug)]</span><span class=w>
+</span></span></span></code></pre></div></li><li><p>match와 함께 사용</p><p>match는 가능한 모든 열거형 값을 포함해야 합니다.</p><p>가능한 모든 열거형 값을 나열하지 않을 때는 다른 변수나 밑줄로 대신할 수 있습니다.</p><p>match 문이 반환하는 값의 Type은 일치해야 합니다.</p><p>match도 move를 발생시킨다는 점에 유의하세요.</p><p>match의 다른 사용 방식은 다른 장에서 설명합니다.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[derive(Debug)]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>enum</span> <span class=nc>UsState</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Alabama</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Alaska</span><span class=p>,</span><span class=w>
@@ -97,21 +92,21 @@ match의 다른 사용 방식은 다른 장에서 설명합니다.<div class=hig
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>_</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>5</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li><li>if let과 함께 사용<div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>;</span><span class=w>
+</span></span></span></code></pre></div></li><li><p>if let과 함께 사용</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// match 写法
+</span></span></span><span class=line><span class=cl><span class=c1>// match 방식
 </span></span></span><span class=line><span class=cl><span class=k>match</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Coin</span>::<span class=n>Quarter</span><span class=p>(</span><span class=n>state</span><span class=p>)</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;State quarter from </span><span class=si>{:?}</span><span class=s>!&#34;</span><span class=p>,</span><span class=w> </span><span class=n>state</span><span class=p>),</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>_</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// if let 写法
+</span></span></span><span class=line><span class=cl><span class=c1>// if let 방식
 </span></span></span><span class=line><span class=cl><span class=k>if</span><span class=w> </span><span class=kd>let</span><span class=w> </span><span class=n>Coin</span>::<span class=n>Quarter</span><span class=p>(</span><span class=n>state</span><span class=p>)</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;State quarter from </span><span class=si>{:?}</span><span class=s>!&#34;</span><span class=p>,</span><span class=w> </span><span class=n>state</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>count</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=mi>1</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li></ul><h1 id=출처>출처</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch06-00-enums.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch06-00-enums.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#열거형>열거형</a></li><li><a href=#이해>이해</a></li><li><a href=#출처>출처</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/ko/posts/rust/05_struct/>&larr; Rust - Basic - 05 - 구조체</a>
+</span></span></span></code></pre></div></li></ul><h1 id=출처>출처</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch06-00-enums.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch06-00-enums.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>목차</div><nav id=TableOfContents><ul><li><a href=#열거형>열거형</a></li><li><a href=#이해>이해</a></li><li><a href=#출처>출처</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/ko/posts/rust/05_struct/>&larr; Rust - Basic - 05 - 구조체</a>
 <a href=/ko/posts/rust/07_package-crate-module/>Rust - Basic - 07 - 패키지 크레이트 모듈 &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
 <a href=/index.xml>RSS</a>
 <a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>

@@ -4,7 +4,7 @@
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>한국어</summary><div class=language-options aria-label=Language><a href=/posts/web_automation/01_playwrightvsotherframework/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/web_automation/01_playwrightvsotherframework/ class=language-link hreflang=en>English</a>
 <a href=/fr/posts/web_automation/01_playwrightvsotherframework/ class=language-link hreflang=fr>Français</a>
-<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/ru/posts/web_automation/01_playwrightvsotherframework/ class=language-link hreflang=ru>Русский</a>
 <a href=/es/posts/web_automation/01_playwrightvsotherframework/ class=language-link hreflang=es>Español</a>
 <a href=/ja/posts/web_automation/01_playwrightvsotherframework/ class=language-link hreflang=ja>日本語</a>
 <a href=/ko/posts/web_automation/01_playwrightvsotherframework/ class="language-link active" hreflang=ko aria-current=page>한국어</a>
@@ -14,16 +14,14 @@
 를 참고한 노트입니다.
 Chrome이
 <a href=https://developers.google.com/web/updates/2017/04/headless-chrome target=_blank rel="noopener noreferrer">headless browser를 지원한 이후</a>
-, 일부 개발자가 지원하던 복잡하고 번거로운 기술(예: PhantomJS, Selenium)을 바탕으로 Web 자동화 프레임워크가 <em>빠르게</em> 발전하기 시작했습니다.
-**
+, 일부 개발자가 지원하던 복잡하고 번거로운 기술(예: PhantomJS, Selenium)을 바탕으로 Web 자동화 프레임워크가 <em>빠르게</em> 발전하기 시작했습니다.</p></blockquote><p>**
 <a href=https://pptr.dev/ target=_blank rel="noopener noreferrer">Puppeteer</a>
-**는 Chrome이 공식 지원하는(DevTools Protocol 기반) 프레임워크이며, WebDriver 프로토콜 기반인 PhantomJS보다 안정적입니다.
-**
+**는 Chrome이 공식 지원하는(DevTools Protocol 기반) 프레임워크이며, WebDriver 프로토콜 기반인 PhantomJS보다 안정적입니다.</p><p>**
 <a href=https://playwright.dev/ target=_blank rel="noopener noreferrer">Playwright</a>
-**의 개발팀은 Puppeteer에서 왔습니다. Puppeteer와 비교하면:</p></blockquote><ol><li>API가 비슷합니다(사용법을 익히는 비용이 거의 없습니다).</li><li>일부 API가 더 Ergonomic합니다(의미가 더 명확합니다). 여러 장치를 편리하게 흉내 낼 수 있습니다.</li><li>Firefox와 Webkit을 지원하지만 호환성은 낮습니다(앞으로 Puppeteer 팀과 “함께 구축”할 수 있을지도 모릅니다……).
+**의 개발팀은 Puppeteer에서 왔습니다. Puppeteer와 비교하면:</p><ol><li>API가 비슷합니다(사용법을 익히는 비용이 거의 없습니다).</li><li>일부 API가 더 Ergonomic합니다(의미가 더 명확합니다). 여러 장치를 편리하게 흉내 낼 수 있습니다.</li><li>Firefox와 Webkit을 지원하지만 호환성은 낮습니다(앞으로 Puppeteer 팀과 “함께 구축”할 수 있을지도 모릅니다……).
 <strong>기술 선택</strong>에서는 Playwright / Puppeteer, Cypress / PhantomJS / Selenium 중 무엇을 고르든(많은 workaround가 있지만 동시에 flaky할 수 있습니다) 다음을 고려해야 합니다.</li><li>브라우저 간 지원(이 글에 따르면 현재는 Playwright가 가장 잘하지만, Puppeteer와 Cypress가 계속 뒤처질 것이라고 누가 보장할 수 있을까요?)</li><li>장기 지원(당연한 말처럼 들립니다……).</li><li>구체적인 업무에 맞춘 분석(이 역시 당연한 말입니다……).</li></ol><h1 id=업무-선택>업무 선택</h1><p>새 프로젝트라면 Playwright 사용을 권합니다. 다른 프레임워크와의 자세한 비교는 아래 <strong>기타 참고 자료</strong>의 2번 글을 읽어 보세요.</p><h1 id=기타-참고-자료>기타 참고 자료</h1><ol><li><a href=https://drewdevault.com/2020/03/18/Reckless-limitless-scope.html target=_blank rel="noopener noreferrer">The reckless, infinite scope of web browsers</a>
 - 현대 브라우저 생태계에 대한 견해</li><li><a href=https://www.cnblogs.com/fnng/p/14230840.html target=_blank rel="noopener noreferrer">Playwright VS Selenium VS Puppeteer VS Cypress</a>
 - 인기 Web 자동화 프레임워크를 여러 관점에서 비교한 종합적인 중국어 블로그</li><li><a href=https://www.testim.io/blog/puppeteer-selenium-playwright-cypress-how-to-choose/ target=_blank rel="noopener noreferrer">Puppeteer, Selenium, Playwright, Cypress – how to choose?</a>
-- 위 중국어 블로그 서두에서 인용한 글</li></ol></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#기본-노트>기본 노트</a></li><li><a href=#업무-선택>업무 선택</a></li><li><a href=#기타-참고-자료>기타 참고 자료</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><span></span></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
+- 위 중국어 블로그 서두에서 인용한 글</li></ol></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>목차</div><nav id=TableOfContents><ul><li><a href=#기본-노트>기본 노트</a></li><li><a href=#업무-선택>업무 선택</a></li><li><a href=#기타-참고-자료>기타 참고 자료</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><span></span></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
 <a href=/index.xml>RSS</a>
 <a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>

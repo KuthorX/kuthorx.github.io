@@ -4,27 +4,27 @@
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>日本語</summary><div class=language-options aria-label=Language><a href=/posts/rust/06_enum/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/rust/06_enum/ class=language-link hreflang=en>English</a>
 <a href=/fr/posts/rust/06_enum/ class=language-link hreflang=fr>Français</a>
-<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/ru/posts/rust/06_enum/ class=language-link hreflang=ru>Русский</a>
 <a href=/es/posts/rust/06_enum/ class=language-link hreflang=es>Español</a>
 <a href=/ja/posts/rust/06_enum/ class="language-link active" hreflang=ja aria-current=page>日本語</a>
 <a href=/ko/posts/rust/06_enum/ class=language-link hreflang=ko>한국어</a>
 <a href=/de/posts/rust/06_enum/ class=language-link hreflang=de>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/ja/about/ class=nav-link>About</a></li><li><a href=/ja/posts/ class=nav-link>Posts</a></li><li><a href=/ja/repos/ class=nav-link>Repos</a></li><li><a href=/ja/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/ja/posts/rust/06_enum/><div class=article-header><h1 class=article-title>Rust - Basic - 06 - Enum</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
-<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=列挙型>列挙型</h1><h1 id=理解>理解</h1><ul><li><p>基本構文</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 基础声明
+<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=列挙型とは>列挙型とは</h1><h1 id=理解する>理解する</h1><ul><li><p>基本的な構文</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// 基本の宣言
 </span></span></span><span class=line><span class=cl><span class=k>enum</span> <span class=nc>IpAddrKind</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V4</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V6</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 基础使用
+</span></span></span><span class=line><span class=cl><span class=c1>// 基本的な使い方
 </span></span></span><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=n>four</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>IpAddrKind</span>::<span class=n>V4</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=n>six</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>IpAddrKind</span>::<span class=n>V6</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 可用于 struct
+</span></span></span><span class=line><span class=cl><span class=c1>// struct 内でも使えます
 </span></span></span><span class=line><span class=cl><span class=k>struct</span> <span class=nc>IpAddr</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>kind</span>: <span class=nc>IpAddrKind</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>address</span>: <span class=nb>String</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 可包含不同 Type，包括 struct
+</span></span></span><span class=line><span class=cl><span class=c1>// 異なる Type を含められます。struct もその 1 つです
 </span></span></span><span class=line><span class=cl><span class=k>enum</span> <span class=nc>IpAddr</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V4</span><span class=p>(</span><span class=kt>u8</span><span class=p>,</span><span class=w> </span><span class=kt>u8</span><span class=p>,</span><span class=w> </span><span class=kt>u8</span><span class=p>,</span><span class=w> </span><span class=kt>u8</span><span class=p>),</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>V6</span><span class=p>(</span><span class=nb>String</span><span class=p>),</span><span class=w>
@@ -48,13 +48,13 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>ChangeColor</span><span class=p>(</span><span class=kt>i32</span><span class=p>,</span><span class=w> </span><span class=kt>i32</span><span class=p>,</span><span class=w> </span><span class=kt>i32</span><span class=p>),</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 和 struct 一样，支持 impl
+</span></span></span><span class=line><span class=cl><span class=c1>// struct と同じく impl をサポート
 </span></span></span><span class=line><span class=cl><span class=k>impl</span><span class=w> </span><span class=n>Message</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>fn</span> <span class=nf>call</span><span class=p>(</span><span class=o>&amp;</span><span class=bp>self</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// method body would be defined here
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li><li><p>match と組み合わせて使う</p><p>match では、列挙型のすべてのな値を網羅する必要があります。</p><p>すべての値を列挙しない場合は、別の変数またはアンダースコアで代できます。</p><p>match 式の各分岐が返す値の Type は一致していなければなりません。</p><p>match も move を発生させるに注意してください。</p><p>match のその他の使い方は、別の章で説明します。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[derive(Debug)]</span><span class=w>
+</span></span></span></code></pre></div></li><li><p>match と組み合わせて使う</p><p>match では、列挙型のすべての可能な値を網羅する必要があります。</p><p>すべての値を列挙しない場合は、別の変数またはアンダースコアで代用できます。</p><p>match 式の各分岐が返す値の Type は一致していなければなりません。</p><p>match も move を発生させることに注意してください。</p><p>match のその他の使い方は、別の章で説明します。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=cp>#[derive(Debug)]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>enum</span> <span class=nc>UsState</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Alabama</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Alaska</span><span class=p>,</span><span class=w>
@@ -69,18 +69,18 @@
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>fn</span> <span class=nf>value_in_cents</span><span class=p>(</span><span class=n>coin</span>: <span class=nc>Coin</span><span class=p>)</span><span class=w> </span>-&gt; <span class=kt>u8</span> <span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>match</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Penny</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>  </span><span class=c1>// 只有一行的时候，可以省略 {}
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Penny</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>  </span><span class=c1>// 1 行だけなら {} を省略できます
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Nickel</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>5</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Dime</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>10</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Quarter</span><span class=p>(</span><span class=n>state</span><span class=p>)</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>						</span><span class=c1>// 这里的值可能为 UsState::Alabama 或 UsState::Alaska
+</span></span></span><span class=line><span class=cl><span class=w>						</span><span class=c1>// ここでの値は UsState::Alabama または UsState::Alaska の可能性があります
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;State quarter from </span><span class=si>{:?}</span><span class=s>!&#34;</span><span class=p>,</span><span class=w> </span><span class=n>state</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=mi>25</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>};</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>match</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Penny</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// 可用其他变量，表示其他情况
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// 他の変数でその他のケースを表せます
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>a</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;</span><span class=si>{:?}</span><span class=s>&#34;</span><span class=p>,</span><span class=w> </span><span class=n>a</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=mi>5</span><span class=w>
@@ -88,25 +88,25 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>};</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>match</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Coin</span>::<span class=n>Penny</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// 可用下划线
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// アンダースコアも使えます
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>_</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=mi>5</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span></code></pre></div></li><li><p>if let と組み合わせて使う</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=kd>let</span><span class=w> </span><span class=k>mut</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// match 写法
+</span></span></span><span class=line><span class=cl><span class=c1>// match での書き方
 </span></span></span><span class=line><span class=cl><span class=k>match</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>Coin</span>::<span class=n>Quarter</span><span class=p>(</span><span class=n>state</span><span class=p>)</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;State quarter from </span><span class=si>{:?}</span><span class=s>!&#34;</span><span class=p>,</span><span class=w> </span><span class=n>state</span><span class=p>),</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>_</span><span class=w> </span><span class=o>=&gt;</span><span class=w> </span><span class=n>count</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=mi>1</span><span class=p>,</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// if let 写法
+</span></span></span><span class=line><span class=cl><span class=c1>// if let での書き方
 </span></span></span><span class=line><span class=cl><span class=k>if</span><span class=w> </span><span class=kd>let</span><span class=w> </span><span class=n>Coin</span>::<span class=n>Quarter</span><span class=p>(</span><span class=n>state</span><span class=p>)</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>coin</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=fm>println!</span><span class=p>(</span><span class=s>&#34;State quarter from </span><span class=si>{:?}</span><span class=s>!&#34;</span><span class=p>,</span><span class=w> </span><span class=n>state</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w> </span><span class=k>else</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>count</span><span class=w> </span><span class=o>+=</span><span class=w> </span><span class=mi>1</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li></ul><h1 id=参照元>参照元</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch06-00-enums.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch06-00-enums.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#列挙型>列挙型</a></li><li><a href=#理解>理解</a></li><li><a href=#参照元>参照元</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/ja/posts/rust/05_struct/>&larr; Rust - Basic - 05 - Struct</a>
+</span></span></span></code></pre></div></li></ul><h1 id=参照元のリンク>参照元のリンク</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch06-00-enums.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch06-00-enums.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>目次</div><nav id=TableOfContents><ul><li><a href=#列挙型とは>列挙型とは</a></li><li><a href=#理解する>理解する</a></li><li><a href=#参照元のリンク>参照元のリンク</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/ja/posts/rust/05_struct/>&larr; Rust - Basic - 05 - Struct</a>
 <a href=/ja/posts/rust/07_package-crate-module/>Rust - Basic - 07 - Pacakge Crate Module &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
 <a href=/index.xml>RSS</a>
 <a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>

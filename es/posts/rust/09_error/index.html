@@ -4,19 +4,19 @@
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>Español</summary><div class=language-options aria-label=Language><a href=/posts/rust/09_error/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/rust/09_error/ class=language-link hreflang=en>English</a>
 <a href=/fr/posts/rust/09_error/ class=language-link hreflang=fr>Français</a>
-<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/ru/posts/rust/09_error/ class=language-link hreflang=ru>Русский</a>
 <a href=/es/posts/rust/09_error/ class="language-link active" hreflang=es aria-current=page>Español</a>
 <a href=/ja/posts/rust/09_error/ class=language-link hreflang=ja>日本語</a>
 <a href=/ko/posts/rust/09_error/ class=language-link hreflang=ko>한국어</a>
 <a href=/de/posts/rust/09_error/ class=language-link hreflang=de>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/es/about/ class=nav-link>About</a></li><li><a href=/es/posts/ class=nav-link>Posts</a></li><li><a href=/es/repos/ class=nav-link>Repos</a></li><li><a href=/es/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/es/posts/rust/09_error/><div class=article-header><h1 class=article-title>Rust - Básico - 09 - Errores</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
-<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=errores>Errores</h1><h1 id=comprensión>Comprensión</h1><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// Rust 默认在遇到 panic 时会 unwinding，比较消耗性能
-</span></span></span><span class=line><span class=cl><span class=c1>// 如果想直接退出程序，可以在 toml 中做如下设置
+<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=errores>Errores</h1><h1 id=comprensión>Comprensión</h1><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// por defecto Rust hace unwinding al encontrar un panic, lo que consume rendimiento
+</span></span></span><span class=line><span class=cl><span class=c1>// si se quiere salir del programa directamente, se puede configurar así en el toml
 </span></span></span><span class=line><span class=cl><span class=p>[</span><span class=n>profile</span><span class=p>.</span><span class=n>release</span><span class=p>]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=n>panic</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=na>&#39;abort&#39;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 可以设置 RUST_BACKTRACE=1 展示 panic 时的堆栈
+</span></span></span><span class=line><span class=cl><span class=c1>// se puede definir RUST_BACKTRACE=1 para mostrar la pila en el momento del panic
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 典型的 Error 处理方式
+</span></span></span><span class=line><span class=cl><span class=c1>// forma típica de manejar Error
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>fs</span>::<span class=n>File</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span>::<span class=n>ErrorKind</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
@@ -37,7 +37,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>};</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 使用闭包处理 Error
+</span></span></span><span class=line><span class=cl><span class=c1>// manejar Error con closures
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>fs</span>::<span class=n>File</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span>::<span class=n>ErrorKind</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
@@ -53,7 +53,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>});</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 传递 Error - return Err
+</span></span></span><span class=line><span class=cl><span class=c1>// propagar Error - return Err
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>fs</span>::<span class=n>File</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span>::<span class=p>{</span><span class=bp>self</span><span class=p>,</span><span class=w> </span><span class=n>Read</span><span class=p>};</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
@@ -73,7 +73,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 传递 Error - 使用 ?
+</span></span></span><span class=line><span class=cl><span class=c1>// propagar Error - usando ?
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>fs</span>::<span class=n>File</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span>::<span class=n>Read</span><span class=p>;</span><span class=w>
@@ -85,14 +85,14 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nb>Ok</span><span class=p>(</span><span class=n>s</span><span class=p>)</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=c1>// 值得注意的是，Rust 提供了更方便的读取文件的 method
+</span></span></span><span class=line><span class=cl><span class=c1>// conviene notar que Rust ofrece un method más cómodo para leer archivos
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>fs</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>use</span><span class=w> </span><span class=n>std</span>::<span class=n>io</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>fn</span> <span class=nf>read_username_from_file</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=nb>String</span><span class=p>,</span><span class=w> </span><span class=n>io</span>::<span class=n>Error</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>fs</span>::<span class=n>read_to_string</span><span class=p>(</span><span class=s>&#34;hello.txt&#34;</span><span class=p>)</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div><h1 id=fuente>Fuente</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch09-00-error-handling.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch09-00-error-handling.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#errores>Errores</a></li><li><a href=#comprensión>Comprensión</a></li><li><a href=#fuente>Fuente</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/es/posts/rust/08_collections/>&larr; Rust - Básico - 08 - Colecciones</a>
+</span></span></span></code></pre></div><h1 id=fuente>Fuente</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch09-00-error-handling.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch09-00-error-handling.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Índice</div><nav id=TableOfContents><ul><li><a href=#errores>Errores</a></li><li><a href=#comprensión>Comprensión</a></li><li><a href=#fuente>Fuente</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/es/posts/rust/08_collections/>&larr; Rust - Básico - 08 - Colecciones</a>
 <a href=/es/posts/rust/10_generic-data-type--traits--lifetime/>Rust - Básico - 10 - Generaic Data Type & Traits & Lifetime &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
 <a href=/index.xml>RSS</a>
 <a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>

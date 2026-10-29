@@ -4,12 +4,12 @@
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>日本語</summary><div class=language-options aria-label=Language><a href=/posts/rust/11_test/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/rust/11_test/ class=language-link hreflang=en>English</a>
 <a href=/fr/posts/rust/11_test/ class=language-link hreflang=fr>Français</a>
-<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/ru/posts/rust/11_test/ class=language-link hreflang=ru>Русский</a>
 <a href=/es/posts/rust/11_test/ class=language-link hreflang=es>Español</a>
 <a href=/ja/posts/rust/11_test/ class="language-link active" hreflang=ja aria-current=page>日本語</a>
 <a href=/ko/posts/rust/11_test/ class=language-link hreflang=ko>한국어</a>
 <a href=/de/posts/rust/11_test/ class=language-link hreflang=de>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/ja/about/ class=nav-link>About</a></li><li><a href=/ja/posts/ class=nav-link>Posts</a></li><li><a href=/ja/repos/ class=nav-link>Repos</a></li><li><a href=/ja/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/ja/posts/rust/11_test/><div class=article-header><h1 class=article-title>Rust - Basic - 11 - Test</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
-<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=テスト>テスト</h1><blockquote><p>全体として、Rust が提供する機は比較的シンプルですが十分に網羅的で、Test-Driven 開発に適しています。ただ、筆者の職場では多くの場合、バージョン新の人手が足りず要件も多いため、Test-Driven 開発は適していません。テストの時間ができてから単体テストや統合テストを追加するのは、とても面倒です。</p></blockquote><h1 id=理解>理解</h1><ul><li><p>基本的な書き方</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=w>
+<span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=テスト>テスト</h1><blockquote><p>全体として、Rust が提供する機能は比較的シンプルですが十分に網羅的で、Test-Driven 開発に適しています。ただ、筆者の職場では多くの場合、バージョン刷新の人手が足りず要件も多いため、Test-Driven 開発は適していません。テストの時間ができてから単体テストや統合テストを追加するのは、とても面倒です。</p></blockquote><h1 id=理解する>理解する</h1><ul><li><p>基本的な書き方</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>pub</span><span class=w> </span><span class=k>fn</span> <span class=nf>greeting</span><span class=p>(</span><span class=n>name</span>: <span class=kp>&amp;</span><span class=kt>str</span><span class=p>)</span><span class=w> </span>-&gt; <span class=nb>String</span> <span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nb>String</span>::<span class=n>from</span><span class=p>(</span><span class=s>&#34;Hello!&#34;</span><span class=p>)</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
@@ -33,7 +33,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>use</span><span class=w> </span><span class=k>super</span>::<span class=o>*</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=cp>#[test]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>fn</span> <span class=nf>it_works</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// 也有 assert_ne! 可以使用
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// assert_ne! も使えます
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=mi>2</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>2</span><span class=p>,</span><span class=w> </span><span class=mi>4</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
@@ -45,7 +45,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=cp>#[test]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>fn</span> <span class=nf>greeting_contains_name</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kd>let</span><span class=w> </span><span class=n>result</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>greeting</span><span class=p>(</span><span class=s>&#34;Carol&#34;</span><span class=p>);</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// assert 时如果不符合预期，可以 print hint
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// assert が期待どおりでないときは、hint を print できます
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=fm>assert!</span><span class=p>(</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>result</span><span class=p>.</span><span class=n>contains</span><span class=p>(</span><span class=s>&#34;Carol&#34;</span><span class=p>),</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=s>&#34;Greeting did not contain name, value was `{}`&#34;</span><span class=p>,</span><span class=w>
@@ -55,7 +55,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=cp>#[test]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=cp>#[should_panic]</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=c1>// should_panic 用于检测是否 panic
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=c1>// should_panic は panic するかどうかの検出に使います
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>fn</span> <span class=nf>greater_than_100</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Guess</span>::<span class=n>new</span><span class=p>(</span><span class=mi>200</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
@@ -64,7 +64,7 @@
 </span></span></span><span class=line><span class=cl><span class=cp>#[cfg(test)]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>mod</span> <span class=nn>tests2</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=cp>#[test]</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=c1>// 使用 Result&lt;T, E&gt; 作为返回值，无法使用 should_panic trait
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=c1>// 戻り値に Result&lt;T, E&gt; を使う場合、should_panic trait は使えません
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>fn</span> <span class=nf>it_works</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=p>(),</span><span class=w> </span><span class=nb>String</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=mi>2</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>2</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=mi>4</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nb>Ok</span><span class=p>(())</span><span class=w>
@@ -73,7 +73,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li></ul><h1 id=参照元>参照元</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch11-00-testing.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch11-00-testing.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#テスト>テスト</a></li><li><a href=#理解>理解</a></li><li><a href=#参照元>参照元</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/ja/posts/rust/10_generic-data-type--traits--lifetime/>&larr; Rust - Basic - 10 - Generaic Data Type & Traits & Lifetime</a>
+</span></span></span></code></pre></div></li></ul><h1 id=参照元のリンク>参照元のリンク</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch11-00-testing.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch11-00-testing.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>目次</div><nav id=TableOfContents><ul><li><a href=#テスト>テスト</a></li><li><a href=#理解する>理解する</a></li><li><a href=#参照元のリンク>参照元のリンク</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/ja/posts/rust/10_generic-data-type--traits--lifetime/>&larr; Rust - Basic - 10 - Generaic Data Type & Traits & Lifetime</a>
 <a href=/ja/posts/rust/12_iterators-and-closures/>Rust - Basic - 12 - Iterators and Closures &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
 <a href=/index.xml>RSS</a>
 <a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>

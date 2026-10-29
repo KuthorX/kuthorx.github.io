@@ -4,7 +4,7 @@
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>Deutsch</summary><div class=language-options aria-label=Language><a href=/posts/rust/11_test/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/rust/11_test/ class=language-link hreflang=en>English</a>
 <a href=/fr/posts/rust/11_test/ class=language-link hreflang=fr>Français</a>
-<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/ru/posts/rust/11_test/ class=language-link hreflang=ru>Русский</a>
 <a href=/es/posts/rust/11_test/ class=language-link hreflang=es>Español</a>
 <a href=/ja/posts/rust/11_test/ class=language-link hreflang=ja>日本語</a>
 <a href=/ko/posts/rust/11_test/ class=language-link hreflang=ko>한국어</a>
@@ -33,7 +33,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>use</span><span class=w> </span><span class=k>super</span>::<span class=o>*</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=cp>#[test]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>fn</span> <span class=nf>it_works</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// 也有 assert_ne! 可以使用
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// Auch assert_ne! ist verfügbar
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=fm>assert_eq!</span><span class=p>(</span><span class=mi>2</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>2</span><span class=p>,</span><span class=w> </span><span class=mi>4</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
@@ -45,7 +45,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=cp>#[test]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>fn</span> <span class=nf>greeting_contains_name</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=kd>let</span><span class=w> </span><span class=n>result</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>greeting</span><span class=p>(</span><span class=s>&#34;Carol&#34;</span><span class=p>);</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// assert 时如果不符合预期，可以 print hint
+</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=c1>// Wenn assert nicht der Erwartung entspricht, kann ein Hinweis ausgegeben werden
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=fm>assert!</span><span class=p>(</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>result</span><span class=p>.</span><span class=n>contains</span><span class=p>(</span><span class=s>&#34;Carol&#34;</span><span class=p>),</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=s>&#34;Greeting did not contain name, value was `{}`&#34;</span><span class=p>,</span><span class=w>
@@ -55,7 +55,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=cp>#[test]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=cp>#[should_panic]</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=c1>// should_panic 用于检测是否 panic
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=c1>// should_panic prüft, ob panic auftritt
 </span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>fn</span> <span class=nf>greater_than_100</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Guess</span>::<span class=n>new</span><span class=p>(</span><span class=mi>200</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
@@ -64,7 +64,7 @@
 </span></span></span><span class=line><span class=cl><span class=cp>#[cfg(test)]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=k>mod</span> <span class=nn>tests2</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=cp>#[test]</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=c1>// 使用 Result&lt;T, E&gt; 作为返回值，无法使用 should_panic trait
+</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=c1>// Mit Result&lt;T, E&gt; als Rückgabewert lässt sich der should_panic-Trait nicht verwenden
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>fn</span> <span class=nf>it_works</span><span class=p>()</span><span class=w> </span>-&gt; <span class=nb>Result</span><span class=o>&lt;</span><span class=p>(),</span><span class=w> </span><span class=nb>String</span><span class=o>&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>if</span><span class=w> </span><span class=mi>2</span><span class=w> </span><span class=o>+</span><span class=w> </span><span class=mi>2</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=mi>4</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>            </span><span class=nb>Ok</span><span class=p>(())</span><span class=w>
@@ -73,7 +73,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
-</span></span></span></code></pre></div></li></ul><h1 id=quelle>Quelle</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch11-00-testing.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch11-00-testing.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#tests>Tests</a></li><li><a href=#verständnis>Verständnis</a></li><li><a href=#quelle>Quelle</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/de/posts/rust/10_generic-data-type--traits--lifetime/>&larr; Rust - Grundlagen - 10 - Generische Datentypen, Traits und Lebenszeiten</a>
+</span></span></span></code></pre></div></li></ul><h1 id=quelle>Quelle</h1><blockquote><p><a href=https://doc.rust-lang.org/book/ch11-00-testing.html target=_blank rel="noopener noreferrer">https://doc.rust-lang.org/book/ch11-00-testing.html</a></p></blockquote></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Inhalt</div><nav id=TableOfContents><ul><li><a href=#tests>Tests</a></li><li><a href=#verständnis>Verständnis</a></li><li><a href=#quelle>Quelle</a></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/de/posts/rust/10_generic-data-type--traits--lifetime/>&larr; Rust - Grundlagen - 10 - Generische Datentypen, Traits und Lebenszeiten</a>
 <a href=/de/posts/rust/12_iterators-and-closures/>Rust - Grundlagen - 12 - Iteratoren und Closures &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
 <a href=/index.xml>RSS</a>
 <a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>

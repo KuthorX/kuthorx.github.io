@@ -4,13 +4,13 @@
 <span></span><span></span><span></span></button><details class=language-switcher><summary class=language-current>Deutsch</summary><div class=language-options aria-label=Language><a href=/posts/rust/13_cargo-crates-io/ class=language-link hreflang=zh>中文</a>
 <a href=/en/posts/rust/13_cargo-crates-io/ class=language-link hreflang=en>English</a>
 <a href=/fr/posts/rust/13_cargo-crates-io/ class=language-link hreflang=fr>Français</a>
-<a href=/ru/ class=language-link hreflang=ru>Русский</a>
+<a href=/ru/posts/rust/13_cargo-crates-io/ class=language-link hreflang=ru>Русский</a>
 <a href=/es/posts/rust/13_cargo-crates-io/ class=language-link hreflang=es>Español</a>
 <a href=/ja/posts/rust/13_cargo-crates-io/ class=language-link hreflang=ja>日本語</a>
 <a href=/ko/posts/rust/13_cargo-crates-io/ class=language-link hreflang=ko>한국어</a>
 <a href=/de/posts/rust/13_cargo-crates-io/ class="language-link active" hreflang=de aria-current=page>Deutsch</a></div></details><ul class=nav-links id=nav-links><li><a href=/de/about/ class=nav-link>About</a></li><li><a href=/de/posts/ class=nav-link>Posts</a></li><li><a href=/de/repos/ class=nav-link>Repos</a></li><li><a href=/de/apps/ class=nav-link>APP</a></li></ul></div></nav><main id=content><article data-article-key=/de/posts/rust/13_cargo-crates-io/><div class=article-header><h1 class=article-title>Rust - Basic - 13 - Cargo Crates.io</h1><div class=article-meta><time datetime=2022-01-03>2022-01-03</time>
 <span>Rust</span></div></div><div class="article-layout has-toc"><div class=article-content><h1 id=cargo-cratesio>Cargo Crates.io</h1><h1 id=verständnis>Verständnis</h1><ul><li><p>Optionen zur Kompilierungsoptimierung</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-rust data-lang=rust><span class=line><span class=cl><span class=c1>// Filename: Cargo.toml
-</span></span></span><span class=line><span class=cl><span class=c1>// opt-level 为优化程度，0-3，越高编译时间越长，运行效率越快
+</span></span></span><span class=line><span class=cl><span class=c1>// opt-level ist der Optimierungsgrad, 0-3; je höher, desto länger die Kompilierung und desto schneller die Laufzeit
 </span></span></span><span class=line><span class=cl><span class=p>[</span><span class=n>profile</span><span class=p>.</span><span class=n>dev</span><span class=p>]</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=n>opt</span><span class=o>-</span><span class=n>level</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=mi>0</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
@@ -38,7 +38,7 @@
 <a href=https://crates.io/ target=_blank rel="noopener noreferrer">crates.io</a>
 zu teilen, macht das Rust-Ökosystem für viele Aufgaben nützlich. Die Standardbibliothek ist klein und stabil; Crates lassen sich jedoch leicht teilen, verwenden und unabhängig von der Sprache weiterentwickeln. Nützlichen Code auf
 <a href=https://crates.io/ target=_blank rel="noopener noreferrer">crates.io</a>
-zu veröffentlichen, lohnt sich wahrscheinlich auch für andere.</p></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Contents</div><nav id=TableOfContents><ul><li><a href=#cargo-cratesio>Cargo Crates.io</a></li><li><a href=#verständnis>Verständnis</a></li><li><a href=#quelle>Quelle</a><ul><li><a href=#cargo-mit-eigenen-befehlen-erweitern>Cargo mit eigenen Befehlen erweitern</a></li><li><a href=#zusammenfassung>Zusammenfassung</a></li></ul></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/de/posts/rust/12_iterators-and-closures/>&larr; Rust - Grundlagen - 12 - Iteratoren und Closures</a>
+zu veröffentlichen, lohnt sich wahrscheinlich auch für andere.</p></div><aside class=toc role=navigation aria-label="Table of contents"><div class=toc-title>Inhalt</div><nav id=TableOfContents><ul><li><a href=#cargo-cratesio>Cargo Crates.io</a></li><li><a href=#verständnis>Verständnis</a></li><li><a href=#quelle>Quelle</a><ul><li><a href=#cargo-mit-eigenen-befehlen-erweitern>Cargo mit eigenen Befehlen erweitern</a></li><li><a href=#zusammenfassung>Zusammenfassung</a></li></ul></li></ul></nav></aside></div><div class=container><nav class=post-nav aria-label="Post navigation"><a href=/de/posts/rust/12_iterators-and-closures/>&larr; Rust - Grundlagen - 12 - Iteratoren und Closures</a>
 <a href=/de/posts/rust/14_smart-pointers/>Rust - Basic - 14 - Smart Pointers &rarr;</a></nav></div></article></main><footer class=site-footer role=contentinfo><div class=footer-inner><span>&copy; 2026 KuthorX Blog II</span><div class=footer-links><a href=https://github.com/KuthorX target=_blank rel="noopener noreferrer">GitHub</a>
 <a href=/index.xml>RSS</a>
 <a href=https://github.com/bas3line/ascii rel="noopener noreferrer" target=_blank>ascii by ascii.rest</a></div></div></footer><script src=/js/site.js></script></body></html>
