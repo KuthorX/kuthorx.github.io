@@ -6,12 +6,29 @@
   var STATE_PREFIX = 'kuthorx-blog:article-state:';
   var LEGACY_CLOAK_PREFIX = '/posts/story_of_cloak/';
   var CURRENT_CLOAK_PREFIX = '/story_of_cloak/';
-  var LABELS = {
+  var FALLBACK_LABELS = {
     new: '未开始',
     reached: '已到达',
     solved: '已解开',
     locked: '未解锁'
   };
+
+  function hubLabels() {
+    var hub = document.querySelector('[data-cloak-hub]');
+    if (!hub) return FALLBACK_LABELS;
+    return {
+      new: hub.getAttribute('data-cloak-new') || FALLBACK_LABELS.new,
+      reached: hub.getAttribute('data-cloak-reached') || FALLBACK_LABELS.reached,
+      solved: hub.getAttribute('data-cloak-solved') || FALLBACK_LABELS.solved,
+      locked: hub.getAttribute('data-cloak-locked') || FALLBACK_LABELS.locked,
+      completed: hub.getAttribute('data-cloak-completed') || '完成 %d / %d',
+      wait: hub.getAttribute('data-cloak-wait') || '等所有人到齐（已完成 %d / %d 个案卷）'
+    };
+  }
+
+  function formatLabel(template, first, second) {
+    return String(template).replace('%d', first).replace('%d', second);
+  }
 
   function read(key, fallback) {
     try {
@@ -106,6 +123,7 @@
   }
 
   function paintCase(caseElement, visited) {
+    var labels = hubLabels();
     var steps = Array.prototype.slice.call(caseElement.querySelectorAll('[data-cloak-step]'));
     var results = steps.map(function (step) { return stepState(step, visited); });
     var firstOpen = -1;
@@ -122,13 +140,13 @@
       var status = step.querySelector('[data-cloak-status]');
       step.setAttribute('data-state', state);
       step.classList.toggle('is-current', index === firstOpen);
-      if (status) status.textContent = LABELS[state];
+      if (status) status.textContent = labels[state];
     });
 
     var progress = caseElement.querySelector('[data-cloak-progress]');
     var progressLabel = caseElement.querySelector('[data-cloak-progress-label]');
     if (progress) progress.textContent = doneCount + '/' + steps.length;
-    if (progressLabel) progressLabel.textContent = '完成 ' + doneCount + '/' + steps.length;
+    if (progressLabel) progressLabel.textContent = formatLabel(labels.completed, doneCount, steps.length);
     var complete = steps.length > 0 && doneCount === steps.length;
     caseElement.classList.toggle('is-complete', complete);
     return complete;
@@ -136,13 +154,14 @@
 
   // `requires: all` cases wait (visually only; links stay real) until every other case is complete.
   function paintGates(gated, completed, total) {
+    var labels = hubLabels();
     var waiting = completed < total;
     gated.forEach(function (caseElement) {
       caseElement.classList.toggle('is-waiting', waiting);
       var gate = caseElement.querySelector('[data-cloak-gate]');
       if (!gate) return;
       gate.hidden = !waiting;
-      gate.textContent = '等所有人到齐（已完成 ' + completed + ' / ' + total + ' 个案卷）';
+      gate.textContent = formatLabel(labels.wait, completed, total);
     });
   }
 

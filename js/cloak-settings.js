@@ -90,7 +90,7 @@
        被浏览器拦下时它显示「开」，可点一下却是关。被拦下的原因由下面那行
        note 说明，点开关就是再试一次。 */
     if (toggle) toggle.setAttribute('aria-checked', running ? 'true' : 'false');
-    if (toggleText) toggleText.textContent = running ? '开' : '关';
+    if (toggleText) toggleText.textContent = running ? (toggle.getAttribute('data-cloak-on') || '开') : (toggle.getAttribute('data-cloak-off') || '关');
     if (volume && String(volume.value) !== String(state.volume)) volume.value = String(state.volume);
     if (volumeText) volumeText.textContent = state.volume + '%';
     if (note) note.hidden = !(state.on && !running);
